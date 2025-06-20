@@ -6,8 +6,8 @@
     <title>A Negra que Não Podia Ser Anjo | Cordel Transformador para Educadores</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter for buttons and main text -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter for buttons and main text, Noto Serif for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
     <style>
         /* Default font for all devices (mobile first) using Inter */
         body {
@@ -15,7 +15,10 @@
             background-color: #fbfefe; /* New Background */
             color: #00374C; /* New Text */
         }
-        /* No need for a separate media query for font if it's the same generic 'serif' for all */
+        /* Titles font using Noto Serif */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Serif', serif;
+        }
         .cta-button {
             font-family: 'Inter', sans-serif; /* Apply Inter font to buttons */
             transition: all 0.3s ease;
@@ -72,6 +75,87 @@
                 flex-direction: row; /* Row for larger screens */
             }
         }
+
+        /* Sticky CTA for mobile */
+        #sticky-cta {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            background-color: #10B981; /* bg-green-500 */
+            color: white;
+            text-align: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* shadow-lg */
+            z-index: 50;
+            display: none; /* Hidden by default for desktop */
+            font-family: 'Inter', sans-serif;
+            font-weight: 800; /* font-extrabold */
+            text-transform: uppercase;
+            letter-spacing: 0.05em; /* tracking-wider */
+            font-size: 1.25rem; /* text-xl */
+            line-height: 1.75rem; /* text-2xl */
+        }
+        #sticky-cta a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #sticky-cta:hover {
+            background-color: #059669; /* hover:bg-green-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Back to top/packages button */
+        #back-to-packages {
+            position: fixed;
+            bottom: 5rem; /* Adjusted to be above the sticky CTA */
+            right: 1rem;
+            background-color: #00a8db; /* Primary color */
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            z-index: 40;
+            display: none; /* Hidden by default */
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem; /* text-sm */
+            line-height: 1.25rem; /* text-base */
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #back-to-packages:hover {
+            background-color: #007599; /* Darker primary on hover */
+            transform: translateY(-1px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Media queries for responsive buttons */
+        @media (max-width: 767px) {
+            #sticky-cta {
+                display: block; /* Show sticky CTA on mobile */
+                bottom: 1rem; /* Adjust position for mobile */
+                font-size: 1.125rem; /* Smaller text for mobile */
+                padding: 0.65rem 1rem;
+            }
+            #back-to-packages {
+                bottom: 5.5rem; /* Position above sticky CTA on mobile */
+            }
+        }
+        @media (min-width: 768px) {
+            #sticky-cta {
+                display: none; /* Hide sticky CTA on desktop */
+            }
+            #back-to-packages {
+                bottom: 1rem; /* Position for desktop */
+            }
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -117,7 +201,7 @@
             
             <div class="mb-8">
                 <!-- Capa Principal para a seção de cabeçalho -->
-                <img src="assets/capa_principal.png" alt="[Image of Capa do cordel A Negra que Não Podia Ser Anjo]" class="mx-auto rounded-xl shadow-2xl max-w-full h-auto">
+                <img src="assets/capa_principal.png" alt="[Image of Capa do cordel A Negra que Não Podia Ser Anjo]" class="mx-auto rounded-xl shadow-2xl max-w-full h-auto" loading="lazy">
             </div>
 
             <div class="bg-white text-[#00374C] p-6 md:p-8 rounded-2xl shadow-xl mx-auto max-w-2xl mb-10">
@@ -146,7 +230,7 @@
                 Com esse material, você não estará apenas ensinando — estará educando com propósito, provocando empatia e formando consciência social.
             </p>
             <a href="#comparacao-ofertas" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                👉 Quero fazer parte disso
+                👉 QUERO SOLUÇÕES PARA MINHA AULA!
             </a>
         </div>
     </section>
@@ -160,19 +244,19 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Depoimento 1 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_1.png" alt="[Image of Depoimento de professor 1]" class="rounded-lg mb-4 w-full h-auto">
+                    <img src="assets/depoimento_1.png" alt="[Image of Depoimento de professor 1]" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
                 </div>
                 <!-- Depoimento 2 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_2.png" alt="[Image of Depoimento de professor 2]" class="rounded-lg mb-4 w-full h-auto">
+                    <img src="assets/depoimento_2.png" alt="[Image of Depoimento de professor 2]" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
                 </div>
                 <!-- Depoimento 3 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_3.png" alt="[Image of Depoimento de professor 3]" class="rounded-lg mb-4 w-full h-auto">
+                    <img src="assets/depoimento_3.png" alt="[Image of Depoimento de professor 3]" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
                 </div>
                 <!-- Depoimento 4 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_4.png" alt="[Image of Depoimento de professor 4]" class="rounded-lg mb-4 w-full h-auto">
+                    <img src="assets/depoimento_4.png" alt="[Image of Depoimento de professor 4]" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
                 </div>
             </div>
             <p class="text-lg md:text-xl mt-8 opacity-90">E muitos outros depoimentos que transformam e inspiram!</p>
@@ -253,7 +337,7 @@
         <div class="container mx-auto max-w-4xl">
             <h3 class="text-3xl md:text-4xl font-bold text-white mb-8">Pronto para levar essa poderosa mensagem à sua turma?</h3>
             <a href="#comparacao-ofertas" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                👉 QUERO APLICAR CORDÉIS NA MINHA AULA!
+                👉 CONHECER OS MATERIAIS AGORA!
             </a>
         </div>
     </section>
@@ -324,7 +408,7 @@
                 </div>
             </div>
             <a href="#comparacao-ofertas" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider mt-12">
-                👉 SIM, QUERO FAZER A DIFERENÇA COM ESSE CORDEL!
+                👉 DESCOBRIR MEUS PACOTES!
             </a>
         </div>
     </section>
@@ -442,8 +526,8 @@
                 <p class="text-xl md:text-2xl font-semibold">💳 <strong class="font-extrabold">Garantia Incondicional de 7 Dias:</strong> Sua satisfação garantida ou seu dinheiro de volta!</p>
             </div>
 
-            <a href="#comparacao-ofertas" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse">
-                👉 SIM, QUERO O CORDEL POR R$ 9,90!
+            <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse">
+                👉 QUERO COMEÇAR COM ESTE CORDEL!
             </a>
         </div>
     </section>
@@ -452,7 +536,7 @@
     <section id="comparacao-ofertas" class="py-16 px-4 md:py-20 bg-white text-center">
         <div class="container mx-auto max-w-4xl">
             <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                ✨ Escolha o pacote ideal para sua jornada como educador consciente:
+                🛍️ Qual nível de transformação você quer levar para sua sala de aula?
             </h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -623,7 +707,7 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
                 ✨ Conheça o Mestre Por Trás dos Versos: Leonardo Sampaio
             </h2>
-            <img src="assets/foto_leonardo.png" alt="[Image of Foto de Leonardo Sampaio, autor e educador-poeta.]" class="rounded-full w-48 h-48 object-cover mx-auto mb-8 shadow-xl">
+            <img src="assets/foto_leonardo.png" alt="[Image of Foto de Leonardo Sampaio, autor e educador-poeta.]" class="rounded-full w-48 h-48 object-cover mx-auto mb-8 shadow-xl" loading="lazy">
             <div class="text-left text-lg md:text-xl leading-relaxed mb-8">
                 <p class="mb-4">
                     Leonardo Sampaio é um <strong class="text-[#00374C]">verdadeiro artesão da palavra e da educação</strong>, um poeta-pedagogo que transforma salas de aula em palcos e livros em atos de resistência cultural. Natural de Abaiara, no coração do Cariri cearense, cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.
@@ -650,7 +734,7 @@
             <!-- Modified structure for the WhatsApp section -->
             <div class="whatsapp-section-content mx-auto max-w-2xl bg-white p-6 rounded-xl shadow-lg">
                 <div class="flex-shrink-0">
-                    <img src="assets/whatsapp_logo.png" alt="[Image of WhatsApp Logo]" class="block mx-auto w-20 h-20 rounded-full">
+                    <img src="assets/whatsapp_logo.png" alt="[Image of WhatsApp Logo]" class="block mx-auto w-20 h-20 rounded-full" loading="lazy">
                 </div>
                 <div class="flex-grow">
                     <h2 class="text-2xl md:text-3xl font-bold mb-2 text-[#00374C]">
@@ -733,7 +817,7 @@
                 Pronto para transformar suas aulas e expandir sua visão?
             </p>
             <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse">
-                👉 QUERO A COLEÇÃO COMPLETA AGORA!
+                👉 QUERO MINHA COLEÇÃO AGORA!
             </a>
             <p class="mt-8 text-md md:text-lg opacity-80">
                 © A Negra que Não Podia Ser Anjo & Coleção Tesouro Poético. Todos os direitos reservados.
@@ -743,6 +827,18 @@
             </p>
         </div>
     </section>
+
+    <!-- Sticky CTA for mobile -->
+    <div id="sticky-cta">
+        <a href="#comparacao-ofertas">
+            👉 VER PACOTES E PREÇOS!
+        </a>
+    </div>
+
+    <!-- Back to top/packages button -->
+    <button id="back-to-packages" class="hidden">
+        ↑ Ver Pacotes
+    </button>
 
     <!-- Facebook Conversion API Conceptual Script -->
     <script>
@@ -866,6 +962,35 @@
                 }
             });
         }();
+    </script>
+
+    <script>
+        // JavaScript para o Sticky CTA (Fixo no Mobile)
+        const stickyCta = document.getElementById('sticky-cta');
+        window.addEventListener('scroll', function() {
+            // Mostra o CTA fixo após rolar uma certa distância (ex: 200px)
+            if (window.scrollY > 200) {
+                stickyCta.style.display = 'block';
+            } else {
+                stickyCta.style.display = 'none';
+            }
+        });
+
+        // JavaScript para o botão "Voltar aos Pacotes"
+        const backToPackagesButton = document.getElementById('back-to-packages');
+        window.addEventListener('scroll', function() {
+            // Mostra o botão "Voltar aos Pacotes" após rolar uma certa distância (ex: 400px)
+            if (window.scrollY > 400) {
+                backToPackagesButton.style.display = 'block';
+            } else {
+                backToPackagesButton.style.display = 'none';
+            }
+        });
+
+        // Adiciona um evento de clique para rolar suavemente até a seção de comparação de ofertas
+        backToPackagesButton.addEventListener('click', function() {
+            document.getElementById('comparacao-ofertas').scrollIntoView({ behavior: 'smooth' });
+        });
     </script>
 </body>
 </html>
