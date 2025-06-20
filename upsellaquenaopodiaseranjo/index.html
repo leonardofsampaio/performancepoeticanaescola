@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Exclusiva: Coleção Tesouro Poético - Não Feche Esta Página!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // PALETA DE CORES FORNECIDA PELA IMAGEM "Tesouro_poetico-palette.png"
+                        'color-dark-blue': {
+                            DEFAULT: '#0A232F', // O azul marinho mais escuro
+                        },
+                        'color-off-white': {
+                            DEFAULT: '#F7F7F7', // O branco quase puro
+                        },
+                        'color-vibrant-blue': {
+                            DEFAULT: '#00A8DB', // O azul vibrante principal
+                        },
+                        'color-light-blue': {
+                            DEFAULT: '#8CD7EE', // O azul mais claro
+                        },
+                        'color-accent-orange': {
+                            DEFAULT: '#FFB300', // O laranja/amarelo
+                        },
+                        // Mapeamento para nomes customizados mais curtos para uso em classes Tailwind (se suportado pelo CDN)
+                        'custom-text-main': '#0A232F',
+                        'custom-text-light': '#F7F7F7',
+
+                        'custom-bg-main': '#F7F7F7',
+                        'custom-bg-dark-section': '#0A232F', // Usado para seções azuis escuras principais
+
+                        'custom-primary-btn': '#00A8DB',
+                        'custom-secondary-btn': '#8CD7EE',
+
+                        'custom-accent-main': '#FFB300',
+                    },
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    keyframes: {
+                        pulse: {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.05)' },
+                        },
+                        'pulse-slow': {
+                            '0%, 100%': { transform: 'scale(1)' },
+                            '50%': { transform: 'scale(1.01)' },
+                        },
+                        'bounce-subtle': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    },
+                    animation: {
+                        pulse: 'pulse 1.5s infinite',
+                        'pulse-slow': 'pulse-slow 3s infinite ease-in-out',
+                        'bounce-subtle': 'bounce-subtle 2s infinite ease-in-out',
+                    }
+                },
+            },
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Variáveis CSS para uso consistente em gradientes e onde Tailwind CDN tem limitações */
+        :root {
+            --color-dark-blue: #0A232F;
+            --color-off-white: #F7F7F7;
+            --color-vibrant-blue: #00A8DB;
+            --color-light-blue: #8CD7EE;
+            --color-accent-orange: #FFB300;
+        }
+
+        /* Classe para forçar o fundo laranja diretamente */
+        .bg-force-orange {
+            background-color: #FFB300 !important;
+        }
+
+        /* Estilos para o degradê nos botões principais */
+        .btn-gradient-primary {
+            background: linear-gradient(to right, var(--color-vibrant-blue), var(--color-light-blue));
+            border: none;
+            transition: transform 0.2s ease-in-out;
+        }
+        .btn-gradient-primary:hover {
+            background: linear-gradient(to right, #007ACC, #00A8DB); /* Usando hex diretamente para hover */
+            transform: scale(1.02);
+        }
+
+        /* Estilo para o botão de recusa, mais sutil */
+        .btn-recusal-subtle {
+            color: var(--color-dark-blue);
+            text-decoration: underline;
+            font-weight: 400;
+            padding: 0.5rem 1rem;
+            display: inline-block;
+            transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+            opacity: 0.7; /* Reduz a opacidade para não competir com o CTA principal */
+            font-size: 0.9em;
+        }
+        .btn-recusal-subtle:hover {
+            color: var(--color-light-blue);
+            opacity: 1;
+        }
+
+        /* Degradês para as seções de fundo */
+        .bg-gradient-dark-blue-section {
+            background: linear-gradient(to bottom, var(--color-dark-blue), var(--color-vibrant-blue));
+        }
+        .bg-gradient-dark-blue-variation {
+            background: linear-gradient(to bottom, var(--color-vibrant-blue), var(--color-light-blue));
+        }
+
+        /* Estilo para o botão flutuante em mobile */
+        .sticky-mobile-button {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: var(--color-vibrant-blue); /* Fundo sólido para o sticky */
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body.has-sticky-button {
+            padding-bottom: 70px; /* Garante que o conteúdo não fique escondido sob o botão */
+        }
+        @media (min-width: 768px) {
+            body.has-sticky-button {
+                padding-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body class="font-body bg-custom-bg-main text-custom-text-main antialiased">
+    <div class="min-h-screen flex flex-col items-center">
+
+        <!-- Seção 1: Alerta e Confirmação de Compra - Fundo agora forçado para laranja -->
+        <section class="w-full bg-force-orange py-4 md:py-6 px-4 text-center rounded-b-xl shadow-lg relative z-10">
+            <h1 class="font-heading text-color-dark-blue text-3xl md:text-4xl font-extrabold mb-2 leading-tight drop-shadow-md animate-bounce-subtle">
+                <i class="fas fa-exclamation-triangle mr-2 text-color-vibrant-blue"></i>NÃO FECHE ESTA PÁGINA!
+            </h1>
+            <p class="text-color-dark-blue text-lg md:text-xl font-medium mb-4">
+                <i class="fas fa-check-circle mr-2 text-color-vibrant-blue"></i>Você garantiu o cordel ‘A Negra que Não Podia Ser Anjo’ por apenas R$ 9,90.
+            </p>
+            <p class="text-color-dark-blue text-base md:text-lg italic">
+                (Parabéns por essa excelente escolha!)
+            </p>
+            <p class="text-color-dark-blue text-xl md:text-2xl font-bold mt-6">
+                Agora preste atenção:
+            </p>
+        </section>
+
+        <!-- Seção 2: Oferta Exclusiva e Senso de Urgência -->
+        <section class="w-full max-w-4xl bg-gradient-dark-blue-section py-10 md:py-16 px-4 md:px-8 text-center text-color-off-white shadow-inner rounded-lg
+                      mt-0 md:mt-0 sticky top-0 z-40 md:static md:top-auto md:z-auto backdrop-blur-sm bg-opacity-90">
+            <!-- Barra de Progresso Visual -->
+            <div class="flex justify-center items-center space-x-2 md:space-x-4 mb-8">
+                <!-- Passo 1: Compra Realizada (Azul claro, concluído) -->
+                <div class="flex items-center">
+                    <span class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-color-light-blue text-color-dark-blue font-bold text-sm md:text-base shadow-md">1</span>
+                    <span class="ml-2 md:ml-3 text-color-off-white font-semibold text-sm md:text-base hidden sm:inline">Compra Realizada</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-arrow-right text-color-off-white text-lg md:text-xl"></i>
+                </div>
+                <!-- Passo 2: Oferta Exclusiva (Azul vibrante, ativo) -->
+                <div class="flex items-center">
+                    <span class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-color-vibrant-blue text-color-off-white font-bold text-sm md:text-base shadow-md animate-pulse">2</span>
+                    <span class="ml-2 md:ml-3 text-color-off-white font-bold text-sm md:text-base">Oferta Exclusiva</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-arrow-right text-color-off-white text-lg md:text-xl"></i>
+                </div>
+                <!-- Passo 3: Pedido Finalizado (Azul escuro, futuro) -->
+                <div class="flex items-center">
+                    <span class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-color-dark-blue text-color-off-white font-bold text-sm md:text-base shadow-md">3</span>
+                    <span class="ml-2 md:ml-3 text-color-off-white font-semibold text-sm md:text-base hidden sm:inline">Pedido Finalizado</span>
+                </div>
+            </div>
+
+            <h2 class="font-heading text-color-off-white text-2xl md:text-3xl font-bold mb-4 leading-relaxed drop-shadow-md">
+                Sua compra ainda <span class="text-color-accent-orange animate-pulse-slow">não está completa</span>...
+            </h2>
+            <p class="text-color-off-white text-lg md:text-xl mb-6">
+                Esta é uma <strong>oportunidade única</strong> que você provavelmente nunca mais verá com este desconto.
+            </p>
+            <p class="text-color-off-white text-xl md:text-2xl font-semibold italic">
+                Então por favor, leia com atenção.
+            </p>
+        </section>
+
+        <!-- Seção 3: Conexão e Próximo Nível -->
+        <section class="w-full max-w-4xl bg-gradient-dark-blue-variation py-10 md:py-16 px-4 md:px-8 text-center text-color-dark-blue shadow-inner rounded-lg mt-8">
+            <h2 class="font-heading text-color-accent-orange text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
+                <i class="fas fa-lightbulb mr-2 text-color-dark-blue"></i>Você já deu o primeiro passo... Agora é hora de aprofundar.
+            </h2>
+            <p class="text-color-dark-blue text-lg md:text-xl leading-relaxed mb-6">
+                Você acabou de adquirir um cordel poderoso.
+                Mas e se eu te dissesse que ele é só uma parte de algo muito maior?
+                Uma coleção completa que vai <strong>transformar suas aulas e sua prática pedagógica!</strong>
+            </p>
+            <ul class="text-color-dark-blue text-lg md:text-xl leading-relaxed space-y-2 max-w-2xl mx-auto text-left">
+                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Mais poesia para inspirar e educar.</li>
+                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Abordagem aprofundada de temas urgentes e relevantes.</li>
+                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Propostas pedagógicas prontas com base na BNCC.</li>
+                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Roteiros teatrais e cadernos de atividades para alunos.</li>
+                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Tudo o que um educador consciente precisa para transformar o agora!</li>
+            </ul>
+        </section>
+
+        <!-- Seção 4: Problema e Conscientização - Fundo agora forçado para laranja -->
+        <section class="w-full bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center rounded-t-xl shadow-lg mt-8">
+            <h2 class="font-heading text-color-dark-blue text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
+                <i class="fas fa-exclamation-circle mr-2 text-color-vibrant-blue"></i>Existe um problema... Que nós resolvemos!
+            </h2>
+            <p class="text-color-dark-blue text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                A maioria dos professores quer trabalhar racismo, ancestralidade, justiça social...
+                Mas não tem tempo pra criar tudo do zero.
+                Ou pior: encontra conteúdos rasos, neutros ou genéricos.
+                <span class="font-bold block mt-2">Você e seus alunos merecem mais do que isso.</span>
+            </p>
+        </section>
+
+        <!-- Seção 5: Causa e Propósito -->
+        <section class="w-full max-w-4xl bg-custom-bg-main py-10 md:py-16 px-4 md:px-8 text-center shadow-md rounded-lg">
+            <h2 class="font-heading text-color-vibrant-blue text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
+                <i class="fas fa-fist-raised mr-2 text-color-vibrant-blue"></i>Essa é a nossa causa, e a sua também!
+            </h2>
+            <!-- IMAGEM DE MOCKUP REAL: Atualizado para caminho relativo -->
+            <img src="assets/mockup-colecao.png" alt="Mockup da Coleção Tesouro Poético: Livro Digital, Cordéis, Caderno de Atividades" class="w-full max-w-2xl mx-auto rounded-lg shadow-xl mb-8 border-4 border-color-vibrant-blue animate-pulse-slow">
+            <p class="text-color-dark-blue text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
+                A Coleção Tesouro Poético nasceu da vivência real na escola pública.
+                É poesia com propósito. É formação com identidade.
+                Porque educar com beleza é bom.
+                Mas educar com consciência... <strong>é fundamental e urgente!</strong>
+            </p>
+        </section>
+
+        <!-- Seção 6: A Solução e a Oferta (Fundo Branco, Conteúdo direto conforme a imagem) -->
+        <section class="w-full bg-custom-bg-main py-10 md:py-16 px-4 md:px-8 text-center max-w-4xl mx-auto rounded-lg shadow-md mt-8">
+            <h2 class="font-heading text-color-vibrant-blue text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
+                <i class="fas fa-lightbulb mr-2 text-color-vibrant-blue"></i>A solução está aqui, e com um desconto imperdível!
+            </h2>
+            <p class="text-color-dark-blue text-xl md:text-2xl font-bold mb-4">
+                De <span class="text-color-accent-orange line-through">R$ 57,70</span> por apenas <span class="text-color-vibrant-blue text-4xl md:text-5xl">R$ 47,80!</span>
+            </p>
+            <p class="text-color-dark-blue text-lg md:text-xl italic mb-8">
+                (Isso já descontando os R$ 9,90 que você investiu no cordel.)
+            </p>
+
+            <h3 class="font-heading text-color-dark-blue text-2xl md:text-3xl font-bold mb-6">
+                <i class="fas fa-box-open mr-2 text-color-vibrant-blue"></i>Ao garantir a coleção, você vai receber:
+            </h3>
+            <ul class="text-color-dark-blue text-lg md:text-xl leading-relaxed space-y-3 max-w-2xl mx-auto text-left">
+                <li class="flex items-center"><i class="fas fa-bookmark text-color-vibrant-blue mr-3"></i>O livro "Performance Poética na Escola"</li>
+                <li class="flex items-start">
+                    <i class="fas fa-feather-alt text-color-vibrant-blue mr-3 mt-1"></i>
+                    Os cordéis: "Consequência do voto", "Crenças e religiões no mundo", "Lendas racismo e brincadeiras africanas", e "Pobre não pode ter voz"
+                    <span class="block ml-6 text-sm italic">(Cada um acompanhado de uma proposta pedagógica)</span>
+                </li>
+                <li class="flex items-center"><i class="fas fa-palette text-color-vibrant-blue mr-3"></i>O Kit Poético Interdisciplinar - Língua Portuguesa, História e Artes em Cordel</li>
+                <li class="flex items-center"><i class="fas fa-quote-right text-color-vibrant-blue mr-3"></i>As Frases-Poema para Começar Aulas com Reflexão</li>
+                <li class="flex items-center"><i class="fas fa-file-alt text-color-vibrant-blue mr-3"></i>O Caderno de Atividades para Estudantes</li>
+            </ul>
+        </section>
+
+        <!-- Seção 7: Garantia e Quebra de Objeção -->
+        <section class="w-full bg-gradient-dark-blue-section py-10 md:py-16 px-4 md:px-8 text-center rounded-b-xl shadow-lg mt-8 text-color-off-white">
+            <h2 class="font-heading text-color-off-white text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
+                <i class="fas fa-shield-alt mr-2 text-color-accent-orange"></i>Experimente por 7 dias sem risco ALGUM.
+            </h2>
+            <div class="flex justify-center mb-6">
+                <!-- SELO DE GARANTIA REAL: Atualizado para caminho relativo -->
+                <img src="assets/selo-garantia.png" alt="Selo de Garantia 7 dias Incondicional" class="rounded-full shadow-md animate-pulse-slow border-4 border-color-accent-orange">
+            </div>
+            <p class="text-color-off-white text-lg md:text-xl leading-relaxed max-w-3xl mx-auto mb-8">
+                <strong>Sua satisfação é a nossa prioridade!</strong>
+                Se você não se conectar com a proposta, ou achar que o material não é para você, basta clicar no botão da <span class="font-bold">Kiwify</span> e receber 100% do seu dinheiro de volta.
+                <span class="block mt-2 font-bold">Sem perguntas. Sem burocracia.</span>
+            </p>
+            <p class="text-color-off-white text-2xl md:text-3xl font-extrabold leading-tight animate-bounce-subtle">
+                <i class="fas fa-fire mr-2 text-color-accent-orange"></i>O RISCO AGORA É TODO MEU.
+            </p>
+            <p class="text-color-off-white text-xl md:text-2xl font-semibold italic mt-2">
+                E a oportunidade de transformação é sua.
+            </p>
+        </section>
+
+        <!-- Seção 8: Chamada para Ação Final - Fundo agora forçado para laranja -->
+        <section class="w-full max-w-4xl bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center mt-8 rounded-lg shadow-lg">
+            <h2 class="font-heading text-color-dark-blue text-2xl md:text-3xl font-bold mb-8 leading-relaxed drop-shadow-md">
+                <i class="fas fa-hand-point-right text-color-vibrant-blue mr-2 animate-bounce-subtle"></i>Sim! Eu quero a Coleção Completa com R$ 9,90 de desconto agora!
+            </h2>
+            <!-- Gatilho de Urgência/Escassez - Texto agora preto com fundo off-white -->
+            <p class="text-sm font-bold mt-2 mb-4 animate-pulse">
+                <span class="inline-block bg-color-off-white text-color-dark-blue px-3 py-1 rounded-full shadow-sm">
+                    ⚡ Oferta disponível APENAS nesta página! Você não verá esse desconto novamente.
+                </span>
+            </p>
+
+            <!-- Empilhamento de valor no CTA final - Melhoria visual com ícones maiores e estrutura mais clara -->
+            <div class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto mb-6 text-color-dark-blue">
+                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-feather-alt text-color-vibrant-blue text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold text-left">5 Cordéis Impactantes</span>
+                </div>
+                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-pencil-ruler text-color-vibrant-blue text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold text-left">Atividades Prontas com BNCC</span>
+                </div>
+                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-theater-masks text-color-vibrant-blue text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold text-left">Kit Poético + Roteiro Teatral</span>
+                </div>
+                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-file-alt text-color-vibrant-blue text-2xl mr-3"></i>
+                    <span class="text-lg font-semibold text-left">Frases-Poema e Caderno de Atividades</span>
+                </div>
+            </div>
+
+
+            <!-- Botão de Upsell da Kiwify -->
+            <button id="kiwify-upsell-trigger-xqBkSdl" class="inline-block btn-gradient-primary text-color-off-white px-8 py-4 rounded-full text-xl md:text-2xl font-bold uppercase shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animation-pulse">
+                <i class="fas fa-arrow-alt-circle-right mr-2"></i>GARANTIR MINHA COLEÇÃO POR APENAS R$ 47,80
+            </button>
+
+            <!-- Botão de Recusa da Kiwify -->
+            <p class="mt-8 text-color-dark-blue text-lg md:text-xl">
+                <div id="kiwify-upsell-cancel-trigger" class="btn-recusal-subtle">
+                    <i class="fas fa-times-circle mr-2"></i>Não, obrigado(a). Prefiro ficar apenas com o cordel que já adquiri.
+                </div>
+            </p>
+        </section>
+
+        <!-- Seção 9: Rodapé e Avisos Legais - Fundo agora forçado para laranja -->
+        <footer class="w-full bg-force-orange py-8 px-4 text-center text-color-dark-blue text-sm mt-auto border-t border-color-light-blue">
+            <p class="mb-2">
+                <a href="#" class="hover:underline text-color-dark-blue">Política de Privacidade</a> |
+                <a href="#" class="hover:underline text-color-dark-blue">Aviso Legal</a> |
+                <a href="#" class="hover:underline text-color-dark-blue">Termos de Uso</a>
+            </p>
+            <p class="mb-2">Compra 100% segura com garantia de 7 dias</p>
+            <p>Copyright &copy; Tesouro Poético dos Professores Conscientes</p>
+        </footer>
+
+        <!-- Script de Rastreamento da Kiwify e lógica de UTMs (adicionado aqui) -->
+        <script>
+            let prefix = ["https://pay.kiwify.com.br"];
+
+            function getParams() {
+                let t = "",
+                    e = window.top.location.href,
+                    r = new URL(e);
+                if (null != r) {
+                    let a = r.searchParams.get("utm_source"),
+                        n = r.searchParams.get("utm_medium"),
+                        o = r.searchParams.get("utm_campaign"),
+                        m = r.searchParams.get("utm_term"),
+                        c = r.searchParams.get("utm_content");
+                    -1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+                }
+                return t
+            }! function() {
+                var t = new URLSearchParams(window.location.search);
+                t.toString() && document.querySelectorAll("a").forEach(function(e) {
+                    for (let r = 0; r < prefix.length; r++) -1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+                })
+            }();
+        </script>
+
+        <!-- Botão Flutuante Sticky para Mobile -->
+        <div class="block md:hidden sticky-mobile-button">
+            <!-- Botão Mobile com data-kiwify-upsell-trigger para evitar ID duplicado -->
+            <button data-kiwify-upsell-trigger-mobile="xqBkSdl" class="inline-block btn-gradient-primary text-color-off-white px-6 py-3 rounded-full text-lg font-bold uppercase shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 w-full animation-pulse">
+                <i class="fas fa-arrow-alt-circle-right mr-2"></i>GARANTIR MINHA COLEÇÃO POR R$ 47,80
+            </button>
+        </div>
+
+        <script>
+            // Adiciona classe ao body para ajustar o padding-bottom em mobile, compensando o sticky button
+            if (window.innerWidth < 768) { // Verifica se é mobile (ou menor que md breakpoint do Tailwind)
+                document.body.classList.add('has-sticky-button');
+            }
+            window.addEventListener('resize', () => {
+                if (window.innerWidth < 768) {
+                    document.body.classList.add('has-sticky-button');
+                } else {
+                    document.body.classList.remove('has-sticky-button');
+                }
+            });
+
+            // Ajuste para o botão mobile Kiwify: Usa o data-attribute para o trigger
+            document.addEventListener('DOMContentLoaded', () => {
+                const upsellTriggerMobile = document.querySelector('[data-kiwify-upsell-trigger-mobile]');
+                if (upsellTriggerMobile) {
+                    upsellTriggerMobile.addEventListener('click', () => {
+                        const originalTrigger = document.getElementById('kiwify-upsell-trigger-xqBkSdl');
+                        if (originalTrigger) {
+                            originalTrigger.click(); // Dispara o clique no botão principal
+                        }
+                    });
+                }
+            });
+
+
+            // Variáveis e script da Kiwify
+            let nextUpsellURL = "";
+            let nextDownsellURL = "";
+        </script>
+        <script src="https://snippets.kiwify.com/upsell/upsell.min.js"></script>
+    </div>
+</body>
+</html>
