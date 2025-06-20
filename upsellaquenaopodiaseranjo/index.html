@@ -103,18 +103,17 @@
 
         /* Estilo para o botão de recusa, mais sutil */
         .btn-recusal-subtle {
-            /* Cor do botão de recusa agora usa light-blue para menor contraste com o laranja */
-            color: var(--color-light-blue);
+            color: var(--color-dark-blue); /* Alterado para azul escuro */
             text-decoration: underline;
             font-weight: 400;
             padding: 0.5rem 1rem;
             display: inline-block;
             transition: color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-            opacity: 0.8; /* Levemente mais opaco para o contraste */
+            opacity: 0.6; /* Reduzida a opacidade */
             font-size: 0.9em;
         }
         .btn-recusal-subtle:hover {
-            color: var(--color-dark-blue); /* Fica mais visível ao passar o mouse */
+            color: var(--color-vibrant-blue); /* Alterado para azul vibrante no hover */
             opacity: 1;
         }
 
@@ -155,8 +154,8 @@
 <body class="font-body bg-custom-bg-main text-custom-text-main antialiased">
     <div class="min-h-screen flex flex-col items-center">
 
-        <!-- Seção 1: Alerta e Confirmação de Compra - Fundo agora forçado para laranja -->
-        <section class="w-full bg-force-orange py-4 md:py-6 px-4 text-center rounded-b-xl shadow-lg relative z-10">
+        <!-- Seção 1: Alerta e Confirmação de Compra - Fundo agora forçado para laranja com sombra -->
+        <section class="w-full bg-force-orange py-4 md:py-6 px-4 text-center rounded-b-xl shadow-xl relative z-10">
             <h1 class="font-heading text-color-dark-blue text-3xl md:text-4xl font-extrabold mb-2 leading-tight drop-shadow-md animate-bounce-subtle">
                 <i class="fas fa-exclamation-triangle mr-2 text-color-vibrant-blue"></i>NÃO FECHE ESTA PÁGINA!
             </h1>
@@ -172,8 +171,7 @@
         </section>
 
         <!-- Seção 2: Oferta Exclusiva e Senso de Urgência -->
-        <section class="w-full max-w-4xl bg-gradient-dark-blue-section py-10 md:py-16 px-4 md:px-8 text-center text-color-off-white shadow-inner rounded-lg
-                      mt-0 md:mt-0">
+        <section class="w-full max-w-4xl bg-gradient-dark-blue-section py-10 md:py-16 px-4 md:px-8 text-center text-color-off-white shadow-inner rounded-lg mt-8">
             <!-- Barra de Progresso Visual - Otimizada para mobile e tablet/desktop -->
             <div class="flex flex-col gap-y-6 md:flex-row md:justify-center md:items-center md:gap-x-8 mb-8">
                 <!-- Passo 1: Compra Realizada (Azul claro, concluído) -->
@@ -181,7 +179,7 @@
                     <span class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-color-light-blue text-color-dark-blue font-bold text-sm md:text-base shadow-md">1</span>
                     <span class="mt-1 text-color-off-white font-semibold text-sm md:text-base">Compra Realizada</span>
                 </div>
-                <div class="hidden md:block"> <!-- Seta visível apenas em telas médias e maiores -->
+                <div class="hidden md:block">
                     <i class="fas fa-arrow-right text-color-off-white text-lg md:text-xl"></i>
                 </div>
                 <!-- Passo 2: Oferta Exclusiva (Azul vibrante, ativo) -->
@@ -189,7 +187,7 @@
                     <span class="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-color-vibrant-blue text-color-off-white font-bold text-sm md:text-base shadow-md animate-pulse">2</span>
                     <span class="mt-1 text-color-off-white font-bold text-sm md:text-base">Oferta Exclusiva</span>
                 </div>
-                <div class="hidden md:block"> <!-- Seta visível apenas em telas médias e maiores -->
+                <div class="hidden md:block">
                     <i class="fas fa-arrow-right text-color-off-white text-lg md:text-xl"></i>
                 </div>
                 <!-- Passo 3: Pedido Finalizado (Azul escuro, futuro) -->
@@ -221,16 +219,20 @@
                 Uma coleção completa que vai <strong>transformar suas aulas e sua prática pedagógica!</strong>
             </p>
             <ul class="text-color-dark-blue text-lg md:text-xl leading-relaxed space-y-2 max-w-2xl mx-auto text-left">
-                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Mais poesia para inspirar e educar.</li>
-                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Abordagem aprofundada de temas urgentes e relevantes.</li>
-                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Propostas pedagógicas prontas com base na BNCC.</li>
-                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Roteiros teatrais e cadernos de atividades para alunos.</li>
-                <li><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Tudo o que um educador consciente precisa para transformar o agora!</li>
+                <li class="flex items-center"><i class="fas fa-check-circle text-color-vibrant-blue mr-2"></i>Mais poesia para inspirar e educar.</li>
+                <li class="flex items-start">
+                    <i class="fas fa-feather-alt text-color-vibrant-blue mr-3 mt-1"></i>
+                    Os cordéis: "Consequência do voto", "Crenças e religiões no mundo", "Lendas racismo e brincadeiras africanas", e "Pobre não pode ter voz"
+                    <span class="block ml-6 text-sm italic">(Cada um acompanhado de uma proposta pedagógica)</span>
+                </li>
+                <li class="flex items-center"><i class="fas fa-palette text-color-vibrant-blue mr-3"></i>O Kit Poético Interdisciplinar - Língua Portuguesa, História e Artes em Cordel</li>
+                <li class="flex items-center"><i class="fas fa-quote-right text-color-vibrant-blue mr-3"></i>As Frases-Poema para Começar Aulas com Reflexão</li>
+                <li class="flex items-center"><i class="fas fa-file-alt text-color-vibrant-blue mr-3"></i>O Caderno de Atividades para Estudantes</li>
             </ul>
         </section>
 
-        <!-- Seção 4: Problema e Conscientização - Fundo agora forçado para laranja -->
-        <section class="w-full bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center rounded-t-xl shadow-lg mt-8">
+        <!-- Seção 4: Problema e Conscientização - Fundo agora forçado para laranja com sombra -->
+        <section class="w-full bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center rounded-t-xl shadow-xl mt-8">
             <h2 class="font-heading text-color-dark-blue text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
                 <i class="fas fa-exclamation-circle mr-2 text-color-vibrant-blue"></i>Existe um problema... Que nós resolvemos!
             </h2>
@@ -242,8 +244,8 @@
             </p>
         </section>
 
-        <!-- Seção 5: Causa e Propósito -->
-        <section class="w-full max-w-4xl bg-custom-bg-main py-10 md:py-16 px-4 md:px-8 text-center shadow-md rounded-lg">
+        <!-- Seção 5: Causa e Propósito - Adicionada margem superior -->
+        <section class="w-full max-w-4xl bg-custom-bg-main py-10 md:py-16 px-4 md:px-8 text-center shadow-md rounded-lg mt-8">
             <h2 class="font-heading text-color-vibrant-blue text-3xl md:text-4xl font-extrabold mb-6 leading-tight drop-shadow-md">
                 <i class="fas fa-fist-raised mr-2 text-color-vibrant-blue"></i>Essa é a nossa causa, e a sua também!
             </h2>
@@ -251,7 +253,7 @@
             <img src="assets/mockup-colecao.png" alt="Mockup da Coleção Tesouro Poético: Livro Digital, Cordéis, Caderno de Atividades" class="w-full max-w-2xl mx-auto rounded-lg shadow-xl mb-8 border-4 border-color-vibrant-blue animate-pulse-slow">
             <p class="text-color-dark-blue text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">
                 A Coleção Tesouro Poético nasceu da vivência real na escola pública.
-                É poesia com propósito. É formação com identidade.
+                E poesia com propósito. É formação com identidade.
                 Porque educar com beleza é bom.
                 Mas educar com consciência... <strong>é fundamental e urgente!</strong>
             </p>
@@ -307,37 +309,39 @@
             </p>
         </section>
 
-        <!-- Seção 8: Chamada para Ação Final - Fundo agora forçado para laranja -->
-        <section class="w-full max-w-4xl bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center mt-8 rounded-lg shadow-lg">
+        <!-- Seção 8: Chamada para Ação Final - Fundo agora forçado para laranja com sombra -->
+        <section class="w-full max-w-4xl bg-force-orange py-10 md:py-16 px-4 md:px-8 text-center mt-8 rounded-lg shadow-xl">
             <h2 class="font-heading text-color-dark-blue text-2xl md:text-3xl font-bold mb-8 leading-relaxed drop-shadow-md">
                 <i class="fas fa-hand-point-right text-color-vibrant-blue mr-2 animate-bounce-subtle"></i>Sim! Eu quero a Coleção Completa com R$ 9,90 de desconto agora!
             </h2>
+            <!-- Mensagem de exclusividade reintroduzida -->
+            <p class="text-color-dark-blue text-sm font-semibold mb-2">Você não verá este desconto novamente!</p>
             <!-- Gatilho de Urgência/Escassez - Adicionado selo visual e contador regressivo -->
             <p class="text-sm font-bold mt-2 mb-4 animate-pulse">
                 <span class="inline-flex items-center bg-color-off-white text-color-dark-blue px-3 py-1 rounded-full shadow-sm animate-flash-red">
-                    <i class="fas fa-hourglass-half mr-2"></i>Oferta por Tempo Limitado!
+                    ⚡ Oferta Exclusiva! <i class="fas fa-hourglass-half ml-1 mr-2"></i>Tempo Limitado!
                 </span>
             </p>
             <div id="countdown-timer" class="text-color-dark-blue text-xl md:text-2xl font-bold mb-6 mt-2">
                 <!-- O tempo será exibido aqui por JavaScript -->
             </div>
 
-            <!-- Empilhamento de valor no CTA final - Melhoria visual com ícones maiores e estrutura mais clara -->
+            <!-- Empilhamento de valor no CTA final - Fundo dos cards alterado para azul claro com borda e sombra -->
             <div class="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto mb-6 text-color-dark-blue">
-                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
-                    <i class="fas fa-feather-alt text-color-vibrant-blue text-2xl mr-3"></i>
+                <div class="flex items-center p-3 bg-color-light-blue rounded-lg shadow-lg border border-color-dark-blue w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-feather-alt text-color-dark-blue text-2xl mr-3"></i>
                     <span class="text-lg font-semibold text-left">5 Cordéis Impactantes</span>
                 </div>
-                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
-                    <i class="fas fa-pencil-ruler text-color-vibrant-blue text-2xl mr-3"></i>
+                <div class="flex items-center p-3 bg-color-light-blue rounded-lg shadow-lg border border-color-dark-blue w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-pencil-ruler text-color-dark-blue text-2xl mr-3"></i>
                     <span class="text-lg font-semibold text-left">Atividades Prontas com BNCC</span>
                 </div>
-                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
-                    <i class="fas fa-theater-masks text-color-vibrant-blue text-2xl mr-3"></i>
+                <div class="flex items-center p-3 bg-color-light-blue rounded-lg shadow-lg border border-color-dark-blue w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-theater-masks text-color-dark-blue text-2xl mr-3"></i>
                     <span class="text-lg font-semibold text-left">Kit Poético + Roteiro Teatral</span>
                 </div>
-                <div class="flex items-center p-3 bg-color-off-white rounded-lg shadow-md w-full md:w-[calc(50%-0.5rem)]">
-                    <i class="fas fa-file-alt text-color-vibrant-blue text-2xl mr-3"></i>
+                <div class="flex items-center p-3 bg-color-light-blue rounded-lg shadow-lg border border-color-dark-blue w-full md:w-[calc(50%-0.5rem)]">
+                    <i class="fas fa-file-alt text-color-dark-blue text-2xl mr-3"></i>
                     <span class="text-lg font-semibold text-left">Frases-Poema e Caderno de Atividades</span>
                 </div>
             </div>
@@ -356,8 +360,8 @@
             </p>
         </section>
 
-        <!-- Seção 9: Rodapé e Avisos Legais - Fundo agora forçado para laranja -->
-        <footer class="w-full bg-force-orange py-8 px-4 text-center text-color-dark-blue text-sm mt-auto border-t border-color-light-blue">
+        <!-- Seção 9: Rodapé e Avisos Legais - Fundo agora forçado para laranja com sombra -->
+        <footer class="w-full bg-force-orange py-8 px-4 text-center text-color-dark-blue text-sm mt-auto border-t border-color-light-blue shadow-xl">
             <p class="mb-2">
                 <a href="#" class="hover:underline text-color-dark-blue">Política de Privacidade</a> |
                 <a href="#" class="hover:underline text-color-dark-blue">Aviso Legal</a> |
