@@ -803,89 +803,88 @@
         </a>
     </div>
 
-    <!-- Facebook Conversion API Conceptual Script -->
+    <!-- Facebook Conversion API Script -->
     <script>
-        // Este script é um EXEMPLO CONCEITUAL de como os dados para a Facebook Conversion API
-        // seriam estruturados e *potencialmente enviados* de um ambiente de cliente (navegador).
-        //
-        // IMPORTANTE: A Facebook Conversion API é primariamente uma API server-to-server.
-        // Isso significa que, na maioria das implementações reais, estes dados seriam enviados
-        // do seu backend (servidor) diretamente para o Facebook, não do navegador.
-        //
-        // Se você precisa enviar eventos do lado do cliente, o Facebook Pixel (JavaScript) é a ferramenta
-        // principal para isso. A Conversion API é usada para complementar ou como alternativa ao Pixel
-        // para dados de maior qualidade ou para situações onde o Pixel não é ideal.
-        //
-        // Para usar isso de forma eficaz, você precisaria de:
-        // 1. Um endpoint no seu servidor que receba esses dados e os reencaminhe para o Facebook Conversion API.
-        // 2. Um ID de Pixel e Token de Acesso para a API (que *nunca* devem ser expostos diretamente no frontend).
-        //
-        // Este é apenas um DEMONSTRAÇÃO do payload JSON que você forneceu.
+        // Configurações da API de Conversão do Facebook
+        const pixelId = '1243155826763791';
+        const accessToken = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzJwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hPwnAdVfjONICnXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrwSUN9FJa5OSK0uaqwf2NZAx96j4X1zuvDtiBjHkr4gZDZD';
+        const graphApiVersion = 'v19.0'; // Versão da API, ajuste se necessário
 
-        const facebookConversionData = {
-            "data": [
-                {
+        // Função para enviar o evento de compra para a API de Conversão
+        async function sendPurchaseConversionEvent(value, currency, userEmailHash = null) {
+            const eventTime = Math.floor(Date.now() / 1000); // Timestamp atual em segundos
+
+            const userData = {
+                // Em um ambiente de produção, o email DEVE ser normalizado (lowercase, sem espaços) e HASHADO com SHA256.
+                // O exemplo fornecido já é um hash SHA256, mas lembre-se que em produção você geraria isso do email real do usuário.
+                "em": userEmailHash ? [userEmailHash] : [], // Use o hash do email se disponível, ou o provided "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+                "ph": [null] // Telefone, se disponível e hashado
+            };
+
+            const purchaseData = {
+                "event_name": "Purchase",
+                "event_time": eventTime,
+                "action_source": "website",
+                "user_data": userData,
+                "attribution_data": {
+                    "attribution_share": "0.3" // Ajuste conforme sua lógica de atribuição
+                },
+                "custom_data": {
+                    "currency": currency, // "BRL" para Reais Brasileiros, "USD" para Dólares Americanos
+                    "value": value // Valor da compra, ajuste para o valor real
+                },
+                "original_event_data": {
                     "event_name": "Purchase",
-                    "event_time": 1750361329, // Este timestamp é estático; em uma aplicação real, seria dinâmico (e.g., Math.floor(Date.now() / 1000))
-                    "action_source": "website",
-                    "user_data": {
-                        // Email hashed using SHA256 (example provided by user)
-                        "em": [
-                            "7b17fb0bd173f625b586366b796407c22b3d16fc78302d79f0fd30c2fc2fc068"
-                        ],
-                        // Phone number (null in this example)
-                        "ph": [
-                            null
-                        ]
-                    },
-                    "attribution_data": {
-                        "attribution_share": "0.3"
-                    },
-                    "custom_data": {
-                        "currency": "USD", // Moeda (o usuário forneceu USD, mas a página usa BRL) - Ajustar conforme sua necessidade real
-                        "value": "142.52"   // Valor (o usuário forneceu 142.52, mas o produto é R$9,90/R$57,70) - Ajustar para o valor real da compra
-                    },
-                    "original_event_data": {
-                        "event_name": "Purchase",
-                        "event_time": 1750361329
-                    }
+                    "event_time": eventTime
                 }
-            ]
-        };
+            };
 
-        // --- EXEMPLO CONCEITUAL DE COMO ESTES DADOS SERIAM ENVIADOS ---
-        // Em uma aplicação real, este 'fetch' seria para o seu próprio servidor,
-        // que então enviaria para a API do Facebook.
-        const CONCEPTUAL_SERVER_ENDPOINT = "/api/facebook-conversion"; // Exemplo de endpoint no seu servidor
+            const payload = {
+                data: [purchaseData],
+                // Test event code - REMOVA EM PRODUÇÃO ou substitua por um código de test_event real
+                // test_event_code: "TESTXXXXXXXX",
+            };
 
-        // function sendConversionEvent() {
-        //     fetch(CONCEPTUAL_SERVER_ENDPOINT, {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(facebookConversionData),
-        //     })
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         console.log('Conceptual Facebook Conversion API response:', data);
-        //         // Aqui você lidaria com a resposta do seu servidor
-        //     })
-        //     .catch((error) => {
-        //         console.error('Erro ao enviar evento conceitual para Facebook Conversion API:', error);
+            const apiUrl = `https://graph.facebook.com/${graphApiVersion}/${pixelId}/events?access_token=${accessToken}`;
+
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+                console.log('Facebook Conversion API response:', result);
+
+                if (!response.ok) {
+                    console.error('Erro ao enviar evento para Facebook Conversion API:', result);
+                }
+            } catch (error) {
+                console.error('Erro de rede ou fetch para Facebook Conversion API:', error);
+            }
+        }
+
+        // Exemplo de como chamar a função de compra (você deve adaptar isso para o seu fluxo de checkout)
+        // Por exemplo, você chamaria esta função após uma compra bem-sucedida.
+        // Abaixo, um exemplo para quando a página carrega, mas em um cenário real seria no fluxo de compra.
+        // window.onload = function() {
+        //     // Chamar sendPurchaseConversionEvent com os dados reais da compra
+        //     sendPurchaseConversionEvent("57.70", "BRL", "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068");
+        // };
+
+        // Você pode anexar esta chamada a um botão de compra, por exemplo:
+        // const purchaseButton = document.querySelector('a[href="https://pay.kiwify.com.br/M3GiQfv"]');
+        // if (purchaseButton) {
+        //     purchaseButton.addEventListener('click', function(event) {
+        //         // event.preventDefault(); // Opcional: previne o link padrão para testar a chamada da API antes de redirecionar
+        //         // Substitua com o valor e a moeda reais da compra e, se possível, o hash do e-mail do usuário.
+        //         sendPurchaseConversionEvent("57.70", "BRL", "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068");
+        //         // window.location.href = event.target.href; // Redireciona após a chamada da API
         //     });
         // }
-
-        // Para evitar envios automáticos em cada carregamento de página,
-        // esta função não é chamada por padrão.
-        // Você chamaria `sendConversionEvent()` após uma ação específica,
-        // como a confirmação de uma compra real (e.g., em uma página de agradecimento).
-
-        console.log('Facebook Conversion API (Conceptual Data):', facebookConversionData);
-        // O valor do 'event_time' no JSON é um timestamp UNIX.
-        // O email e telefone são dados de exemplo, e em produção,
-        // o email deve ser o real do cliente, normalizado e hashed usando SHA256.
-        // A moeda e o valor também devem refletir a transação real.
     </script>
 
     <!-- Kiwify UTM Script -->
