@@ -1,35 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1243155826763791');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-6633SYS5NB');
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tesouro Poético dos Professores Conscientes | Aulas com Poesia, BNCC e Cordel</title>
@@ -41,6 +12,35 @@ src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
     <meta property="og:image" content="assets/mockup_colecao.png">
     <meta property="og:url" content="https://seusite.com.br/colecao-tesouro-poetico">
     <meta property="og:type" content="website">
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1243155826763791');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-6633SYS5NB');
+    </script>
+    <!-- End Google tag (gtag.js) -->
 
     <!-- Slick Carousel CSS -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
@@ -918,61 +918,45 @@ src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
                 </div>
             </div>
         </footer>
-    
-<script>
-    let prefix = ["https://pay.kiwify.com.br"];
 
-function getParams() {
-    let t = "",
-        e = window.top.location.href,
-        r = new URL(e);
-    if (null != r) {
-        let a = r.searchParams.get("utm_source"),
-            n = r.searchParams.get("utm_medium"),
-            o = r.searchParams.get("utm_campaign"),
-            m = r.searchParams.get("utm_term"),
-            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-    }
-    return t
-}! function() {
-    var t = new URLSearchParams(window.location.search);
-    t.toString() && document.querySelectorAll("a").forEach(function(e) {
-        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
-    })
-}(); </script>
 
         <!-- jQuery CDN -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- Slick Carousel JS -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
+        <!-- Script de rastreamento e parâmetros de URL -->
         <script>
-            // Função para enviar o evento de conversão
+            // Constantes para a API de Conversões do Facebook
+            const FB_PIXEL_ID = '1243155826763791';
+            const FB_ACCESS_TOKEN = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzJwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hPwnAdVfjONICnXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrvSUN9FJa5OSK0uaqwf2NZAx96j4X1zuvDtiBjHkr4gZDZD'; // Seu token de acesso
+
+            // Função para enviar o evento de conversão para o Facebook
             async function sendConversionEvent() {
+                // Event Data conforme a estrutura da API de Conversões
                 const eventData = {
                     "data": [
                         {
-                            "event_name": "Purchase",
-                            "event_time": Math.floor(Date.now() / 1000), // Usar o tempo atual em segundos
-                            "action_source": "website",
+                            "event_name": "Purchase", // Nome do evento, por exemplo, "Purchase"
+                            "event_time": Math.floor(Date.now() / 1000), // Tempo atual em segundos (Unix timestamp)
+                            "action_source": "website", // Fonte da ação, "website" para eventos no site
                             "user_data": {
-                                // Em um cenário real, estes dados seriam dinâmicos, ex: recuperados de um formulário ou do backend.
-                                // O email fornecido já está em hash, o que é uma boa prática de privacidade.
+                                // Dados do usuário (hashing SHA256 é recomendado para privacidade)
+                                // O email fornecido já está em hash. Em um cenário real, você coletaria do usuário e faria o hash.
                                 "em": [
                                     "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
                                 ],
                                 "ph": [
-                                    null // Telefone nulo no exemplo, manter assim.
+                                    null // Telefone (se disponível e hashed)
                                 ]
-                            },
-                            "attribution_data": {
-                                "attribution_share": "0.3"
+                                // Outros dados do usuário podem ser adicionados aqui (ex: fn, ln, external_id)
                             },
                             "custom_data": {
-                                "currency": "BRL", // Mudado para BRL, já que a página é em português
-                                "value": "57.70" // Valor da oferta
+                                "currency": "BRL", // Moeda da transação
+                                "value": "57.70" // Valor da transação
+                                // Outros dados personalizados podem ser adicionados aqui (ex: content_ids, content_name)
                             },
-                            "original_event_data": {
+                            "original_event_data": { // Informações adicionais sobre o evento
                                 "event_name": "Purchase",
                                 "event_time": Math.floor(Date.now() / 1000)
                             }
@@ -980,26 +964,27 @@ function getParams() {
                     ]
                 };
 
-                // Substitua 'https://api.example.com/conversions' pela URL da sua API de conversão real.
-                // Lembre-se de adicionar a chave de API ou token de autenticação se for necessário pela sua API.
-                const apiUrl = "https://api.example.com/conversions"; // ENDPOINT DE API FICTÍCIO
+                // URL da API de Conversões do Facebook
+                // Usamos a versão v19.0 (ou a versão mais atual no momento da sua implementação)
+                const apiUrl = `https://graph.facebook.com/v19.0/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
 
                 try {
                     const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
-                            // 'Authorization': 'Bearer SEU_API_KEY' // Descomente e adicione sua chave de API real aqui
                         },
                         body: JSON.stringify(eventData)
                     });
 
                     if (response.ok) {
-                        console.log('Evento de conversão (Purchase) enviado com sucesso!', eventData);
-                        // Você pode adicionar um feedback visual para o usuário aqui, se desejar.
+                        const result = await response.json();
+                        console.log('Evento de conversão (Purchase) enviado com sucesso!', result);
+                        console.log('Dados enviados:', eventData);
+                        // Aqui você pode adicionar um feedback visual para o usuário, se desejar.
                     } else {
-                        console.error('Falha ao enviar evento de conversão:', response.status, response.statusText);
                         const errorData = await response.json();
+                        console.error('Falha ao enviar evento de conversão:', response.status, response.statusText);
                         console.error('Detalhes do erro:', errorData);
                     }
                 } catch (error) {
@@ -1008,11 +993,32 @@ function getParams() {
             }
 
 
-            // Rolagem suave para botões CTA
+            // Script de rastreamento de parâmetros de URL para Kiwify (já existente)
+            let prefix = ["https://pay.kiwify.com.br"];
+
+            function getParams() {
+                let t = "",
+                    e = window.top.location.href,
+                    r = new URL(e);
+                if (null != r) {
+                    let a = r.searchParams.get("utm_source"),
+                        n = r.searchParams.get("utm_medium"),
+                        o = r.searchParams.get("utm_campaign"),
+                        m = r.searchParams.get("utm_term"),
+                        c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+                }
+                return t
+            }! function() {
+                var t = new URLSearchParams(window.location.search);
+                t.toString() && document.querySelectorAll("a").forEach(function(e) {
+                    for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+                })
+            }();
+
+
+            // Rolagem suave para botões CTA (já existente)
             document.querySelectorAll('a[href^="https://pay.kiwify.com.br/MXCJpDp"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    // Previne o comportamento padrão apenas se não for um link de navegação para fora da página
-                    // Se o href for um link externo (começa com http), não previna o default
                     // A chamada da função sendConversionEvent() já está no onclick, então não precisamos duplicar aqui.
                     // Isso garante que o evento de conversão seja enviado ANTES da navegação para o checkout.
                     if (!this.getAttribute('href').startsWith('http')) {
@@ -1024,7 +1030,7 @@ function getParams() {
                 });
             });
 
-            // Lógica do botão CTA fixo (para celular)
+            // Lógica do botão CTA fixo (para celular) (já existente)
             const fixedCta = document.querySelector('.fixed-cta');
             const heroSection = document.querySelector('header'); // Supondo que o hero seja o cabeçalho
 
@@ -1038,7 +1044,7 @@ function getParams() {
                 }
             });
 
-            // Função para rolar para o topo
+            // Função para rolar para o topo (já existente)
             function scrollToTop() {
                 window.scrollTo({
                     top: 0,
@@ -1046,7 +1052,7 @@ function getParams() {
                 });
             }
 
-            // Funcionalidade de acordeão e WAI-ARIA
+            // Funcionalidade de acordeão e WAI-ARIA (já existente)
             document.addEventListener('DOMContentLoaded', () => {
                 const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -1113,7 +1119,7 @@ function getParams() {
                     currentYearSpan.textContent = new Date().getFullYear();
                 }
 
-                // Efeito de Tremer do CTA
+                // Efeito de Tremer do CTA (já existente)
                 const ctaButtons = document.querySelectorAll('.cta-button-shake'); // Aplica esta classe aos CTAs que você deseja que tremam
                 let hasShaken = false; // Flag para evitar tremores repetidos
 
@@ -1138,7 +1144,7 @@ function getParams() {
                     observer.observe(button);
                 });
 
-                // Inicialização do Slick Carousel
+                // Inicialização do Slick Carousel (já existente)
                 // Garante que o jQuery esteja carregado antes que isso seja executado
                 if (typeof jQuery !== 'undefined') {
                     $(document).ready(function(){
