@@ -24,7 +24,7 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1243155826763791');
-    fbq('track', 'PageView');
+    fbq('track', 'PageView'); // PageView é disparado automaticamente ao carregar a página
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
@@ -937,14 +937,14 @@
                 const eventData = {
                     "data": [
                         {
-                            "event_name": "Purchase", // Nome do evento, por exemplo, "Purchase"
+                            "event_name": "InitiateCheckout", // Alterado de "Purchase" para "InitiateCheckout"
                             "event_time": Math.floor(Date.now() / 1000), // Tempo atual em segundos (Unix timestamp)
                             "action_source": "website", // Fonte da ação, "website" para eventos no site
                             "user_data": {
                                 // Dados do usuário (hashing SHA256 é recomendado para privacidade)
                                 // O email fornecido já está em hash. Em um cenário real, você coletaria do usuário e faria o hash.
                                 "em": [
-                                    "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+                                    "7b17fb0bd173f625b586366fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
                                 ],
                                 "ph": [
                                     null // Telefone (se disponível e hashed)
@@ -952,12 +952,12 @@
                                 // Outros dados do usuário podem ser adicionados aqui (ex: fn, ln, external_id)
                             },
                             "custom_data": {
-                                "currency": "BRL", // Moeda da transação
-                                "value": "57.70" // Valor da transação
+                                "currency": "BRL", // Moeda da transação (mantido BRL)
+                                "value": "57.70" // Valor da oferta (mantido 57.70)
                                 // Outros dados personalizados podem ser adicionados aqui (ex: content_ids, content_name)
                             },
                             "original_event_data": { // Informações adicionais sobre o evento
-                                "event_name": "Purchase",
+                                "event_name": "InitiateCheckout", // Alterado aqui também
                                 "event_time": Math.floor(Date.now() / 1000)
                             }
                         }
@@ -979,7 +979,7 @@
 
                     if (response.ok) {
                         const result = await response.json();
-                        console.log('Evento de conversão (Purchase) enviado com sucesso!', result);
+                        console.log('Evento de conversão (InitiateCheckout) enviado com sucesso!', result);
                         console.log('Dados enviados:', eventData);
                         // Aqui você pode adicionar um feedback visual para o usuário, se desejar.
                     } else {
