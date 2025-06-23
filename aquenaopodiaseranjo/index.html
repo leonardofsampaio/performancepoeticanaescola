@@ -539,7 +539,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto">
+                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison">
                         QUERO A COLEÇÃO COMPLETA
                     </a>
                 </div>
@@ -609,8 +609,8 @@
                 GARANTA SUA COLEÇÃO COMPLETA HOJE!
             </p>
 
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse">
-                👉 QUERO A COLEÇÃO COMPLETA AGORA!
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell">
+                👉 QUERO MINHA COLEÇÃO AGORA!
             </a>
         </div>
     </section>
@@ -731,15 +731,9 @@
             <p class="text-2xl md:text-3xl font-extrabold mb-8">
                 Pronto para transformar suas aulas e expandir sua visão?
             </p>
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse">
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter">
                 👉 QUERO MINHA COLEÇÃO AGORA!
             </a>
-            <p class="mt-8 text-md md:text-lg opacity-80">
-                © A Negra que Não Podia Ser Anjo & Coleção Tesouro Poético. Todos os direitos reservados.
-            </p>
-            <p class="mt-2 text-lg md:text-xl font-semibold">
-                ✔️ Sua satisfação garantida ou seu dinheiro de volta.
-            </p>
         </div>
     </section>
 
@@ -757,19 +751,19 @@
         const accessToken = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzJwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hPwnAdVfjONICnXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrwSUN9FJa5OSK0uaqwf2NZAx96j4X1zuvDtiBjHkr4gZDZD';
         const graphApiVersion = 'v19.0'; // Versão da API, ajuste se necessário
 
-        // Função para enviar o evento de compra para a API de Conversão
-        async function sendPurchaseConversionEvent(value, currency, userEmailHash = null) {
+        // Função para enviar o evento para a API de Conversão
+        async function sendConversionEvent(eventName, value, currency, userEmailHash = null) {
             const eventTime = Math.floor(Date.now() / 1000); // Timestamp atual em segundos
 
             const userData = {
                 // Em um ambiente de produção, o email DEVE ser normalizado (lowercase, sem espaços) e HASHADO com SHA256.
-                // O exemplo fornecido já é um hash SHA256, mas lembre-se que em produção você geraria isso do email real do usuário.
-                "em": userEmailHash ? [userEmailHash] : [], // Use o hash do email se disponível, ou o provided "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
+                // O exemplo fornecido já é um hash SHA256. Em um cenário real, você geraria o hash do e-mail do usuário.
+                "em": userEmailHash ? [userEmailHash] : [],
                 "ph": [null] // Telefone, se disponível e hashado
             };
 
-            const purchaseData = {
-                "event_name": "Purchase",
+            const eventData = {
+                "event_name": eventName, // Nome do evento, por exemplo, "InitiateCheckout" ou "Purchase"
                 "event_time": eventTime,
                 "action_source": "website",
                 "user_data": userData,
@@ -777,19 +771,17 @@
                     "attribution_share": "0.3" // Ajuste conforme sua lógica de atribuição
                 },
                 "custom_data": {
-                    "currency": currency, // "BRL" para Reais Brasileiros, "USD" para Dólares Americanos
-                    "value": value // Valor da compra, ajuste para o valor real
+                    "currency": currency, // "BRL" para Reais Brasileiros
+                    "value": value // Valor do evento
                 },
                 "original_event_data": {
-                    "event_name": "Purchase",
+                    "event_name": eventName,
                     "event_time": eventTime
                 }
             };
 
             const payload = {
-                data: [purchaseData],
-                // Test event code - REMOVA EM PRODUÇÃO ou substitua por um código de test_event real
-                // test_event_code: "TESTXXXXXXXX",
+                data: [eventData],
             };
 
             const apiUrl = `https://graph.facebook.com/${graphApiVersion}/${pixelId}/events?access_token=${accessToken}`;
@@ -804,7 +796,7 @@
                 });
 
                 const result = await response.json();
-                console.log('Facebook Conversion API response:', result);
+                console.log('Resposta da API de Conversão do Facebook:', result);
 
                 if (!response.ok) {
                     console.error('Erro ao enviar evento para Facebook Conversion API:', result);
@@ -814,24 +806,42 @@
             }
         }
 
-        // Exemplo de como chamar a função de compra (você deve adaptar isso para o seu fluxo de checkout)
-        // Por exemplo, você chamaria esta função após uma compra bem-sucedida.
-        // Abaixo, um exemplo para quando a página carrega, mas em um cenário real seria no fluxo de compra.
-        // window.onload = function() {
-        //     // Chamar sendPurchaseConversionEvent com os dados reais da compra
-        //     sendPurchaseConversionEvent("57.70", "BRL", "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068");
-        // };
+        // --- Integração da API de Conversão com os botões de compra ---
+        // O evento "InitiateCheckout" será disparado no clique do botão que leva ao checkout.
+        // O evento "Purchase" (compra finalizada) deve ser disparado após a confirmação da compra,
+        // idealmente na página de obrigado ou via integração server-to-server (Kiwify webhooks).
 
-        // Você pode anexar esta chamada a um botão de compra, por exemplo:
-        // const purchaseButton = document.querySelector('a[href="https://pay.kiwify.com.br/M3GiQfv"]');
-        // if (purchaseButton) {
-        //     purchaseButton.addEventListener('click', function(event) {
-        //         // event.preventDefault(); // Opcional: previne o link padrão para testar a chamada da API antes de redirecionar
-        //         // Substitua com o valor e a moeda reais da compra e, se possível, o hash do e-mail do usuário.
-        //         sendPurchaseConversionEvent("57.70", "BRL", "7b17fb0bd173f625b58636fb796407c22b3d16fc78302d79f0fd30c2fc2fc068");
-        //         // window.location.href = event.target.href; // Redireciona após a chamada da API
-        //     });
-        // }
+        // Seleciona o botão de "QUERO A COLEÇÃO COMPLETA" na seção de comparação de ofertas
+        const buyBtnComparison = document.getElementById('buyCompleteCollectionBtnComparison');
+        if (buyBtnComparison) {
+            buyBtnComparison.addEventListener('click', function(event) {
+                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
+                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
+                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
+            });
+        }
+
+        // Seleciona o botão de "QUERO MINHA COLEÇÃO AGORA!" na seção de upsell
+        const buyBtnUpsell = document.getElementById('buyCompleteCollectionBtnUpsell');
+        if (buyBtnUpsell) {
+            buyBtnUpsell.addEventListener('click', function(event) {
+                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
+                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
+                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
+            });
+        }
+
+        // Seleciona o botão de "QUERO MINHA COLEÇÃO AGORA!" no rodapé
+        const buyBtnFooter = document.getElementById('buyCompleteCollectionBtnFooter');
+        if (buyBtnFooter) {
+            buyBtnFooter.addEventListener('click', function(event) {
+                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
+                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
+                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
+            });
+        }
+
+        // --- Fim da Integração ---
     </script>
 
     <!-- Kiwify UTM Script -->
