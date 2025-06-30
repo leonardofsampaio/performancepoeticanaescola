@@ -200,6 +200,17 @@
             border-radius: 0.75rem; /* rounded-xl Tailwind class */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
             padding: 1.5rem; /* p-6 */
+            height: 320px; /* Fixed height for consistency */
+            display: flex; /* Enable flexbox for centering image */
+            flex-direction: column; /* Stack image vertically */
+            justify-content: center; /* Center image vertically */
+            align-items: center; /* Center image horizontally */
+        }
+        /* Ensures images fit within the fixed height card without distortion, centering them */
+        .carousel-card img {
+            max-height: 100%; /* Ensure image doesn't exceed card height */
+            width: auto; /* Allow width to adjust proportionally */
+            object-fit: contain; /* Ensure entire image is visible, scale down if needed */
         }
         @media (min-width: 768px) {
             .carousel-card {
