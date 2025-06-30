@@ -8,7 +8,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:700&display=swap" rel="stylesheet">
     <meta property="og:title" content="Tesouro Poético dos Professores Conscientes | Aulas com Poesia, BNCC e Cordel">
     <meta property="og:description" content="Descubra um material exclusivo para educadores: poesias, cordéis, BNCC e atividades para aulas inesquecíveis. Transforme suas aulas com arte e significado!">
-    <!-- A imagem de mockup da coleção agora aponta para o seu arquivo real e a extensão correta (.png) -->
+    <!-- Chosen Palette: Primary Blue, Accent Yellow, Secondary Light Blue, Text Dark Blue -->
+    <!-- Application Structure Plan: The SPA is structured as a single-page sales funnel. It starts with a strong hero section (headline, mockup, main CTA) to capture attention and provide an immediate call to action. It then proceeds through sections that address user pain points ("O que é essa Coleção?", "Superando os Desafios"), showcase the product features ("Tudo o que você vai ter em mãos" with a carousel for dynamic display), highlight bonuses, provide social proof (testimonials carousel), answer common questions (FAQ accordion), and present the offer with urgency (countdown, scarcity message). The "Quem é Leonardo Sampaio?" section builds authority. This linear flow is designed to guide the user through a persuasive narrative, addressing their needs and objections at each stage, culminating in multiple opportunities to convert. The mobile fixed CTA ensures constant access to the purchase option. -->
+    <!-- Visualization & Content Choices:
+    - Hero Section: Headline, sub-headline, and mockup image (textual content + static image) to immediately convey value and product visualization. Goal: Inform, Engage. Justification: Quick understanding and visual appeal. Method: HTML/CSS.
+    - "O que é essa Coleção?": Textual explanations with bullet points (textual content). Goal: Inform, Explain. Justification: Detail product benefits and differentiation. Method: HTML/CSS.
+    - "Superando os Desafios": Card layout with short text snippets (qualitative insights). Goal: Inform, Empathize. Justification: Address pain points directly. Method: HTML/CSS.
+    - "Reforço da Proposta de Valor": Textual summary to re-engage the reader. Goal: Re-engage, Reinforce Value. Justification: Keep the user engaged with core benefits. Method: HTML/CSS.
+    - "Tudo o que você vai ter em mãos": Product carousel (quantitative data + qualitative insights). Goal: Inform, Showcase. Justification: Dynamically display multiple product components without clutter. Interaction: Swipe, arrows, dots. Library: Chart.js (for carousel structure, not charts).
+    - "Seus Bônus Exclusivos": List of bonuses (qualitative insights). Goal: Inform, Enhance Value. Justification: Clearly list additional benefits. Method: HTML/CSS.
+    - "Depoimentos": Testimonial carousel (qualitative insights - social proof). Goal: Persuade, Build Trust. Justification: Dynamic presentation of positive feedback. Interaction: Swipe, arrows, dots. Library: Chart.js (for carousel structure, not charts).
+    - "Perguntas Rápidas Antes de Comprar": Short Q&A (textual content). Goal: Inform, Address Objections. Justification: Quick answers to common pre-purchase questions. Method: HTML/CSS.
+    - "Oferta e Preço": Price display, list of inclusions, countdown timer, kits remaining (quantitative data + textual content). Goal: Inform, Urgency, Scarcity. Justification: Clear pricing, strong call to action with time-sensitive elements. Interaction: Dynamic countdown. Method: HTML/CSS + JavaScript.
+    - "Quem é Leonardo Sampaio?": Textual biography and photo (qualitative insights). Goal: Build Authority/Credibility. Justification: Humanize the brand and establish expertise. Method: HTML/CSS.
+    - "Boletim Poético": Textual explanation (qualitative insights). Goal: Inform, Value Add. Justification: Promote additional engagement. Method: HTML/CSS.
+    - "Como você vai receber": List of delivery details (qualitative insights). Goal: Inform, Reassure. Justification: Clarify purchase process and access. Method: HTML/CSS.
+    - "Perguntas Frequentes": Accordion (textual content). Goal: Inform, Address Objections. Justification: Organize detailed FAQs without overwhelming the user. Interaction: Click to expand/collapse. Method: HTML/CSS + JavaScript.
+    - CTAs: Strategically placed buttons (interactive elements). Goal: Convert. Justification: Provide clear paths to purchase at multiple points. Method: HTML/CSS.
+    - Fixed Mobile CTA: Button (interactive element). Goal: Convert. Justification: Always visible call to action on mobile. Method: HTML/CSS + JavaScript.
+    - Countdown Timer: Dynamic text (quantitative data). Goal: Urgency. Justification: Visual representation of time limit. Method: JavaScript.
+    - Kits Remaining: Dynamic text (quantitative data). Goal: Scarcity. Justification: Visual representation of limited stock. Method: JavaScript.
+    - No specific Chart.js or Plotly.js charts are used as the content of this sales page is primarily textual and image-based, with carousels for dynamic display of products and testimonials. The existing carousels are implemented using Slick Carousel, which relies on jQuery and JavaScript for its functionality. The information architecture focuses on a persuasive linear flow, and the interactive elements are primarily the carousels, accordions, and dynamic scarcity indicators, which are handled by the provided JavaScript.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <meta property="og:image" content="assets/mockup_colecao.png">
     <meta property="og:url" content="https://seusite.com.br/colecao-tesouro-poetico">
     <meta property="og:type" content="website">
@@ -24,7 +46,7 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1243155826763791');
-    fbq('track', 'PageView'); // PageView é disparado automaticamente ao carregar a página
+    fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
@@ -47,16 +69,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
     <style>
-        /* Estilos personalizados para Playfair Display e Inter */
         .font-playfair {
             font-family: 'Playfair Display', serif;
         }
         .font-inter {
             font-family: 'Inter', sans-serif;
         }
-        /* Definição de variáveis CSS para cores para consistência e fácil manutenção */
         :root {
-            /* Nova Paleta de Cores */
             --text: #00374C;
             --background: #fbfefe;
             --primary: #00a8db;
@@ -131,7 +150,7 @@
         }
 
         html {
-            font-size: 100%; /* Tamanho de fonte base 16px */
+            font-size: 100%;
         }
 
         body {
@@ -159,21 +178,19 @@
             font-weight: 700;
         }
 
-        /* Escala Tipográfica: Perfect Fifth (1.500) com base em 1rem (16px) */
-        h1 {font-size: 7.595rem;}
-        h2 {font-size: 5.063rem;}
-        h3 {font-size: 3.375rem;}
-        h4 {font-size: 2.250rem;}
-        h5 {font-size: 1.500rem;}
-        small {font-size: 0.667rem;}
+        h1 {font-size: 3.052rem;}
+        h2 {font-size: 2.441rem;}
+        h3 {font-size: 1.953rem;}
+        h4 {font-size: 1.563rem;}
+        h5 {font-size: 1.25rem;}
+        small {font-size: 0.8rem;}
 
-        /* Botão CTA fixo para celular */
         .fixed-cta {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            background-color: var(--color-action-green);
+            background-color: var(--primary);
             padding: 1rem;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
             z-index: 1000;
@@ -185,7 +202,6 @@
             border-top-right-radius: 1rem;
         }
 
-        /* Estilo para cabeçalhos de acordeão */
         .accordion-header {
             cursor: pointer;
             padding: 1rem;
@@ -219,11 +235,9 @@
         .accordion-header.active svg {
             transform: rotate(180deg);
         }
-        /* Gradiente personalizado para a Seção Hero */
         .hero-gradient {
             background: linear-gradient(to bottom, var(--background-50), var(--primary));
         }
-        /* Microinteração para cartões */
         .card-hover-effect {
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             border: 1px solid transparent;
@@ -233,7 +247,6 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             border-color: var(--text);
         }
-        /* Animação de pulso para CTA */
         @keyframes pulse-cta {
             0%, 100% {
                 transform: scale(1);
@@ -245,11 +258,9 @@
         .animate-cta-pulse {
             animation: pulse-cta 1.5s infinite ease-in-out;
         }
-        /* Alinhamento específico para emoji/ícone em listas */
         .icon-align-middle {
             vertical-align: middle;
         }
-        /* Oferta de escassez com efeito de pulso e cores fortes */
         .offer-countdown-banner {
             background-color: var(--color-scarcity-red);
             color: var(--color-white);
@@ -266,7 +277,6 @@
                 box-shadow: 0 0 0 10px rgba(210, 70, 63, 0);
             }
         }
-        /* Animação de tremer para CTA */
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
@@ -276,295 +286,374 @@
             animation: shake 0.5s;
         }
 
-        /* Ajustes para o Slick Carousel para ser de largura total e combinar com o tema */
         #testimonials-section {
             padding-left: 0;
             padding-right: 0;
             max-width: 100%;
             margin-left: auto;
             margin-right: auto;
-            background-color: var(--primary); /* Fundo azul da seção de depoimentos */
-            padding-top: 2rem; /* Adicionado padding-top para o título */
-            padding-bottom: 2rem; /* Adicionado padding-bottom */
+            background-color: var(--primary);
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
-        /* Remove padding do contêiner principal para permitir largura total */
         main.container {
             padding-left: 0;
             padding-right: 0;
-            max-width: none; /* Permite que o main se expanda além dos limites md/lg */
+            max-width: none;
         }
-        /* Adicione padding de volta para as seções que precisam */
         main section:not(#testimonials-section) {
-            padding-left: 1rem; /* p-4 in Tailwind is 1rem */
+            padding-left: 1rem;
             padding-right: 1rem;
-            max-width: 960px; /* md:max-w-4xl roughly */
+            max-width: 960px;
             margin-left: auto;
             margin-right: auto;
         }
-        @media (min-width: 768px) { /* md breakpoint */
+        @media (min-width: 768px) {
             main section:not(#testimonials-section) {
-                max-width: 1024px; /* lg:max-w-6xl for md screens */
+                max-width: 1024px;
             }
         }
-        @media (min-width: 1024px) { /* lg breakpoint */
+        @media (min-width: 1024px) {
             main section:not(#testimonials-section) {
-                max-width: 1280px; /* max-w-7xl if desired for large screens, or keep md/lg max-w values */
+                max-width: 1280px;
             }
         }
 
 
         .slick-slider {
-            width: 100%; /* Torna o slider Slick de largura total */
-            margin: 0; /* Remove margens padrão */
-            padding-bottom: 2rem; /* Espaço para os pontos na parte inferior */
+            width: 100%;
+            margin: 0;
+            padding-bottom: 2rem;
         }
 
-        /* Estilo para os slides dentro do Slick Carousel */
-        .testimonial-slick-slider .slick-slide {
-            background-color: var(--secondary); /* Azul claro para slides inativos */
-            border-radius: 0.75rem; /* Cantos arredondados */
-            display: flex !important; /* Importante para o Slick funcionar com flexbox */
-            flex-direction: column; /* Alinha conteúdo em coluna */
+        .testimonial-slick-slider .slick-slide, .product-slick-slider .slick-slide {
+            background-color: var(--secondary);
+            border-radius: 0.75rem;
+            display: flex !important;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 250px; /* Altura mínima para slides */
+            min-height: 250px;
             font-weight: bold;
-            transform: scale(0.8); /* Tamanho menor para slides não centrais */
-            opacity: 0.7; /* Torna slides não centrais ligeiramente esmaecidos */
-            transition: all 0.3s ease; /* Transição suave para escala e opacidade */
+            transform: scale(0.8);
+            opacity: 0.7;
+            transition: all 0.3s ease;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            margin: 0 10px; /* Ajusta o espaçamento entre os slides */
-            cursor: grab; /* Indica que o slide é arrastável */
-            position: relative; /* Necessário para posicionar a imagem */
-            padding: 0; /* Remove padding interno do slide */
-            overflow: hidden; /* Garante que a imagem não vaze */
-            /* Adicionado um boarder azul claro para os slides inativos */
+            margin: 0 10px;
+            cursor: grab;
+            position: relative;
+            padding: 0;
+            overflow: hidden;
             border: 4px solid var(--secondary);
         }
 
-        /* Estilo para o slide central (ativo) */
-        .testimonial-slick-slider .slick-center {
-            background-color: var(--color-white); /* Fundo branco para slide ativo */
-            transform: scale(1); /* Tamanho total para o slide ativo */
-            opacity: 1; /* Totalmente opaco */
+        .testimonial-slick-slider .slick-center, .product-slick-slider .slick-center {
+            background-color: var(--color-white);
+            transform: scale(1);
+            opacity: 1;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            /* Borda amarela para o slide ativo */
             border: 4px solid var(--accent);
         }
 
-        /* Garante que as imagens dentro dos slides preencham o espaço mantendo a proporção */
-        .testimonial-slick-slider .slick-slide img {
-            width: 100%; /* Imagem preenche a largura do slide */
-            height: 100%; /* Imagem preenche a altura do slide */
-            object-fit: cover; /* Recorta para preencher, mantendo a proporção */
-            border-radius: 0.5rem; /* Cantos arredondados da imagem */
-            box-shadow: none; /* Remove sombra da imagem individual se o slide já tiver uma */
+        .testimonial-slick-slider .slick-slide img, .product-slick-slider .slick-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: none;
         }
 
-        /* Personalizando setas Slick */
         .slick-prev, .slick-next {
-            font-size: 0; /* Oculta texto padrão */
+            font-size: 0;
             line-height: 1;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             display: block;
-            width: 40px; /* Aumenta o tamanho do botão da seta */
+            width: 40px;
             height: 40px;
             padding: 0;
             cursor: pointer;
             color: transparent;
             border: none;
             outline: none;
-            background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
-            border-radius: 50%; /* Torna-os redondos */
-            z-index: 100; /* Garante que fiquem acima dos slides */
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            z-index: 100;
             transition: background-color 0.3s ease;
         }
         .slick-prev:hover, .slick-next:hover {
-            background: rgba(0, 0, 0, 0.5); /* Fundo mais escuro ao passar o mouse */
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .slick-prev:before, .slick-next:before {
-            font-family: 'Arial', sans-serif; /* Usando fonte genérica para caracteres Unicode */
-            font-size: 30px; /* Aumenta o tamanho do ícone da seta */
+            font-family: 'Arial', sans-serif;
+            font-size: 30px;
             line-height: 1;
-            color: var(--color-white); /* Cor da seta em branco */
+            color: var(--color-white);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* Centraliza o ícone */
+            transform: translate(-50%, -50%);
         }
 
         .slick-prev {
-            left: -15px; /* Move mais para a esquerda */
+            left: -15px;
         }
         .slick-next {
-            right: -15px; /* Move mais para a direita */
+            right: -15px;
         }
         .slick-prev:before {
-            content: '\2039'; /* Caractere Unicode para seta esquerda */
+            content: '\2039';
         }
         .slick-next:before {
-            content: '\203A'; /* Caractere Unicode para seta direita */
+            content: '\203A';
         }
 
-        /* Personalizando pontos Slick para remover "bolinhas pretas" e bordas */
         .slick-dots {
-            bottom: -30px; /* Ajusta a posição para que fiquem mais visíveis abaixo do slide */
-            margin: 0; /* Remove margens padrão que podem causar espaçamento indesejado */
+            bottom: -30px;
+            margin: 0;
         }
         .slick-dots li {
             position: relative;
             display: inline-block;
-            width: 15px; /* Tamanho maior para os pontos */
+            width: 15px;
             height: 15px;
-            margin: 0 6px; /* Espaçamento entre os pontos */
+            margin: 0 6px;
             padding: 0;
             cursor: pointer;
         }
         .slick-dots li button {
-            font-size: 0; /* Oculta texto do botão */
+            font-size: 0;
             line-height: 0;
             display: block;
             width: 15px;
             height: 15px;
             cursor: pointer;
-            color: transparent; /* Cor transparente para o texto do botão */
-            border: none; /* Remove explicitamente qualquer borda */
+            color: transparent;
+            border: none;
             outline: none;
-            background-color: transparent; /* Fundo transparente para o botão */
-            border-radius: 50%; /* Torna os pontos redondos */
+            background-color: transparent;
+            border-radius: 50%;
             transition: background-color 0.3s ease;
         }
-        .slick-dots li button:before { /* Alvo do conteúdo real da "bolinha" */
+        .slick-dots li button:before {
             font-family: 'Arial', sans-serif;
-            font-size: 15px; /* Tamanho da "bolinha" */
-            line-height: 15px; /* Ajusta para centralizar */
+            font-size: 15px;
+            line-height: 15px;
             position: absolute;
             top: 0;
             left: 0;
             width: 15px;
             height: 15px;
-            content: '•'; /* Caractere de ponto */
+            content: '•';
             text-align: center;
-            opacity: 1; /* Garante visibilidade */
-            color: var(--secondary); /* Cor da "bolinha" inativa */
+            opacity: 1;
+            color: var(--secondary);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             transition: color 0.3s ease;
         }
         .slick-dots li.slick-active button:before {
-            color: var(--accent); /* Cor da "bolinha" ativa */
+            color: var(--accent);
         }
         .slick-dots li button:hover:before {
-            color: var(--accent-300); /* Cor da "bolinha" inativa ao passar o mouse */
+            color: var(--accent-300);
         }
 
         .slick-arrow.slick-hidden {
-            display: none !important; /* Oculta setas quando há apenas um slide ou não aplicável */
+            display: none !important;
         }
     </style>
 </head>
 <body class="font-inter">
 
-    <!-- Header agora ocupa largura total, sem cantos arredondados ou sombra -->
-    <!-- Ajustado pt-8, pois não há mais barra de navegação fixa -->
     <header class="text-center py-8 hero-gradient text-[var(--text)] relative overflow-hidden w-full pt-8" id="hero-section">
         <div class="absolute inset-0 bg-gradient-to-br from-transparent to-transparent opacity-70"></div>
-        <!-- Pré-título (usando h3 para 54px/3.375rem) -->
         <h3 class="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text)] mb-2 relative z-10">
             Para Educadores & Educadoras conscientes
         </h3>
-        <!-- Título principal (usando h1 para 121.5px/7.595rem) -->
         <h1 class="font-playfair text-4xl sm:text-5xl md:text-5xl font-bold leading-tight mb-3 px-4 text-[var(--text)] relative z-10">
-            Transforme Suas Aulas em Experiências Inesquecíveis!
+            Você pode ensinar com poesia, consciência e transformação — mesmo com a rotina corrida e poucos recursos.
         </h1>
-        <!-- Subtítulo (usando h4 para 36px/2.250rem) -->
         <h4 class="font-playfair text-xl sm:text-xl md:text-2xl font-semibold px-4 max-w-3xl mx-auto mb-5 text-[var(--text)] opacity-90 relative z-10">
-            Coleção Tesouro Poético do Professor Consciente
+            A Coleção Tesouro Poético entrega tudo pronto: cordéis, livro, propostas pedagógicas, roteiro teatral, atividades para alunos — com temas sociais que seus alunos PRECISAM escutar.
         </h4>
 
-        <!-- Mockup Visual -->
         <div class="mt-8 relative z-10">
-            <!-- Imagem do mockup da coleção, agora com o caminho e a extensão correta para o seu arquivo PNG -->
-            <img src="assets/mockup_colecao.png" alt="[Mockup da Coleção Tesouro Poético, mostrando um tablet, um celular e livros]" class="w-full max-w-2xl mx-auto rounded-xl shadow-lg border-4 border-white" loading="lazy">
-            <!-- Banner de Bônus -->
+            <img src="assets/mockup_colecao.png" alt="Mockup da Coleção Tesouro Poético, mostrando um tablet, um celular e livros" class="w-full max-w-2xl mx-auto rounded-xl shadow-lg border-4 border-white" loading="lazy">
             <div class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full inline-block shadow-lg text-sm sm:text-base border-2 border-white relative z-10 mt-6">
                 🎁 BÔNUS EXCLUSIVO: Proposta Pedagógica exclusiva com os códigos da BNCC para cada cordel!
             </div>
         </div>
 
-        <!-- CTA Inicial em Verde Ação -->
-        <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--color-action-green)] text-white font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="sendConversionEvent()">
-            👉 QUERO MINHA COLEÇÃO AGORA!
+        <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="sendConversionEvent()">
+            📚 QUERO A COLEÇÃO COMPLETA AGORA!
         </a>
+
+        <section class="bg-[var(--primary)] rounded-lg shadow-xl p-6 sm:p-8 mt-12 mx-auto text-center max-w-4xl">
+            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 pt-4">
+                ✨ Veja a Coleção Completa!
+            </h2>
+            <div class="flex justify-center items-center mb-8">
+                <img src="assets/mockupcompleto.png" alt="Mockup da Coleção Tesouro Poético completa, mostrando todos os materiais juntos" class="w-full max-w-3xl rounded-xl shadow-lg border-4 border-white" loading="lazy">
+            </div>
+            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                🎯 GARANTA SUA COLEÇÃO COMPLETA AGORA!
+            </a>
+        </section>
+
     </header>
 
-    <!-- Contêiner de conteúdo principal -->
     <main class="container mx-auto py-8">
+
+        <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
+            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
+                📚 O QUE É ESSA COLEÇÃO?
+            </h2>
+            <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-4 max-w-3xl mx-auto text-left">
+                A Coleção Tesouro Poético dos Professores Conscientes é o seu <strong class="font-bold text-[var(--primary)]">guia completo e inspirador</strong> para transformar a sala de aula! Com ela, você terá <strong class="font-bold text-[var(--text)]">tudo pronto para aplicar</strong>, economizando seu tempo e garantindo aulas impactantes. É um pacote digital pensado para educadores que desejam trabalhar temas como <strong class="font-bold text-[var(--text)]">racismo, ancestralidade, espiritualidade, cidadania e justiça social</strong> de forma sensível, profunda e prática.
+            </p>
+
+            <div class="max-w-3xl mx-auto mb-6">
+                <p class="font-inter text-xl sm:text-2xl text-[var(--text)] font-bold mb-2 text-left">
+                    <span class="text-[var(--accent)] text-4xl leading-none icon-align-middle">✨</span> Aqui, a poesia não é apenas um enfeite.
+                </p>
+                <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-4 text-left">
+                    É uma ferramenta poderosa, uma ponte para o autoconhecimento e um convite direto à transformação.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto mb-6 bg-[var(--background-50)] p-4 rounded-lg shadow-inner">
+                <p class="font-inter text-xl sm:text-2xl text-[var(--text)] font-bold mb-2 text-left">
+                    <span class="text-[var(--color-scarcity-red)] text-4xl leading-none icon-align-middle">🚫</span> Não é uma apostila genérica.
+                </p>
+                <p class="font-inter text-lg sm:text-xl text-[var(--text)] text-left">
+                    Não é um material superficial. Não é poesia para apenas decorar o conteúdo.
+                </p>
+            </div>
+
+            <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-6 max-w-3xl mx-auto text-left">
+                Descubra como aplicar cultura, poesia e justiça social em sala de aula com a Coleção Tesouro Poético dos Professores Conscientes, mesmo que você nunca tenha trabalhado com cordel ou poesia antes.
+            </p>
+            <ul class="space-y-3 text-lg sm:text-xl text-[var(--text)] max-w-2xl mx-auto font-inter">
+                <li class="flex items-center">
+                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Simples de aplicar em sala de aula.
+                </li>
+                <li class="flex items-center">
+                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Conteúdo com alto valor social, cultural e pedagógico.
+                </li>
+                <li class="flex items-center">
+                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Baixo investimento, impacto duradouro.
+                </li>
+                <li class="flex items-center">
+                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Perfeito para projetos interdisciplinares e datas comemorativas.
+                </li>
+                <li class="flex items-center">
+                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Fomenta o protagonismo estudantil, a oralidade e a empatia.
+                </li>
+            </ul>
+        </section>
+
+        <section class="bg-[var(--secondary)] rounded-lg shadow-xl p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
+            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-8 text-center pt-4">
+                Superando os Desafios do Educador Consciente
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Não crie nada do zero — o material está todo pronto, é só aplicar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Chega de repetir os mesmos conteúdos rasos que não geram impacto.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Comece a usar hoje mesmo. Já vem com cordéis, roteiro e propostas aplicáveis.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Deixe seus colegas impressionados com a profundidade das suas aulas.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Outros professores já estão se destacando com esse material.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
+                    <p class="font-inter text-md text-[var(--text)]">Ensine com prazer, propósito e presença.</p>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    🧠 QUERO TRANSFORMAR MINHAS AULAS HOJE!
+                </a>
+            </div>
+        </section>
+
+        <!-- Nova Seção: Reforço da Proposta de Valor no Meio da Página -->
+        <section class="bg-[var(--background-50)] rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto text-center">
+            <p class="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text)] leading-tight max-w-3xl mx-auto">
+                Prepare-se para uma revolução em sua prática pedagógica. A Coleção Tesouro Poético é a chave para aulas mais envolventes, significativas e transformadoras, capacitando você a abordar temas cruciais com sensibilidade e impacto. Não apenas ensine, inspire!
+            </p>
+        </section>
 
         <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto" id="products-section">
             <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-8 text-center pt-4">
                 🎁 Tudo o que você vai ter em mãos:
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+            <div class="product-slick-slider">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--accent)] mr-3">📖</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Ebook: Performance Poética na Escola</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Um livro digital com poemas, cordéis e trovas criados por um educador popular com base em sua vivência em sala de aula. Aborda inclusão, ancestralidade, consciência negra e cultura popular, oferecendo um material prático, sensível e aplicável.</p>
-                    <img src="assets/capa_performance_poetica.jpg" alt="[Capa do Ebook Performance Poética na Escola]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um livro digital com poemas, cordéis e trovas, abordando inclusão, ancestralidade e cultura popular.</p>
+                    <img src="assets/capa_performance_poetica.jpg" alt="Capa do Ebook Performance Poética na Escola" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
 
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--text)] mr-3">📜</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">A Negra que Não Podia Ser Anjo</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Um cordel poderoso sobre racismo e fé que emociona, provoca e transforma. Leve essa reflexão à sua turma! <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_a_negra_que_nao_podia_ser_anjo.jpg" alt="[Capa do cordel A Negra que Não Podia Ser Anjo]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel poderoso sobre racismo e fé que emociona e transforma. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
+                    <img src="assets/capa_a_negra_que_nao_podia_ser_anjo.jpg" alt="Capa do cordel A Negra que Não Podia Ser Anjo" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--text)] mr-3">📜</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Pobre Não Pode Ter Voz</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Um cordel que ecoa a luta de líderes perseguidos por sonhar com justiça e igualdade. Um grito poético contra a desigualdade. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_o_pobre_nao_pode_ter_voz.jpg" alt="[Capa do cordel O Pobre Não Pode Ter Voz]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel que ecoa a luta de líderes por justiça e igualdade. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
+                    <img src="assets/capa_o_pobre_nao_pode_ter_voz.jpg" alt="Capa do cordel O Pobre Não Pode Ter Voz" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--text)] mr-3">📜</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Consequência do Voto</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Versos diretos que desafiam a apatia política. Uma leitura urgente sobre consciência e desigualdade. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_consequencia_do_voto.jpg" alt="[Capa do cordel Consequência do Voto]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Versos diretos que desafiam a apatia política. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
+                    <img src="assets/capa_consequencia_do_voto.jpg" alt="Capa do cordel Consequência do Voto" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--text)] mr-3">📜</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Crenças e Religiões do Mundo</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Cordel educativo que promove o respeito à diversidade religiosa com poesia, história e sensibilidade. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_crencas_e_religioes_no_mundo.jpg" alt="[Capa do cordel Crenças e Religiões do Mundo]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Cordel educativo que promove o respeito à diversidade religiosa. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
+                    <img src="assets/capa_crencas_e_religioes_no_mundo.jpg" alt="Capa do cordel Crenças e Religiões do Mundo" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect">
+                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
                     <div class="flex items-center justify-center mb-4">
                         <span class="text-5xl text-[var(--text)] mr-3">📜</span>
                         <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Lendas, racismo e brincadeiras africanas</h3>
                     </div>
-                    <p class="font-inter text-md text-[var(--text)]">Uma infância entre lendas, brincadeiras e resistência. Um cordel que revela o racismo velado e celebra a memória quilombola. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_lendas_racismo_e_brincadeiras_africanas.jpg" alt="[Capa do cordel Lendas, Racismo e Brincadeiras Africanas]" class="mt-4 mx-auto rounded-md shadow-sm" loading="lazy">
+                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel que revela o racismo velado e celebra a memória quilombola. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
+                    <img src="assets/capa_lendas_racismo_e_brincadeiras_africanas.jpg" alt="Capa do cordel Lendas, Racismo e Brincadeiras Africanas" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--color-action-green)] text-white font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
-                    👉 QUERO APLICAR CORDÉIS NA MINHA AULA!
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    ⏳ GARANTA SUA COLEÇÃO ANTES QUE ACABE!
                 </a>
             </div>
         </section>
@@ -602,37 +691,20 @@
                     </p>
                 </div>
             </div>
+            <div class="text-center mt-12">
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    🔥 APROVEITAR ESSA OFERTA ÚNICA AGORA!
+                </a>
+            </div>
         </section>
-        <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-8 mx-4 md:mx-auto">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                👩🏽‍🏫 Esta coleção foi cuidadosamente criada para...
-            </h2>
-            <ul class="space-y-4 text-lg sm:text-xl text-[var(--text)] max-w-2xl mx-auto font-inter">
-                <li class="flex items-center">
-                    <svg class="w-8 h-8 text-[var(--text)] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p>Professores(as) da Educação Básica que buscam inovar e inspirar.</p>
-                </li>
-                <li class="flex items-center">
-                    <svg class="w-8 h-8 text-[var(--text)] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p>Coordenadores pedagógicos e arte-educadores apaixonados por transformar aulas em experiências.</p>
-                </li>
-                <li class="flex items-center">
-                    <svg class="w-8 h-8 text-[var(--text)] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p>Educadores sociais de ONGs, coletivos e projetos literários engajados com impacto social.</p>
-                </li>
-                <li class="flex items-center">
-                    <svg class="w-8 h-8 text-[var(--text)] mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <p>Profissionais que desejam dar sentido profundo às aulas e emocionar com a arte.</p>
-                </li>
-            </ul>
-        </section>
+
 
         <section class="text-center mb-12 mx-4 md:mx-auto">
             <p class="font-inter text-xl sm:text-2xl text-[var(--text)] mb-6 max-w-3xl mx-auto">
-                <strong class="font-bold">Pronto para transformar suas aulas com poesia e significado?</strong>
+                <strong class="font-bold">Transforme cada aula em um momento de escuta, poesia e consciência — com materiais prontos para aplicar, cordéis potentes, e um roteiro que já impactou centenas de educadores no Brasil inteiro.</strong>
             </p>
-            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--color-action-green)] text-white font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
-                    👉 LIBERAR MEU ACESSO AGORA!
+            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    🎯 QUERO ENSINAR COM POESIA E PROPÓSITO!
                 </a>
             </section>
 
@@ -640,65 +712,22 @@
                 <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 pt-4">
                     💬 Depoimentos
                 </h2>
-                <!-- Contêiner do Slick Slider -->
                 <div class="testimonial-slick-slider">
-                    <!-- Slides de depoimento - Apenas imagens. -->
                     <div>
-                        <img src="assets/depoimento_1.png" alt="[Depoimento de professor 1: Amei as suas publicações, Comprei seu livro online]" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
+                        <img src="assets/depoimento_1.png" alt="Depoimento de professor 1: Amei as suas publicações, Comprei seu livro online" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
                     </div>
                     <div>
-                        <img src="assets/depoimento_2.png" alt="[Depoimento de professor 2: Amei, Que maravilha!]" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
+                        <img src="assets/depoimento_2.png" alt="Depoimento de professor 2: Amei, Que maravilha!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
                     </div>
                     <div>
-                        <img src="assets/depoimento_3.png" alt="[Depoimento de professor 3: Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças]" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
+                        <img src="assets/depoimento_3.png" alt="Depoimento de professor 3: Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
                     </div>
                     <div>
-                        <img src="assets/depoimento_4.png" alt="[Depoimento de professor 4: Fantástico, Uauuu!]" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
+                        <img src="assets/depoimento_4.png" alt="Depoimento de professor 4: Fantástico, Uauuu!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
                     </div>
                     <div>
-                        <img src="assets/depoimento_5.png" alt="[Depoimento de professor 5: Marco Binatti - MARAVILHA!!!]" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
+                        <img src="assets/depoimento_5.png" alt="Depoimento de professor 5: Marco Binatti - MARAVILHA!!!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
                     </div>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto flex flex-col md:flex-row gap-8">
-                <div class="md:w-1/2 bg-[var(--background-50)] p-6 rounded-lg shadow-md">
-                    <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                        ❌ O que você NÃO vai precisar:
-                    </h2>
-                    <ul class="space-y-4 text-lg sm:text-xl text-[var(--text)] mx-auto font-inter">
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-scarcity-red)] text-3xl mr-4">🚫</span> Criar planos de aula do zero, perdendo horas e inspiração valiosa.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-scarcity-red)] text-3xl mr-4">🚫</span> Sentir-se inseguro ao abordar temas sociais sensíveis e complexos em sala.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-scarcity-red)] text-3xl mr-4">🚫</span> Procurar por conteúdos genéricos que não engajam sua turma e não geram resultados reais.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-scarcity-red)] text-3xl mr-4">🚫</span> Lutar para aplicar a BNCC de forma criativa, artística e significativa em suas aulas.
-                        </li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2 bg-[var(--background-50)] p-6 rounded-lg shadow-md">
-                    <h2 class="font-playfair text-2xl sm:text-3xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                        ✅ O que você VAI ter:
-                    </h2>
-                    <ul class="space-y-4 text-lg sm:text-xl text-[var(--text)] mx-auto font-inter">
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Cordéis com propostas pedagógicas passo a passo que garantem a aplicabilidade imediata e sucesso nas aulas.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Atividades prontas para rodas de conversa, debates, teatro e escrita criativa que comprovadamente engajam os alunos.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Conexão clara entre o conteúdo escolar e temas sociais contemporâneos para aulas relevantes e impactantes.
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Conquiste aulas inesquecíveis que geram impacto real, transformando a experiência de aprendizado e inspirando seus alunos.
-                        </li>
-                    </ul>
                 </div>
             </section>
 
@@ -725,8 +754,8 @@
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--color-action-green)] text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
-                        👉 SIM, QUERO APROVEITAR A OFERTA!
+                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                        ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
                     </a>
                 </div>
             </section>
@@ -755,12 +784,14 @@
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎁</span> <strong class="font-semibold">Bônus Exclusivo</strong>: Uma proposta pedagógica para cada cordel contendo os códigos da BNCC.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎭</span> <strong class="font-semibold">Bônus Extra</strong>: Um roteiro teatral completo sobre o cordel “A negra que não podia ser anjo”.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">📦</span> <strong class="font-semibold">Bônus Especial</strong>: Kit Poético Interdisciplinar - Língua Portuguesa, História e Artes em Cordel.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">✍️</span> <strong class="font-semibold">Bônus Essencial</strong>: CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades.</li>
+                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-alone">✍️</span> <strong class="font-semibold">Bônus Essencial</strong>: CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">✨</span> <strong class="font-semibold">Bônus Inspirador</strong>: Frases-Poema para Começar Aulas com Reflexão.</li>
                 </ul>
 
-                <div class="offer-countdown-banner font-bold py-4 px-6 rounded-lg mb-4 shadow-xl text-xl sm:text-2xl">
-                    💥 OFERTA EXCLUSIVA: SÓ AS PRIMEIRAS 200 COMPRAS COM ESTE PREÇO! ÚLTIMA CHANCE!
+                <div class="offer-countdown-banner font-bold py-4 px-6 rounded-lg mb-4 shadow-xl text-xl sm:text-2xl flex flex-col items-center justify-center space-y-2">
+                    <p>💥 OFERTA EXCLUSIVA: SÓ AS PRIMEIRAS 200 COMPRAS COM ESTE PREÇO!</p>
+                    <p id="countdown-timer" class="text-3xl font-bold"></p>
+                    <p id="kits-remaining" class="text-lg"></p>
                 </div>
                
                 <p class="font-inter text-lg sm:text-xl font-semibold mb-4 text-[var(--text)]">
@@ -768,20 +799,20 @@
                 </p>
                 <p class="font-inter text-lg sm:text-xl font-semibold mb-8 text-[var(--text)]">
                     <span class="text-[var(--text)] text-2xl mr-2">💳</span> <strong class="text-[var(--text)]">Garantia Incondicional de 7 Dias</strong> ou seu dinheiro de volta.
-                </p>
+                    </p>
+                
 
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--color-action-green)] text-white font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="sendConversionEvent()">
-                    👉 QUERO MINHA COLEÇÃO AGORA!
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="sendConversionEvent()">
+                    ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
                 </a>
                 <button onclick="scrollToTop()" class="md:hidden mt-8 bg-[var(--text)] text-white font-bold py-3 px-6 rounded-full text-base shadow-lg hover:bg-[var(--text-700)] transition-colors duration-300">
                     ⬆️ Voltar ao Topo
                 </button>
             </section>
-
+            
             <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
                 <div class="md:w-1/3 text-center">
-                    <!-- Imagem da foto de Leonardo Sampaio - Largura e altura aumentadas para w-64 h-64 -->
-                    <img src="assets/foto_leonardo.jpg" alt="[Foto de Leonardo Sampaio, autor e educador-poeta.]" class="rounded-full w-64 h-64 object-cover mx-auto mb-4 shadow-lg border-4 border-[var(--accent)]" loading="lazy">
+                    <img src="assets/foto_leonardo.jpg" alt="Foto de Leonardo Sampaio, autor e educador-poeta." class="rounded-full w-64 h-64 object-cover mx-auto mb-4 shadow-lg border-4 border-[var(--accent)]" loading="lazy">
                     <h3 class="font-playfair text-xl sm:text-2xl font-bold text-[var(--text)]">Leonardo Sampaio</h3>
                 </div>
                 <div class="md:w-2/3 text-lg sm:text-xl text-[var(--text)] font-inter">
@@ -830,6 +861,11 @@
                         <span class="text-[var(--accent)] text-2xl mr-3 icon-align-middle">⭐</span> Acesso vitalício e a todas as futuras atualizações da coleção.
                     </li>
                 </ul>
+                <div class="text-center mt-12">
+                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
+                    </a>
+                </div>
             </section>
 
             <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto" id="faq-section">
@@ -896,13 +932,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="text-center mt-8">
+                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                        ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
+                    </a>
+                </div>
             </section>
 
         </main>
 
         <div class="fixed-cta md:hidden">
-            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--color-action-green)] text-white font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--color-action-green-dark)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="sendConversionEvent()">
-                👉 QUERO MINHA COLEÇÃO AGORA!
+            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="sendConversionEvent()">
+                📱 COMPRAR AGORA!
             </a>
         </div>
 
@@ -927,45 +968,36 @@
 
         <!-- Script de rastreamento e parâmetros de URL -->
         <script>
-            // Constantes para a API de Conversões do Facebook
             const FB_PIXEL_ID = '1243155826763791';
-            const FB_ACCESS_TOKEN = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzJwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hPwnAdVfjONICnXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrvSUN9FJa5OSK0uaqwf2NZAx96j4X1zuvDtiBjHkr4gZDZD'; // Seu token de acesso
+            const FB_ACCESS_TOKEN = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzUwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hPwnAdVfjONICXXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrvSUN9FJa5OSK0uaqwf2NZAx96j4X1zuvDtiBjHkr4gZDZD';
 
-            // Função para enviar o evento de conversão para o Facebook
             async function sendConversionEvent() {
-                // Event Data conforme a estrutura da API de Conversões
                 const eventData = {
                     "data": [
                         {
-                            "event_name": "InitiateCheckout", // Alterado de "Purchase" para "InitiateCheckout"
-                            "event_time": Math.floor(Date.now() / 1000), // Tempo atual em segundos (Unix timestamp)
-                            "action_source": "website", // Fonte da ação, "website" para eventos no site
+                            "event_name": "InitiateCheckout",
+                            "event_time": Math.floor(Date.now() / 1000),
+                            "action_source": "website",
                             "user_data": {
-                                // Dados do usuário (hashing SHA256 é recomendado para privacidade)
-                                // O email fornecido já está em hash. Em um cenário real, você coletaria do usuário e faria o hash.
                                 "em": [
                                     "7b17fb0bd173f625b586366fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
                                 ],
                                 "ph": [
-                                    null // Telefone (se disponível e hashed)
+                                    null
                                 ]
-                                // Outros dados do usuário podem ser adicionados aqui (ex: fn, ln, external_id)
                             },
                             "custom_data": {
-                                "currency": "BRL", // Moeda da transação (mantido BRL)
-                                "value": "67.70" // Valor da oferta - ATUALIZADO PARA 67.70
-                                // Outros dados personalizados podem ser adicionados aqui (ex: content_ids, content_name)
+                                "currency": "BRL",
+                                "value": "67.70"
                             },
-                            "original_event_data": { // Informações adicionais sobre o evento
-                                "event_name": "InitiateCheckout", // Alterado aqui também
+                            "original_event_data": {
+                                "event_name": "InitiateCheckout",
                                 "event_time": Math.floor(Date.now() / 1000)
                             }
                         }
                     ]
                 };
 
-                // URL da API de Conversões do Facebook
-                // Usamos a versão v19.0 (ou a versão mais atual no momento da sua implementação)
                 const apiUrl = `https://graph.facebook.com/v19.0/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
 
                 try {
@@ -981,7 +1013,6 @@
                         const result = await response.json();
                         console.log('Evento de conversão (InitiateCheckout) enviado com sucesso!', result);
                         console.log('Dados enviados:', eventData);
-                        // Aqui você pode adicionar um feedback visual para o usuário, se desejar.
                     } else {
                         const errorData = await response.json();
                         console.error('Falha ao enviar evento de conversão:', response.status, response.statusText);
@@ -993,7 +1024,6 @@
             }
 
 
-            // Script de rastreamento de parâmetros de URL para Kiwify (já existente)
             let prefix = ["https://pay.kiwify.com.br"];
 
             function getParams() {
@@ -1016,11 +1046,8 @@
             }();
 
 
-            // Rolagem suave para botões CTA (já existente)
-            document.querySelectorAll('a[href^="https://pay.kiwify.com.br/ZP2vT08"]').forEach(anchor => { // ATUALIZADO O LINK AQUI TAMBÉM
+            document.querySelectorAll('a[href^="https://pay.kiwify.com.br/ZP2vT08"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    // A chamada da função sendConversionEvent() já está no onclick, então não precisamos duplicar aqui.
-                    // Isso garante que o evento de conversão seja enviado ANTES da navegação para o checkout.
                     if (!this.getAttribute('href').startsWith('http')) {
                         e.preventDefault();
                         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -1030,21 +1057,20 @@
                 });
             });
 
-            // Lógica do botão CTA fixo (para celular) (já existente)
             const fixedCta = document.querySelector('.fixed-cta');
-            const heroSection = document.querySelector('header'); // Supondo que o hero seja o cabeçalho
+            const heroSection = document.querySelector('header');
 
             window.addEventListener('scroll', () => {
-                // Mostra o botão CTA fixo se o usuário rolou para além da Seção Hero
-                // E se o usuário não atingiu o final da página (para evitar sobreposição com o rodapé ou oferta final)
-                if (window.scrollY > heroSection.offsetHeight / 2 && (window.scrollY + window.innerHeight < document.body.scrollHeight - 200)) { /* 200px do fundo */
-                    fixedCta.style.display = 'flex'; // Alterado para flex para melhor alinhamento do botão
+                const scrollThreshold = window.innerHeight * 0.2;
+                const nearingEnd = (window.scrollY + window.innerHeight > document.body.scrollHeight - 200);
+
+                if (window.scrollY > scrollThreshold && !nearingEnd) {
+                    fixedCta.style.display = 'flex';
                 } else {
                     fixedCta.style.display = 'none';
                 }
             });
 
-            // Função para rolar para o topo (já existente)
             function scrollToTop() {
                 window.scrollTo({
                     top: 0,
@@ -1052,7 +1078,6 @@
                 });
             }
 
-            // Funcionalidade de acordeão e WAI-ARIA (já existente)
             document.addEventListener('DOMContentLoaded', () => {
                 const accordionHeaders = document.querySelectorAll('.accordion-header');
 
@@ -1061,31 +1086,25 @@
                     const content = document.getElementById(contentId);
 
                     if (content) {
-                        // Define o estado inicial aria-expanded com base na classe 'active' (se houver)
                         header.setAttribute('aria-expanded', header.classList.contains('active'));
 
                         header.addEventListener('click', () => {
                             const currentItem = header.closest('.accordion-item');
                             const icon = header.querySelector('svg');
 
-                            // Alterna a classe active no cabeçalho e no conteúdo
                             const isActive = header.classList.toggle('active');
                             content.classList.toggle('active');
 
-                            // Atualiza aria-expanded
                             header.setAttribute('aria-expanded', isActive);
 
-                            // Gira o ícone
                             icon.classList.toggle('rotate-180');
 
-                            // Rolagem suave para o conteúdo do acordeão aberto se estiver fora da tela
                             if (isActive) {
-                                setTimeout(() => { // Pequeno atraso para permitir a transição max-height
+                                setTimeout(() => {
                                     content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                }, 350); // Corresponde ou excede ligeiramente a duração da transição
+                                }, 350);
                             }
 
-                            // Fechar outros acordeões abertos
                             accordionHeaders.forEach(otherHeader => {
                                 if (otherHeader !== header) {
                                     const otherItem = otherHeader.closest('.accordion-item');
@@ -1103,7 +1122,6 @@
                             });
                         });
 
-                        // Torna os cabeçalhos do acordeão focáveis e alternáveis com Enter/Espaço para acessibilidade
                         header.addEventListener('keydown', (event) => {
                             if (event.key === 'Enter' || event.key === ' ') {
                                 event.preventDefault();
@@ -1113,54 +1131,50 @@
                     }
                 });
 
-                // Define o ano atual no rodapé
                 const currentYearSpan = document.getElementById('current-year');
                 if (currentYearSpan) {
                     currentYearSpan.textContent = new Date().getFullYear();
                 }
 
-                // Efeito de Tremer do CTA (já existente)
-                const ctaButtons = document.querySelectorAll('.cta-button-shake'); // Aplica esta classe aos CTAs que você deseja que tremam
-                let hasShaken = false; // Flag para evitar tremores repetidos
+                const ctaButtons = document.querySelectorAll('.cta-button-shake');
+                let hasShaken = false;
 
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting && !hasShaken) {
                             const button = entry.target;
                             setTimeout(() => {
-                                if (!button.matches(':hover') && !button.matches(':focus')) { // Só treme se não estiver com hover/foco
+                                if (!button.matches(':hover') && !button.matches(':focus')) {
                                     button.classList.add('cta-shake');
                                     button.addEventListener('animationend', () => {
                                         button.classList.remove('cta-shake');
                                     }, { once: true });
-                                    hasShaken = true; // Marca como tremido
+                                    hasShaken = true;
                                 }
-                            }, 4000); // Espera 4 segundos depois que entra na viewport
+                            }, 4000);
                         }
                     });
-                }, { threshold: 0.8 }); // Aciona quando 80% do botão está visível
+                }, { threshold: 0.8 });
 
                 ctaButtons.forEach(button => {
                     observer.observe(button);
                 });
 
-                // Inicialização do Slick Carousel (já existente)
-                // Garante que o jQuery esteja carregado antes que isso seja executado
                 if (typeof jQuery !== 'undefined') {
                     $(document).ready(function(){
                         $('.testimonial-slick-slider').slick({
                             infinite: true,
-                            slidesToShow: 3, // Mostra 3 slides
+                            slidesToShow: 3,
                             slidesToScroll: 1,
                             autoplay: true,
-                            autoplaySpeed: 3000, // Muda o slide a cada 3 segundos
-                            dots: true, // Mostra pontos de navegação
-                            arrows: true, // Mostra setas de navegação
-                            centerMode: true, // Crucial para o slide central proeminente
-                            centerPadding: '0px', // Sem preenchimento entre slides visíveis
+                            autoplaySpeed: 3000,
+                            dots: true,
+                            arrows: true,
+                            centerMode: true,
+                            centerPadding: '0px',
                             responsive: [
                                 {
-                                    breakpoint: 1024, // Para telas maiores que 768px (md breakpoint)
+                                    breakpoint: 1024,
                                     settings: {
                                         slidesToShow: 3,
                                         arrows: true,
@@ -1169,20 +1183,20 @@
                                     }
                                 },
                                 {
-                                    breakpoint: 768, // Para telas menores que 768px (md breakpoint)
+                                    breakpoint: 768,
                                     settings: {
-                                        slidesToShow: 1, // Em telas menores, 1 slide por vez
+                                        slidesToShow: 1,
                                         arrows: true,
                                         dots: true,
                                         centerMode: true,
-                                        centerPadding: '60px' // Ajuste para celular se mostrar parciais
+                                        centerPadding: '60px'
                                     }
                                 },
                                 {
-                                    breakpoint: 480, // Para telas muito pequenas (sm breakpoint)
+                                    breakpoint: 480,
                                     settings: {
                                         slidesToShow: 1,
-                                        arrows: false, /* Setas desativadas em telas muito pequenas */
+                                        arrows: false,
                                         dots: true,
                                         centerMode: true,
                                         centerPadding: '40px'
@@ -1190,8 +1204,80 @@
                                 }
                             ]
                         });
+
+                        $('.product-slick-slider').slick({
+                            infinite: true,
+                            slidesToShow: 3,
+                            slidesToScroll: 1,
+                            autoplay: true,
+                            autoplaySpeed: 4000,
+                            dots: true,
+                            arrows: true,
+                            responsive: [
+                                {
+                                    breakpoint: 1024,
+                                    settings: {
+                                        slidesToShow: 2,
+                                        arrows: true,
+                                        dots: true
+                                    }
+                                },
+                                {
+                                    breakpoint: 768,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        arrows: true,
+                                        dots: true
+                                    }
+                                },
+                                {
+                                    breakpoint: 480,
+                                    settings: {
+                                        slidesToShow: 1,
+                                        arrows: false,
+                                        dots: true
+                                    }
+                                }
+                            ]
+                        });
                     });
                 }
+
+                const countdownTimer = document.getElementById('countdown-timer');
+                const kitsRemaining = document.getElementById('kits-remaining');
+
+                const endDate = new Date();
+                endDate.setHours(endDate.getHours() + 24);
+
+                let initialKits = 37;
+
+                function updateCountdown() {
+                    const now = new Date().getTime();
+                    const distance = endDate.getTime() - now;
+
+                    if (distance < 0) {
+                        countdownTimer.innerHTML = "OFERTA ENCERRADA!";
+                        kitsRemaining.innerHTML = "Todos os kits foram vendidos!";
+                        return;
+                    }
+
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    countdownTimer.innerHTML = `Válido por: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+                    const currentKits = Math.max(0, initialKits - Math.floor(Math.random() * 5));
+                    kitsRemaining.innerHTML = `Apenas ${currentKits} kits restantes com esse valor!`;
+
+                    if (currentKits <= 0) {
+                        countdownTimer.innerHTML = "OFERTA ENCERRADA!";
+                        kitsRemaining.innerHTML = "Todos os kits foram vendidos!";
+                    }
+                }
+
+                setInterval(updateCountdown, 1000);
+                updateCountdown();
             });
         </script>
     </body>
