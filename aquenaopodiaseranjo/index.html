@@ -167,6 +167,89 @@
         .accordion-item.active .accordion-icon {
             transform: rotate(180deg);
         }
+
+        /* Styles for the Testimonial Carousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden; /* Hide scrollbar for aesthetic purposes */
+            padding: 0 1rem; /* Add padding to show glimpse of next/prev card on mobile */
+            box-sizing: border-box;
+        }
+
+        .testimonial-slides-wrapper {
+            display: flex;
+            overflow-x: scroll; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to individual slides */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-behavior: smooth; /* Smooth scroll when clicking buttons */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+            gap: 1.5rem; /* Spacing between cards */
+        }
+
+        .testimonial-slides-wrapper::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
+        }
+
+        .carousel-card {
+            flex: 0 0 calc(100% - 2rem); /* Each card takes full width minus padding for container */
+            scroll-snap-align: center; /* Snap to center of the card */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl Tailwind class */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+        }
+        @media (min-width: 768px) {
+            .carousel-card {
+                flex: 0 0 calc(50% - 0.75rem); /* Two cards per view with half of the gap between them */
+            }
+        }
+
+
+        /* Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #00374C;
+            padding: 0.75rem; /* Equivalent to p-3 Tailwind class */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            display: none; /* Hidden by default on mobile */
+        }
+
+        .carousel-arrow.left {
+            left: 0.5rem; /* Adjusted for container padding */
+        }
+
+        .carousel-arrow.right {
+            right: 0.5rem; /* Adjusted for container padding */
+        }
+
+        @media (min-width: 768px) {
+            .carousel-arrow {
+                display: block; /* Show arrows on desktop */
+            }
+        }
+
+        /* Pagination Dots */
+        .pagination-dot {
+            width: 0.75rem; /* w-3 */
+            height: 0.75rem; /* h-3 */
+            background-color: #9ca3af; /* gray-400 */
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination-dot.active {
+            background-color: #00a8db; /* Primary color for active dot */
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -396,22 +479,20 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-10">
                 💬 O Que Dizem Sobre o Impacto de Nossas Obras:
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Depoimento 1 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_1.png" alt="Depoimento de um professor: 'Amei as suas publicações, comprei seu livro online'." class="rounded-lg mb-4 w-full h-auto" loading="lazy">
+            <div class="carousel-container">
+                <div id="testimonial-carousel-wrapper" class="testimonial-slides-wrapper">
+                    <!-- Testimonials will be dynamically loaded by JavaScript -->
                 </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_2.png" alt="Depoimento de um professor: 'Amei, Que maravilha!'" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
-                </div>
-                <!-- Depoimento 3 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_3.png" alt="Depoimento de um professor: 'Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças'." class="rounded-lg mb-4 w-full h-auto" loading="lazy">
-                </div>
-                <!-- Depoimento 4 -->
-                <div class="bg-white p-6 rounded-xl shadow-lg text-[#00374C] text-left">
-                    <img src="assets/depoimento_4.png" alt="Depoimento de um professor: 'Fantástico, Uauuu!'" class="rounded-lg mb-4 w-full h-auto" loading="lazy">
+                <!-- Navigation arrows -->
+                <button id="prevBtn" class="carousel-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="carousel-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <!-- Pagination indicators -->
+                <div id="pagination-dots" class="flex justify-center space-x-2 mt-6">
+                    <!-- Dots will be dynamically generated by JavaScript -->
                 </div>
             </div>
             <p class="text-lg md:text-xl mt-8 opacity-90">E muitos outros depoimentos que transformam e inspiram!</p>
@@ -1069,6 +1150,154 @@
                 });
             });
         });
+
+        // Testimonials data - using the existing images
+        const testimonials = [
+            { id: 1, img: "assets/depoimento_1.png", alt: "Depoimento de um professor: 'Amei as suas publicações, comprei seu livro online'." },
+            { id: 2, img: "assets/depoimento_2.png", alt: "Depoimento de um professor: 'Amei, Que maravilha!'" },
+            { id: 3, img: "assets/depoimento_3.png", alt: "Depoimento de um professor: 'Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças'." },
+            { id: 4, img: "assets/depoimento_4.png", alt: "Depoimento de um professor: 'Fantástico, Uauuu!'" }
+        ];
+
+        let currentIndex = 0;
+        let carouselWrapper; // The element with overflow-x-scroll
+        let prevBtn;
+        let nextBtn;
+        let paginationDotsContainer;
+        let slideFullWidth = 0; // To store the width of a single slide including its gap
+
+        function initializeCarousel() {
+            carouselWrapper = document.getElementById('testimonial-carousel-wrapper');
+            prevBtn = document.getElementById('prevBtn');
+            nextBtn = document.getElementById('nextBtn');
+            paginationDotsContainer = document.getElementById('pagination-dots');
+
+            // Clear existing content to prevent duplicates on re-initialization
+            carouselWrapper.innerHTML = '';
+            paginationDotsContainer.innerHTML = '';
+
+            testimonials.forEach((depoimento, index) => {
+                const testimonialDiv = document.createElement('div');
+                testimonialDiv.className = 'carousel-card'; // Use the new CSS class
+                testimonialDiv.innerHTML = `<img src="${depoimento.img}" alt="${depoimento.alt}" class="rounded-lg mb-4 w-full h-auto" loading="lazy">`;
+                carouselWrapper.appendChild(testimonialDiv);
+
+                const dot = document.createElement('span');
+                dot.className = 'pagination-dot'; // Use the new CSS class
+                dot.setAttribute('data-index', index);
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+                paginationDotsContainer.appendChild(dot);
+            });
+
+            // Calculate slideFullWidth after testimonials are added
+            if (testimonials.length > 0) {
+                const firstCard = carouselWrapper.children[0];
+                const computedStyle = getComputedStyle(carouselWrapper);
+                const gapValue = parseFloat(computedStyle.gap); // Get the gap value from the parent container
+
+                // slideFullWidth is the card's actual rendered width plus the gap applied by the flex container
+                // This is specifically for scrolling amount, not for individual card width calculation.
+                // The actual card width is defined by flex-basis (carousel-card CSS).
+                // For a smooth snap, we scroll by the width of one card plus its gap to align the next card correctly.
+                slideFullWidth = firstCard.offsetWidth + gapValue;
+                
+                // On smaller screens, where flex: 0 0 85%, adjust slideFullWidth calculation
+                if (window.innerWidth < 768) {
+                    slideFullWidth = (carouselWrapper.offsetWidth * 0.85) + gapValue;
+                } else {
+                    // For desktop, 2 cards per view. So each scroll moves 1 card.
+                    // Card width is 50% - 0.75rem. So full width is card width + gap.
+                    // This becomes complex, let's simplify for the scroll functionality.
+                    // For scroll-snap-type: x mandatory; it's often easier to just scroll by the element's clientWidth
+                    // or rely on native scroll and update dots based on scroll position.
+                    // Reverting to the simpler approach: scroll one full clientWidth.
+                    slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue; // For one card + gap
+                    if (window.innerWidth >= 768) {
+                         // On desktop, we want to scroll one card at a time, not two.
+                         // So the scroll amount should be one card's width + its gap.
+                         // The carousel-card is `calc(50% - 0.75rem)` of its parent.
+                         // The actual width to scroll is one individual card's width + the gap.
+                         slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue;
+                    }
+                }
+            }
+
+            // Remove previous listeners to prevent multiple bindings on resize re-initialization
+            prevBtn.removeEventListener('click', showPrevSlide);
+            nextBtn.removeEventListener('click', showNextSlide);
+            carouselWrapper.removeEventListener('scroll', updateDotsOnScroll);
+
+
+            prevBtn.addEventListener('click', showPrevSlide);
+            nextBtn.addEventListener('click', showNextSlide);
+
+            // Listen for scroll event on the carouselWrapper to update dots
+            carouselWrapper.addEventListener('scroll', () => {
+                // Debounce the scroll event to avoid too many updates during continuous scrolling
+                clearTimeout(carouselWrapper.scrollTimeout);
+                carouselWrapper.scrollTimeout = setTimeout(updateDotsOnScroll, 100);
+            });
+
+            updateCarouselDisplay(); // Initial update
+        }
+
+        function showPrevSlide() {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
+            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
+            updateCarouselDisplay();
+        }
+
+        function showNextSlide() {
+            currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
+            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
+            updateCarouselDisplay();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
+            updateCarouselDisplay();
+        }
+
+        function updateCarouselDisplay() {
+            Array.from(paginationDotsContainer.children).forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function updateDotsOnScroll() {
+            if (!carouselWrapper || slideFullWidth === 0) return;
+
+            const scrollLeft = carouselWrapper.scrollLeft;
+            // Calculate the new index based on the scroll position and full width of a slide
+            const newIndex = Math.round(scrollLeft / slideFullWidth);
+
+            // If on desktop, and showing two cards, the scroll position might snap
+            // differently. We need to account for which card is "most" in view
+            // The `scroll-snap-type: x mandatory` combined with `scroll-snap-align: center` on cards
+            // means the browser will try to center a card.
+            // So `Math.round(scrollLeft / slideFullWidth)` should be mostly accurate.
+            
+            if (newIndex !== currentIndex) {
+                currentIndex = newIndex;
+                updateCarouselDisplay();
+            }
+        }
+
+        window.addEventListener('resize', () => {
+            // Re-initialize carousel to recalculate widths on resize
+            // Debounce resize events to prevent excessive calls
+            clearTimeout(window.resizeTimeout);
+            window.resizeTimeout = setTimeout(initializeCarousel, 250);
+        });
+
+        document.addEventListener('DOMContentLoaded', initializeCarousel);
     </script>
 </body>
 </html>
