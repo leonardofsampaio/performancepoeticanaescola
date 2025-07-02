@@ -45,7 +45,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1243155826763791');
+    fbq('init', '1243155826763791'); // Seu ID do Pixel do Meta
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -489,7 +489,8 @@
             </div>
         </div>
 
-        <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="sendConversionEvent()">
+        <!-- CTA principal leva para a seção de oferta -->
+        <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="trackInitiateCheckoutPixel()">
             📚 QUERO A COLEÇÃO COMPLETA AGORA!
         </a>
 
@@ -500,7 +501,8 @@
             <div class="flex justify-center items-center mb-8">
                 <img src="assets/mockupcompleto.png" alt="Mockup da Coleção Tesouro Poético completa, mostrando todos os materiais juntos" class="w-full max-w-3xl rounded-xl shadow-lg border-4 border-white" loading="lazy">
             </div>
-            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+            <!-- CTA leva para a seção de oferta -->
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                 🎯 GARANTA SUA COLEÇÃO COMPLETA AGORA!
             </a>
         </section>
@@ -582,7 +584,8 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                <!-- CTA leva para a seção de oferta -->
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🧠 QUERO TRANSFORMAR MINHAS AULAS HOJE!
                 </a>
             </div>
@@ -652,7 +655,8 @@
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                <!-- CTA leva para a seção de oferta -->
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     ⏳ GARANTA SUA COLEÇÃO ANTES QUE ACABE!
                 </a>
             </div>
@@ -663,36 +667,55 @@
                 Seus Bônus Exclusivos te esperam!
             </h2>
             <p class="font-inter text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-[var(--text)] text-center">
-                Além da coleção principal, você receberá bônus pensados para enriquecer ainda mais suas aulas:
+                Ao adquirir a Coleção Tesouro Poético, você recebe um pacote 100% digital com:
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
+                    <span class="text-4xl text-[var(--accent)] mr-4">📖</span>
+                    <p class="font-inter text-lg text-[var(--text)]">
+                        Livro digital: Performance Poética na Escola (+190 páginas de poesia crítica e autoral).
+                    </p>
+                </div>
+                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
+                    <span class="text-4xl text-[var(--accent)] mr-4">📜</span>
+                    <p class="font-inter text-lg text-[var(--text)]">
+                        5 cordéis temáticos (racismo, espiritualidade, cidadania, ancestralidade, etc.).
+                    </p>
+                </div>
+                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
                     <span class="text-4xl text-[var(--accent)] mr-4">🎁</span>
                     <p class="font-inter text-lg text-[var(--text)]">
-                        Propostas Pedagógicas alinhadas à BNCC para cada cordel.
+                        Propostas pedagógicas completas, com códigos da BNCC para cada cordel.
                     </p>
                 </div>
                 <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
                     <span class="text-4xl text-[var(--accent)] mr-4">🎭</span>
                     <p class="font-inter text-lg text-[var(--text)]">
-                        Roteiro Teatral Completo: Leve o cordel para o palco!
+                        Roteiro teatral completo do cordel “A Negra que Não Podia Ser Anjo”.
+                    </p>
+                </div>
+                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
+                    <span class="text-4xl text-[var(--accent)] mr-4">📦</span>
+                    <p class="font-inter text-lg text-[var(--text)]">
+                        Kit interdisciplinar (Português, História e Artes) em Cordel.
                     </p>
                 </div>
                 <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
                     <span class="text-4xl text-[var(--accent)] mr-4">✍️</span>
                     <p class="font-inter text-lg text-[var(--text)]">
-                        Caderno de Atividades para Estudantes com mais de 14 propostas.
+                        Caderno de atividades para alunos com mais de 14 propostas.
                     </p>
                 </div>
                 <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
                     <span class="text-4xl text-[var(--accent)] mr-4">✨</span>
                     <p class="font-inter text-lg text-[var(--text)]">
-                        Frases-Poema para Iniciar Aulas com Reflexão e criatividade.
+                        Frases-poema para iniciar aulas com reflexão e criatividade.
                     </p>
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                <!-- CTA leva para a seção de oferta -->
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🔥 APROVEITAR ESSA OFERTA ÚNICA AGORA!
                 </a>
             </div>
@@ -703,7 +726,8 @@
             <p class="font-inter text-xl sm:text-2xl text-[var(--text)] mb-6 max-w-3xl mx-auto">
                 <strong class="font-bold">Transforme cada aula em um momento de escuta, poesia e consciência — com materiais prontos para aplicar, cordéis potentes, e um roteiro que já impactou centenas de educadores no Brasil inteiro.</strong>
             </p>
-            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+            <!-- CTA leva para a seção de oferta -->
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🎯 QUERO ENSINAR COM POESIA E PROPÓSITO!
                 </a>
             </section>
@@ -754,7 +778,8 @@
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    <!-- CTA leva para a seção de oferta -->
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                         ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
                     </a>
                 </div>
@@ -801,8 +826,8 @@
                     <span class="text-[var(--text)] text-2xl mr-2">💳</span> <strong class="text-[var(--text)]">Garantia Incondicional de 7 Dias</strong> ou seu dinheiro de volta.
                     </p>
                 
-
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="sendConversionEvent()">
+                <!-- ESTE É O ÚLTIMO CTA QUE LEVA PARA A KIWIFY -->
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="trackInitiateCheckoutPixel()">
                     ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
                 </a>
                 <button onclick="scrollToTop()" class="md:hidden mt-8 bg-[var(--text)] text-white font-bold py-3 px-6 rounded-full text-base shadow-lg hover:bg-[var(--text-700)] transition-colors duration-300">
@@ -862,7 +887,8 @@
                     </li>
                 </ul>
                 <div class="text-center mt-12">
-                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    <!-- CTA leva para a seção de oferta -->
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                         ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
                     </a>
                 </div>
@@ -933,7 +959,8 @@
                     </div>
                 </div>
                 <div class="text-center mt-8">
-                    <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="sendConversionEvent()">
+                    <!-- CTA leva para a seção de oferta -->
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                         ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
                     </a>
                 </div>
@@ -942,7 +969,8 @@
         </main>
 
         <div class="fixed-cta md:hidden">
-            <a href="https://pay.kiwify.com.br/ZP2vT08" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="sendConversionEvent()">
+            <!-- CTA fixo mobile leva para a seção de oferta -->
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="trackInitiateCheckoutPixel()">
                 📱 COMPRAR AGORA!
             </a>
         </div>
@@ -968,59 +996,25 @@
 
         <!-- Script de rastreamento e parâmetros de URL -->
         <script>
-            const FB_PIXEL_ID = '1243155826763791';
-            const FB_ACCESS_TOKEN = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzUwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hW1zuvDtiBjHkr4gZDZD';
+            // Função para gerar um ID de evento único
+            function generateEventId() {
+                return 'pixel_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
 
-            async function sendConversionEvent() {
-                const eventData = {
-                    "data": [
-                        {
-                            "event_name": "InitiateCheckout",
-                            "event_time": Math.floor(Date.now() / 1000),
-                            "action_source": "website",
-                            "user_data": {
-                                "em": [
-                                    "7b17fb0bd173f625b586366fb796407c22b3d16fc78302d79f0fd30c2fc2fc068"
-                                ],
-                                "ph": [
-                                    null
-                                ]
-                            },
-                            "custom_data": {
-                                "currency": "BRL",
-                                "value": "67.70"
-                            },
-                            "original_event_data": {
-                                "event_name": "InitiateCheckout",
-                                "event_time": Math.floor(Date.now() / 1000)
-                            }
-                        }
-                    ]
-                };
+            // Nova função para disparar o evento InitiateCheckout do Pixel
+            function trackInitiateCheckoutPixel() {
+                const eventId = generateEventId(); // Gera um ID único para este evento
 
-                const apiUrl = `https://graph.facebook.com/v19.0/${FB_PIXEL_ID}/events?access_token=${FB_ACCESS_TOKEN}`;
+                // Dispara o evento InitiateCheckout do Pixel com o event_id
+                fbq('track', 'InitiateCheckout', {
+                    value: 67.70, // O valor é fixo, então pode permanecer assim
+                    currency: 'BRL'
+                }, { eventID: eventId });
 
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(eventData)
-                    });
+                console.log('Evento InitiateCheckout do Pixel disparado com eventID:', eventId);
 
-                    if (response.ok) {
-                        const result = await response.json();
-                        console.log('Evento de conversão (InitiateCheckout) enviado com sucesso!', result);
-                        console.log('Dados enviados:', eventData);
-                    } else {
-                        const errorData = await response.json();
-                        console.error('Falha ao enviar evento de conversão:', response.status, response.statusText);
-                        console.error('Detalhes do erro:', errorData);
-                    }
-                } catch (error) {
-                    console.error('Erro de rede ao enviar evento de conversão:', error);
-                }
+                // O redirecionamento para a Kiwify deve acontecer normalmente
+                // Certifique-se de que o link do CTA já aponta para a Kiwify
             }
 
 
@@ -1041,19 +1035,32 @@
             }! function() {
                 var t = new URLSearchParams(window.location.search);
                 t.toString() && document.querySelectorAll("a").forEach(function(e) {
-                    for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+                    for (let r = 0; r < prefix.length; r++) {
+                        // Verifica se o link é para a Kiwify e não é o CTA principal da seção de oferta
+                        // O CTA principal da seção de oferta (id="main-cta-offer") já tem o href correto.
+                        if (-1 !== e.href.indexOf(prefix[r]) && e.id !== "main-cta-offer") {
+                            // Se o link é para a Kiwify mas NÃO é o CTA final, redireciona para a seção de oferta
+                            e.href = "#offer-section";
+                        } else if (-1 !== e.href.indexOf(prefix[r]) && e.id === "main-cta-offer") {
+                            // Se é o CTA final, mantém o link original para a Kiwify e adiciona os parâmetros
+                            if (-1 === e.href.indexOf("?")) {
+                                e.href += "?" + t.toString() + getParams();
+                            } else {
+                                e.href += "&" + t.toString() + getParams();
+                            }
+                        }
+                    }
                 })
             }();
 
 
-            document.querySelectorAll('a[href^="https://pay.kiwify.com.br/ZP2vT08"]').forEach(anchor => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    if (!this.getAttribute('href').startsWith('http')) {
-                        e.preventDefault();
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
+                    // Garante que o scroll suave funcione para links internos
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
             });
 
