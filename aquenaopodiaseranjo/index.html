@@ -641,7 +641,7 @@
                 </p>
             </div>
 
-            <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCordelBtn">
+            <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCordelBtn" onclick="trackInitiateCheckoutPixel('9.90', 'cordel_anjo_id', 'A Negra que Nao Podia Ser Anjo')">
                 👉 QUERO ADICIONAR AO MEU ACERVO!
             </a>
         </div>
@@ -691,7 +691,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto">
+                    <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" onclick="trackInitiateCheckoutPixel('9.90', 'cordel_anjo_id', 'A Negra que Nao Podia Ser Anjo')">
                         QUERO A OPÇÃO BÁSICA
                     </a>
                 </div>
@@ -728,7 +728,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison">
+                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
                         ✅ DESBLOQUEIE A BIBLIOTECA COMPLETA!
                     </a>
                 </div>
@@ -798,7 +798,7 @@
                 GARANTA SUA COLEÇÃO COMPLETA HOJE!
             </p>
 
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell">
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
                 🚀 GARANTA SEU ACESSO ILIMITADO À COLEÇÃO!
             </a>
         </div>
@@ -962,7 +962,7 @@
             <p class="text-2xl md:text-3xl font-extrabold mb-8">
                 Pronto para transformar suas aulas e expandir sua visão?
             </p>
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter">
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
                 ➡️ TRANSFORME SUAS AULAS COM A COLEÇÃO!
             </a>
             <p class="mt-8 text-md md:text-lg opacity-80">
@@ -980,116 +980,6 @@
             👉 VER PACOTES E PREÇOS!
         </a>
     </div>
-
-    <!-- Facebook Conversion API Script -->
-    <script>
-        // Configurações da API de Conversão do Facebook
-        const pixelId = '1243155826763791';
-        const accessToken = 'EAAIrp13iL6UBOzllDs1Ogfon8yZAkYGdhIZBZCOQQng3I5krA1RPiNlJ0kKeUzJwox99sVciIinKZBSZAGcVYY546ZCx922daBo3mZCbmo9tkScpP34hHwnAdVfjONICXXt8ZB9xKpmdOBQ04rIXt0jgsZBjfrwSUN9FJa5OSK0uaqwf2NZAx96j4XzuvDtiBjHkr4gZDZD';
-        const graphApiVersion = 'v19.0'; // Versão da API, ajuste se necessário
-
-        // Função para enviar o evento para a API de Conversão
-        async function sendConversionEvent(eventName, value, currency, userEmailHash = null) {
-            const eventTime = Math.floor(Date.now() / 1000); // Timestamp atual em segundos
-
-            const userData = {
-                // Em um ambiente de produção, o email DEVE ser normalizado (lowercase, sem espaços) e HASHADO com SHA256.
-                // O exemplo fornecido já é um hash SHA256. Em um cenário real, você geraria o hash do e-mail do usuário.
-                "em": userEmailHash ? [userEmailHash] : [],
-                "ph": [null] // Telefone, se disponível e hashado
-            };
-
-            const eventData = {
-                "event_name": eventName, // Nome do evento, por exemplo, "InitiateCheckout" ou "Purchase"
-                "event_time": eventTime,
-                "action_source": "website",
-                "user_data": userData,
-                "attribution_data": {
-                    "attribution_share": "0.3" // Ajuste conforme sua lógica de atribuição
-                },
-                "custom_data": {
-                    "currency": currency, // "BRL" para Reais Brasileiros
-                    "value": value // Valor do evento
-                },
-                "original_event_data": {
-                    "event_name": eventName,
-                    "event_time": eventTime
-                }
-            };
-
-            const payload = {
-                data: [eventData],
-            };
-
-            const apiUrl = `https://graph.facebook.com/${graphApiVersion}/${pixelId}/events?access_token=${accessToken}`;
-
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(payload)
-                });
-
-                const result = await response.json();
-                console.log('Resposta da API de Conversão do Facebook:', result);
-
-                if (!response.ok) {
-                    console.error('Erro ao enviar evento para Facebook Conversion API:', result);
-                }
-            } catch (error) {
-                console.error('Erro de rede ou fetch para Facebook Conversion API:', error);
-            }
-        }
-
-        // --- Integração da API de Conversão com os botões de compra ---
-        // O evento "InitiateCheckout" será disparado no clique do botão que leva ao checkout.
-        // O evento "Purchase" (compra finalizada) deve ser disparado após a confirmação da compra,
-        // idealmente na página de obrigado ou via integração server-to-server (Kiwify webhooks).
-
-        // Botão para o cordel de R$ 9,90
-        const buyCordelBtn = document.getElementById('buyCordelBtn');
-        if (buyCordelBtn) {
-            buyCordelBtn.addEventListener('click', function(event) {
-                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
-                sendConversionEvent("InitiateCheckout", "9.90", "BRL", null); // Evento InitiateCheckout para o cordel
-                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
-            });
-        }
-
-        // Seleciona o botão de "QUERO A COLEÇÃO COMPLETA" na seção de comparação de ofertas
-        const buyCompleteCollectionBtnComparison = document.getElementById('buyCompleteCollectionBtnComparison');
-        if (buyCompleteCollectionBtnComparison) {
-            buyCompleteCollectionBtnComparison.addEventListener('click', function(event) {
-                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
-                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
-                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
-            });
-        }
-
-        // Seleciona o botão de "QUERO MINHA COLEÇÃO AGORA!" na seção de upsell
-        const buyCompleteCollectionBtnUpsell = document.getElementById('buyCompleteCollectionBtnUpsell');
-        if (buyCompleteCollectionBtnUpsell) {
-            buyCompleteCollectionBtnUpsell.addEventListener('click', function(event) {
-                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
-                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
-                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
-            });
-        }
-
-        // Seleciona o botão de "QUERO MINHA COLEÇÃO AGORA!" no rodapé
-        const buyCompleteCollectionBtnFooter = document.getElementById('buyCompleteCollectionBtnFooter');
-        if (buyCompleteCollectionBtnFooter) {
-            buyCompleteCollectionBtnFooter.addEventListener('click', function(event) {
-                // event.preventDefault(); // Descomente para testar o envio do evento sem redirecionar imediatamente.
-                sendConversionEvent("InitiateCheckout", "67.70", "BRL", null); // Evento InitiateCheckout
-                // window.location.href = event.target.href; // Redireciona após o evento (descomente se event.preventDefault() for usado)
-            });
-        }
-
-        // --- Fim da Integração ---
-    </script>
 
     <!-- Kiwify UTM Script -->
     <script>
@@ -1131,7 +1021,39 @@
     </script>
 
     <script>
+        // Função para gerar um UUID (Identificador Único Universal)
+        // Usado para criar um eventID único para cada evento do Pixel, auxiliando na deduplicação.
+        function generateUUID() {
+            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                return v.toString(16);
+            });
+        }
+
+        // Nova função para rastrear o InitiateCheckout via Meta Pixel (lado do cliente)
+        // Esta função é chamada no clique dos botões CTA que levam ao checkout da Kiwify.
+        // Dispara o evento InitiateCheckout do Meta Pixel com dados de produto e um eventID único.
+        // O Meta Pixel também coleta automaticamente os cookies _fbc e _fbp, que são essenciais
+        // para a deduplicação com os eventos de CAPI que a Kiwify envia do lado do servidor.
+        function trackInitiateCheckoutPixel(value, contentId, contentName) {
+            if (typeof fbq === 'function') {
+                fbq('track', 'InitiateCheckout', {
+                    content_ids: [contentId],
+                    content_name: contentName,
+                    content_type: 'product', // Tipo de conteúdo, pode ser 'product_group' se for uma coleção
+                    value: value,
+                    currency: 'BRL'
+                }, {
+                    eventID: generateUUID() // Adiciona um eventID único para deduplicação
+                });
+                console.log(`Evento InitiateCheckout disparado para ${contentName} com valor ${value}`);
+            } else {
+                console.warn('Meta Pixel (fbq) não carregado. O evento InitiateCheckout não foi disparado.');
+            }
+        }
+
         // JavaScript para o Sticky CTA (Fixo no Mobile)
+        // Controla a visibilidade do botão CTA fixo na parte inferior da tela em dispositivos móveis.
         const stickyCta = document.getElementById('sticky-cta');
         window.addEventListener('scroll', function() {
             // Mostra o CTA fixo após rolar uma certa distância (ex: 200px)
@@ -1143,16 +1065,17 @@
         });
 
         // JavaScript para o Acordeão (FAQ)
+        // Implementa a funcionalidade de acordeão para a seção de Perguntas Frequentes.
         document.addEventListener('DOMContentLoaded', function() {
             const accordionItems = document.querySelectorAll('.accordion-item');
 
             accordionItems.forEach(item => {
                 const header = item.querySelector('.accordion-header');
                 header.addEventListener('click', () => {
-                    // Toggle 'active' class on the clicked item
+                    // Alterna a classe 'active' no item clicado para expandir/recolher o conteúdo.
                     item.classList.toggle('active');
 
-                    // Close other open accordion items
+                    // Fecha outros itens de acordeão abertos para manter apenas um expandido.
                     accordionItems.forEach(otherItem => {
                         if (otherItem !== item && otherItem.classList.contains('active')) {
                             otherItem.classList.remove('active');
@@ -1163,6 +1086,7 @@
         });
 
         // Testimonials data - using the existing images
+        // Dados dos depoimentos para o carrossel.
         const testimonials = [
             { id: 1, img: "assets/depoimento_1.png", alt: "Depoimento de um professor: 'Amei as suas publicações, comprei seu livro online'." },
             { id: 2, img: "assets/depoimento_2.png", alt: "Depoimento de um professor: 'Amei, Que maravilha!'" },
@@ -1171,30 +1095,32 @@
         ];
 
         let currentIndex = 0;
-        let carouselWrapper; // The element with overflow-x-scroll
+        let carouselWrapper; // O elemento com overflow-x-scroll
         let prevBtn;
         let nextBtn;
         let paginationDotsContainer;
-        let slideFullWidth = 0; // To store the width of a single slide including its gap
+        let slideFullWidth = 0; // Para armazenar a largura total de um slide, incluindo seu espaçamento
 
+        // Inicializa o carrossel de depoimentos.
         function initializeCarousel() {
             carouselWrapper = document.getElementById('testimonial-carousel-wrapper');
             prevBtn = document.getElementById('prevBtn');
             nextBtn = document.getElementById('nextBtn');
             paginationDotsContainer = document.getElementById('pagination-dots');
 
-            // Clear existing content to prevent duplicates on re-initialization
+            // Limpa o conteúdo existente para evitar duplicações em reinicializações.
             carouselWrapper.innerHTML = '';
             paginationDotsContainer.innerHTML = '';
 
+            // Adiciona cada depoimento e seu respectivo ponto de paginação.
             testimonials.forEach((depoimento, index) => {
                 const testimonialDiv = document.createElement('div');
-                testimonialDiv.className = 'carousel-card'; // Use the new CSS class
+                testimonialDiv.className = 'carousel-card'; // Usa a nova classe CSS para estilização.
                 testimonialDiv.innerHTML = `<img src="${depoimento.img}" alt="${depoimento.alt}" class="rounded-lg mb-4 w-full h-auto" loading="lazy">`;
                 carouselWrapper.appendChild(testimonialDiv);
 
                 const dot = document.createElement('span');
-                dot.className = 'pagination-dot'; // Use the new CSS class
+                dot.className = 'pagination-dot'; // Usa a nova classe CSS para estilização.
                 dot.setAttribute('data-index', index);
                 dot.addEventListener('click', () => {
                     goToSlide(index);
@@ -1202,76 +1128,67 @@
                 paginationDotsContainer.appendChild(dot);
             });
 
-            // Calculate slideFullWidth after testimonials are added
+            // Calcula a largura total de um slide após a adição dos depoimentos.
             if (testimonials.length > 0) {
                 const firstCard = carouselWrapper.children[0];
                 const computedStyle = getComputedStyle(carouselWrapper);
-                const gapValue = parseFloat(computedStyle.gap); // Get the gap value from the parent container
+                const gapValue = parseFloat(computedStyle.gap); // Obtém o valor do espaçamento (gap) do contêiner pai.
 
-                // slideFullWidth is the card's actual rendered width plus the gap applied by the flex container
-                // This is specifically for scrolling amount, not for individual card width calculation.
-                // The actual card width is defined by flex-basis (carousel-card CSS).
-                // For a smooth snap, we scroll by the width of one card plus its gap to align the next card correctly.
+                // A largura total do slide é a largura do cartão mais o espaçamento.
                 slideFullWidth = firstCard.offsetWidth + gapValue;
                 
-                // On smaller screens, where flex: 0 0 85%, adjust slideFullWidth calculation
+                // Ajuste para telas menores, onde o layout do carrossel pode ser diferente.
                 if (window.innerWidth < 768) {
-                    slideFullWidth = (carouselWrapper.offsetWidth * 0.85) + gapValue;
+                    // Se o cartão ocupa uma porcentagem da largura do contêiner, recalcula.
+                    slideFullWidth = (carouselWrapper.offsetWidth * 0.85) + gapValue; // Exemplo: se o cartão é 85% da largura do wrapper.
                 } else {
-                    // For desktop, 2 cards per view. So each scroll moves 1 card.
-                    // Card width is 50% - 0.75rem. So full width is card width + gap.
-                    // This becomes complex, let's simplify for the scroll functionality.
-                    // For scroll-snap-type: x mandatory; it's often easier to just scroll by the element's clientWidth
-                    // or rely on native scroll and update dots based on scroll position.
-                    // Reverting to the simpler approach: scroll one full clientWidth.
-                    slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue; // For one card + gap
-                    if (window.innerWidth >= 768) {
-                         // On desktop, we want to scroll one card at a time, not two.
-                         // So the scroll amount should be one card's width + its gap.
-                         // The carousel-card is `calc(50% - 0.75rem)` of its parent.
-                         // The actual width to scroll is one individual card's width + the gap.
-                         slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue;
-                    }
+                    // Para desktop, onde pode haver mais de um cartão visível.
+                    // O scroll deve mover apenas um cartão por vez.
+                    slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue;
                 }
             }
 
-            // Remove previous listeners to prevent multiple bindings on resize re-initialization
+            // Remove listeners anteriores para evitar múltiplas vinculações em redimensionamentos.
             prevBtn.removeEventListener('click', showPrevSlide);
             nextBtn.removeEventListener('click', showNextSlide);
             carouselWrapper.removeEventListener('scroll', updateDotsOnScroll);
 
-
+            // Adiciona os event listeners para os botões de navegação.
             prevBtn.addEventListener('click', showPrevSlide);
             nextBtn.addEventListener('click', showNextSlide);
 
-            // Listen for scroll event on the carouselWrapper to update dots
+            // Escuta o evento de scroll no carrosselWrapper para atualizar os pontos de paginação.
             carouselWrapper.addEventListener('scroll', () => {
-                // Debounce the scroll event to avoid too many updates during continuous scrolling
+                // Debounce o evento de scroll para evitar muitas atualizações durante o scroll contínuo.
                 clearTimeout(carouselWrapper.scrollTimeout);
                 carouselWrapper.scrollTimeout = setTimeout(updateDotsOnScroll, 100);
             });
 
-            updateCarouselDisplay(); // Initial update
+            updateCarouselDisplay(); // Atualiza a exibição do carrossel inicialmente.
         }
 
+        // Mostra o slide anterior no carrossel.
         function showPrevSlide() {
             currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
             carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
             updateCarouselDisplay();
         }
 
+        // Mostra o próximo slide no carrossel.
         function showNextSlide() {
             currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
             carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
             updateCarouselDisplay();
         }
 
+        // Navega para um slide específico no carrossel.
         function goToSlide(index) {
             currentIndex = index;
             carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
             updateCarouselDisplay();
         }
 
+        // Atualiza a classe 'active' nos pontos de paginação para refletir o slide atual.
         function updateCarouselDisplay() {
             Array.from(paginationDotsContainer.children).forEach((dot, index) => {
                 if (index === currentIndex) {
@@ -1282,18 +1199,13 @@
             });
         }
 
+        // Atualiza o índice do slide atual com base na posição de scroll do carrossel.
         function updateDotsOnScroll() {
             if (!carouselWrapper || slideFullWidth === 0) return;
 
             const scrollLeft = carouselWrapper.scrollLeft;
-            // Calculate the new index based on the scroll position and full width of a slide
+            // Calcula o novo índice arredondando a posição de scroll pela largura total do slide.
             const newIndex = Math.round(scrollLeft / slideFullWidth);
-
-            // If on desktop, and showing two cards, the scroll position might snap
-            // differently. We need to account for which card is "most" in view
-            // The `scroll-snap-type: x mandatory` combined with `scroll-snap-align: center` on cards
-            // means the browser will try to center a card.
-            // So `Math.round(scrollLeft / slideFullWidth)` should be mostly accurate.
             
             if (newIndex !== currentIndex) {
                 currentIndex = newIndex;
@@ -1301,13 +1213,15 @@
             }
         }
 
+        // Adiciona um listener para o evento de redimensionamento da janela.
         window.addEventListener('resize', () => {
-            // Re-initialize carousel to recalculate widths on resize
-            // Debounce resize events to prevent excessive calls
+            // Reinicializa o carrossel para recalcular larguras em caso de redimensionamento.
+            // Debounce o evento de redimensionamento para evitar chamadas excessivas.
             clearTimeout(window.resizeTimeout);
             window.resizeTimeout = setTimeout(initializeCarousel, 250);
         });
 
+        // Inicializa o carrossel quando o DOM estiver completamente carregado.
         document.addEventListener('DOMContentLoaded', initializeCarousel);
     </script>
 </body>
