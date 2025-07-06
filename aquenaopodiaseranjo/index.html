@@ -641,7 +641,7 @@
                 </p>
             </div>
 
-            <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCordelBtn" onclick="trackInitiateCheckoutPixel('9.90', 'cordel_anjo_id', 'A Negra que Nao Podia Ser Anjo')">
+            <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCordelBtn">
                 👉 QUERO ADICIONAR AO MEU ACERVO!
             </a>
         </div>
@@ -691,7 +691,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" onclick="trackInitiateCheckoutPixel('9.90', 'cordel_anjo_id', 'A Negra que Nao Podia Ser Anjo')">
+                    <a href="https://pay.kiwify.com.br/2beGBsh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto">
                         QUERO A OPÇÃO BÁSICA
                     </a>
                 </div>
@@ -728,7 +728,7 @@
                             </li>
                         </ul>
                     </div>
-                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
+                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison">
                         ✅ DESBLOQUEIE A BIBLIOTECA COMPLETA!
                     </a>
                 </div>
@@ -798,7 +798,7 @@
                 GARANTA SUA COLEÇÃO COMPLETA HOJE!
             </p>
 
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell">
                 🚀 GARANTA SEU ACESSO ILIMITADO À COLEÇÃO!
             </a>
         </div>
@@ -962,7 +962,7 @@
             <p class="text-2xl md:text-3xl font-extrabold mb-8">
                 Pronto para transformar suas aulas e expandir sua visão?
             </p>
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter" onclick="trackInitiateCheckoutPixel('67.70', 'colecao_tesouro_id', 'Colecao Tesouro Poetico')">
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter">
                 ➡️ TRANSFORME SUAS AULAS COM A COLEÇÃO!
             </a>
             <p class="mt-8 text-md md:text-lg opacity-80">
@@ -1030,27 +1030,8 @@
             });
         }
 
-        // Nova função para rastrear o InitiateCheckout via Meta Pixel (lado do cliente)
-        // Esta função é chamada no clique dos botões CTA que levam ao checkout da Kiwify.
-        // Dispara o evento InitiateCheckout do Meta Pixel com dados de produto e um eventID único.
-        // O Meta Pixel também coleta automaticamente os cookies _fbc e _fbp, que são essenciais
-        // para a deduplicação com os eventos de CAPI que a Kiwify envia do lado do servidor.
-        function trackInitiateCheckoutPixel(value, contentId, contentName) {
-            if (typeof fbq === 'function') {
-                fbq('track', 'InitiateCheckout', {
-                    content_ids: [contentId],
-                    content_name: contentName,
-                    content_type: 'product', // Tipo de conteúdo, pode ser 'product_group' se for uma coleção
-                    value: value,
-                    currency: 'BRL'
-                }, {
-                    eventID: generateUUID() // Adiciona um eventID único para deduplicação
-                });
-                console.log(`Evento InitiateCheckout disparado para ${contentName} com valor ${value}`);
-            } else {
-                console.warn('Meta Pixel (fbq) não carregado. O evento InitiateCheckout não foi disparado.');
-            }
-        }
+        // REMOVIDO: A função trackInitiateCheckoutPixel foi removida conforme sua solicitação.
+        // Agora, o evento InitiateCheckout será enviado exclusivamente pela Kiwify.
 
         // JavaScript para o Sticky CTA (Fixo no Mobile)
         // Controla a visibilidade do botão CTA fixo na parte inferior da tela em dispositivos móveis.
@@ -1112,7 +1093,6 @@
             carouselWrapper.innerHTML = '';
             paginationDotsContainer.innerHTML = '';
 
-            // Adiciona cada depoimento e seu respectivo ponto de paginação.
             testimonials.forEach((depoimento, index) => {
                 const testimonialDiv = document.createElement('div');
                 testimonialDiv.className = 'carousel-card'; // Usa a nova classe CSS para estilização.
@@ -1153,7 +1133,7 @@
             nextBtn.removeEventListener('click', showNextSlide);
             carouselWrapper.removeEventListener('scroll', updateDotsOnScroll);
 
-            // Adiciona os event listeners para os botões de navegação.
+
             prevBtn.addEventListener('click', showPrevSlide);
             nextBtn.addEventListener('click', showNextSlide);
 
@@ -1206,6 +1186,12 @@
             const scrollLeft = carouselWrapper.scrollLeft;
             // Calcula o novo índice arredondando a posição de scroll pela largura total do slide.
             const newIndex = Math.round(scrollLeft / slideFullWidth);
+
+            // If on desktop, and showing two cards, the scroll position might snap
+            // differently. We need to account for which card is "most" in view
+            // The `scroll-snap-type: x mandatory` combined with `scroll-snap-align: center` on cards
+            // means the browser will try to center a card.
+            // So `Math.round(scrollLeft / slideFullWidth)` should be mostly accurate.
             
             if (newIndex !== currentIndex) {
                 currentIndex = newIndex;
