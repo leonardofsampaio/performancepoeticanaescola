@@ -12,7 +12,7 @@
     <!-- Application Structure Plan: The SPA is structured as a single-page sales funnel. It starts with a strong hero section (headline, mockup, main CTA) to capture attention and provide an immediate call to action. It then proceeds through sections that address user pain points ("O que é essa Coleção?", "Superando os Desafios"), showcase the product features ("Tudo o que você vai ter em mãos" with a carousel for dynamic display), highlight bonuses, provide social proof (testimonials carousel), answer common questions (FAQ accordion), and present the offer with urgency (countdown, scarcity message). The "Quem é Leonardo Sampaio?" section builds authority. This linear flow is designed to guide the user through a persuasive narrative, addressing their needs and objections at each stage, culminating in multiple opportunities to convert. The mobile fixed CTA ensures constant access to the purchase option. -->
     <!-- Visualization & Content Choices:
     - Hero Section: Headline, sub-headline, and mockup image (textual content + static image) to immediately convey value and product visualization. Goal: Inform, Engage. Justification: Quick understanding and visual appeal. Method: HTML/CSS.
-    - "O que é essa Colehão?": Textual explanations with bullet points (textual content). Goal: Inform, Explain. Justification: Detail product benefits and differentiation. Method: HTML/CSS.
+    - "O que é essa Coleção?": Textual explanations with bullet points (textual content). Goal: Inform, Explain. Justification: Detail product benefits and differentiation. Method: HTML/CSS.
     - "Superando os Desafios": Card layout with short text snippets (qualitative insights). Goal: Inform, Empathize. Justification: Address pain points directly. Method: HTML/CSS.
     - "Reforço da Proposta de Valor": Textual summary to re-engage the reader. Goal: Re-engage, Reinforce Value. Justification: Keep the user engaged with core benefits. Method: HTML/CSS.
     - "Os Livros e Cordéis da Coleção": Product carousel (quantitative data + qualitative insights). Goal: Inform, Showcase. Justification: Dynamically display multiple product components without clutter. Interaction: Swipe, arrows, dots. Library: Chart.js (for carousel structure, not charts).
@@ -35,7 +35,7 @@
     <meta property="og:url" content="https://seusite.com.br/colecao-tesouro-poetico">
     <meta property="og:type" content="website">
 
-    <!-- Meta Pixel Code - MOVIDO PARA O HEAD -->
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -51,7 +51,7 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
     /></noscript>
-    <!-- Fim Meta Pixel Code -->
+    <!-- End Meta Pixel Code -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
@@ -490,7 +490,7 @@
         </div>
 
         <!-- CTA principal leva para a seção de oferta -->
-        <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+        <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="trackInitiateCheckoutPixel()">
             📚 QUERO A COLEÇÃO COMPLETA AGORA!
         </a>
 
@@ -502,7 +502,7 @@
                 <img src="assets/mockupcompleto.png" alt="Mockup da Coleção Tesouro Poético completa, mostrando todos os materiais juntos" class="w-full max-w-3xl rounded-xl shadow-lg border-4 border-white" loading="lazy">
             </div>
             <!-- CTA leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                 🎯 GARANTA SUA COLEÇÃO COMPLETA AGORA!
             </a>
         </section>
@@ -585,7 +585,7 @@
             </div>
             <div class="text-center mt-12">
                 <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🧠 QUERO TRANSFORMAR MINHAS AULAS HOJE!
                 </a>
             </div>
@@ -656,7 +656,7 @@
             </div>
             <div class="text-center mt-12">
                 <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     ⏳ GARANTA SUA COLEÇÃO ANTES QUE ACABE!
                 </a>
             </div>
@@ -715,7 +715,7 @@
             </div>
             <div class="text-center mt-12">
                 <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🔥 APROVEITAR ESSA OFERTA ÚNICA AGORA!
                 </a>
             </div>
@@ -727,7 +727,7 @@
                 <strong class="font-bold">Transforme cada aula em um momento de escuta, poesia e consciência — com materiais prontos para aplicar, cordéis potentes, e um roteiro que já impactou centenas de educadores no Brasil inteiro.</strong>
             </p>
             <!-- CTA leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                     🎯 QUERO ENSINAR COM POESIA E PROPÓSITO!
                 </a>
             </section>
@@ -779,7 +779,7 @@
                 </div>
                 <div class="text-center mt-8">
                     <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                         ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
                     </a>
                 </div>
@@ -827,7 +827,7 @@
                     </p>
                 
                 <!-- ESTE É O ÚLTIMO CTA QUE LEVA PARA A KIWIFY -->
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="window.location.href = 'https://pay.kiwify.com.br/ZP2vT08' + getParams(); return false;">
+                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="trackInitiateCheckoutPixelAndRedirect()">
                     ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
                 </a>
                 <button onclick="scrollToTop()" class="md:hidden mt-8 bg-[var(--text)] text-white font-bold py-3 px-6 rounded-full text-base shadow-lg hover:bg-[var(--text-700)] transition-colors duration-300">
@@ -888,7 +888,7 @@
                 </ul>
                 <div class="text-center mt-12">
                     <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
                         ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
                     </a>
                 </div>
@@ -960,8 +960,8 @@
                 </div>
                 <div class="text-center mt-8">
                     <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
+                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="trackInitiateCheckoutPixel()">
+                        ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
                     </a>
                 </div>
             </section>
@@ -970,7 +970,7 @@
 
         <div class="fixed-cta md:hidden">
             <!-- CTA fixo mobile leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
+            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="trackInitiateCheckoutPixel()">
                 📱 COMPRAR AGORA!
             </a>
         </div>
@@ -996,10 +996,45 @@
 
         <!-- Script de rastreamento e parâmetros de URL -->
         <script>
-            // A função generateEventId() foi removida pois não é mais necessária para o InitiateCheckout no lado do cliente.
+            // Função para gerar um ID de evento único
+            function generateEventId() {
+                return 'pixel_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
 
-            // As funções trackInitiateCheckoutPixelAndRedirect() e trackInitiateCheckoutPixelAndScroll() foram removidas.
-            // O disparo do evento InitiateCheckout agora será feito exclusivamente pela Kiwify.
+            // Função para disparar o evento InitiateCheckout do Pixel e redirecionar para a Kiwify
+            function trackInitiateCheckoutPixelAndRedirect() {
+                const eventId = generateEventId(); // Gera um ID único para este evento
+
+                // Dispara o evento InitiateCheckout do Pixel com o event_id
+                fbq('track', 'InitiateCheckout', {
+                    value: 67.70, // O valor é fixo, então pode permanecer assim
+                    currency: 'BRL'
+                }, { eventID: eventId });
+
+                console.log('Evento InitiateCheckout do Pixel disparado com eventID:', eventId);
+
+                // Redireciona para a Kiwify após o disparo do Pixel
+                window.location.href = "https://pay.kiwify.com.br/ZP2vT08" + getParams();
+            }
+
+            // Função para disparar o evento InitiateCheckout do Pixel e rolar para a seção de oferta
+            function trackInitiateCheckoutPixelAndScroll() {
+                const eventId = generateEventId(); // Gera um ID único para este evento
+
+                // Dispara o evento InitiateCheckout do Pixel com o event_id
+                fbq('track', 'InitiateCheckout', {
+                    value: 67.70, // O valor é fixo, então pode permanecer assim
+                    currency: 'BRL'
+                }, { eventID: eventId });
+
+                console.log('Evento InitiateCheckout do Pixel disparado com eventID:', eventId);
+
+                // Rola para a seção de oferta
+                document.querySelector('#offer-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
 
             let prefix = ["https://pay.kiwify.com.br"];
 
@@ -1018,18 +1053,14 @@
             }! function() {
                 var t = new URLSearchParams(window.location.search);
                 t.toString() && document.querySelectorAll("a").forEach(function(e) {
-                    // Para links internos que levam para a seção de oferta, o onclick agora faz apenas o scroll suave.
+                    // Remove o listener de clique padrão para links que não são o CTA final
+                    // e que levam para a seção de oferta.
+                    // O listener de scroll suave para #offer-section será tratado abaixo.
                     if (e.getAttribute('href') === '#offer-section') {
-                        e.onclick = function() {
-                            document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' });
-                            return false; // Previne o comportamento padrão do link
-                        };
+                        e.onclick = function() { trackInitiateCheckoutPixelAndScroll(); return false; };
                     } else if (e.id === "main-cta-offer") {
-                        // Para o CTA final que leva para a Kiwify, o onclick agora faz apenas o redirecionamento.
-                        e.onclick = function() {
-                            window.location.href = "https://pay.kiwify.com.br/ZP2vT08" + getParams();
-                            return false; // Previne o comportamento padrão do link
-                        };
+                        // Este é o CTA final que leva para a Kiwify
+                        e.onclick = function() { trackInitiateCheckoutPixelAndRedirect(); return false; };
                         // Adiciona os parâmetros UTM ao link da Kiwify
                         if (-1 === e.href.indexOf("?")) {
                             e.href += "?" + t.toString() + getParams();
@@ -1247,8 +1278,7 @@
                 const endDate = new Date();
                 endDate.setHours(endDate.getHours() + 24);
 
-                let currentKitsCount = 37; // Variável para controlar a contagem regressiva dos kits
-                // A constante minKits foi removida, pois a lógica agora reseta a contagem.
+                let initialKits = 37;
 
                 function updateCountdown() {
                     const now = new Date().getTime();
@@ -1266,16 +1296,13 @@
 
                     countdownTimer.innerHTML = `Válido por: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-                    // Lógica para a contagem regressiva dos kits: vai até 5 e recomeça em 37
-                    if (currentKitsCount > 5) {
-                        currentKitsCount--; // Decrementa um por um
-                    } else {
-                        currentKitsCount = 37; // Recomeça a contagem em 37
-                    }
-                    
-                    kitsRemaining.innerHTML = `Apenas ${currentKitsCount} kits restantes com esse valor!`;
+                    const currentKits = Math.max(0, initialKits - Math.floor(Math.random() * 5));
+                    kitsRemaining.innerHTML = `Apenas ${currentKits} kits restantes com esse valor!`;
 
-                    // A condição de currentKitsCount <= 0 não é mais necessária, pois a contagem reseta em 5.
+                    if (currentKits <= 0) {
+                        countdownTimer.innerHTML = "OFERTA ENCERRADA!";
+                        kitsRemaining.innerHTML = "Todos os kits foram vendidos!";
+                    }
                 }
 
                 setInterval(updateCountdown, 1000);
