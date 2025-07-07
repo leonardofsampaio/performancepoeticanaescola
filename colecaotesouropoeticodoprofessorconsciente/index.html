@@ -35,7 +35,7 @@
     <meta property="og:url" content="https://seusite.com.br/colecao-tesouro-poetico">
     <meta property="og:type" content="website">
 
-    <!-- Meta Pixel Code - MOVIDO PARA O HEAD -->
+    <!-- Meta Pixel Code (Original) -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -45,13 +45,31 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1243155826763791'); // Seu ID do Pixel do Meta
+    fbq('init', '1243155826763791'); // Seu ID do Pixel do Meta (Original)
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
     /></noscript>
-    <!-- Fim Meta Pixel Code -->
+    <!-- End Meta Pixel Code (Original) -->
+
+    <!-- Meta Pixel Code (Novo) -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '959536202816242'); // Novo ID do Pixel do Meta
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=959536202816242&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code (Novo) -->
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
@@ -513,7 +531,7 @@
 
         <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
             <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                📚 O QUE É ESSA COLEÇÃO?
+                � O QUE É ESSA COLEÇÃO?
             </h2>
             <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-4 max-w-3xl mx-auto text-left">
                 A Coleção Tesouro Poético dos Professores Conscientes é o seu <strong class="font-bold text-[var(--primary)]">guia completo e inspirador</strong> para transformar a sala de aula! Com ela, você terá <strong class="font-bold text-[var(--text)]">tudo pronto para aplicar</strong>, economizando seu tempo e garantindo aulas impactantes. É um pacote digital pensado para educadores que desejam trabalhar temas como <strong class="font-bold text-[var(--text)]">racismo, ancestralidade, espiritualidade, cidadania e justiça social</strong> de forma sensível, profunda e prática.
@@ -808,7 +826,6 @@
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">📜</span> <strong class="font-semibold">5 cordéis transformadores</strong> com propostas pedagógicas alinhadas à BNCC.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎁</span> <strong class="font-semibold">Bônus Exclusivo</strong>: Uma proposta pedagógica para cada cordel contendo os códigos da BNCC.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎭</span> <strong class="font-semibold">Bônus Extra</strong>: Um roteiro teatral completo sobre o cordel “A negra que não podia ser anjo”.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">📦</span> <strong class="font-semibold">Bônus Especial</strong>: Kit Poético Interdisciplinar - Língua Portuguesa, História e Artes em Cordel.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-alone">✍️</span> <strong class="font-semibold">Bônus Essencial</strong>: CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades.</li>
                     <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">✨</span> <strong class="font-semibold">Bônus Inspirador</strong>: Frases-Poema para Começar Aulas com Reflexão.</li>
                 </ul>
@@ -1026,6 +1043,7 @@
                         };
                     } else if (e.id === "main-cta-offer") {
                         // Para o CTA final que leva para a Kiwify, o onclick agora faz apenas o redirecionamento.
+                        // O InitiateCheckout do Pixel do Meta no lado do cliente foi removido.
                         e.onclick = function() {
                             window.location.href = "https://pay.kiwify.com.br/ZP2vT08" + getParams();
                             return false; // Previne o comportamento padrão do link
@@ -1248,7 +1266,8 @@
                 endDate.setHours(endDate.getHours() + 24);
 
                 let currentKitsCount = 37; // Variável para controlar a contagem regressiva dos kits
-                // A constante minKits foi removida, pois a lógica agora reseta a contagem.
+                const resetKitsCount = 37; // Valor para reiniciar a contagem
+                const minKits = 5; // Define o valor mínimo para a contagem de kits
 
                 function updateCountdown() {
                     const now = new Date().getTime();
@@ -1267,15 +1286,14 @@
                     countdownTimer.innerHTML = `Válido por: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
                     // Lógica para a contagem regressiva dos kits: vai até 5 e recomeça em 37
-                    if (currentKitsCount > 5) {
+                    if (currentKitsCount > minKits) {
                         currentKitsCount--; // Decrementa um por um
                     } else {
-                        currentKitsCount = 37; // Recomeça a contagem em 37
+                        currentKitsCount = resetKitsCount; // Recomeça a contagem em 37
                     }
                     
                     kitsRemaining.innerHTML = `Apenas ${currentKitsCount} kits restantes com esse valor!`;
 
-                    // A condição de currentKitsCount <= 0 não é mais necessária, pois a contagem reseta em 5.
                 }
 
                 setInterval(updateCountdown, 1000);
@@ -1284,3 +1302,4 @@
         </script>
     </body>
 </html>
+�
