@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-2.0">
+    <title>Performance Poética na Escola - Ebook e Coleção | Leonardo Sampaio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter for buttons and main text, Noto Serif for titles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Default font for all devices (mobile first) using Inter */
+        body {
+            font-family: 'Inter', sans-serif; /* Apply Inter font to body */
+            background-color: #fbfefe; /* New Background */
+            color: #00374C; /* New Text */
+        }
+        /* Titles font using Noto Serif */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Noto Serif', serif;
+        }
+        .cta-button {
+            font-family: 'Inter', sans-serif; /* Apply Inter font to buttons */
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+        .section-gradient-bg {
+            /* New Primary gradient */
+            background: linear-gradient(to right, #00a8db, #007599); /* Primary to Primary-700 for gradient effect */
+            color: white;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #00a8db, #007599);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .rounded-card {
+            border-radius: 1.5rem; /* More rounded corners */
+        }
+        /* New style for the main offer highlight */
+        .main-offer-card {
+            border: 4px solid #ffba19; /* New Accent color */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .main-offer-card::before {
+            content: "OFERTA ESPECIAL!";
+            position: absolute;
+            top: 15px; /* Adjust as needed */
+            right: -30px; /* Adjust as needed */
+            background-color: #ffba19; /* New Accent color */
+            color: #00374C; /* New Text color */
+            padding: 5px 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transform: rotate(45deg);
+            transform-origin: 100% 0%; /* Rotate around top-right corner */
+            text-transform: uppercase;
+        }
+        /* Custom styles for the WhatsApp section to mimic the image */
+        .whatsapp-section-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem; /* Spacing between image and text */
+            flex-direction: column; /* Default to column for mobile */
+            text-align: center; /* Center content for mobile */
+        }
+        @media (min-width: 768px) { /* Adjust breakpoint as needed */
+            .whatsapp-section-content {
+                flex-direction: row; /* Row for larger screens */
+                text-align: left; /* Align text left for desktop */
+            }
+        }
+
+        /* Sticky CTA for mobile */
+        #sticky-cta {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            background-color: #10B981; /* bg-green-500 */
+            color: white;
+            text-align: center;
+            padding: 0.75rem 1.5rem; /* py-3 px-6 */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* shadow-lg */
+            z-index: 50;
+            display: none; /* Hidden by default for desktop */
+            font-family: 'Inter', sans-serif;
+            font-weight: 800; /* font-extrabold */
+            text-transform: uppercase;
+            letter-spacing: 0.05em; /* tracking-wider */
+            font-size: 1.25rem; /* text-xl */
+            line-height: 1.75rem; /* text-2xl */
+        }
+        #sticky-cta a {
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        #sticky-cta:hover {
+            background-color: #059669; /* hover:bg-green-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 12px 18px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Media queries for responsive buttons */
+        @media (max-width: 767px) {
+            #sticky-cta {
+                display: block; /* Show sticky CTA on mobile */
+                bottom: 1rem; /* Adjust position for mobile */
+                font-size: 1.125rem; /* Smaller text for mobile */
+                padding: 0.65rem 1rem;
+            }
+        }
+        @media (min-width: 768px) {
+            #sticky-cta {
+                display: none; /* Hide sticky CTA on desktop */
+            }
+        }
+
+        /* Styles for Accordion (FAQ) */
+        .accordion-item {
+            background-color: #ffffff; /* White background for each FAQ item */
+            padding: 1.5rem; /* px-6 py-6 */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
+            cursor: pointer;
+            border: 1px solid #e2e8f0; /* Light border for separation */
+        }
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* font-semibold */
+            color: #00374C; /* text-[#00374C] */
+            padding-bottom: 0.5rem; /* pb-2 */
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            color: #00374C; /* text-[#00374C] */
+            font-size: 1.125rem; /* text-lg */
+            padding-top: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px; /* Adjust as needed for content height */
+            padding-top: 1rem; /* pt-4 */
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Styles for the Testimonial Carousel */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden; /* Hide scrollbar for aesthetic purposes */
+            padding: 0 1rem; /* Add padding to show glimpse of next/prev card on mobile */
+            box-sizing: border-box;
+        }
+
+        .testimonial-slides-wrapper {
+            display: flex;
+            overflow-x: scroll; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to individual slides */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scroll-behavior: smooth; /* Smooth scroll when clicking buttons */
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+            gap: 1.5rem; /* Spacing between cards */
+        }
+
+        .testimonial-slides-wrapper::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Webkit browsers */
+        }
+
+        .carousel-card {
+            flex: 0 0 calc(100% - 2rem); /* Each card takes full width minus padding for container */
+            scroll-snap-align: center; /* Snap to center of the card */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl Tailwind class */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            height: 320px; /* Fixed height for consistency */
+            display: flex; /* Enable flexbox for centering image */
+            flex-direction: column; /* Stack image vertically */
+            justify-content: center; /* Center image vertically */
+            align-items: center; /* Center image horizontally */
+        }
+        /* Ensures images fit within the fixed height card without distortion, centering them */
+        .carousel-card img {
+            max-height: 100%; /* Ensure image doesn't exceed card height */
+            width: auto; /* Allow width to adjust proportionally */
+            object-fit: contain; /* Ensure entire image is visible, scale down if needed */
+        }
+        @media (min-width: 768px) {
+            .carousel-card {
+                flex: 0 0 calc(50% - 0.75rem); /* Two cards per view with half of the gap between them */
+            }
+        }
+
+
+        /* Navigation Arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #00374C;
+            padding: 0.75rem; /* Equivalent to p-3 Tailwind class */
+            border-radius: 9999px; /* rounded-full */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 10;
+            display: none; /* Hidden by default on mobile */
+        }
+
+        .carousel-arrow.left {
+            left: 0.5rem; /* Adjusted for container padding */
+        }
+
+        .carousel-arrow.right {
+            right: 0.5rem; /* Adjusted for container padding */
+        }
+
+        @media (min-width: 768px) {
+            .carousel-arrow {
+                display: block; /* Show arrows on desktop */
+            }
+        }
+
+        /* Pagination Dots */
+        .pagination-dot {
+            width: 0.75rem; /* w-3 */
+            height: 0.75rem; /* h-3 */
+            background-color: #9ca3af; /* gray-400 */
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .pagination-dot.active {
+            background-color: #00a8db; /* Primary color for active dot */
+        }
+
+        /* Comparison Table styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate; /* Use separate to allow border-spacing */
+            border-spacing: 0 1rem; /* Space between rows */
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 1.25rem; /* p-5 */
+            border-radius: 0.75rem; /* rounded-xl */
+            text-align: center;
+        }
+        .comparison-table th {
+            background-color: #00374C; /* Dark blue for headers */
+            color: white;
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+        }
+        .comparison-table td {
+            background-color: #ffffff; /* White for content cells */
+            color: #00374C; /* Dark text */
+            font-size: 1.125rem; /* text-lg */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* shadow-md */
+        }
+        .comparison-table td:first-child {
+            text-align: left; /* Feature name aligned left */
+            font-weight: 600; /* font-semibold */
+        }
+        .comparison-table .check-icon {
+            color: #10B981; /* Green check */
+            font-size: 1.5rem;
+        }
+        .comparison-table .times-icon {
+            color: #EF4444; /* Red times */
+            font-size: 1.5rem;
+        }
+        /* First row of headers needs rounded corners */
+        .comparison-table tr:first-child th:first-child { border-top-left-radius: 0.75rem; }
+        .comparison-table tr:first-child th:last-child { border-top-right-radius: 0.75rem; }
+        /* Apply rounded corners to cells for better aesthetics */
+        .comparison-table tr td:first-child { border-top-left-radius: 0.75rem; border-bottom-left-radius: 0.75rem; }
+        .comparison-table tr td:last-child { border-top-right-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
+        /* Media query for comparison table on mobile */
+        @media (max-width: 767px) {
+            .comparison-table, .comparison-table tbody, .comparison-table tr, .comparison-table th, .comparison-table td {
+                display: block;
+            }
+            .comparison-table thead {
+                display: none; /* Hide header on small screens */
+            }
+            .comparison-table tr {
+                margin-bottom: 1rem;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.75rem;
+                overflow: hidden;
+            }
+            .comparison-table td {
+                text-align: right;
+                position: relative;
+                padding-left: 50%;
+                border-bottom: 1px solid #e2e8f0;
+                border-radius: 0; /* Remove specific cell radius on mobile */
+                box-shadow: none; /* Remove shadow on individual cells on mobile */
+            }
+            .comparison-table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 1.25rem;
+                width: calc(50% - 1.25rem);
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 700;
+                color: #00374C;
+            }
+            .comparison-table td:first-child {
+                background-color: #ebfafa; /* Light background for feature name on mobile */
+                font-weight: 700; /* Bold for the feature name */
+                border-radius: 0.75rem 0.75rem 0 0; /* Top corners rounded */
+            }
+            .comparison-table tr:last-child td:last-child {
+                border-bottom-left-radius: 0.75rem; /* Bottom corners for last cell */
+                border-bottom-right-radius: 0.75rem;
+            }
+            .comparison-table tr {
+                padding-bottom: 1rem; /* Add padding at the bottom of each "row" group */
+            }
+        }
+    </style>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1243155826763791');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1H7TNQVG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-2T1H7TNQVG');
+    </script>
+</head>
+<body class="antialiased">
+
+    <!-- Sticky CTA for mobile -->
+    <div id="sticky-cta" class="fixed-cta">
+        <a href="#comparacao-valor">QUERO MEU EXEMPLAR AGORA!</a>
+    </div>
+
+    <!-- Header Section -->
+    <header class="section-gradient-bg py-16 px-4 md:py-24 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <p class="text-xl md:text-2xl font-light mb-4 opacity-90">
+                <!-- BIG IDEA -->
+                Ensinar com propósito, consciência e beleza — através da poesia que desperta, representa e transforma.
+            </p>
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                <!-- HEADLINE -->
+                Transforme sua sala de aula com poesia, sensibilidade e prática pedagógica real.
+            </h1>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-8 opacity-90">
+                <!-- SUBHEADLINE -->
+                Mais de 190 páginas de poemas, cordéis e reflexões criados dentro da escola pública por um professor que vive a educação com escuta, coragem e poesia.
+            </h2>
+            
+            <div class="bg-white text-[#00374C] p-6 md:p-8 rounded-2xl shadow-xl mx-auto max-w-2xl mb-10 main-offer-card">
+                <p class="text-xl md:text-2xl font-bold mb-2">
+                    <!-- HOOK -->
+                    Uma história que começa em verso e termina em transformação.
+                </p>
+                <p class="mt-2 text-lg md:text-xl">
+                    🎓 Ebook "Performance Poética na Escola"<br>
+                      Apenas <span class="font-black text-[#00a8db]">R$ 29,70</span><br>
+                    ✏️ Conteúdo 100% digital<br>
+                    📩 Acesso digital imediato.
+                </p>
+            </div>
+
+            <div class="mb-8">
+                <!-- Capa Principal para a seção de cabeçalho -->
+                <img src="assets/capa_performance_poetica.png" alt="Capa do ebook Performance Poética na Escola" class="mx-auto rounded-xl shadow-2xl max-w-full h-auto" loading="lazy">
+            </div>
+
+            <a href="#comparacao-valor" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                <!-- CHAMADA PARA AÇÃO (BOTÃO) -->
+                👉 QUERO O MEU EXEMPLAR AGORA!
+            </a>
+        </div>
+    </header>
+
+    <!-- Nova Seção: Problema e Solução (O Jeito Errado e O Jeito Certo) -->
+    <section class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                O Jeito Certo de Ensinar Poesia Começa Aqui!
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                <!-- O JEITO ERRADO - Gap 8 já oferece espaço vertical no mobile. -->
+                <div class="bg-red-50 p-6 rounded-xl shadow-lg border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4">🚫 O Jeito Errado:</h3>
+                    <ul class="space-y-3 text-lg text-[#00374C]">
+                        <li class="flex items-start">
+                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
+                            <span>Baixar atividades genéricas da internet sem identidade.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
+                            <span>Aplicar textos frios que não representam os alunos.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
+                            <span>Ignorar a escuta e a criatividade no processo de ensino.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
+                            <span>Reduzir a poesia a "atividade para datas".</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- O JEITO CERTO - Gap 8 já oferece espaço vertical no mobile. -->
+                <div class="bg-green-50 p-6 rounded-xl shadow-lg border-2 border-green-200">
+                    <h3 class="text-2xl font-bold text-green-700 mb-4">✅ O Jeito Certo:</h3>
+                    <ul class="space-y-3 text-lg text-[#00374C]">
+                        <li class="flex items-start">
+                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
+                            <span>Trabalhar a palavra como ponte para escuta e reflexão.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
+                            <span>Usar poemas e cordéis que nasceram da sala de aula.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
+                            <span>Ensinar com sensibilidade e representação.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
+                            <span>Criar experiências pedagógicas com propósito.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- SENTIMENTOS QUE CONECTAM -->
+            <div class="bg-white text-[#00374C] p-6 md:p-8 rounded-2xl shadow-xl mx-auto max-w-2xl mt-12">
+                <p class="text-xl md:text-2xl font-bold mb-4">Você já se pegou pensando:</p>
+                <ul class="space-y-3 text-lg md:text-xl text-left pl-6">
+                    <li>"Quero abordar temas importantes, mas não sei como começar..."</li>
+                    <li>"Tenho medo de usar o material errado ou não saber conduzir a conversa."</li>
+                    <li>"Me sinto sozinho na tentativa de fazer diferente em sala."</li>
+                    <li>"Queria algo simples, bonito e profundo — pronto pra usar."</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Transição para a solução (com fundo ampliado) -->
+    <section class="bg-[#00a8db] text-white py-12 px-4 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-3xl md:text-4xl font-bold">
+                Chega de dúvidas! A solução para esses desafios está ao seu alcance:
+            </h3>
+        </div>
+    </section>
+
+    <!-- Seção de Produto: Ebook 'Performance Poética na Escola' -->
+    <section class="py-16 px-4 md:py-20 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                Performance Poética na Escola: Seu Guia para Aulas Inesquecíveis!
+            </h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 text-left">
+                <div class="md:w-1/2">
+                    <img src="assets/mockup_ebook_performance.png" alt="Mockup do Ebook Performance Poética na Escola" class="w-full rounded-lg shadow-md">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg md:text-xl mb-6 leading-relaxed text-[#00374C]">
+                        Performance Poética na Escola não é só um livro. É o que acontece quando a literatura popular encontra o chão da escola.
+                        Um livro digital com mais de 190 páginas de poemas, cordéis, trovas e reflexões criadas por Leonardo Sampaio, professor da escola pública e arte-educador. A obra é atravessada por experiências reais de sala de aula, com base na educação popular.
+                        Feito para ser impresso, vivido e sentido, o conteúdo atravessa temas essenciais como ancestralidade, direitos humanos, inclusão e identidade.
+                    </p>
+                    <h3 class="text-2xl font-bold text-[#00a8db] mb-4">Você vai receber:</h3>
+                    <ul class="space-y-3 text-lg md:text-xl text-[#00374C] mb-8">
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-file-pdf"></i></span>
+                            <span><strong>190+ páginas em PDF:</strong> Conteúdo rico e original.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-feather-alt"></i></span>
+                            <span><strong>Textos que abordam:</strong> Escuta, identidade, comunidade e afeto.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book-reader"></i></span>
+                            <span><strong>Versatilidade:</strong> Pode ser usado como leitura, inspiração ou material didático.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-palette"></i></span>
+                            <span><strong>Ilustrações feitas por crianças:</strong> Enriquecem a obra com um toque autêntico e criativo.</span>
+                        </li>
+                    </ul>
+                    <p class="text-lg md:text-xl mt-8 leading-relaxed text-[#00374C]">
+                        Com poemas usados por educadores de verdade — em datas como o 8 de Março, o Dia da Consciência Negra, o Dia do Índio, o Carnaval e tantos outros — este ebook é mais que leitura: É prática. É performance. É formação.
+                    </p>
+                </div>
+            </div>
+            <p class="text-2xl md:text-3xl font-bold mt-10 text-[#00374C]">
+                Porque o que muda uma sala de aula não é o giz —<br>
+                É a palavra que toca.<br>
+                É o aluno que se reconhece no poema.<br>
+                É o professor que vê nos olhos o brilho do aprendizado com sentido.
+            </p>
+        </div>
+    </section>
+
+    <!-- Second CTA -->
+    <section class="py-12 px-4 bg-[#00a8db] text-center"> <!-- New Primary color -->
+        <div class="container mx-auto max-w-4xl">
+            <h3 class="text-3xl md:text-4xl font-bold text-white mb-8">Pronto para levar essa poderosa mensagem à sua turma?</h3>
+            <a href="#comparacao-valor" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                👉 ADQUIRIR MEU EXEMPLAR!
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Prova Social (Depoimentos) -->
+    <section class="py-16 px-4 md:py-20 section-gradient-bg text-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10">
+                💬 O Que Dizem Sobre o Impacto de Nossas Obras:
+            </h2>
+            <div class="carousel-container">
+                <div id="testimonial-carousel-wrapper" class="testimonial-slides-wrapper">
+                    <!-- Testimonial 1 - Apenas imagem do print -->
+                    <div class="carousel-card">
+                        <img src="assets/depoimento_1.png" alt="Print de depoimento da Profa. Ana Paula" class="w-full h-auto object-contain rounded-lg shadow-md">
+                    </div>
+                    <!-- Testimonial 2 - Apenas imagem do print -->
+                    <div class="carousel-card">
+                        <img src="assets/depoimento_2.png" alt="Print de depoimento do Prof. Carlos Silva" class="w-full h-auto object-contain rounded-lg shadow-md">
+                    </div>
+                    <!-- Testimonial 3 - Apenas imagem do print -->
+                    <div class="carousel-card">
+                        <img src="assets/depoimento_3.png" alt="Print de depoimento da Pedagoga Maria Eduarda" class="w-full h-auto object-contain rounded-lg shadow-md">
+                    </div>
+                    <!-- Testimonial 4 - Adicionado -->
+                    <div class="carousel-card">
+                        <img src="assets/depoimento_4.png" alt="Print de depoimento 4" class="w-full h-auto object-contain rounded-lg shadow-md">
+                    </div>
+                    <!-- Testimonial 5 - Adicionado -->
+                    <div class="carousel-card">
+                        <img src="assets/depoimento_5.png" alt="Print de depoimento 5" class="w-full h-auto object-contain rounded-lg shadow-md">
+                    </div>
+                </div>
+                <!-- Navigation arrows -->
+                <button id="prevBtn" class="carousel-arrow left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextBtn" class="carousel-arrow right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <!-- Pagination indicators -->
+                <div id="pagination-dots" class="flex justify-center space-x-2 mt-6">
+                    <!-- Dots will be dynamically generated by JavaScript -->
+                </div>
+            </div>
+            <p class="text-lg md:text-xl mt-8 opacity-90">E muitos outros depoimentos que transformam e inspiram!</p>
+        </div>
+    </section>
+
+    <!-- Nova Seção: Benefícios Imediatos para Você e Seus Alunos -->
+    <section class="py-16 px-4 md:py-20 bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                Benefícios Imediatos para VOCÊ e SEUS ALUNOS:
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-lg md:text-xl">
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-star"></i></span>
+                    <span>Ser admirada(o) pela coragem de trazer temas urgentes para a sala de aula.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-comments"></i></span>
+                    <span>Promover rodas de leitura, apresentações e debates significativos.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-award"></i></span>
+                    <span>Ser referência na escola por transformar conteúdos em vivência.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-heart"></i></span>
+                    <span>Sentir orgulho por ensinar com sensibilidade, não só com conteúdo.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-lightbulb"></i></span>
+                    <span>Facilitar o diálogo sobre temas cruciais como racismo e preconceito.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-users"></i></span>
+                    <span>Promover a empatia e a compreensão mútua.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-leaf"></i></span>
+                    <span>Material culturalmente rico, valorizando a literatura de cordel.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-child"></i></span>
+                    <span>Linguagem acessível que engaja jovens e adultos.</span>
+                </div>
+                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm col-span-1 md:col-span-2">
+                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-hand-fist"></i></span>
+                    <span>Inspirar a reflexão crítica e o protagonismo estudantil.</span>
+                </div>
+            </div>
+            <a href="#comparacao-valor" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                👉 SIM, QUERO ESSES BENEFÍCIOS!
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Oferta do Ebook (Produto Isca) -->
+    <section id="oferta-ebook" class="py-16 px-4 md:py-20 bg-[#d6f5f5] text-center"> <!-- New background-100 -->
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-10 text-[#00374C]">
+                ✨ Adquira o Ebook "Performance Poética na Escola" Hoje Mesmo!
+            </h2>
+            <div class="bg-white text-[#00374C] p-8 rounded-3xl shadow-xl mx-auto max-w-2xl mb-10">
+                <p class="text-5xl md:text-6xl font-black text-[#00a8db] mb-4">POR APENAS: R$ 29,70</p> <!-- Primary color -->
+                <p class="text-xl md:text-2xl font-semibold mb-6">(Acesso vitalício ao Ebook)</p>
+                
+                <p class="text-lg md:text-xl mt-8 leading-relaxed text-[#00374C]">
+                    Garanta seu exemplar do Ebook "Performance Poética na Escola" e comece a transformar suas aulas com poesia e propósito.
+                </p>
+            </div>
+            <a href="https://pay.kiwify.com.br/IdXCsnh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                👉 QUERO MEU EXEMPLAR AGORA!
+            </a>
+        </div>
+    </section>
+
+    <!-- CONEXÃO COM O PRÓXIMO PASSO -->
+    <section class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <p class="text-2xl md:text-3xl font-bold mb-4 text-[#00374C]">
+                <span class="text-gradient">Mas espere um pouco...</span>
+            </p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-[#00374C]">
+                E se você pudesse levar esse impacto para o ano inteiro, com uma solução completa e ainda mais econômica?
+            </h2>
+            <p class="text-lg md:text-xl mb-8 leading-relaxed text-[#00374C]">
+                O Ebook "Performance Poética na Escola" é incrível, mas ele é apenas a ponta do iceberg.
+                A verdadeira transformação acontece quando você tem um acervo completo de materiais para cada momento do seu ano letivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO: Comparação de Valor -->
+    <section id="comparacao-valor" class="py-16 px-4 md:py-20 bg-[#d6f5f5] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                Escolha a Melhor Opção para Suas Aulas:
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Recurso</th>
+                            <th>Ebook Individual</th>
+                            <th>Coleção Completa</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Recurso">Ebook "Performance Poética na Escola"</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-check-circle check-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">5 Cordéis Autorais Inéditos</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">5 Propostas Pedagógicas (BNCC)</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">1 Roteiro Teatral Completo</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Kit Interdisciplinar</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Caderno de Atividades para Alunos</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Frases-Poema para Aulas</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Bônus: Guia Rápido: Sarau Poético</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Bônus: Kit de Cordéis Inéditos</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Bônus: Acesso à Comunidade Exclusiva</td>
+                            <td data-label="Ebook Individual"><i class="fas fa-times-circle times-icon"></i></td>
+                            <td data-label="Coleção Completa"><i class="fas fa-check-circle check-icon"></i></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Preço</td>
+                            <td data-label="Ebook Individual">R$ 29,70</td>
+                            <td data-label="Coleção Completa">R$ 67,70</td>
+                        </tr>
+                        <tr>
+                            <td data-label="Recurso">Economia</td>
+                            <td data-label="Ebook Individual">-</td>
+                            <td data-label="Coleção Completa"><span class="font-bold text-green-600">R$ 30,00</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-xl md:text-2xl font-bold mt-10 text-[#00374C]">
+                Escolha a opção que vai realmente <span class="text-[#00a8db]">TRANSFORMAR</span> suas aulas e o ano letivo de seus alunos!
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-4 mt-8">
+                <a href="https://pay.kiwify.com.br/IdXCsnh" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                    👉 QUERO APENAS O EBOOK (Básico)
+                </a>
+                <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-[#ffba19] hover:bg-[#e0a010] text-[#00374C] font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                    🔥 QUERO A COLEÇÃO COMPLETA! (Mais Vendido)
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção de Oferta da Coleção (Upsell) -->
+    <section id="oferta-colecao" class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-10 text-[#00374C]">
+                Leve Sua Paixão pela Poesia Além: Adquira a Coleção Completa!
+            </h2>
+            <div class="bg-white text-[#00374C] p-8 rounded-3xl shadow-xl mx-auto max-w-2xl mb-10 main-offer-card">
+                <p class="text-lg md:text-xl line-through text-gray-500 mb-2">De R$ 97,70</p>
+                <p class="text-5xl md:text-6xl font-black text-[#00a8db] mb-4">POR APENAS: R$ 67,70</p>
+                <p class="text-xl md:text-2xl font-semibold mb-6">(Acesso vitalício à coleção completa + todas as atualizações)</p>
+                <p class="text-lg md:text-xl font-bold text-[#10B981] mb-8">✨ Economize R$ 30,00 e tenha a biblioteca completa de um educador consciente!</p>
+
+                <div class="text-left mb-8">
+                    <ul class="space-y-3 text-lg md:text-xl">
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book-open"></i></span>
+                            <span><strong>Ebook "Performance Poética na Escola"</strong> (Já incluso!)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-scroll"></i></span>
+                            <span><strong>5 cordéis autorais inéditos:</strong> Para explorar diversos temas.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-lightbulb"></i></span>
+                            <span><strong>5 propostas pedagógicas:</strong> Alinhadas à BNCC, com objetivos e atividades.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-theater-masks"></i></span>
+                            <span><strong>1 roteiro teatral:</strong> Baseado no cordel “A Negra que Não Podia Ser Anjo”, pronto para encenação.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-puzzle-piece"></i></span>
+                            <span><strong>Kit interdisciplinar:</strong> Conectando Português, História e Artes.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-pencil-alt"></i></span>
+                            <span><strong>Caderno de atividades para alunos:</strong> Para fixação e aprofundamento.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-quote-right"></i></span>
+                            <span><strong>Frases-poema:</strong> Para abrir aulas com reflexão e inspiração.</span>
+                        </li>
+                    </ul>
+                </div>
+                <p class="text-lg md:text-xl mt-8 leading-relaxed text-[#00374C]">
+                    Tudo o que você precisa para um ano letivo repleto de poesia e transformação!
+                </p>
+            </div>
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
+                🔥 MAIS VENDIDO! 👉 QUERO ADICIONAR AO MEU ACERVO!
+            </a>
+        </div>
+    </section>
+
+    <!-- Seção de Autoridade (Quem é o Autor) -->
+    <section class="py-16 px-4 md:py-20 bg-[#d6f5f5] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                Quem é Leonardo Sampaio?
+            </h2>
+            <div class="flex flex-col md:flex-row items-center gap-8 text-left">
+                <div class="md:w-1/3 flex justify-center">
+                    <img src="assets/foto_leonardo.png" alt="Foto de Leonardo Sampaio" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover shadow-lg border-4 border-[#00a8db]">
+                </div>
+                <div class="md:w-2/3">
+                    <p class="text-lg md:text-xl mb-4 leading-relaxed text-[#00374C]">
+                        Leonardo Sampaio é arte-educador, professor da rede pública e apaixonado pela transformação social através da palavra. Com uma trajetória dedicada à educação popular, ele utiliza a poesia e a literatura de cordel como ferramentas para discutir temas relevantes e complexos, como racismo, ancestralidade, cidadania e direitos humanos, de forma acessível e envolvente.
+                    </p>
+                    <p class="text-lg md:text-xl leading-relaxed text-[#00374C]">
+                        Sua experiência em sala de aula e seu compromisso com uma educação mais justa e representativa o levaram a criar materiais que não apenas ensinam, mas também tocam, inspiram e promovem a reflexão crítica. Leonardo acredita que a poesia tem o poder de despertar a consciência e fortalecer a identidade de alunos e professores.
+                    </p>
+                </div>
+            </div>
+            <p class="text-2xl md:text-3xl font-bold mt-10 text-[#00374C]">
+                A voz de quem vive a escola e acredita na poesia como ponte para um mundo mais consciente.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção de Bônus de Relacionamento (Boletim Poético via WhatsApp) -->
+    <section class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                Quer Receber Poesia e Conteúdo Exclusivo Diretamente no Seu WhatsApp?
+            </h2>
+            <div class="bg-white text-[#00374C] p-8 rounded-3xl shadow-xl mx-auto max-w-3xl whatsapp-section-content">
+                <div class="flex-shrink-0">
+                    <img src="assets/whatsapp_logo.png" alt="Ícone de Grupo de WhatsApp" class="w-32 h-32 md:w-40 md:h-40 mx-auto">
+                </div>
+                <div class="text-left">
+                    <p class="text-xl md:text-2xl font-bold mb-4">Junte-se ao nosso "Boletim Poético"! 💌</p>
+                    <p class="text-lg md:text-xl leading-relaxed mb-6">
+                        Receba gratuitamente poemas inspiradores, dicas pedagógicas, novidades e ofertas exclusivas direto no seu celular. Um canal direto para você se manter conectado com a poesia que transforma.
+                    </p>
+                </div>
+            </div>
+            <p class="text-lg md:text-xl mt-8 opacity-90 text-[#00374C]">
+                Conteúdo de qualidade, sem spam e feito com carinho para você.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção "Como Você Vai Receber" (Detalhada do Codigo 2.txt) -->
+    <section class="py-16 px-4 md:py-20 bg-white">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                📲 Receba Seu Conteúdo em Instantes:
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-lg md:text-xl">
+                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start"> <!-- New background-50 -->
+                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-laptop-code"></i></span> <!-- Primary color -->
+                    <span>Após a confirmação da compra, você receberá acesso <strong class="font-semibold">imediato</strong> ao produto.</span>
+                </div>
+                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start">
+                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-envelope-open-text"></i></span>
+                    <span>Você receberá por e-mail os dados de login.</span>
+                </div>
+                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start">
+                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-infinity"></i></span>
+                    <span>Acesso vitalício e a todas as futuras atualizações relacionadas ao material.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Perguntas Frequentes (FAQ Detalhado do Codigo 2.txt) -->
+    <section class="py-16 px-4 md:py-20 bg-[#ebfafa]"> <!-- New background-50 -->
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
+                📌 Perguntas Frequentes (FAQ)
+            </h2>
+            <div class="space-y-6 text-left">
+                <!-- FAQ Item 1 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">O que é o cordel "A Negra que Não Podia Ser Anjo"?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">É uma obra poética em formato de cordel, escrita por Leonardo Sampaio, que aborda temas como racismo, fé, ancestralidade e identidade negra de forma sensível e impactante. Acompanha uma proposta pedagógica e outros bônus para aplicação em diversos contextos.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 2 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Qual a diferença entre o cordel individual e a Coleção Tesouro Poético?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">O cordel "A Negra que Não Podia Ser Anjo" é uma obra poderosa e completa por si só, e funciona como uma introdução acessível ao universo de Leonardo Sampaio. A Coleção Tesouro Poético, por sua vez, é um pacote muito mais abrangente, incluindo o ebook "Performance Poética na Escola", mais 4 cordéis (além de "A Negra que Não Podia Ser Anjo"), e um conjunto ainda maior de propostas pedagógicas e materiais de apoio para enriquecer suas aulas de forma completa.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 3 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Como receberei os materiais após a compra?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">Todos os materiais são digitais (PDFs, etc.) e o acesso é liberado imediatamente após a confirmação do pagamento. Você receberá um e-mail com os dados de login.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 4 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">É indicado para qual faixa etária e público?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">Embora o cordel tenha uma mensagem universal, a proposta pedagógica é adaptável do 5º ano do Ensino Fundamental ao Ensino Médio. É ideal para professores, pais, educadores sociais e qualquer pessoa interessada em discussões sobre racismo e inclusão.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 5 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Posso imprimir os materiais?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">Sim! Todos os PDFs são otimizados para impressão em formato A4, permitindo que você os utilize tanto digitalmente quanto em material físico.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 6 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Funciona em escolas públicas?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">Sim! O material foi pensado e desenvolvido para a realidade e o contexto das redes pública e privada, sendo flexível e adaptável às suas necessidades e projetos.</p>
+                    </div>
+                </div>
+                <!-- FAQ Item 7 -->
+                <div class="accordion-item bg-white" onclick="toggleAccordion(this)">
+                    <div class="accordion-header">
+                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Recebo tudo na hora?</h3>
+                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="text-lg text-[#00374C]">Sim! Assim que a sua compra for confirmada, você receberá um e-mail com as instruções e o link para acessar todo o conteúdo digital imediatamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Final e Rodapé -->
+    <section class="section-gradient-bg py-16 px-4 md:py-24 text-center">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+                Pronto para Transformar Suas Aulas?
+            </h2>
+            <p class="text-xl md:text-2xl font-light mb-10 opacity-90">
+                Não perca mais tempo! Garanta agora mesmo o acesso a um conteúdo que vai revolucionar sua prática pedagógica e o aprendizado de seus alunos.
+            </p>
+            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-10 rounded-full text-2xl md:text-3xl uppercase tracking-wider">
+                QUERO GARANTIR MEUS MATERIAIS AGORA MESMO!
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-8 px-4 md:px-8 lg:px-16 text-center text-sm">
+        <div class="max-w-4xl mx-auto">
+            <p class="mb-2">&copy; 2023 Leonardo Sampaio. Todos os direitos reservados.</p>
+            <p class="mb-2">Material exclusivo para fins pedagógicos. Produto digital.</p>
+            <p class="mb-4">Não reembolsável após o download.</p>
+            <div class="space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a>
+                <a href="#" class="text-gray-400 hover:text-white">Termos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for Sticky CTA Button
+        window.addEventListener('scroll', function() {
+            const ctaButton = document.getElementById('sticky-cta');
+            if (window.scrollY > 500) { // Show after scrolling 500px
+                ctaButton.style.display = 'block';
+            } else {
+                ctaButton.style.display = 'none';
+            }
+        });
+
+        // JavaScript for Accordion
+        function toggleAccordion(item) {
+            item.classList.toggle('active');
+            const content = item.querySelector('.accordion-content');
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.paddingTop = '0';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.paddingTop = '1rem';
+            }
+        }
+
+        // JavaScript for Testimonial Carousel
+        let currentSlide = 0;
+        const testimonialWrapper = document.getElementById('testimonial-carousel-wrapper');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const paginationDotsContainer = document.getElementById('pagination-dots');
+        let slidesPerView = 1; // Default for mobile
+
+        function updateSlidesPerView() {
+            if (window.innerWidth >= 768) { // Desktop breakpoint
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 1;
+            }
+            showSlide(currentSlide); // Recalculate position based on new slidesPerView
+            updatePaginationDots();
+        }
+
+        function showSlide(index) {
+            const totalSlides = testimonialWrapper.children.length;
+            if (index >= totalSlides / slidesPerView) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = Math.floor((totalSlides - 1) / slidesPerView);
+            } else {
+                currentSlide = index;
+            }
+            const offset = currentSlide * (100 / slidesPerView);
+            testimonialWrapper.style.transform = `translateX(-${offset}%)`;
+            updatePaginationDots();
+        }
+
+        function moveCarousel(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        function createPaginationDots() {
+            paginationDotsContainer.innerHTML = '';
+            const totalSlides = testimonialWrapper.children.length;
+            const numDots = Math.ceil(totalSlides / slidesPerView);
+            for (let i = 0; i < numDots; i++) {
+                const dot = document.createElement('span');
+                dot.classList.add('pagination-dot');
+                dot.addEventListener('click', () => showSlide(i));
+                paginationDotsContainer.appendChild(dot);
+            }
+        }
+
+        function updatePaginationDots() {
+            const dots = paginationDotsContainer.querySelectorAll('.pagination-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Event Listeners for Carousel Navigation
+        prevBtn.addEventListener('click', () => moveCarousel(-1));
+        nextBtn.addEventListener('click', () => moveCarousel(1));
+
+        // Initialize carousel on load and resize
+        window.addEventListener('load', () => {
+            updateSlidesPerView();
+            createPaginationDots();
+            showSlide(0);
+        });
+        window.addEventListener('resize', updateSlidesPerView);
+    </script>
+    <script>
+        let prefix = ["https://pay.kiwify.com.br"];
+
+        function getParams() {
+            let t = "",
+                e = window.top.location.href,
+                r = new URL(e);
+            if (null != r) {
+                let a = r.searchParams.get("utm_source"),
+                    n = r.searchParams.get("utm_medium"),
+                    o = r.searchParams.get("utm_campaign"),
+                    m = r.searchParams.get("utm_term"),
+                    c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+            }
+            return t
+        }! function() {
+            var t = new URLSearchParams(window.location.search);
+            t.toString() && document.querySelectorAll("a").forEach(function(e) {
+                for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+            })
+        }();
+    </script>
+</body>
+</html>
+ 
