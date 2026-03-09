@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Especial de Upgrade - Coleção Poética</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+
+        .pulse-btn {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+        }
+
+        .check-icon {
+            color: #16a34a;
+            margin-right: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Barra de Alerta - Escassez Real -->
+    <div class="bg-red-600 text-white text-center py-2 px-4 text-xs md:text-sm font-bold uppercase tracking-widest">
+        ⚠️ ATENÇÃO: ESSA OFERTA É ÚNICA E EXCLUSIVA DESTA PÁGINA!
+    </div>
+
+    <main class="max-w-xl mx-auto px-6 py-8 md:py-12">
+        
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <span class="text-blue-600 font-extrabold text-sm uppercase tracking-tighter">Desconto Especial Liberado</span>
+            <h1 class="text-3xl md:text-4xl font-black mt-2 leading-tight">
+                Espere! Tenho uma <span class="text-red-600">OFERTA ESPECIAL</span> de Upgrade exclusiva!
+            </h1>
+        </div>
+
+        <!-- Mockup do Produto Intermediário -->
+        <div class="mb-10 text-center">
+            <!-- Gabriel: Imagem PNG da coleção na pasta assets -->
+            <img src="assets/Intermediario.png" alt="Kit Básico + Intermediário Cordéis Educativos" class="w-full h-auto rounded-lg shadow-2xl mx-auto" onerror="this.alt='[Imagem do Kit Básico + Intermediário]'; this.style.background='#eee'; this.style.padding='40px'">
+        </div>
+
+        <!-- Bloco de Preço -->
+        <div class="text-center mb-10 bg-yellow-50 border-2 border-dashed border-yellow-400 rounded-2xl py-6">
+            <p class="text-gray-500 line-through text-lg">Preço normal: R$ 57,70</p>
+            <p class="text-xl font-bold text-gray-700">Preço PROMOCIONAL e EXCLUSIVO:</p>
+            <div class="flex items-center justify-center gap-2 mt-1">
+                <span class="text-2xl font-bold">R$</span>
+                <span class="text-6xl font-black text-green-600 tracking-tighter">37,70</span>
+            </div>
+        </div>
+
+        <!-- Lista de Conteúdos -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl border border-gray-100 mb-10">
+            <h3 class="font-bold text-xl mb-6 border-b pb-4 text-center">O que você vai levar agora:</h3>
+            
+            <ul class="space-y-4 text-sm md:text-base">
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Kit:</strong> Produto Básico + Intermediário.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>5 Cordéis Temáticos:</strong> Negra que não podia ser anjo, Voto, Religiões, Racismo e Pobreza.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>5 Propostas Pedagógicas:</strong> Guia completo de aplicação em sala de aula.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Garantia Incondicional:</strong> 7 dias para testar o material.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Acesso digital imediato.</strong></span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
+                    <span><strong>Acesso Vitalício:</strong> O material é seu para sempre.</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Seção de Ação -->
+        <div class="text-center space-y-6">
+            <p class="text-gray-600 font-semibold px-4">
+                Garanta seu acesso <span class="text-gray-900">EXCLUSIVO e VITALÍCIO</span> por apenas R$ 37,70
+            </p>
+
+            <!-- Botão de Upgrade Intermediário (Kiwify) -->
+            <a href="https://pay.kiwify.com.br/Hxk6b5k" class="pulse-btn block w-full bg-green-600 hover:bg-green-700 text-white font-black text-xl md:text-2xl py-6 rounded-2xl shadow-lg transition-all uppercase tracking-tight text-center">
+                SIM! QUERO FAZER O UPGRADE
+            </a>
+
+            <!-- Link de Recusa para o Básico (Kiwify) -->
+            <a href="https://pay.kiwify.com.br/2beGBsh" class="block text-gray-400 underline text-sm hover:text-gray-600 font-medium pb-10">
+                Não, obrigada! Quero apenas o plano básico de R$ 9,90
+            </a>
+        </div>
+
+    </main>
+
+    <script>
+        document.querySelector('.pulse-btn').onclick = function() {
+            console.log("Iniciando Checkout Upgrade: R$ 37,70");
+        };
+    </script>
+
+</body>
+</html>
