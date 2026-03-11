@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1243155826763791');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oferta Especial de Upgrade - Coleção Poética</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1243155826763791');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
         
@@ -68,7 +68,6 @@ src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
 
         <!-- Mockup do Produto Intermediário -->
         <div class="mb-10 text-center">
-            <!-- Gabriel: Imagem PNG da coleção na pasta assets -->
             <img src="assets/Intermediario.png" alt="Kit Básico + Intermediário Cordéis Educativos" class="w-full h-auto rounded-lg shadow-2xl mx-auto" onerror="this.alt='[Imagem do Kit Básico + Intermediário]'; this.style.background='#eee'; this.style.padding='40px'">
         </div>
 
@@ -133,12 +132,61 @@ src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
 
     </main>
 
+    <!-- Rodapé de Créditos -->
+    <section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap; align-content: center;display: flex;position: relative;height: 4rem;">
+        <a href="https://leonardosampaio.com.br" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;">
+            <img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==">
+        </a>
+        <p style="margin: 0;text-align: center;" class="display-7">&#8204;</p>
+    </section>
+
+    <!-- Scripts de Terceiros -->
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/ytplayer/index.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
+    <!-- Script de Captura de Parâmetros UTM para Kiwify -->
     <script>
-        document.querySelector('.pulse-btn').onclick = function() {
-            console.log("Iniciando Checkout Upgrade: R$ 37,70");
-        };
+        let prefix = ["https://pay.kiwify.com.br"];
+
+        function getParams() {
+            let t = "",
+                e = window.top.location.href,
+                r = new URL(e);
+            if (null != r) {
+                let a = r.searchParams.get("utm_source"),
+                    n = r.searchParams.get("utm_medium"),
+                    o = r.searchParams.get("utm_campaign"),
+                    m = r.searchParams.get("utm_term"),
+                    c = r.searchParams.get("utm_content"); 
+                
+                if (e.indexOf("?") !== -1) {
+                    t = `&sck=${a}|${n}|${o}|${m}|${c}`;
+                }
+                console.log("Parâmetros SCK:", t);
+            }
+            return t;
+        }
+
+        (function() {
+            var t = new URLSearchParams(window.location.search);
+            if (t.toString()) {
+                document.querySelectorAll("a").forEach(function(e) {
+                    for (let r = 0; r < prefix.length; r++) {
+                        if (e.href.indexOf(prefix[r]) !== -1) {
+                            if (e.href.indexOf("?") === -1) {
+                                e.href += "?" + t.toString() + getParams();
+                            } else {
+                                e.href += "&" + t.toString() + getParams();
+                            }
+                        }
+                    }
+                });
+            }
+        })();
     </script>
 
 </body>
-
 </html>
