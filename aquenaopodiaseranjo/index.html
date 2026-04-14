@@ -325,37 +325,41 @@
 
     .carousel-wrap { position: relative; }
 
-    .carousel-track {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      gap: 1.25rem;
-      align-items: flex-start;
-    }
-    .carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 0;              /* ← remove o gap no mobile; controlamos via padding */
+  align-items: flex-start;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
 
-    .carousel-slide {
-      flex: 0 0 calc(100% - 0.5rem);
-      scroll-snap-align: start;
-      background: #fff;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-lift);
-    }
-    @media(min-width:640px){
-      .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
-    }
+@media(min-width:640px){
+  .carousel-track { gap: 1.25rem; }
+}
+.carousel-slide {
+  flex: 0 0 100%; /* mobile: ocupa exatamente 100% sem sobra */
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+}
+@media(min-width:640px){
+  .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
+}
 
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-      object-fit: unset;
-    }
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: unset;
+}
+
 
     .carousel-nav {
       display: flex;
@@ -1389,32 +1393,38 @@ compare-grid">
     const nextBtn = document.getElementById('nextBtn');
     if(!track) return;
 
-    const slides = track.querySelectorAll('.carousel-slide');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const total = slides.length; // 5
     let current = 0;
     let autoTimer;
 
-    slides.forEach((_,i) => {
+    // Cria dots — um por slide
+    slides.forEach((_, i) => {
       const d = document.createElement('div');
-      d.className = 'dot' + (i===0?' active':'');
-      d.addEventListener('click', () => goTo(i));
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => { clearInterval(autoTimer); goTo(i); startAuto(); });
       dotsContainer.appendChild(d);
     });
 
-    function getVisible(){
-      return window.innerWidth >= 640 ? 2 : 1;
-    }
-
     function goTo(index){
-      const visible = getVisible();
-      const max = slides.length - visible;
-      current = Math.max(0, Math.min(index, max));
-      const slideWidth = slides[0].offsetWidth + 20;
-      track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
-      dotsContainer.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===current));
+      // Sempre percorre todos os slides (0 até total-1)
+      // independente de quantos estão visíveis na tela
+      current = ((index % total) + total) % total; // garante loop circular
+
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = window.innerWidth >= 640 ? 20 : 0;
+      track.scrollTo({ left: current * (slideWidth + gap), behavior: 'smooth' });
+      updateDots(current);
     }
 
-    function next(){ goTo(current + 1 >= slides.length - getVisible() + 1 ? 0 : current + 1); }
-    function prev(){ goTo(current - 1 < 0 ? slides.length - getVisible() : current - 1); }
+    function updateDots(idx){
+      dotsContainer.querySelectorAll('.dot').forEach((d, i) => {
+        d.classList.toggle('active', i === idx);
+      });
+    }
+
+    function next(){ goTo(current + 1); }
+    function prev(){ goTo(current - 1); }
 
     prevBtn && prevBtn.addEventListener('click', () => { clearInterval(autoTimer); prev(); startAuto(); });
     nextBtn && nextBtn.addEventListener('click', () => { clearInterval(autoTimer); next(); startAuto(); });
@@ -1422,12 +1432,19 @@ compare-grid">
     function startAuto(){ autoTimer = setInterval(next, 4000); }
     startAuto();
 
+    // Sincroniza dots ao arrastar manualmente
     track.addEventListener('scroll', () => {
-      const slideWidth = slides[0].offsetWidth + 20;
-      const idx = Math.round(track.scrollLeft / slideWidth);
-      dotsContainer.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===idx));
-      current = idx;
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      const gap = window.innerWidth >= 640 ? 20 : 0;
+      const unit = slideWidth + gap;
+      if(unit === 0) return;
+      const idx = Math.round(track.scrollLeft / unit);
+      current = Math.max(0, Math.min(idx, total - 1));
+      updateDots(current);
     });
+
+    // Recalcula ao girar a tela
+    window.addEventListener('resize', () => { goTo(current); });
   })();
 
   // ── ACCORDION / FAQ ──
@@ -1451,7 +1468,7 @@ compare-grid">
     els.forEach(el => obs.observe(el));
   })();
 
-  // ── STICKY CTA: esconde quando footer-cta está visível ──
+  // ── STICKY CTA ──
   (function(){
     const sticky = document.getElementById('sticky-cta');
     const footerCta = document.querySelector('.footer-cta');
@@ -1462,6 +1479,9 @@ compare-grid">
     obs.observe(footerCta);
   })();
 </script>
+
+
+
 
 </body>
 </html>
