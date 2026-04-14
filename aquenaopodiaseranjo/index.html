@@ -73,23 +73,43 @@
       --shadow-xl:   0 16px 60px rgba(0,0,0,.20);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
-    html { scroll-behavior: smooth; }
-
+    /* ── RESET RESPONSIVO ── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      /* impede scroll horizontal em qualquer situação */
+      overflow-x: hidden;
+    }
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--sand);
       color: var(--ink);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
+      /* contenção total de largura */
+      width: 100%;
+      overflow-x: hidden;
     }
 
     h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
-    img { max-width:100%; height:auto; display:block; }
-    a { text-decoration:none; color:inherit; }
 
+    /* Toda imagem é responsiva por padrão */
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── CONTAINER ── */
     .container {
-      width:100%;
+      width: 100%;
       max-width: 900px;
       margin-inline: auto;
       padding-inline: 1.25rem;
@@ -146,7 +166,7 @@
       margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-size: clamp(1.8rem, 5vw, 3.6rem);
       font-weight: 900;
       margin-bottom: 1.25rem;
       text-shadow: 0 2px 12px rgba(0,0,0,.25);
@@ -163,7 +183,7 @@
       background: rgba(255,255,255,.12);
       border: 1px solid rgba(255,255,255,.22);
       border-radius: var(--radius-lg);
-      padding: 1.5rem 2rem;
+      padding: 1.5rem;
       max-width: 640px;
       margin: 0 auto 2.5rem;
     }
@@ -181,6 +201,7 @@
     .hero-image-wrap img {
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-xl);
+      width: 100%;
     }
 
     /* ── TRUST BAR ── */
@@ -191,7 +212,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: .5rem 2rem;
+      gap: .5rem 1.5rem;
     }
     .trust-item {
       display: flex;
@@ -204,7 +225,7 @@
     .trust-item i { color: var(--teal); }
 
     /* ── SECTIONS ── */
-    section { padding: 4.5rem 1.25rem; }
+    section { padding: 4.5rem 0; }
     .section-label {
       display: block;
       text-align: center;
@@ -216,7 +237,7 @@
       margin-bottom: 0.5rem;
     }
     .section-title {
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
       text-align: center;
       margin-bottom: 0.75rem;
       color: var(--ink);
@@ -276,7 +297,7 @@
       text-align: center;
       padding: 2rem 1.25rem;
     }
-    .banner-teal h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
+    .banner-teal h3 { font-size: clamp(1.1rem, 3vw, 1.8rem); }
 
     /* ── PRODUCT BLOCK (CORDEL) ── */
     .product-inner {
@@ -298,10 +319,9 @@
     /* ── BENEFITS GRID ── */
     .benefits-grid {
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
-    @media(min-width:480px){ .benefits-grid { grid-template-columns: 1fr 1fr; } }
     @media(min-width:768px){ .benefits-grid { grid-template-columns: repeat(4,1fr); } }
 
     .benefit-card {
@@ -323,43 +343,46 @@
     .testimonials-bg .section-title { color: #fff; }
     .testimonials-bg .section-sub   { color: rgba(255,255,255,.8); }
 
-    .carousel-wrap { position: relative; }
+    .carousel-wrap {
+      position: relative;
+      /* impede que o carousel vaze para fora */
+      overflow: hidden;
+    }
 
-.carousel-track {
-  display: flex;
-  overflow-x: scroll;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  gap: 0;              /* ← remove o gap no mobile; controlamos via padding */
-  align-items: flex-start;
-}
-.carousel-track::-webkit-scrollbar { display: none; }
+    .carousel-track {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      /* sem gap no mobile */
+      gap: 0;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
 
-@media(min-width:640px){
-  .carousel-track { gap: 1.25rem; }
-}
-.carousel-slide {
-  flex: 0 0 100%; /* mobile: ocupa exatamente 100% sem sobra */
-  scroll-snap-align: start;
-  background: #fff;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  box-shadow: var(--shadow-lift);
-}
-@media(min-width:640px){
-  .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
-}
+    /* slide ocupa 100% no mobile */
+    .carousel-slide {
+      flex: 0 0 100%;
+      width: 100%;
+      scroll-snap-align: start;
+      background: #fff;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lift);
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.carousel-slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: unset;
-}
-
+    /* desktop: 2 slides visíveis com gap */
+    @media(min-width:640px){
+      .carousel-track { gap: 1.25rem; }
+      .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
+    }
 
     .carousel-nav {
       display: flex;
@@ -378,16 +401,18 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem;
       transition: background 0.2s;
+      flex-shrink: 0;
     }
     .carousel-btn:hover { background: rgba(255,255,255,0.35); }
 
-    .dots { display: flex; gap: 0.5rem; }
+    .dots { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
     .dot {
       width: 0.6rem; height: 0.6rem;
       border-radius: 50%;
       background: rgba(255,255,255,0.3);
       cursor: pointer;
       transition: background 0.2s, transform 0.2s;
+      flex-shrink: 0;
     }
     .dot.active { background: #fff; transform: scale(1.3); }
 
@@ -410,29 +435,60 @@
       margin: 0 auto 2rem;
     }
 
-  /* ── COLLECTION SECTION ── */
-.collection-bg {
-  background: var(--ink);
-  color: #fff;
-  overflow: hidden; /* ← impede qualquer filho de vazar */
-}
-.collection-bg .section-title { color: #fff; }
-.collection-bg .section-sub { color: rgba(255,255,255,.8); }
+    /* ── COLLECTION SECTION ── */
+    .collection-bg {
+      background: var(--ink);
+      color: #fff;
+      /* contenção total */
+      overflow: hidden;
+    }
+    .collection-bg .section-title { color: #fff; }
+    .collection-bg .section-sub { color: rgba(255,255,255,.8); }
 
-.collection-mockup {
-  width: 100%;
-  overflow: hidden;
-  margin-bottom: 2.5rem;
-}
-.collection-mockup img {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xl);
-  display: block;
-  width: 100%;        /* ← ocupa 100% do container, nunca mais */
-  max-width: 680px;   /* ← limita em telas grandes */
-  height: auto;
-  margin: 0 auto;
-}
+    /* mockup responsivo */
+    .collection-mockup {
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+    .collection-mockup img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      display: block;
+      width: 100%;
+      max-width: 680px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    /* lista de features da coleção */
+    .collection-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    .collection-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.97rem;
+      color: rgba(255,255,255,.9);
+    }
+    .collection-feature-list li i {
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+
+    .manifesto {
+      text-align: center;
+      font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255,255,255,.75);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
 
     /* ── COMPARISON ── */
     .compare-grid {
@@ -504,7 +560,7 @@
       background: #fff;
       color: var(--ink);
       border-radius: var(--radius-lg);
-      padding: 2.5rem 2rem;
+      padding: 2rem 1.5rem;
       max-width: 640px;
       margin: 0 auto 2rem;
       box-shadow: var(--shadow-xl);
@@ -555,7 +611,7 @@
     .access-box h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--teal-dark); margin-bottom: 0.6rem; }
     .access-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .access-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
-    .access-list li i { color: var(--teal); }
+    .access-list li i { color: var(--teal); flex-shrink: 0; }
 
     .guarantee-box {
       background: #f0faf5;
@@ -715,7 +771,7 @@
       text-align: center;
       padding: 4rem 1.25rem;
     }
-    .footer-cta h2 { color: #fff; font-size: clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom: 0.75rem; }
+    .footer-cta h2 { color: #fff; font-size: clamp(1.4rem, 3.5vw, 2.4rem); margin-bottom: 0.75rem; }
     .footer-cta p { opacity: 0.85; margin-bottom: 2rem; font-size: 1.05rem; max-width: 560px; margin-inline: auto; }
     .footer-cta .guarantee-note { display: flex; align-items: center; justify-content: center; gap: .5rem; font-size: .92rem; font-weight: 700; color: rgba(255,255,255,.85); margin-top: 1.25rem; }
 
@@ -739,13 +795,18 @@
       font-weight: 700;
       font-size: 1rem;
       border-radius: 3rem;
-      padding: 1rem 2.25rem;
+      padding: 1rem 2rem;
       cursor: pointer;
       border: none;
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       text-align: center;
+      /* botão nunca vaza */
+      max-width: 100%;
+      word-break: break-word;
+      white-space: normal;
+      line-height: 1.3;
     }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
     .btn:active { transform: translateY(0); }
@@ -753,8 +814,8 @@
     .btn-green:hover { background: var(--green-hover); }
     .btn-teal { background: var(--teal); color: #fff; box-shadow: 0 4px 16px rgba(0,122,138,.3); }
     .btn-teal:hover { background: var(--teal-dark); }
-    .btn-full { width: 100%; display: block; }
-    .btn-xl { font-size: 1.15rem; padding: 1.2rem 2.75rem; }
+    .btn-full { width: 100%; display: flex; }
+    .btn-xl { font-size: 1.1rem; padding: 1.1rem 2rem; }
     .btn-pulse { animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{ box-shadow: 0 4px 16px rgba(30,158,94,.35); } 50%{ box-shadow: 0 4px 28px rgba(30,158,94,.6); } }
 
@@ -990,7 +1051,7 @@
 </div>
 
 <!-- COLEÇÃO — PRODUTO PRINCIPAL -->
-<section class="collection-bg fade-in" id="colecao" style="padding-inline: 1.25rem;">
+<section class="collection-bg fade-in" id="colecao">
   <div class="container">
     <span class="section-label" style="color:rgba(255,255,255,.6)">⭐ Produto Principal · Mais Vendido</span>
     <h2 class="section-title">🚀 Coleção Tesouro Poético<br>do Professor Consciente</h2>
@@ -1047,8 +1108,7 @@
     <span class="section-label">Compare e Escolha</span>
     <h2 class="section-title">Qual nível de transformação você quer levar para a sua sala?</h2>
     <p class="section-sub">As duas opções são válidas. Mas há uma que realmente vale cada centavo para a sua carreira.</p>
-    <div class="
-compare-grid">
+    <div class="compare-grid">
       <!-- BÁSICO -->
       <div class="compare-card basic">
         <h3>O Cordel Essencial</h3>
@@ -1096,7 +1156,6 @@ compare-grid">
         <p class="cta-note-dark" style="margin-top:.6rem;">🔒 7 dias de garantia incondicional</p>
       </div>
     </div>
-
     <p style="text-align:center; font-size:.93rem; color:var(--ink-soft); margin-top:1.5rem;">
       A Coleção Completa oferece a solução definitiva para aulas inesquecíveis — com custo-benefício incomparável.
     </p>
@@ -1392,11 +1451,10 @@ compare-grid">
     if(!track) return;
 
     const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-    const total = slides.length; // 5
+    const total = slides.length;
     let current = 0;
     let autoTimer;
 
-    // Cria dots — um por slide
     slides.forEach((_, i) => {
       const d = document.createElement('div');
       d.className = 'dot' + (i === 0 ? ' active' : '');
@@ -1405,10 +1463,7 @@ compare-grid">
     });
 
     function goTo(index){
-      // Sempre percorre todos os slides (0 até total-1)
-      // independente de quantos estão visíveis na tela
-      current = ((index % total) + total) % total; // garante loop circular
-
+      current = ((index % total) + total) % total;
       const slideWidth = slides[0].getBoundingClientRect().width;
       const gap = window.innerWidth >= 640 ? 20 : 0;
       track.scrollTo({ left: current * (slideWidth + gap), behavior: 'smooth' });
@@ -1430,7 +1485,6 @@ compare-grid">
     function startAuto(){ autoTimer = setInterval(next, 4000); }
     startAuto();
 
-    // Sincroniza dots ao arrastar manualmente
     track.addEventListener('scroll', () => {
       const slideWidth = slides[0].getBoundingClientRect().width;
       const gap = window.innerWidth >= 640 ? 20 : 0;
@@ -1441,7 +1495,6 @@ compare-grid">
       updateDots(current);
     });
 
-    // Recalcula ao girar a tela
     window.addEventListener('resize', () => { goTo(current); });
   })();
 
@@ -1477,9 +1530,6 @@ compare-grid">
     obs.observe(footerCta);
   })();
 </script>
-
-
-
 
 </body>
 </html>
