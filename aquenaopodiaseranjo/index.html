@@ -344,45 +344,45 @@
     .testimonials-bg .section-sub   { color: rgba(255,255,255,.8); }
 
     .carousel-wrap {
-      position: relative;
-      /* impede que o carousel vaze para fora */
-      overflow: hidden;
-    }
+  position: relative;
+  overflow: hidden;
+}
 
-    .carousel-track {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      /* sem gap no mobile */
-      gap: 0;
-    }
-    .carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 0;
+  align-items: flex-start; /* ← cada slide tem sua própria altura */
+}
+.carousel-track::-webkit-scrollbar { display: none; }
 
-    /* slide ocupa 100% no mobile */
-    .carousel-slide {
-      flex: 0 0 100%;
-      width: 100%;
-      scroll-snap-align: start;
-      background: #fff;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-lift);
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  /* SEM height fixa — o slide cresce com a imagem */
+}
 
-    /* desktop: 2 slides visíveis com gap */
-    @media(min-width:640px){
-      .carousel-track { gap: 1.25rem; }
-      .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
-    }
+.carousel-slide img {
+  width: 100%;
+  height: auto;      /* ← altura natural da imagem, sem corte */
+  display: block;
+  object-fit: unset; /* ← remove qualquer corte */
+}
+
+@media(min-width:640px){
+  .carousel-track { gap: 1.25rem; }
+  .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
+}
 
     .carousel-nav {
       display: flex;
