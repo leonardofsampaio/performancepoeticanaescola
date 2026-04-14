@@ -410,31 +410,29 @@
       margin: 0 auto 2rem;
     }
 
-    /* ── COLLECTION SECTION ── */
-    .collection-bg { background: var(--ink); color: #fff; }
-    .collection-bg .section-title { color: #fff; }
-    .collection-bg .section-sub { color: rgba(255,255,255,.8); }
+  /* ── COLLECTION SECTION ── */
+.collection-bg {
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden; /* ← impede qualquer filho de vazar */
+}
+.collection-bg .section-title { color: #fff; }
+.collection-bg .section-sub { color: rgba(255,255,255,.8); }
 
-    .collection-mockup img {
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-      margin: 0 auto 2.5rem;
-      max-width: 680px;
-    }
-    .manifesto {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.3rem, 3vw, 1.9rem);
-      font-style: italic;
-      color: #ffd966;
-      margin: 1.5rem auto 2.5rem;
-      max-width: 620px;
-      line-height: 1.45;
-    }
-
-    .collection-feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; max-width: 640px; margin: 0 auto 2rem; }
-    .collection-feature-list li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 1rem; color: rgba(255,255,255,.9); }
-    .collection-feature-list li i { color: var(--accent); flex-shrink: 0; margin-top: 0.2rem; font-size: 1.05rem; }
+.collection-mockup {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+.collection-mockup img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: block;
+  width: 100%;        /* ← ocupa 100% do container, nunca mais */
+  max-width: 680px;   /* ← limita em telas grandes */
+  height: auto;
+  margin: 0 auto;
+}
 
     /* ── COMPARISON ── */
     .compare-grid {
@@ -992,7 +990,7 @@
 </div>
 
 <!-- COLEÇÃO — PRODUTO PRINCIPAL -->
-<section class="collection-bg fade-in" id="colecao">
+<section class="collection-bg fade-in" id="colecao" style="padding-inline: 1.25rem;">
   <div class="container">
     <span class="section-label" style="color:rgba(255,255,255,.6)">⭐ Produto Principal · Mais Vendido</span>
     <h2 class="section-title">🚀 Coleção Tesouro Poético<br>do Professor Consciente</h2>
