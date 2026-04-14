@@ -1,1236 +1,1552 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Negra que Não Podia Ser Anjo | Cordel Transformador para Educadores</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter for buttons and main text, Noto Serif for titles -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Serif:wght@700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Default font for all devices (mobile first) using Inter */
-        body {
-            font-family: 'Inter', sans-serif; /* Apply Inter font to body */
-            background-color: #fbfefe; /* New Background */
-            color: #00374C; /* New Text */
-        }
-        /* Titles font using Noto Serif */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Noto Serif', serif;
-        }
-        .cta-button {
-            font-family: 'Inter', sans-serif; /* Apply Inter font to buttons */
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15), 0 3px 5px rgba(0, 0, 0, 0.1);
-        }
-        .section-gradient-bg {
-            /* New Primary gradient */
-            background: linear-gradient(to right, #00a8db, #007599); /* Primary to Primary-700 for gradient effect */
-            color: white;
-        }
-        .text-gradient {
-            background: linear-gradient(to right, #00a8db, #007599);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .rounded-card {
-            border-radius: 1.5rem; /* More rounded corners */
-        }
-        /* New style for the main offer highlight */
-        .main-offer-card {
-            border: 4px solid #ffba19; /* New Accent color */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-        .main-offer-card::before {
-            content: "MELHOR OFERTA!";
-            position: absolute;
-            top: 15px; /* Adjust as needed */
-            right: -30px; /* Adjust as needed */
-            background-color: #ffba19; /* New Accent color */
-            color: #00374C; /* New Text color */
-            padding: 5px 30px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transform: rotate(45deg);
-            transform-origin: 100% 0%; /* Rotate around top-right corner */
-            text-transform: uppercase;
-        }
-        /* Custom styles for the WhatsApp section to mimic the image */
-        .whatsapp-section-content {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem; /* Spacing between image and text */
-            text-align: left;
-            flex-direction: column; /* Default to column for mobile */
-        }
-        @media (min-width: 768px) { /* Adjust breakpoint as needed */
-            .whatsapp-section-content {
-                flex-direction: row; /* Row for larger screens */
-            }
-        }
+  <!-- UTMify -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
-        /* Sticky CTA for mobile */
-        #sticky-cta {
-            position: fixed;
-            bottom: 1rem;
-            left: 1rem;
-            right: 1rem;
-            background-color: #10B981; /* bg-green-500 */
-            color: white;
-            text-align: center;
-            padding: 0.75rem 1.5rem; /* py-3 px-6 */
-            border-radius: 9999px; /* rounded-full */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* shadow-lg */
-            z-index: 50;
-            display: none; /* Hidden by default for desktop */
-            font-family: 'Inter', sans-serif;
-            font-weight: 800; /* font-extrabold */
-            text-transform: uppercase;
-            letter-spacing: 0.05em; /* tracking-wider */
-            font-size: 1.25rem; /* text-xl */
-            line-height: 1.75rem; /* text-2xl */
-        }
-        #sticky-cta a {
-            color: inherit;
-            text-decoration: none;
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-        #sticky-cta:hover {
-            background-color: #059669; /* hover:bg-green-600 */
-            transform: translateY(-2px);
-            box-shadow: 0 12px 18px rgba(0, 0, 0, 0.4);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleção Tesouro Poético do Professor Consciente | Leonardo Sampaio</title>
 
-        /* Media queries for responsive buttons */
-        @media (max-width: 767px) {
-            #sticky-cta {
-                display: block; /* Show sticky CTA on mobile */
-                bottom: 1rem; /* Adjust position for mobile */
-                font-size: 1.125rem; /* Smaller text for mobile */
-                padding: 0.65rem 1rem;
-            }
-        }
-        @media (min-width: 768px) {
-            #sticky-cta {
-                display: none; /* Hide sticky CTA on desktop */
-            }
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        /* Styles for Accordion (FAQ) */
-        .accordion-item {
-            background-color: #ffffff; /* White background for each FAQ item */
-            padding: 1.5rem; /* px-6 py-6 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
-            cursor: pointer;
-            border: 1px solid #e2e8f0; /* Light border for separation */
-        }
-        .accordion-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: #00374C; /* text-[#00374C] */
-            padding-bottom: 0.5rem; /* pb-2 */
-        }
-        .accordion-icon {
-            transition: transform 0.3s ease;
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            color: #00374C; /* text-[#00374C] */
-            font-size: 1.125rem; /* text-lg */
-            padding-top: 0;
-        }
-        .accordion-item.active .accordion-content {
-            max-height: 500px; /* Adjust as needed for content height */
-            padding-top: 1rem; /* pt-4 */
-        }
-        .accordion-item.active .accordion-icon {
-            transform: rotate(180deg);
-        }
+  <!-- Meta Pixel + CAPI -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1243155826763791');
+    fbq('track','PageView');
 
-        /* Styles for the Testimonial Carousel */
-        .carousel-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden; /* Hide scrollbar for aesthetic purposes */
-            padding: 0 1rem; /* Add padding to show glimpse of next/prev card on mobile */
-            box-sizing: border-box;
-        }
+    async function sendCAPI(eventName, eventData){
+      const payload = {
+        data:[{
+          event_name: eventName,
+          event_time: Math.floor(Date.now()/1000),
+          event_id: 'ev_'+Math.random().toString(36).substr(2,9),
+          action_source:'website',
+          event_source_url: window.location.href,
+          ...eventData
+        }]
+      };
+      try{
+        await fetch(`https://graph.facebook.com/v19.0/1243155826763791/events?access_token=EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD`,{
+          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)
+        });
+      }catch(e){}
+    }
+    window.addEventListener('load',()=>{ sendCAPI('PageView',{}); });
 
-        .testimonial-slides-wrapper {
-            display: flex;
-            overflow-x: scroll; /* Enable horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Snap to individual slides */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            scroll-behavior: smooth; /* Smooth scroll when clicking buttons */
-            scrollbar-width: none; /* Hide scrollbar for Firefox */
-            -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-            gap: 1.5rem; /* Spacing between cards */
-        }
+    function trackCheckout(product){
+      fbq('track','InitiateCheckout',{content_name: product});
+      sendCAPI('InitiateCheckout',{});
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
 
-        .testimonial-slides-wrapper::-webkit-scrollbar {
-            display: none; /* Hide scrollbar for Webkit browsers */
-        }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1H7TNQVG"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2T1H7TNQVG');</script>
 
-        .carousel-card {
-            flex: 0 0 calc(100% - 2rem); /* Each card takes full width minus padding for container */
-            scroll-snap-align: center; /* Snap to center of the card */
-            box-sizing: border-box; /* Include padding and border in the element's total width and height */
-            background-color: white;
-            border-radius: 0.75rem; /* rounded-xl Tailwind class */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* shadow-lg */
-            padding: 1.5rem; /* p-6 */
-            height: 320px; /* Fixed height for consistency */
-            display: flex; /* Enable flexbox for centering image */
-            flex-direction: column; /* Stack image vertically */
-            justify-content: center; /* Center image vertically */
-            align-items: center; /* Center image horizontally */
-        }
-        /* Ensures images fit within the fixed height card without distortion, centering them */
-        .carousel-card img {
-            max-height: 100%; /* Ensure image doesn't exceed card height */
-            width: auto; /* Allow width to adjust proportionally */
-            object-fit: contain; /* Ensure entire image is visible, scale down if needed */
-        }
-        @media (min-width: 768px) {
-            .carousel-card {
-                flex: 0 0 calc(50% - 0.75rem); /* Two cards per view with half of the gap between them */
-            }
-        }
+  <style>
+    :root {
+      --ink:        #1a1a2e;
+      --ink-soft:   #3d3d5c;
+      --sand:       #faf8f4;
+      --cream:      #f3efe8;
+      --teal:       #007a8a;
+      --teal-dark:  #005a68;
+      --teal-light: #e0f4f6;
+      --gold:       #c8940a;
+      --gold-light: #fff3cc;
+      --accent:     #ffba19;
+      --green:      #1a7a4a;
+      --green-btn:  #1e9e5e;
+      --green-hover:#158548;
+      --red-soft:   #fff0f0;
+      --red-border: #f5c6c6;
+      --radius-lg:  1.5rem;
+      --radius-md:  0.875rem;
+      --shadow-card: 0 4px 24px rgba(0,0,0,.08), 0 1px 6px rgba(0,0,0,.05);
+      --shadow-lift: 0 12px 40px rgba(0,0,0,.14);
+      --shadow-xl:   0 16px 60px rgba(0,0,0,.20);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--sand);
+      color: var(--ink);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    img { max-width:100%; height:auto; display:block; }
+    a { text-decoration:none; color:inherit; }
+
+    .container {
+      width:100%;
+      max-width: 900px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    /* ── ANNOUNCE BAR ── */
+    .announce-bar {
+      background: var(--teal-dark);
+      color: #fff;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+
+    /* ── URGENCY BANNER ── */
+    .urgency-banner {
+      background: var(--accent);
+      color: var(--ink);
+      text-align: center;
+      padding: .7rem 1.25rem;
+      font-weight: 700;
+      font-size: .9rem;
+      letter-spacing: .03em;
+    }
+    .urgency-banner i { margin-right: .4rem; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--teal-dark) 0%, var(--teal) 60%, #009fb5 100%);
+      color: #fff;
+      padding: 5rem 1.25rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 2rem;
+      padding: 0.3rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-weight: 900;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 12px rgba(0,0,0,.25);
+    }
+    .hero h1 em { font-style: italic; color: #ffd966; }
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      opacity: 0.92;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+    .hero-hook {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem 2rem;
+      max-width: 640px;
+      margin: 0 auto 2.5rem;
+    }
+    .hero-hook p { font-size: 1.05rem; line-height: 1.7; opacity: .92; }
+    .hero-hook .price-tag {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 900;
+      color: #ffd966;
+      margin-top: .5rem;
+    }
+    .hero-image-wrap {
+      max-width: 360px;
+      margin: 2rem auto 0;
+    }
+    .hero-image-wrap img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: #fff;
+      border-bottom: 1px solid #d4eef5;
+      padding: .9rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem 2rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--ink-soft);
+    }
+    .trust-item i { color: var(--teal); }
+
+    /* ── SECTIONS ── */
+    section { padding: 4.5rem 1.25rem; }
+    .section-label {
+      display: block;
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      text-align: center;
+      margin-bottom: 0.75rem;
+      color: var(--ink);
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0 auto 2.5rem;
+    }
+    .sep {
+      width: 60px;
+      height: 4px;
+      background: var(--teal);
+      border-radius: 99px;
+      margin: 1rem auto 1.75rem;
+    }
+
+    /* ── PAIN / GAIN ── */
+    .two-col { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+    @media(min-width:640px){ .two-col { grid-template-columns: 1fr 1fr; } }
+
+    .pain-card, .gain-card {
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+    .pain-card { background: var(--red-soft); border: 1.5px solid var(--red-border); }
+    .pain-card h3 { color: #c0392b; margin-bottom: 1rem; font-size: 1.1rem; }
+    .gain-card { background: #f0faf5; border: 1.5px solid #b8e6cf; }
+    .gain-card h3 { color: var(--green); margin-bottom: 1rem; font-size: 1.1rem; }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .check-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.97rem; }
+    .check-list li .icon { flex-shrink: 0; margin-top: 0.15rem; }
+    .icon-x { color: #c0392b; }
+    .icon-check { color: var(--green); }
+
+    .quote-box {
+      background: #fff;
+      border-left: 4px solid var(--teal);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: 1.5rem 1.75rem;
+      margin-top: 2.5rem;
+      box-shadow: var(--shadow-card);
+    }
+    .quote-box .q-lead { font-weight: 700; font-size: 1.05rem; margin-bottom: 0.75rem; color: var(--ink); }
+    .quote-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding-left: 0.5rem; }
+    .quote-box ul li::before { content: '"'; color: var(--teal); font-weight: 700; margin-right: 0.3rem; }
+    .quote-box ul li { font-size: 0.97rem; color: var(--ink-soft); }
+
+    /* ── BANNER TEAL ── */
+    .banner-teal {
+      background: linear-gradient(90deg, var(--teal-dark), var(--teal));
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1.25rem;
+    }
+    .banner-teal h3 { font-size: clamp(1.2rem, 3vw, 1.8rem); }
+
+    /* ── PRODUCT BLOCK (CORDEL) ── */
+    .product-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+    @media(min-width:640px){ .product-inner { grid-template-columns: 1fr 1fr; } }
+    .product-img img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lift);
+      width: 100%;
+    }
+    .feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.5rem; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.97rem; }
+    .feature-list li i { color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+
+    /* ── BENEFITS GRID ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media(min-width:480px){ .benefits-grid { grid-template-columns: 1fr 1fr; } }
+    @media(min-width:768px){ .benefits-grid { grid-template-columns: repeat(4,1fr); } }
+
+    .benefit-card {
+      background: #fff;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    }
+    .benefit-card .b-icon { font-size: 1.8rem; color: var(--teal); }
+    .benefit-card p { font-size: 0.9rem; color: var(--ink-soft); }
+
+  /* ── TESTIMONIALS ── */
+.testimonials-bg {
+  background: linear-gradient(160deg, var(--teal-dark) 0%, var(--teal) 100%);
+  color: #fff;
+}
+.testimonials-bg .section-title { color: #fff; }
+.testimonials-bg .section-sub   { color: rgba(255,255,255,.8); }
+
+.carousel-wrap { position: relative; }
+
+.carousel-track {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 1.25rem;
+  align-items: flex-start; /* ← chave: alinha pelo topo, sem esticar */
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.carousel-slide {
+  flex: 0 0 calc(100% - 0.5rem);
+  scroll-snap-align: start;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lift);
+  /* SEM height, SEM min-height — o slide cresce com a imagem */
+}
+@media(min-width:640px){
+  .carousel-slide { flex: 0 0 calc(50% - 0.625rem); }
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;        /* ← altura natural da imagem */
+  display: block;
+  object-fit: unset;   /* ← sem corte */
+}
+
+.carousel-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.carousel-btn {
+  background: rgba(255,255,255,0.2);
+  border: 1.5px solid rgba(255,255,255,0.4);
+  color: #fff;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.carousel-btn:hover { background: rgba(255,255,255,0.35); }
+
+.dots { display: flex; gap: 0.5rem; }
+.dot {
+  width: 0.6rem; height: 0.6rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot.active { background: #fff; transform: scale(1.3); }
 
 
-        /* Navigation Arrows */
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: white;
-            color: #00374C;
-            padding: 0.75rem; /* Equivalent to p-3 Tailwind class */
-            border-radius: 9999px; /* rounded-full */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            z-index: 10;
-            display: none; /* Hidden by default on mobile */
-        }
+    /* ── BRIDGE ── */
+    .bridge-section {
+      background: var(--cream);
+      text-align: center;
+      padding: 3.5rem 1.25rem;
+    }
+    .bridge-section p.lead {
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+    .bridge-section p.body-text {
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      max-width: 580px;
+      margin: 0 auto 2rem;
+    }
 
-        .carousel-arrow.left {
-            left: 0.5rem; /* Adjusted for container padding */
-        }
+    /* ── COLLECTION SECTION ── */
+    .collection-bg { background: var(--ink); color: #fff; }
+    .collection-bg .section-title { color: #fff; }
+    .collection-bg .section-sub { color: rgba(255,255,255,.8); }
 
-        .carousel-arrow.right {
-            right: 0.5rem; /* Adjusted for container padding */
-        }
+    .collection-mockup img {
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
+      margin: 0 auto 2.5rem;
+      max-width: 680px;
+    }
+    .manifesto {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-style: italic;
+      color: #ffd966;
+      margin: 1.5rem auto 2.5rem;
+      max-width: 620px;
+      line-height: 1.45;
+    }
 
-        @media (min-width: 768px) {
-            .carousel-arrow {
-                display: block; /* Show arrows on desktop */
-            }
-        }
+    .collection-feature-list { list-style: none; display: flex; flex-direction: column; gap: 0.85rem; max-width: 640px; margin: 0 auto 2rem; }
+    .collection-feature-list li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 1rem; color: rgba(255,255,255,.9); }
+    .collection-feature-list li i { color: var(--accent); flex-shrink: 0; margin-top: 0.2rem; font-size: 1.05rem; }
 
-        /* Pagination Dots */
-        .pagination-dot {
-            width: 0.75rem; /* w-3 */
-            height: 0.75rem; /* h-3 */
-            background-color: #9ca3af; /* gray-400 */
-            border-radius: 9999px; /* rounded-full */
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+    /* ── COMPARISON ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    @media(min-width:640px){ .compare-grid { grid-template-columns: 1fr 1fr; } }
 
-        .pagination-dot.active {
-            background-color: #00a8db; /* Primary color for active dot */
-        }
-    </style>
+    .compare-card {
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+      display: flex; flex-direction: column;
+    }
+    .compare-card.basic {
+      background: var(--teal-light);
+      border: 2px solid var(--teal);
+    }
+    .compare-card.main-offer {
+      background: #fff;
+      border: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .best-badge {
+      position: absolute;
+      top: 0; right: 0;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 1rem;
+      border-bottom-left-radius: var(--radius-md);
+    }
+    .compare-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+    .compare-price { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
+    .compare-price .old { text-decoration: line-through; color: #999; font-size: 0.95rem; }
+    .compare-price .new { font-size: 2rem; font-weight: 900; color: var(--teal); line-height: 1; margin-top: 0.2rem; }
+    .compare-price .new.highlight { color: var(--gold); }
+    .compare-price .installment { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.25rem; }
+    .compare-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; margin-bottom: 1.5rem; flex: 1; }
+    .compare-list li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.93rem; color: var(--ink-soft); }
+    .compare-list li i { color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+    .economy-tag {
+      background: var(--gold-light);
+      border: 1px solid var(--gold);
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 1.25rem;
+    }
 
-    <!-- Meta Pixel Code -->
-    <script async defer>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0; // This is already async
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1243155826763791');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    /* ── OFFER SECTION (MAIN) ── */
+    .offer-section {
+      background: linear-gradient(160deg, var(--teal-dark) 0%, var(--teal) 100%);
+      color: #fff;
+    }
+    .offer-section .section-title { color: #fff; }
+    .offer-section .section-sub { color: rgba(255,255,255,0.85); }
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1H7TNQVG"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+    .offer-card {
+      background: #fff;
+      color: var(--ink);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      box-shadow: var(--shadow-xl);
+      position: relative;
+      overflow: hidden;
+    }
+    .offer-card::before {
+      content: 'MELHOR OFERTA';
+      position: absolute;
+      top: 16px; right: -28px;
+      background: var(--gold);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.35rem 2.5rem;
+      transform: rotate(45deg);
+    }
+    .offer-price-block { text-align: center; margin-bottom: 1.5rem; }
+    .offer-price-block .old { text-decoration: line-through; color: #aaa; font-size: 1rem; }
+    .offer-price-block .installments { font-size: 1rem; color: var(--ink-soft); font-weight: 500; margin-bottom: 0.25rem; }
+    .offer-price-block .price-row {
+      display: flex; align-items: flex-end; justify-content: center; gap: 0.3rem;
+      margin: 0.3rem 0;
+    }
+    .offer-price-block .currency { font-size: 1.6rem; font-weight: 900; color: var(--teal); line-height: 1.3; }
+    .offer-price-block .amount { font-size: 3.5rem; font-weight: 900; color: var(--teal); line-height: 1; }
+    .offer-price-block .or-cash { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.35rem; }
+    .offer-economy {
+      background: var(--gold-light);
+      border: 1px solid var(--gold);
+      border-radius: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      font-size: 0.87rem;
+      font-weight: 700;
+      color: var(--gold);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
 
-      gtag('config', 'G-2T1H7TNQVG');
-    </script>
+    .access-box {
+      background: var(--teal-light);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .access-box h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--teal-dark); margin-bottom: 0.6rem; }
+    .access-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .access-list li { display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; }
+    .access-list li i { color: var(--teal); }
+
+    .guarantee-box {
+      background: #f0faf5;
+      border: 1.5px solid #b8e6cf;
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .guarantee-box i { color: var(--green); font-size: 1.4rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .guarantee-box p { font-size: 0.9rem; color: var(--ink-soft); }
+    .guarantee-box strong { color: var(--ink); }
+
+    .urgency-bar-inner {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+    .urgency-bar-inner span { color: #ffd966; }
+
+    /* ── OFFER CARD CHECKLIST ── */
+    .offer-checklist { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .offer-checklist li { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.97rem; }
+    .offer-checklist li i { color: var(--gold); flex-shrink: 0; margin-top: 0.2rem; }
+
+    /* ── TRIPWIRE CARD ── */
+    .tripwire-card {
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      max-width: 560px;
+      margin: 0 auto 1.5rem;
+      box-shadow: var(--shadow-lift);
+      text-align: left;
+    }
+    .tripwire-price { text-align: center; margin-bottom: 1.25rem; }
+    .tripwire-price .old { text-decoration: line-through; color: #aaa; font-size: 0.95rem; }
+    .tripwire-price .new { font-size: 2.8rem; font-weight: 900; color: var(--teal); line-height: 1; }
+
+    /* ── AUTHOR ── */
+    .author-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media(min-width:640px){ .author-inner { grid-template-columns: auto 1fr; } }
+    .author-photo img {
+      width: 160px; height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: var(--shadow-lift);
+      margin: 0 auto;
+    }
+    .author-text h2 { margin-bottom: 0.75rem; font-size: 1.6rem; }
+    .author-text p { font-size: 0.97rem; color: var(--ink-soft); margin-bottom: 0.75rem; }
+
+    /* ── WHATSAPP BONUS ── */
+    .whatsapp-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+    }
+    @media(min-width:540px){ .whatsapp-card { flex-direction: row; text-align: left; } }
+    .whatsapp-card img { width: 72px; height: 72px; flex-shrink: 0; }
+    .whatsapp-card h3 { font-size: 1.2rem; margin-bottom: 0.4rem; }
+    .whatsapp-card p { font-size: 0.93rem; color: var(--ink-soft); }
+
+    /* ── DELIVERY ── */
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media(min-width:480px){ .delivery-grid { grid-template-columns: repeat(3,1fr); } }
+    .delivery-card {
+      background: var(--teal-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 0.75rem;
+      text-align: center;
+      box-shadow: var(--shadow-card);
+    }
+    .delivery-card i { font-size: 2rem; color: var(--teal); }
+    .delivery-card h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 1rem; }
+    .delivery-card p { font-size: 0.93rem; color: var(--ink-soft); }
+
+    /* ── FAQ ── */
+    .accordion-item {
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+    }
+    .accordion-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.5rem;
+      cursor: pointer;
+      gap: 1rem;
+    }
+    .accordion-header h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .accordion-icon { flex-shrink: 0; color: var(--teal); transition: transform 0.3s; }
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 1.5rem;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+    .accordion-item.open .accordion-body { max-height: 300px; padding: 0 1.5rem 1.25rem; }
+    .accordion-item.open .accordion-icon { transform: rotate(180deg); }
+    .faq-stack { display: flex; flex-direction: column; gap: 0.875rem; }
+
+    /* ── QUICK FAQ GRID ── */
+    .qfaq-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media(min-width:540px){ .qfaq-grid { grid-template-columns: 1fr 1fr; } }
+    .qfaq-card {
+      background: var(--teal-light);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-card);
+    }
+    .qfaq-card h4 { font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.93rem; color: var(--teal-dark); margin-bottom: 0.4rem; }
+    .qfaq-card p { font-size: 0.9rem; color: var(--ink-soft); }
+
+    /* ── FOOTER CTA ── */
+    .footer-cta {
+      background: var(--teal-dark);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1.25rem;
+    }
+    .footer-cta h2 { color: #fff; font-size: clamp(1.5rem, 3.5vw, 2.4rem); margin-bottom: 0.75rem; }
+    .footer-cta p { opacity: 0.85; margin-bottom: 2rem; font-size: 1.05rem; max-width: 560px; margin-inline: auto; }
+    .footer-cta .guarantee-note { display: flex; align-items: center; justify-content: center; gap: .5rem; font-size: .92rem; font-weight: 700; color: rgba(255,255,255,.85); margin-top: 1.25rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #111827;
+      color: #9ca3af;
+      text-align: center;
+      padding: 2rem 1.25rem;
+      font-size: 0.82rem;
+    }
+    footer strong { color: #e5e7eb; }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 3rem;
+      padding: 1rem 2.25rem;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+    .btn:active { transform: translateY(0); }
+    .btn-green { background: var(--green-btn); color: #fff; box-shadow: 0 4px 16px rgba(30,158,94,.35); }
+    .btn-green:hover { background: var(--green-hover); }
+    .btn-teal { background: var(--teal); color: #fff; box-shadow: 0 4px 16px rgba(0,122,138,.3); }
+    .btn-teal:hover { background: var(--teal-dark); }
+    .btn-full { width: 100%; display: block; }
+    .btn-xl { font-size: 1.15rem; padding: 1.2rem 2.75rem; }
+    .btn-pulse { animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{ box-shadow: 0 4px 16px rgba(30,158,94,.35); } 50%{ box-shadow: 0 4px 28px rgba(30,158,94,.6); } }
+
+    .cta-note { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 0.75rem; text-align: center; }
+    .cta-note-dark { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.75rem; text-align: center; }
+
+    /* ── STICKY MOBILE CTA ── */
+    #sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 1rem; left: 1rem; right: 1rem;
+      background: var(--green-btn);
+      color: #fff;
+      text-align: center;
+      padding: 0.9rem 1.5rem;
+      border-radius: 3rem;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      z-index: 9999;
+      box-shadow: 0 6px 24px rgba(0,0,0,.3);
+      animation: pulse 2s infinite;
+    }
+    #sticky-cta a { color: inherit; }
+    @media(max-width:767px){ #sticky-cta { display: block; } }
+    @media(min-width:768px){ #sticky-cta { display: none !important; } }
+
+    /* ── FADE IN ── */
+    .fade-in { opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity:1; transform:none; }
+
+    /* ── UTILS ── */
+    .text-center { text-align: center; }
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+  </style>
 </head>
-<body class="antialiased">
+<body>
 
-    <!-- Header Section -->
-    <header class="section-gradient-bg py-16 px-4 md:py-24 text-center">
-        <div class="container mx-auto max-w-4xl">
-            <p class="text-xl md:text-2xl font-light mb-4 opacity-90">
-                <!-- BIG IDEA -->
-                Ensinar com propósito, consciência e beleza — através da poesia que desperta, representa e transforma.
-            </p>
-            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                <!-- HEADLINE -->
-                Transforme uma simples leitura em uma aula inesquecível.
-            </h1>
-            <h2 class="text-2xl md:text-3xl font-semibold mb-8 opacity-90">
-                <!-- SUBHEADLINE -->
-                É mais do que um cordel. É uma chave para abrir conversas potentes sobre racismo, ancestralidade e representatividade — com poesia, arte e coragem.
-            </h2>
-            
-            <div class="bg-white text-[#00374C] p-6 md:p-8 rounded-2xl shadow-xl mx-auto max-w-2xl mb-10">
-                <p class="text-xl md:text-2xl font-bold mb-2">
-                    <!-- HOOK -->
-                    Uma história que começa em verso e termina em transformação.
-                </p>
-                <p class="mt-2 text-lg md:text-xl">
-                    Por apenas <span class="font-black text-[#00a8db]">R$ 9,90</span>, você acessa o cordel que está abrindo portas para professores ensinarem com mais identidade, crítica e sensibilidade.
-                </p>
-            </div>
+<!-- ══════════════════════════════════════════════════════
+     ANNOUNCE BAR
+═══════════════════════════════════════════════════════ -->
+<div class="announce-bar">
+  🔒 Acesso digital imediato &nbsp;|&nbsp; 7 dias de garantia incondicional &nbsp;|&nbsp; Alinhado à BNCC
+</div>
 
-            <div class="mb-8">
-                <!-- Capa Principal para a seção de cabeçalho -->
-                <img src="assets/capa_principal.png" alt="Capa do cordel 'A Negra que Não Podia Ser Anjo', apresentando uma ilustração de uma mulher negra, elementos de cordel e tons vibrantes." class="mx-auto rounded-xl shadow-2xl max-w-full h-auto" loading="lazy">
-            </div>
+<!-- ══════════════════════════════════════════════════════
+     URGENCY BANNER
+═══════════════════════════════════════════════════════ -->
+<div class="urgency-banner">
+  <i class="fa-solid fa-fire"></i> OFERTA EXCLUSIVA · Apenas as primeiras 200 compras com este preço!
+</div>
 
-            <a href="#oferta-cordel" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                <!-- CHAMADA PARA AÇÃO (BOTÃO) -->
-                👉 COMECE COM ESTE CORDEL!
-            </a>
-        </div>
-    </header>
-
-    <!-- Nova Seção: Problema e Solução (O Jeito Errado e O Jeito Certo) -->
-    <section class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                Você sente o desafio de abordar temas sensíveis em sala de aula?
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                <!-- O JEITO ERRADO - Gap 8 já oferece espaço vertical no mobile. -->
-                <div class="bg-red-50 p-6 rounded-xl shadow-lg border-2 border-red-200">
-                    <h3 class="text-2xl font-bold text-red-700 mb-4">🚫 O Jeito Errado:</h3>
-                    <ul class="space-y-3 text-lg text-[#00374C]">
-                        <li class="flex items-start">
-                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
-                            <span>Tentar ensinar sobre temas como racismo e identidade com textos frios, neutros ou distantes da realidade dos alunos.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
-                            <span>Evitar o assunto por medo de errar — ou usar materiais que não representam.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-red-500 text-2xl mr-3"><i class="fa-solid fa-times-circle"></i></span>
-                            <span>Entregar conteúdos que apagam, em vez de revelar.</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- O JEITO CERTO - Gap 8 já oferece espaço vertical no mobile. -->
-                <div class="bg-green-50 p-6 rounded-xl shadow-lg border-2 border-green-200">
-                    <h3 class="text-2xl font-bold text-green-700 mb-4">✅ O Jeito Certo:</h3>
-                    <ul class="space-y-3 text-lg text-[#00374C]">
-                        <li class="flex items-start">
-                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                            <span>Usar a poesia como porta de entrada.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                            <span>Contar uma história que representa, emociona e provoca reflexão — de forma acessível, sensível e crítica.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                            <span>Aplicar um conteúdo autoral, alinhado à BNCC, com proposta pedagógica e roteiro teatral pronto para levar à prática.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- SENTIMENTOS QUE CONECTAM -->
-            <div class="bg-white text-[#00374C] p-6 md:p-8 rounded-2xl shadow-xl mx-auto max-w-2xl mt-12">
-                <p class="text-xl md:text-2xl font-bold mb-4">Você já se pegou pensando:</p>
-                <ul class="space-y-3 text-lg md:text-xl text-left pl-6">
-                    <li>"Quero abordar temas importantes, mas não sei como começar..."</li>
-                    <li>"Tenho medo de usar o material errado ou não saber conduzir a conversa."</li>
-                    <li>"Me sinto sozinho na tentativa de fazer diferente em sala."</li>
-                    <li>"Queria algo simples, bonito e profundo — pronto pra usar."</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Nova Seção: Transição para a solução (com fundo ampliado) -->
-    <section class="bg-[#00a8db] text-white py-12 px-4 text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h3 class="text-3xl md:text-4xl font-bold">
-                Chega de dúvidas! A solução para esses desafios está ao seu alcance:
-            </h3>
-        </div>
-    </section>
-
-    <!-- Seção de Produto: Cordel 'A Negra que não podia ser Anjo' -->
-    <section class="py-16 px-4 md:py-20 bg-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                O cordel 'A Negra que não podia ser Anjo'
-            </h2>
-            <div class="text-left">
-                <p class="text-lg md:text-xl mb-6 leading-relaxed text-[#00374C]">
-                    Escrito pelo renomado poeta e educador Leonardo Sampaio, este cordel não é apenas uma história, mas um convite à reflexão e à ação. Com linguagem acessível e emocionante, 'A Negra que não podia ser Anjo' narra uma experiência impactante que aborda de frente as complexidades do racismo e da busca por identidade.
-                </p>
-                
-                <p class="text-lg md:text-xl mt-8 mb-4 leading-relaxed text-[#00374C]">
-                    <!-- REFORÇO DA PROMESSA -->
-                    “A Negra que Não Podia Ser Anjo” é o primeiro passo. É um cordel que emociona, provoca e já vem com um roteiro teatral e proposta pedagógica completa. É a faísca que inicia uma prática mais consciente — e que pode se tornar um caminho contínuo de transformação.
-                </p>
-                <p class="text-lg md:text-xl mb-4 leading-relaxed text-[#00374C]">
-                    Com esse material, você terá:
-                </p>
-                <!-- COMO FUNCIONA O PRODUTO -->
-                <ul class="space-y-3 text-lg md:text-xl text-[#00374C] mb-8">
-                    <li class="flex items-start">
-                        <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-file-pdf"></i></span>
-                        <span><strong>Cordel digital em PDF:</strong> Aborda racismo, ancestralidade e identidade de forma poética.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book-open"></i></span>
-                        <span><strong>Proposta pedagógica:</strong> Com objetivos, habilidades da BNCC e atividades práticas.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-theater-masks"></i></span>
-                        <span><strong>Roteiro teatral:</strong> Adaptado para aplicação em sala ou eventos escolares.</span>
-                    </li>
-                </ul>
-                <p class="text-lg md:text-xl mt-8 leading-relaxed text-[#00374C]">
-                    Tudo pronto para você usar com seus alunos — sem precisar criar nada do zero.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Second CTA -->
-    <section class="py-12 px-4 bg-[#00a8db] text-center"> <!-- New Primary color -->
-        <div class="container mx-auto max-w-4xl">
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-8">Pronto para levar essa poderosa mensagem à sua turma?</h3>
-            <a href="#oferta-cordel" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                👉 QUERO EXPERIMENTAR AGORA!
-            </a>
-        </div>
-    </section>
-
-    <!-- Nova Seção: Coleção Tesouro Poético -->
-    <section class="py-16 px-4 md:py-20 bg-[#fbfefe] text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                E se você pudesse levar esse impacto para o ano inteiro?
-            </h2>
-            <p class="text-lg md:text-xl mb-8 leading-relaxed text-[#00374C]">
-                A <strong class="font-bold text-[#00a8db]">Coleção Tesouro Poético dos Professores Conscientes</strong> é um pacote digital completo para educadores que desejam trabalhar temas como racismo, ancestralidade, espiritualidade, cidadania e justiça social de forma sensível, profunda e prática.
-            </p>
-            <p class="text-2xl md:text-3xl font-extrabold text-gradient mb-8">
-                Aqui, a poesia não é enfeite.<br>É ferramenta. É ponte. É despertar.
-            </p>
-            
-            <h3 class="text-2xl md:text-3xl font-bold mb-6 text-[#00374C]">
-                🧠 O QUE VOCÊ VAI RECEBER:
-            </h3>
-            <!-- Mockup Placeholder - Lembre-se de otimizar esta imagem para produção -->
-            <div class="mx-auto max-w-4xl mb-10">
-                <img src="assets/mockup_colecao.png" alt="Mockup das capas da Coleção Tesouro Poético, mostrando diversos livros digitais agrupados em um formato atraente." class="mx-auto rounded-lg shadow-md max-w-full h-auto" loading="lazy">
-            </div>
-
-            <p class="text-2xl md:text-3xl font-bold mb-4 text-[#00374C]">
-                Não é uma apostila genérica.<br>
-                Não é um material raso.<br>
-                Não é um enfeite poético para decorar o conteúdo.
-            </p>
-            <p class="text-3xl md:text-4xl font-extrabold text-gradient mb-10">
-                É um convite à consciência.<br>
-                É uma ferramenta de transformação.
-            </p>
-
-            <a href="#oferta-colecao" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                🔥 MAIS VENDIDO! 👉 QUERO ADICIONAR AO MEU ACERVO!
-            </a>
-        </div>
-    </section>
-
-    <!-- Seção de Prova Social (Depoimentos) -->
-    <section class="py-16 px-4 md:py-20 section-gradient-bg text-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10">
-                💬 O Que Dizem Sobre o Impacto de Nossas Obras:
-            </h2>
-            <div class="carousel-container">
-                <div id="testimonial-carousel-wrapper" class="testimonial-slides-wrapper">
-                    <!-- Testimonials will be dynamically loaded by JavaScript -->
-                </div>
-                <!-- Navigation arrows -->
-                <button id="prevBtn" class="carousel-arrow left">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button id="nextBtn" class="carousel-arrow right">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                <!-- Pagination indicators -->
-                <div id="pagination-dots" class="flex justify-center space-x-2 mt-6">
-                    <!-- Dots will be dynamically generated by JavaScript -->
-                </div>
-            </div>
-            <p class="text-lg md:text-xl mt-8 opacity-90">E muitos outros depoimentos que transformam e inspiram!</p>
-        </div>
-    </section>
-
-    <!-- Nova Seção: Benefícios Imediatos para Você e Seus Alunos -->
-    <section class="py-16 px-4 md:py-20 bg-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                Benefícios Imediatos para VOCÊ e SEUS ALUNOS:
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left text-lg md:text-xl">
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-star"></i></span>
-                    <span>É admirada pela coragem de trazer temas urgentes para a sala de aula</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-comments"></i></span>
-                    <span>Promove rodas de leitura, apresentações e debates significativos</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-award"></i></span>
-                    <span>É referência na escola por transformar conteúdos em vivência</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-heart"></i></span>
-                    <span>Sente orgulho por ensinar com sensibilidade, não só com conteúdo</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-lightbulb"></i></span>
-                    <span>Facilita o diálogo sobre temas cruciais como racismo e preconceito.</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-users"></i></span>
-                    <span>Promove a empatia e a compreensão mútua.</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-leaf"></i></span>
-                    <span>Material culturalmente rico, valorizando a literatura de cordel.</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-child"></i></span>
-                    <span>Linguagem acessível que engaja jovens e adultos.</span>
-                </div>
-                <div class="flex items-start p-4 bg-[#ebfafa] rounded-lg shadow-sm col-span-1 md:col-span-2">
-                    <span class="text-[#ffba19] text-2xl mr-3 mt-1"><i class="fa-solid fa-hand-fist"></i></span>
-                    <span>Inspira a reflexão crítica e o protagonismo estudantil.</span>
-                </div>
-            </div>
-            <a href="#oferta-cordel" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider mt-12">
-                👉 SIM, QUERO ESSES BENEFÍCIOS!
-            </a>
-        </div>
-    </section>
-
-    <!-- Seção de Perguntas Rápidas / FAQ Preliminar -->
-    <section class="py-16 px-4 md:py-20 bg-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                ❓ Dúvidas Rápidas Antes de Adquirir?
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm"> <!-- New background-50 -->
-                    <h3 class="text-xl font-semibold mb-2 text-[#00374C]">Q: É um material físico ou digital?</h3>
-                    <p class="text-[#00374C]">R: Digital, em PDF, com acesso imediato após a confirmação da compra.</p>
-                </div>
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-2 text-[#00374C]">Q: Tem garantia?</h3>
-                    <p class="text-[#00374C]">R: Sim, garantia incondicional de 7 dias.</p>
-                </div>
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-2 text-[#00374C]">Q: Posso parcelar?</h3>
-                    <p class="text-[#00374C]">R: Sim, opções de parcelamento disponíveis no checkout.</p>
-                </div>
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm">
-                    <h3 class="text-xl font-semibold mb-2 text-[#00374C]">Q: A proposta pedagógica é para qual faixa etária?</h3>
-                    <p class="text-[#00374C]">R: As sugestões de aplicação são adaptáveis do 5º ano do Ensino Fundamental ao Ensino Médio.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Oferta do Cordel (Tripwire) - Agora com COMO FUNCIONA A ENTREGA -->
-    <section id="oferta-cordel" class="py-16 px-4 md:py-20 bg-[#d6f5f5] text-center"> <!-- New background-100 -->
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-10 text-[#00374C]">
-                ✨ O Que Começou com um Cordel Pode se Tornar um Projeto Que Marca Vidas
-            </h2>
-            <div class="bg-white text-[#00374C] p-8 rounded-3xl shadow-xl mx-auto max-w-2xl mb-10">
-                <p class="text-5xl md:text-6xl font-black text-[#00a8db] mb-4">POR APENAS: R$ 9,90</p> <!-- Primary color -->
-                <p class="text-xl md:text-2xl font-semibold mb-6">(Acesso vitalício + bônus exclusivos)</p>
-
-                <div class="text-left mb-8">
-                    <ul class="space-y-3 text-lg md:text-xl">
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book"></i></span>
-                            <span>O Cordel <strong class="font-bold">'A Negra que Não Podia Ser Anjo'</strong>: Leitura completa em formato PDF.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-masks-theater"></i></span>
-                            <span><strong class="font-bold">Roteiro Teatral Completo:</strong> Inspirado no cordel para apresentações impactantes.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-clipboard-check"></i></span>
-                            <span><strong class="font-bold">Propostas Pedagógicas alinhadas à BNCC:</strong> Para aplicação imediata.</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- COMO FUNCIONA A ENTREGA -->
-                <div class="bg-[#00a8db]/10 p-4 rounded-xl mb-6 text-left">
-                    <h3 class="text-xl font-bold text-[#00374C] mb-2">📦 Como Funciona o Acesso:</h3>
-                    <ul class="space-y-2 text-lg text-[#00374C]">
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-xl mr-2"><i class="fa-solid fa-laptop-code"></i></span>
-                            <span>Produto 100% digital, com acesso imediato.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-xl mr-2"><i class="fa-solid fa-user-check"></i></span>
-                            <span>Você receberá os dados de acesso por e-mail.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-xl mr-2"><i class="fa-solid fa-print"></i></span>
-                            <span>Você pode baixar, imprimir ou usar direto no digital.</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="bg-[#00a8db] p-6 rounded-xl shadow-lg mb-10 mx-auto max-w-xl text-white"> <!-- Primary color -->
-                <p class="text-xl md:text-2xl font-semibold mb-2">📩 Acesso digital imediato.</p>
-                <p class="text-xl md:text-2xl font-semibold">
-                    <strong class="font-extrabold">🔐 GARANTIA:</strong> Você tem 7 dias de garantia. Se não gostar do material por qualquer motivo, devolvemos seu dinheiro sem perguntas.
-                </p>
-            </div>
-
-            <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCordelBtn">
-                👉 QUERO ADICIONAR AO MEU ACERVO!
-            </a>
-        </div>
-    </section>
-
-    <!-- CONEXÃO COM O PRÓXIMO PASSO -->
-    <section class="py-12 px-4 bg-[#fbfefe] text-center">
-        <div class="container mx-auto max-w-4xl">
-            <p class="text-2xl md:text-3xl font-extrabold text-[#00374C] mb-8">
-                Esse é só o começo.
-            </p>
-            <p class="text-xl md:text-2xl leading-relaxed text-[#00374C] mb-8">
-                Se esse cordel te emocionar, imagine o que uma coleção inteira pode fazer por você e seus alunos...
-            </p>
-            <a href="#oferta-colecao" class="cta-button inline-block bg-[#00a8db] hover:bg-[#007599] text-white font-extrabold py-4 px-10 rounded-full text-xl md:text-2xl uppercase tracking-wider">
-                🔥 MAIS VENDIDO! 👉 QUERO CONHECER A COLEÇÃO COMPLETA!
-            </a>
-        </div>
-    </section>
-
-    <!-- NOVA SEÇÃO: Comparação de Valor -->
-    <section id="comparacao-ofertas" class="py-16 px-4 md:py-20 bg-white text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                🛍️ Qual nível de transformação você quer levar para sua sala de aula?
-            </h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-                <!-- Coluna do Cordel Individual -->
-                <div class="bg-[#ebfafa] p-8 rounded-xl shadow-lg flex flex-col justify-between border-2 border-[#8cd7ee]">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-[#00374C]">Opção Básica: O Cordel Essencial</h3>
-                        <p class="text-xl md:text-2xl line-through mb-2 opacity-80">De R$ 19,90</p>
-                        <p class="text-4xl font-black text-[#00a8db] mb-6">R$ 9,90</p>
-                        <ul class="text-left space-y-4 text-lg mb-8 text-[#00374C]">
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                                <span><strong>O Cordel "A Negra que Não Podia Ser Anjo":</strong> A obra poderosa em PDF.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                                <span><strong>Roteiro Teatral Completo:</strong> Para encenar o cordel.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                                <span><strong>Proposta Pedagógica Alinhada à BNCC:</strong> Para aplicação imediata.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto">
-                        QUERO A OPÇÃO BÁSICA
-                    </a>
-                </div>
-
-                <!-- Coluna da Coleção Completa -->
-                <div class="main-offer-card bg-white p-8 rounded-xl shadow-lg flex flex-col justify-between border-4 border-[#ffba19]">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-[#00374C]">Coleção Completa: Revolucione com Poesia e Consciência!</h3>
-                        <p class="text-2xl md:text-3xl line-through mb-2 opacity-80">De R$ 97,70</p>
-                       <div class="flex flex-col items-center justify-center mb-6">
-        <p class="text-sm font-semibold text-gray-500 uppercase mb-1">Adquira por apenas:</p>
-        <div class="flex items-center justify-center gap-2">
-            <span class="text-3xl font-black text-[#00374C]">12X</span>
-            <span class="text-5xl font-black text-[#00a8db] tracking-tighter">R$ 7,00</span>
-        </div>
-        <p class="text-sm font-medium text-gray-500 mt-1">ou R$ 67,70 à vista</p>
-        </div>
-                        <p class="text-xl md:text-2xl font-bold text-[#00a8db] mb-8">
-                            ✨ Economize R$ 30,00!
-                        </p>
-                        <ul class="text-left space-y-4 text-lg mb-8 text-[#00374C]">
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-check-circle"></i></span>
-                                <span><strong>TUDO do Pacote Essencial</strong> (todos os 5 cordéis com suas propostas e o roteiro teatral).</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book-reader"></i></span>
-                                <span>O Ebook <strong class="font-bold">Performance Poética na Escola</strong>: 190 páginas de poesias e didática.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-box-open"></i></span>
-                                <span><strong class="font-bold">BÔNUS:</strong> Kit Poético Interdisciplinar: Língua Portuguesa, História e Artes em Cordel.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-pencil-alt"></i></span>
-                                <span><strong class="font-bold">BÔNUS:</strong> CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades (para toda a coleção).</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-sparkles"></i></span>
-                                <span><strong class="font-bold">BÔNUS:</strong> Frases-Poema: Para iniciar aulas com reflexão e criatividade.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-3 px-8 rounded-full text-lg uppercase tracking-wider mt-auto" id="buyCompleteCollectionBtnComparison">
-                        ✅ DESBLOQUEIE A BIBLIOTECA COMPLETA!
-                    </a>
-                </div>
-            </div>
-            <p class="text-lg md:text-xl mt-8 leading-relaxed text-[#00374C] opacity-90">
-                A Coleção Completa oferece a você a solução definitiva para aulas inesquecíveis, com um custo-benefício incomparável!
-            </p>
-        </div>
-    </section>
-
-    <!-- Seção de Upsell: Coleção Tesouro Poético (AGORA DEPOIS DO COMPARATIVO) -->
-    <section id="oferta-colecao" class="py-16 px-4 md:py-20 section-gradient-bg text-white text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-10">
-                🚀 Acelere Seus Resultados: Tenha A Coleção Completa!
-            </h2>
-            <p class="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-                Se você busca uma transformação ainda mais profunda e um arsenal completo de materiais para suas aulas, a <strong class="font-bold text-[#ffba19]">Coleção Tesouro Poético do Professor Consciente</strong> é o seu próximo passo essencial!
-            </p>
-
-            <div class="main-offer-card bg-white text-[#00374C] p-8 rounded-3xl shadow-2xl mx-auto max-w-2xl mb-10">
-                <p class="text-2xl md:text-3xl line-through mb-2 opacity-80">De R$ 97,70</p>
-               <div class="text-center mb-6">
-        <p class="text-xl md:text-2xl font-bold mb-2 text-[#00374C]">Adquira a coleção completa por apenas:</p>
-        <div class="flex items-center justify-center gap-3">
-            <span class="text-6xl md:text-7xl font-black text-[#00374C]">12X</span>
-            <span class="text-7xl md:text-8xl font-black text-[#00a8db] tracking-tighter">R$ 7,00</span>
-        </div>
-        <p class="text-xl md:text-2xl font-semibold mt-2 text-gray-600">ou R$ 67,70 à vista</p>
+<!-- ══════════════════════════════════════════════════════
+     HERO — sem botão CTA
+═══════════════════════════════════════════════════════ -->
+<header class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Para Educadores Comprometidos com a Transformação</span>
+    <h1>
+      A poesia que sua sala de aula está esperando —<br>
+      <em>e você ainda não conhece.</em>
+    </h1>
+    <p class="hero-sub">
+      Ensinar sobre racismo, ancestralidade e identidade nunca foi tão acessível, sensível e pedagogicamente completo.
+      Conheça o cordel e a coleção que já mudaram a prática de centenas de professores pelo Brasil.
+    </p>
+    <div class="hero-hook fade-in">
+      <p>Comece com o cordel <strong>"A Negra que Não Podia Ser Anjo"</strong> — a obra que já emocionou centenas de educadores — e descubra como ela pode ser só o início de uma prática pedagógica verdadeiramente transformadora.</p>
+      <div class="price-tag">A partir de R$ 9,90</div>
     </div>
-    <p class="text-xl md:text-2xl font-semibold mb-8">(Acesso vitalício a todo o material)</p>
-                <p class="text-2xl md:text-3xl font-bold text-[#00a8db] mb-8">
-                    ✨ Economize R$ 30,00 e tenha a biblioteca completa de um educador consciente!
-                </p>
+    <div class="hero-image-wrap fade-in">
+      <img src="https://raw.githubusercontent.com/leonardofsampaio/performancepoeticanaescola/refs/heads/main/aquenaopodiaseranjo/assets/capa_principal.png"
+           alt="Capa do cordel A Negra que Não Podia Ser Anjo" loading="eager">
+    </div>
+  </div>
+</header>
 
-                <div class="text-left mb-8">
-                    <ul class="space-y-3 text-lg md:text-xl">
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-book-reader"></i></span>
-                            <span>O Ebook <strong class="font-bold">Performance Poética na Escola</strong>: 190 páginas de poesias e didática.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-scroll"></i></span>
-                            <span><strong class="font-bold">5 cordéis transformadores</strong> (incluindo 'A Negra que Não Podia Ser Anjo'), todos com propostas pedagógicas alinhadas à BNCC.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-gift"></i></span>
-                            <span><strong class="font-bold">BÔNUS:</strong> Uma proposta pedagógica para CADA cordel com os códigos da BNCC.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-box-open"></i></span>
-                            <span><strong class="font-bold">BÔNUS ESPECIAL:</strong> Kit Poético Interdisciplinar: Língua Portuguesa, História e Artes em Cordel.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-pencil-alt"></i></span>
-                            <span><strong class="font-bold">BÔNUS ESSENCIAL:</strong> CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades (para toda a coleção).</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-sparkles"></i></span>
-                            <span><strong class="font-bold">BÔNUS:</strong> Frases-Poema: Para iniciar aulas com reflexão e criatividade.</span>
-                            </li>
-                        <li class="flex items-start">
-                            <span class="text-[#ffba19] text-2xl mr-3"><i class="fa-solid fa-masks-theater"></i></span>
-                            <span><strong class="font-bold">E o Roteiro Teatral Completo</strong> sobre “A Negra que Não Podia Ser Anjo” também está incluso aqui!</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <p class="text-2xl md:text-3xl font-bold mb-4 text-[#ffba19]"> <!-- New Accent color -->
-                💥 OFERTA EXCLUSIVA: SÓ AS PRIMEIRAS 200 COMPRAS COM ESTE PREÇO!
-            </p>
-            <p class="text-3xl md:text-4xl font-extrabold mb-8 text-[#ffba19]/80"> <!-- Accent with opacity for urgency -->
-                GARANTA SUA COLEÇÃO COMPLETA HOJE!
-            </p>
+<!-- ══════════════════════════════════════════════════════
+     TRUST BAR
+═══════════════════════════════════════════════════════ -->
+<div class="trust-bar">
+  <span class="trust-item"><i class="fa-solid fa-shield-halved"></i> Garantia de 7 dias</span>
+  <span class="trust-item"><i class="fa-solid fa-bolt"></i> Acesso imediato</span>
+  <span class="trust-item"><i class="fa-solid fa-file-pdf"></i> 100% digital / PDF</span>
+  <span class="trust-item"><i class="fa-solid fa-check-double"></i> Alinhado à BNCC</span>
+  <span class="trust-item"><i class="fa-brands fa-whatsapp"></i> Boletim Poético exclusivo</span>
+</div>
 
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnUpsell">
-                🚀 GARANTA SEU ACESSO ILIMITADO À COLEÇÃO!
-            </a>
+<!-- ══════════════════════════════════════════════════════
+     DOR / SOLUÇÃO
+═══════════════════════════════════════════════════════ -->
+<section style="background:#fff;" class="fade-in">
+  <div class="container">
+    <span class="section-label">O Desafio Real da Sala de Aula</span>
+    <h2 class="section-title">Você sente na pele esse desafio?</h2>
+    <p class="section-sub">Abordar temas como racismo e identidade exige coragem — e o material certo. Veja a diferença.</p>
+    <div class="sep"></div>
+
+    <div class="two-col">
+      <div class="pain-card">
+        <h3><i class="fa-solid fa-times-circle icon-x" style="margin-right:.4rem"></i> O Jeito Errado</h3>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-times-circle icon icon-x"></i><span>Textos frios e genéricos que não representam seus alunos</span></li>
+          <li><i class="fa-solid fa-times-circle icon icon-x"></i><span>Evitar o tema por medo de errar ou não saber conduzir</span></li>
+          <li><i class="fa-solid fa-times-circle icon icon-x"></i><span>Horas procurando material que nunca está pronto para uso</span></li>
+          <li><i class="fa-solid fa-times-circle icon icon-x"></i><span>Conteúdo desconectado da realidade cultural dos seus alunos</span></li>
+        </ul>
+      </div>
+      <div class="gain-card">
+        <h3><i class="fa-solid fa-check-circle icon-check" style="margin-right:.4rem"></i> O Jeito Certo</h3>
+        <ul class="check-list">
+          <li><i class="fa-solid fa-check-circle icon icon-check"></i><span>Poesia que representa, emociona e provoca reflexão genuína</span></li>
+          <li><i class="fa-solid fa-check-circle icon icon-check"></i><span>Roteiro teatral e proposta pedagógica prontos para usar</span></li>
+          <li><i class="fa-solid fa-check-circle icon icon-check"></i><span>Tudo alinhado à BNCC — sem precisar adaptar nada</span></li>
+          <li><i class="fa-solid fa-check-circle icon icon-check"></i><span>Conteúdo autoral, profundo e culturalmente rico</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-box">
+      <p class="q-lead">Se você já pensou alguma dessas coisas, este material foi feito para você:</p>
+      <ul>
+        <li>Quero abordar racismo, mas não sei como começar sem errar...</li>
+        <li>Me sinto sozinho tentando fazer diferente na escola.</li>
+        <li>Queria algo bonito, simples e profundo — pronto para usar amanhã.</li>
+        <li>Meus alunos merecem mais do que o livro didático oferece.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     BANNER SOLUÇÃO
+═══════════════════════════════════════════════════════ -->
+<div class="banner-teal">
+  <div class="container">
+    <h3>A solução está ao seu alcance — e cabe no seu bolso.</h3>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     PRODUTO: CORDEL (TRIPWIRE)
+═══════════════════════════════════════════════════════ -->
+<section style="background:#fff;" id="cordel" class="fade-in">
+  <div class="container">
+    <span class="section-label">Passo 1 · O Ponto de Partida</span>
+    <h2 class="section-title">"A Negra que Não Podia Ser Anjo"</h2>
+    <div class="sep"></div>
+    <div class="product-inner">
+      <div class="product-img">
+        <img src="https://raw.githubusercontent.com/leonardofsampaio/performancepoeticanaescola/refs/heads/main/aquenaopodiaseranjo/assets/capa_secundaria.jpg"
+             alt="Capa secundária do cordel A Negra que Não Podia Ser Anjo" loading="lazy">
+      </div>
+      <div>
+        <p style="font-size:.98rem; color:var(--ink-soft); line-height:1.75; margin-bottom:1.25rem;">
+          Escrito pelo poeta-pedagogo <strong>Leonardo Sampaio</strong>, este cordel narra com beleza e coragem uma história sobre racismo, fé e identidade negra — em linguagem que alcança tanto professores quanto alunos. Com o primeiro verso, a sala para. Com o último, a conversa começa.
+        </p>
+        <p style="font-size:.98rem; color:var(--ink-soft); line-height:1.75; margin-bottom:1.25rem;">
+          Não é só um texto bonito para decorar. É um <strong>instrumento completo</strong> que já chegou pronto para ser colocado em prática.
+        </p>
+        <ul class="feature-list">
+          <li><i class="fa-solid fa-file-pdf"></i><span><strong>Cordel digital em PDF</strong> — leitura, impressão ou uso no digital</span></li>
+          <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> — para apresentações em sala ou eventos</span></li>
+          <li><i class="fa-solid fa-clipboard-check"></i><span><strong>Proposta Pedagógica alinhada à BNCC</strong> — objetivos, habilidades e atividades prontas</span></li>
+        </ul>
+        <p style="font-size:.92rem; color:var(--ink-soft); font-style:italic; margin-bottom:1.5rem;">
+          Tudo pronto. Sem precisar criar nada do zero.
+        </p>
+        <div style="background:var(--teal-light); border-radius:var(--radius-md); padding:1.25rem; text-align:center;">
+          <p style="font-size:.9rem; color:var(--ink-soft); text-decoration:line-through;">De R$ 19,90</p>
+          <p style="font-size:2.4rem; font-weight:900; color:var(--teal); line-height:1;">R$ 9,90</p>
+          <p style="font-size:.88rem; color:var(--ink-soft); margin-top:.25rem;">Acesso vitalício · PDF imediato</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- ══════════════════════════════════════════════════════
+     BENEFÍCIOS
+═══════════════════════════════════════════════════════ -->
+<section style="background:var(--cream);" class="fade-in">
+  <div class="container">
+    <span class="section-label">O que você ganha</span>
+    <h2 class="section-title">Benefícios imediatos para você e seus alunos</h2>
+    <p class="section-sub">Quando a poesia entra na sala de aula com propósito, tudo muda.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fa-solid fa-star b-icon"></i>
+        <p>Admirada pela coragem de trazer temas urgentes para a sala</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-comments b-icon"></i>
+        <p>Rodas de leitura e debates que marcam para sempre</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-award b-icon"></i>
+        <p>Referência na escola por transformar conteúdo em vivência</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-heart b-icon"></i>
+        <p>Orgulho de ensinar com sensibilidade, não só conteúdo</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-lightbulb b-icon"></i>
+        <p>Diálogo facilitado sobre racismo e preconceito de forma acolhedora</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-users b-icon"></i>
+        <p>Empatia e pertencimento despertados nos seus alunos</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-leaf b-icon"></i>
+        <p>Valorização da literatura de cordel como patrimônio cultural</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-child b-icon"></i>
+        <p>Linguagem acessível que engaja do 5º ano ao Ensino Médio</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Seção de Autoridade (Quem é o Autor) -->
-    <section class="py-16 px-4 md:py-20 bg-white text-center">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                ✨ Conheça o Mestre Por Trás dos Versos: Leonardo Sampaio
-            </h2>
-            <img src="assets/foto_leonardo.png" alt="Foto de Leonardo Sampaio, autor e educador-poeta. Ele é um homem negro com um sorriso amigável, olhando para a câmera." class="rounded-full w-48 h-48 object-cover mx-auto mb-8 shadow-xl" loading="lazy">
-            <div class="text-left text-lg md:text-xl leading-relaxed mb-8">
-                <p class="mb-4">
-                    Leonardo Sampaio é um <strong class="text-[#00374C]">verdadeiro artesão da palavra e da educação</strong>, um poeta-pedagogo que transforma salas de aula em palcos e livros em atos de resistência cultural. Natural de Abaiara, no coração do Cariri cearense, cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.
-                </p>
-                <p class="mb-4">
-                    Com formação em Pedagogia e especialização focada em comunidades quilombolas e negras, Leonardo é um educador que caminha de mãos dadas com Paulo Freire e dança ao som dos tambores da ancestralidade. É também membro fundador da <strong class="text-[#00374C]">Academia Afrocearense de Letras (AAFROCEL)</strong>.
-                </p>
-                <p class="mb-4">
-                    Com mais de uma década no magistério, sua jornada <strong class="font-bold">une</strong> o formal e o popular, o lírico e o didático. Leonardo atua como professor da rede municipal de Fortaleza, mas sua missão é fazer da educação uma experiência poética e transformadora, onde cada rima e verso abrem portas para um mundo mais inclusivo e consciente.
-                </p>
-                <p class="mb-4">
-                    Com Leonardo Sampaio, a palavra vira ação, o poema vira inspiração, e a sala de aula... bem, essa vira uma verdadeira festa de cordel e cidadania!
-                </p>
-            </div>
-            <p class="text-xl md:text-2xl font-semibold text-[#00374C] mb-8">
-                Junte-se a mim e a centenas de educadores que já estão transformando suas salas de aula!
-            </p>
+<!-- ══════════════════════════════════════════════════════
+     DEPOIMENTOS
+═══════════════════════════════════════════════════════ -->
+<section class="testimonials-bg fade-in">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.7)">Prova Social</span>
+    <h2 class="section-title">O que professores estão dizendo</h2>
+    <p class="section-sub">Centenas de educadores já transformaram suas aulas com este material.</p>
+    <div class="carousel-wrap">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide">
+          <img src="assets/depoimento_1.png" alt="Depoimento 1" loading="lazy">
         </div>
-    </section>
-
-    <!-- Seção de Bônus de Relacionamento (Boletim Poético) -->
-    <section class="py-16 px-4 md:py-20 bg-[#d6f5f5] text-center"> <!-- New background-100 -->
-        <div class="container mx-auto max-w-4xl">
-            <!-- Modified structure for the WhatsApp section -->
-            <div class="whatsapp-section-content mx-auto max-w-2xl bg-white p-6 rounded-xl shadow-lg">
-                <div class="flex-shrink-0">
-                    <img src="assets/whatsapp_logo.png" alt="Logotipo do WhatsApp, um balão de fala verde com um telefone branco dentro." class="block mx-auto w-20 h-20 rounded-full" loading="lazy">
-                </div>
-                <div class="flex-grow">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-2 text-[#00374C]">
-                        Leonardo Sampaio - Boletim Poético
-                    </h2>
-                    <p class="text-lg md:text-xl leading-relaxed text-[#00374C]">
-                        Ao adquirir <strong class="font-semibold">'A Negra que Não Podia Ser Anjo'</strong>, ou a coleção completa, você ganha acesso exclusivo ao <strong class="font-bold text-[#00374C]">Boletim Poético</strong>: versos inéditos, reflexões e conteúdos inspiradores de Leonardo Sampaio, direto no seu WhatsApp, para manter a paixão pela educação e poesia sempre viva!
-                    </p>
-                </div>
-            </div>
+        <div class="carousel-slide">
+          <img src="assets/depoimento_2.png" alt="Depoimento 2" loading="lazy">
         </div>
-    </section>
-
-    <!-- Seção "Como Você Vai Receber" (Detalhada da Nova Proposta) -->
-    <section class="py-16 px-4 md:py-20 bg-white">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                📲 Receba Seu Conteúdo em Instantes:
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left text-lg md:text-xl">
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start"> <!-- New background-50 -->
-                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-laptop-code"></i></span> <!-- Primary color -->
-                    <span>Após a confirmação da compra, você receberá acesso <strong class="font-semibold">imediato</strong> ao produto.</span>
-                </div>
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start">
-                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-envelope-open-text"></i></span>
-                    <span>Você receberá por e-mail os dados de login.</span>
-                </div>
-                <div class="bg-[#ebfafa] p-6 rounded-lg shadow-sm flex items-start">
-                    <span class="text-[#00a8db] text-2xl mr-3"><i class="fa-solid fa-infinity"></i></span>
-                    <span>Acesso vitalício e a todas as futuras atualizações relacionadas ao material.</span>
-                </div>
-            </div>
+        <div class="carousel-slide">
+          <img src="assets/depoimento_3.png" alt="Depoimento 3" loading="lazy">
         </div>
-    </section>
-
-    <!-- Seção de Perguntas Frequentes (FAQ Detalhado) -->
-    <section class="py-16 px-4 md:py-20 bg-[#ebfafa]"> <!-- New background-50 -->
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-[#00374C]">
-                📌 Perguntas Frequentes (FAQ)
-            </h2>
-            <div class="space-y-6 text-left">
-                <!-- FAQ Item 1 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">O que é o cordel "A Negra que Não Podia Ser Anjo"?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">É uma obra poética em formato de cordel, escrita por Leonardo Sampaio, que aborda temas como racismo, fé, ancestralidade e identidade negra de forma sensível e impactante. Acompanha uma proposta pedagógica e outros bônus para aplicação em diversos contextos.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 2 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Qual a diferença entre o cordel individual e a Coleção Tesouro Poético?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">O cordel "A Negra que Não Podia Ser Anjo" é uma obra poderosa e completa por si só, e funciona como uma introdução acessível ao universo de Leonardo Sampaio. A Coleção Tesouro Poético, por sua vez, é um pacote muito mais abrangente, incluindo o ebook "Performance Poética na Escola", mais 4 cordéis (além de "A Negra que Não Podia Ser Anjo"), e um conjunto ainda maior de propostas pedagógicas e materiais de apoio para enriquecer suas aulas de forma completa.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 3 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Como receberei os materiais após a compra?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">Todos os materiais são digitais (PDFs, etc.) e o acesso é liberado imediatamente após a confirmação do pagamento. Você receberá um e-mail com os dados de login.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 4 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">É indicado para qual faixa etária e público?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">Embora o cordel tenha uma mensagem universal, a proposta pedagógica é adaptável do 5º ano do Ensino Fundamental ao Ensino Médio. É ideal para professores, pais, educadores sociais e qualquer pessoa interessada em discussões sobre racismo e inclusão.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 5 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Posso imprimir os materiais?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">Sim! Todos os PDFs são otimizados para impressão em formato A4, permitindo que você os utilize tanto digitalmente quanto em material físico.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 6 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Funciona em escolas públicas?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">Sim! O material foi pensado e desenvolvido para a realidade e o contexto das redes pública e privada, sendo flexível e adaptável às suas necessidades e projetos.</p>
-                    </div>
-                </div>
-                <!-- FAQ Item 7 -->
-                <div class="accordion-item bg-white">
-                    <div class="accordion-header">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2 text-[#00374C]">Recebo tudo na hora?</h3>
-                        <span class="accordion-icon text-2xl transform transition-transform duration-300">▼</span>
-                    </div>
-                    <div class="accordion-content">
-                        <p class="text-lg text-[#00374C]">Sim! Assim que a sua compra for confirmada, você receberá um e-mail com as instruções e o link para acessar todo o conteúdo digital imediatamente.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="carousel-slide">
+          <img src="assets/depoimento_4.png" alt="Depoimento 4" loading="lazy">
         </div>
-    </section>
-
-    <!-- Call-to-Action Final e Rodapé -->
-    <section class="py-12 px-4 bg-[#004966] text-center text-white"> <!-- New Text-800 for dark footer -->
-        <div class="container mx-auto max-w-4xl">
-            <p class="text-2xl md:text-3xl font-extrabold mb-8">
-                Pronto para transformar suas aulas e expandir sua visão?
-            </p>
-            <a href="https://pay.kiwify.com.br/M3GiQfv" class="cta-button inline-block bg-green-500 hover:bg-green-600 text-white font-extrabold py-5 px-12 rounded-full text-2xl md:text-3xl uppercase tracking-wider animate-pulse" id="buyCompleteCollectionBtnFooter">
-                ➡️ TRANSFORME SUAS AULAS COM A COLEÇÃO!
-            </a>
-            <p class="mt-8 text-md md:text-lg opacity-80">
-                © A Negra que Não Podia Ser Anjo & Coleção Tesouro Poético. Todos os direitos reservados.
-            </p>
-            <p class="mt-2 text-lg md:text-xl font-semibold">
-                ✔️ Sua satisfação garantida ou seu dinheiro de volta.
-            </p>
+        <div class="carousel-slide">
+          <img src="assets/depoimento_5.png" alt="Depoimento 5" loading="lazy">
         </div>
-    </section>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" aria-label="Anterior">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="dots" id="carouselDots"></div>
+        <button class="carousel-btn" id="nextBtn" aria-label="Próximo">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem; opacity:.8; font-size:.95rem; text-align:center;">
+      E centenas de outros educadores já transformando suas aulas.
+    </p>
+  </div>
+</section>
 
-    <!-- Sticky CTA for mobile -->
-    <div id="sticky-cta">
-        <a href="#comparacao-ofertas">
-            👉 VER PACOTES E PREÇOS!
+<!-- ══════════════════════════════════════════════════════
+     BRIDGE — TRIPWIRE → COLEÇÃO
+═══════════════════════════════════════════════════════ -->
+<div class="bridge-section fade-in">
+  <div class="container">
+    <p class="lead">Esse é só o começo.</p>
+    <p class="body-text">Se esse cordel te emocionar — e vai —, imagine o que uma coleção inteira de obras transformadoras pode fazer pela sua prática e pelos seus alunos ao longo do ano letivo inteiro.</p>
+    <a href="#colecao" class="btn btn-teal btn-xl">
+      🚀 Conhecer a Coleção Completa
+    </a>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     COLEÇÃO — PRODUTO PRINCIPAL
+═══════════════════════════════════════════════════════ -->
+<section class="collection-bg fade-in" id="colecao">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.6)">⭐ Produto Principal · Mais Vendido</span>
+    <h2 class="section-title">🚀 Coleção Tesouro Poético<br>do Professor Consciente</h2>
+    <p class="section-sub">Um arsenal completo para trabalhar racismo, ancestralidade, espiritualidade, cidadania e justiça social com poesia, profundidade e praticidade — durante o ano letivo inteiro.</p>
+
+    <div class="collection-mockup">
+      <img src="https://raw.githubusercontent.com/leonardofsampaio/performancepoeticanaescola/refs/heads/main/aquenaopodiaseranjo/assets/mockup_colecao.png"
+           alt="Mockup da Coleção Tesouro Poético do Professor Consciente" loading="lazy">
+    </div>
+
+    <p class="manifesto">
+      "Aqui a poesia não é enfeite.<br>É ferramenta. É ponte. É despertar."
+    </p>
+
+    <h3 style="text-align:center; font-size:1.3rem; margin-bottom:1.5rem; color:rgba(255,255,255,.9);">O que você vai receber:</h3>
+    <ul class="collection-feature-list">
+      <li><i class="fa-solid fa-book-reader"></i><span><strong>Ebook "Performance Poética na Escola"</strong> — 190 páginas de poesias e didática transformadora</span></li>
+      <li><i class="fa-solid fa-scroll"></i><span><strong>5 cordéis transformadores</strong> (incluindo "A Negra que Não Podia Ser Anjo"), com propostas pedagógicas BNCC</span></li>
+      <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> do cordel "A Negra que Não Podia Ser Anjo"</span></li>
+      <li><i class="fa-solid fa-gift"></i><span><strong>BÔNUS:</strong> Proposta pedagógica para cada cordel, com os códigos da BNCC</span></li>
+      <li><i class="fa-solid fa-box-open"></i><span><strong>BÔNUS:</strong> Kit Poético Interdisciplinar — Língua Portuguesa, História e Artes em Cordel</span></li>
+      <li><i class="fa-solid fa-pencil-alt"></i><span><strong>BÔNUS:</strong> Caderno de Atividades para Estudantes — mais de 14 atividades para toda
+ a coleção</span></li>
+      <li><i class="fa-solid fa-sparkles"></i><span><strong>BÔNUS:</strong> Frases-Poema para iniciar aulas com reflexão e criatividade</span></li>
+      <li><i class="fa-brands fa-whatsapp"></i><span><strong>BÔNUS EXCLUSIVO:</strong> Boletim Poético no WhatsApp com Leonardo Sampaio</span></li>
+    </ul>
+
+    <p style="text-align:center; font-size:1.05rem; font-weight:700; color:rgba(255,255,255,.9); max-width:560px; margin:0 auto 2rem;">
+      Não é uma apostila genérica. Não é material raso.<br>
+      <span style="color:#ffd966;">É um convite à consciência. É uma ferramenta de transformação.</span>
+    </p>
+
+    <div class="text-center">
+      <a href="#oferta-colecao" class="btn btn-green btn-xl btn-pulse" onclick="trackCheckout('colecao')">
+        🔥 Quero a Coleção Completa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHATSAPP BONUS
+═══════════════════════════════════════════════════════ -->
+<section style="background:var(--cream);" class="fade-in">
+  <div class="container">
+    <span class="section-label">Bônus Exclusivo</span>
+    <h2 class="section-title">Boletim Poético no WhatsApp</h2>
+    <p class="section-sub">Quem adquire a Coleção Completa entra em contato direto com Leonardo Sampaio.</p>
+    <div class="whatsapp-card">
+      <img src="https://raw.githubusercontent.com/leonardofsampaio/performancepoeticanaescola/refs/heads/main/aquenaopodiaseranjo/assets/whatsapp_logo.png" alt="WhatsApp Boletim Poético">
+      <div>
+        <h3>Boletim Poético — direto no seu WhatsApp</h3>
+        <p>Receba regularmente poemas, reflexões pedagógicas, sugestões de atividades e novidades do universo da poesia consciente. Um canal exclusivo para quem faz parte da coleção.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     COMPARAÇÃO DE OFERTAS
+═══════════════════════════════════════════════════════ -->
+<section style="background:#fff;" id="comparacao" class="fade-in">
+  <div class="container">
+    <span class="section-label">Compare e Escolha</span>
+    <h2 class="section-title">Qual nível de transformação você quer levar para a sua sala?</h2>
+    <p class="section-sub">As duas opções são válidas. Mas há uma que realmente vale cada centavo para a sua carreira.</p>
+
+    <div class="compare-grid">
+      <!-- BÁSICO -->
+      <div class="compare-card basic">
+        <h3>O Cordel Essencial</h3>
+        <div class="compare-price">
+          <span class="old">De R$ 19,90</span>
+          <span class="new">R$ 9,90</span>
+          <span class="installment">Acesso vitalício · PDF imediato</span>
+        </div>
+        <ul class="compare-list">
+          <li><i class="fa-solid fa-check-circle"></i><span>Cordel "A Negra que Não Podia Ser Anjo" em PDF</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Roteiro Teatral Completo</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Proposta Pedagógica BNCC</span></li>
+        </ul>
+        <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-teal btn-full" onclick="trackCheckout('cordel')">
+          Começar com o Cordel
         </a>
+        <p class="cta-note-dark" style="margin-top:.6rem;">Ótimo ponto de entrada 🟢</p>
+      </div>
+
+      <!-- PRINCIPAL -->
+      <div class="compare-card main-offer">
+        <span class="best-badge">Melhor Oferta</span>
+        <h3 style="color:var(--teal-dark);">Coleção Completa</h3>
+        <div class="compare-price">
+          <span class="old">De R$ 97,70</span>
+          <div style="margin-top:.25rem;">
+            <span style="font-size:.85rem; color:var(--ink-soft); font-weight:500;">12x de </span>
+            <span class="new highlight" style="font-size:2.4rem;">R$ 7,00</span>
+          </div>
+          <span class="installment">ou R$ 67,70 à vista</span>
+        </div>
+        <div class="economy-tag">✨ Economize R$ 30,00 — tudo incluso!</div>
+        <ul class="compare-list">
+          <li><i class="fa-solid fa-check-circle"></i><span><strong>TUDO do Cordel Essencial</strong></span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Ebook Performance Poética na Escola (190 págs.)</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>5 cordéis transformadores + propostas BNCC</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Caderno de Atividades p/ Estudantes (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Frases-Poema para iniciar aulas (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span>Boletim Poético no WhatsApp (Bônus Exclusivo)</span></li>
+        </ul>
+        <a href="https://pay.kiwify.com.br/M3GiQfv" class="btn btn-green btn-full btn-xl btn-pulse" onclick="trackCheckout('colecao')">
+          ✅ Desbloqueie a Biblioteca Completa
+        </a>
+        <p class="cta-note-dark" style="margin-top:.6rem;">🔒 7 dias de garantia incondicional</p>
+      </div>
     </div>
 
-    <!-- Kiwify UTM Script -->
-    <script>
-        let prefix = ["https://pay.kiwify.com.br"];
+    <p style="text-align:center; font-size:.93rem; color:var(--ink-soft); margin-top:1.5rem;">
+      A Coleção Completa oferece a solução definitiva para aulas inesquecíveis — com custo-benefício incomparável.
+    </p>
+  </div>
+</section>
 
-        function getParams() {
-            let t = "",
-                e = window.top.location.href,
-                r = new URL(e);
-            if (null != r) {
-                let a = r.searchParams.get("utm_source"),
-                    n = r.searchParams.get("utm_medium"),
-                    o = r.searchParams.get("utm_campaign"),
-                    m = r.searchParams.get("utm_term"),
-                    c = r.searchParams.get("utm_content");
-                // Check if there are any UTM params before adding the sck parameter
-                if (a || n || o || m || c) {
-                    t = `&sck=${a || ''}|${n || ''}|${o || ''}|${m || ''}|${c || ''}`;
-                }
-                console.log(t);
-            }
-            return t;
-        }
+<!-- ══════════════════════════════════════════════════════
+     DÚVIDAS RÁPIDAS
+═══════════════════════════════════════════════════════ -->
+<section style="background:var(--cream); padding-top:3rem; padding-bottom:3rem;" class="fade-in">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:1.5rem;">Dúvidas rápidas antes de adquirir</h2>
+    <div class="qfaq-grid">
+      <div class="qfaq-card">
+        <h4>É físico ou digital?</h4>
+        <p>Digital, em PDF. Acesso imediato após a confirmação do pagamento.</p>
+      </div>
+      <div class="qfaq-card">
+        <h4>Tem garantia?</h4>
+        <p>Sim — 7 dias de garantia incondicional. Seu dinheiro de volta sem perguntas.</p>
+      </div>
+      <div class="qfaq-card">
+        <h4>Posso parcelar?</h4>
+        <p>Sim! A coleção pode ser parcelada em até 12x de R$ 7,00 no checkout.</p>
+      </div>
+      <div class="qfaq-card">
+        <h4>Para qual faixa etária?</h4>
+        <p>Propostas adaptáveis do 5º ano do Fundamental ao Ensino Médio.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        !function() {
-            var t = new URLSearchParams(window.location.search);
-            t.toString() && document.querySelectorAll("a").forEach(function(e) {
-                for (let r = 0; r < prefix.length; r++) {
-                    if (e.href.indexOf(prefix[r]) !== -1) {
-                        if (e.href.indexOf("?") === -1) {
-                            e.href += "?" + t.toString() + getParams();
-                        } else {
-                            e.href += "&" + t.toString() + getParams();
-                        }
-                    }
-                }
-            });
-        }();
-    </script>
+<!-- ══════════════════════════════════════════════════════
+     OFERTA: CORDEL (TRIPWIRE)
+═══════════════════════════════════════════════════════ -->
+<section style="background:#fff;" id="oferta-cordel" class="fade-in">
+  <div class="container">
+    <span class="section-label">Opção de Entrada</span>
+    <h2 class="section-title">Comece por R$ 9,90</h2>
+    <p class="section-sub">Dê o primeiro passo — com um material que já chegou completo e pronto para transformar sua aula amanhã.</p>
 
-    <script>
-        // Função para gerar um UUID (Identificador Único Universal)
-        // Usado para criar um eventID único para cada evento do Pixel, auxiliando na deduplicação.
-        function generateUUID() {
-            return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
+    <div class="tripwire-card">
+      <div class="tripwire-price">
+        <span class="old">De R$ 19,90</span><br>
+        <span class="new">R$ 9,90</span>
+      </div>
+      <ul class="feature-list" style="margin-bottom:1.5rem;">
+        <li><i class="fa-solid fa-book"></i><span><strong>O Cordel completo</strong> em PDF — leitura, impressão ou digital</span></li>
+        <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral</strong> — pronto para encenação em sala ou eventos</span></li>
+        <li><i class="fa-solid fa-clipboard-check"></i><span><strong>Proposta Pedagógica BNCC</strong> — aplicação imediata</span></li>
+      </ul>
+      <div class="access-box">
+        <h4><i class="fa-solid fa-box-open" style="margin-right:.4rem"></i> Como você recebe:</h4>
+        <ul class="access-list">
+          <li><i class="fa-solid fa-laptop-code"></i> 100% digital — acesso imediato após pagamento</li>
+          <li><i class="fa-solid fa-envelope"></i> Link de acesso enviado ao seu e-mail</li>
+          <li><i class="fa-solid fa-print"></i> Pode baixar, imprimir ou usar no digital</li>
+        </ul>
+      </div>
+      <div class="guarantee-box">
+        <i class="fa-solid fa-shield-halved"></i>
+        <p><strong>Garantia de 7 dias.</strong> Se não gostar por qualquer motivo, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+      </div>
+    </div>
 
-        // REMOVIDO: A função trackInitiateCheckoutPixel foi removida conforme sua solicitação.
-        // Agora, o evento InitiateCheckout será enviado exclusivamente pela Kiwify.
+    <div class="text-center">
+      <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-teal btn-xl" onclick="trackCheckout('cordel')">
+        👉 Quero Adicionar ao Meu Acervo — R$ 9,90
+      </a>
+      <p class="cta-note-dark mt-1">Acesso imediato · PDF · Garantia 7 dias</p>
+    </div>
+  </div>
+</section>
 
-        // JavaScript para o Sticky CTA (Fixo no Mobile)
-        // Controla a visibilidade do botão CTA fixo na parte inferior da tela em dispositivos móveis.
-        const stickyCta = document.getElementById('sticky-cta');
-        window.addEventListener('scroll', function() {
-            // Mostra o CTA fixo após rolar uma certa distância (ex: 200px)
-            if (window.scrollY > 200) {
-                stickyCta.style.display = 'block';
-            } else {
-                stickyCta.style.display = 'none';
-            }
-        });
+<!-- ══════════════════════════════════════════════════════
+     OFERTA PRINCIPAL: COLEÇÃO
+═══════════════════════════════════════════════════════ -->
+<section class="offer-section fade-in" id="oferta-colecao">
+  <div class="container">
+    <span class="section-label" style="color:rgba(255,255,255,.7);">⭐ Produto Principal</span>
+    <h2 class="section-title">Coleção Completa — A Transformação Total</h2>
+    <p class="section-sub">Para o professor que quer um arsenal completo de poesia consciente para o ano letivo inteiro.</p>
 
-        // JavaScript para o Acordeão (FAQ)
-        // Implementa a funcionalidade de acordeão para a seção de Perguntas Frequentes.
-        document.addEventListener('DOMContentLoaded', function() {
-            const accordionItems = document.querySelectorAll('.accordion-item');
+    <div class="urgency-bar-inner">
+      💥 OFERTA EXCLUSIVA: <span>Somente as primeiras 200 compras com este preço!</span>
+    </div>
 
-            accordionItems.forEach(item => {
-                const header = item.querySelector('.accordion-header');
-                header.addEventListener('click', () => {
-                    // Alterna a classe 'active' no item clicado para expandir/recolher o conteúdo.
-                    item.classList.toggle('active');
+    <div class="offer-card">
+      <div class="offer-price-block">
+        <span class="old">De R$ 97,70</span>
+        <p class="installments">Parcele em</p>
+        <div class="price-row">
+          <span class="currency">12x R$</span>
+          <span class="amount">7</span>
+        </div>
+        <p class="or-cash">ou <strong>R$ 67,70 à vista</strong></p>
+      </div>
+      <div class="text-center" style="margin-bottom:1.5rem;">
+        <span class="offer-economy">✨ Você economiza R$ 30,00!</span>
+      </div>
 
-                    // Fecha outros itens de acordeão abertos para manter apenas um expandido.
-                    accordionItems.forEach(otherItem => {
-                        if (otherItem !== item && otherItem.classList.contains('active')) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-                });
-            });
-        });
+      <ul class="offer-checklist">
+        <li><i class="fa-solid fa-book-reader"></i><span>Ebook <strong>"Performance Poética na Escola"</strong> — 190 páginas de poesia e didática</span></li>
+        <li><i class="fa-solid fa-scroll"></i><span><strong>5 cordéis autorais</strong> (incluindo "A Negra que Não Podia Ser Anjo") com propostas pedagógicas BNCC</span></li>
+        <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> para encenação</span></li>
+        <li><i class="fa-solid fa-box-open"></i><span><strong>Kit Poético Interdisciplinar</strong> — Língua Portuguesa, História e Artes em Cordel</span></li>
+        <li><i class="fa-solid fa-pencil-alt"></i><span><strong>Caderno de Atividades para Estudantes</strong> — mais de 14 atividades completas</span></li>
+        <li><i class="fa-solid fa-sparkles"></i><span><strong>Frases-Poema</strong> para iniciar aulas com criatividade e reflexão</span></li>
+        <li><i class="fa-brands fa-whatsapp"></i><span><strong>Boletim Poético no WhatsApp</strong> com Leonardo Sampaio — exclusivo para a Coleção</span></li>
+      </ul>
 
-        // Testimonials data - using the existing images
-        // Dados dos depoimentos para o carrossel.
-        const testimonials = [
-            { id: 1, img: "assets/depoimento_1.png", alt: "Depoimento de um professor: 'Amei as suas publicações, comprei seu livro online'." },
-            { id: 2, img: "assets/depoimento_2.png", alt: "Depoimento de um professor: 'Amei, Que maravilha!'" },
-            { id: 3, img: "assets/depoimento_3.png", alt: "Depoimento de um professor: 'Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças'." },
-            { id: 4, img: "assets/depoimento_4.png", alt: "Depoimento de um professor: 'Fantástico, Uauuu!'" }
-        ];
+      <div class="access-box">
+        <h4><i class="fa-solid fa-box-open" style="margin-right:.4rem"></i> Como você recebe:</h4>
+        <ul class="access-list">
+          <li><i class="fa-solid fa-laptop-code"></i> 100% digital — acesso imediato após pagamento</li>
+          <li><i class="fa-solid fa-envelope"></i> Link de acesso enviado ao seu e-mail</li>
+          <li><i class="fa-solid fa-print"></i> Pode baixar, imprimir ou usar no digital</li>
+        </ul>
+      </div>
 
-        let currentIndex = 0;
-        let carouselWrapper; // O elemento com overflow-x-scroll
-        let prevBtn;
-        let nextBtn;
-        let paginationDotsContainer;
-        let slideFullWidth = 0; // Para armazenar a largura total de um slide, incluindo seu espaçamento
+      <div class="guarantee-box">
+        <i class="fa-solid fa-shield-halved"></i>
+        <p><strong>Garantia incondicional de 7 dias.</strong> Se não gostar por qualquer motivo, devolvemos 100% do valor — sem perguntas, sem burocracia.</p>
+      </div>
 
-        // Inicializa o carrossel de depoimentos.
-        function initializeCarousel() {
-            carouselWrapper = document.getElementById('testimonial-carousel-wrapper');
-            prevBtn = document.getElementById('prevBtn');
-            nextBtn = document.getElementById('nextBtn');
-            paginationDotsContainer = document.getElementById('pagination-dots');
+      <div style="margin-top:1.75rem;">
+        <a href="https://pay.kiwify.com.br/M3GiQfv" class="btn btn-green btn-full btn-xl btn-pulse" onclick="trackCheckout('colecao')">
+          ✅ QUERO A COLEÇÃO COMPLETA AGORA!
+        </a>
+        <p class="cta-note-dark mt-1">Compra segura · Acesso imediato · Garantia de 7 dias</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            // Limpa o conteúdo existente para evitar duplicações em reinicializações.
-            carouselWrapper.innerHTML = '';
-            paginationDotsContainer.innerHTML = '';
+<!-- ══════════════════════════════════════════════════════
+     ENTREGA — COMO FUNCIONA
+═══════════════════════════════════════════════════════ -->
+<section style="background:var(--cream);" class="fade-in">
+  <div class="container">
+    <span class="section-label">Como funciona</span>
+    <h2 class="section-title">Acesso em 3 passos simples</h2>
+    <div class="sep"></div>
+    <div class="delivery-grid">
+      <div class="delivery-card">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h4>1. Escolha sua opção</h4>
+        <p>Selecione o Cordel Essencial ou a Coleção Completa e finalize o pagamento com segurança.</p>
+      </div>
+      <div class="delivery-card">
+        <i class="fa-solid fa-envelope-open-text"></i>
+        <h4>2. Receba por e-mail</h4>
+        <p>Imediatamente após a confirmação, você recebe o link de acesso no seu e-mail.</p>
+      </div>
+      <div class="delivery-card">
+        <i class="fa-solid fa-chalkboard-teacher"></i>
+        <h4>3. Use na sua aula</h4>
+        <p>Baixe os PDFs, leia, imprima ou use no digital. Tudo pronto para aplicar amanhã.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            testimonials.forEach((depoimento, index) => {
-                const testimonialDiv = document.createElement('div');
-                testimonialDiv.className = 'carousel-card'; // Usa a nova classe CSS para estilização.
-                testimonialDiv.innerHTML = `<img src="${depoimento.img}" alt="${depoimento.alt}" class="rounded-lg mb-4 w-full h-auto" loading="lazy">`;
-                carouselWrapper.appendChild(testimonialDiv);
+<!-- ══════════════════════════════════════════════════════
+     AUTOR
+═══════════════════════════════════════════════════════ -->
+<section style="background:#fff;" class="fade-in">
+  <div class="container">
+    <span class="section-label">Quem criou este material</span>
+    <h2 class="section-title">Leonardo Sampaio</h2>
+    <div class="sep"></div>
+    <div class="author-inner">
+      <div class="author-photo">
+        <img src="https://raw.githubusercontent.com/leonardofsampaio/performancepoeticanaescola/refs/heads/main/aquenaopodiaseranjo/assets/foto_leonardo.png"
+             alt="Foto de Leonardo Sampaio" loading="lazy">
+      </div>
+      <div class="author-text">
+        <p>
+          <strong>Leonardo Sampaio</strong> é poeta, pedagogo e educador comprometido com a transformação social por meio da literatura. Há anos trabalha na interseção entre poesia, identidade e educação — levando a literatura de cordel para dentro das salas de aula de forma viva, crítica e acolhedora.
+        </p>
+        <p>
+          Seus materiais já impactaram centenas de professores em todo o Brasil, sendo reconhecidos pela profundidade pedagógica, pela beleza literária e pela capacidade de provocar reflexão genuína em alunos de diferentes faixas etárias.
+        </p>
+        <p>
+          A <strong>Coleção Tesouro Poético do Professor Consciente</strong> é o resultado de anos de prática em sala de aula e de escuta atenta às necessidades reais dos educadores brasileiros.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-                const dot = document.createElement('span');
-                dot.className = 'pagination-dot'; // Usa a nova classe CSS para estilização.
-                dot.setAttribute('data-index', index);
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
-                });
-                paginationDotsContainer.appendChild(dot);
-            });
+<!-- ══════════════════════════════════════════════════════
+     FAQ COMPLETO
+═══════════════════════════════════════════════════════ -->
+<section style="background:var(--cream);" class="fade-in">
+  <div class="container">
+    <span class="section-label">Perguntas Frequentes</span>
+    <h2 class="section-title">Ainda tem dúvidas?</h2>
+    <p class="section-sub">Respondemos as perguntas mais comuns dos professores antes de adquirir.</p>
+    <div class="faq-stack" id="faqStack">
 
-            // Calcula a largura total de um slide após a adição dos depoimentos.
-            if (testimonials.length > 0) {
-                const firstCard = carouselWrapper.children[0];
-                const computedStyle = getComputedStyle(carouselWrapper);
-                const gapValue = parseFloat(computedStyle.gap); // Obtém o valor do espaçamento (gap) do contêiner pai.
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>O material é físico ou digital?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          Todo o material é 100% digital, entregue em formato PDF. Você recebe o link de acesso imediatamente após a confirmação do pagamento, diretamente no seu e-mail. Pode baixar, imprimir ou usar no computador, tablet ou celular.
+        </div>
+      </div>
 
-                // A largura total do slide é a largura do cartão mais o espaçamento.
-                slideFullWidth = firstCard.offsetWidth + gapValue;
-                
-                // Ajuste para telas menores, onde o layout do carrossel pode ser diferente.
-                if (window.innerWidth < 768) {
-                    // Se o cartão ocupa uma porcentagem da largura do contêiner, recalcula.
-                    slideFullWidth = (carouselWrapper.offsetWidth * 0.85) + gapValue; // Exemplo: se o cartão é 85% da largura do wrapper.
-                } else {
-                    // Para desktop, onde pode haver mais de um cartão visível.
-                    // O scroll deve mover apenas um cartão por vez.
-                    slideFullWidth = carouselWrapper.children[0].offsetWidth + gapValue;
-                }
-            }
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Posso usar o material com qualquer faixa etária?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          Sim! As propostas pedagógicas foram desenvolvidas para serem adaptáveis, atendendo desde o 5º ano do Ensino Fundamental até o Ensino Médio. Cada proposta traz orientações claras sobre como adaptar para cada nível.
+        </div>
+      </div>
 
-            // Remove listeners anteriores para evitar múltiplas vinculações em redimensionamentos.
-            prevBtn.removeEventListener('click', showPrevSlide);
-            nextBtn.removeEventListener('click', showNextSlide);
-            carouselWrapper.removeEventListener('scroll', updateDotsOnScroll);
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>O material está realmente alinhado à BNCC?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          Sim. Cada proposta pedagógica inclui os códigos e habilidades da BNCC correspondentes, facilitando o planejamento e o registro das atividades. Você não precisa adaptar nada — já está tudo mapeado.
+        </div>
+      </div>
 
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Posso parcelar o pagamento?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          Sim! A Coleção Completa pode ser parcelada em até 12x de R$ 7,00 no cartão de crédito. Você também pode pagar à vista por R$ 67,70 via Pix, boleto ou cartão. O Cordel Essencial está disponível por R$ 9,90.
+        </div>
+      </div>
 
-            prevBtn.addEventListener('click', showPrevSlide);
-            nextBtn.addEventListener('click', showNextSlide);
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>E se eu não gostar do material?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          Você tem 7 dias de garantia incondicional a partir da data da compra. Se por qualquer motivo não ficar satisfeito, basta entrar em contato e devolvemos 100% do valor pago. Sem perguntas, sem burocracia.
+        </div>
+      </div>
 
-            // Escuta o evento de scroll no carrosselWrapper para atualizar os pontos de paginação.
-            carouselWrapper.addEventListener('scroll', () => {
-                // Debounce o evento de scroll para evitar muitas atualizações durante o scroll contínuo.
-                clearTimeout(carouselWrapper.scrollTimeout);
-                carouselWrapper.scrollTimeout = setTimeout(updateDotsOnScroll, 100);
-            });
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <h3>Qual a diferença entre o Cordel Essencial e a Coleção Completa?</h3>
+          <i class="fa-solid fa-chevron-down accordion-icon"></i>
+        </div>
+        <div class="accordion-body">
+          O Cordel Essencial é o ponto de entrada: você recebe o cordel "A Negra que Não Podia Ser Anjo" em PDF, o roteiro teatral completo e a proposta pedagógica BNCC. A Coleção Completa inclui tudo isso mais o ebook de 190 páginas, 4 cordéis adicionais, o Kit Interdisciplinar, o Caderno de Atividades, as Frases-Poema e o Boletim Poético no WhatsApp — um arsenal completo para o ano letivo inteiro.
+        </div>
+      </div>
 
-            updateCarouselDisplay(); // Atualiza a exibição do carrossel inicialmente.
-        }
+    </div>
+  </div>
+</section>
 
-        // Mostra o slide anterior no carrossel.
-        function showPrevSlide() {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonials.length - 1;
-            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
-            updateCarouselDisplay();
-        }
+<!-- ══════════════════════════════════════════════════════
+     FOOTER CTA
+═══════════════════════════════════════════════════════ -->
+<section class="footer-cta fade-in">
+  <div class="container">
+    <h2>Sua sala de aula merece este material.</h2>
+    <p style="margin-bottom:2rem;">
+      Não deixe mais um ano letivo passar sem uma ferramenta que realmente transforma. A poesia que seus alunos precisam está a um clique de distância.
+    </p>
+    <a href="https://pay.kiwify.com.br/M3GiQfv" class="btn btn-green btn-xl btn-pulse" onclick="trackCheckout('colecao')">
+      ✅ QUERO A COLEÇÃO COMPLETA — 12x R$ 7,00
+    </a>
+    <p class="cta-note" style="margin-top:1rem;">ou R$ 67,70 à vista · Acesso imediato · Garantia de 7 dias</p>
+    <div class="guarantee-note">
+      <i class="fa-solid fa-shield-halved"></i>
+      Compra 100% segura e protegida
+    </div>
+    <p style="margin-top:2rem; opacity:.6; font-size:.85rem;">
+      Prefere começar pelo cordel? <a href="https://leonardosampaio.com.br/intermediariocolecao/" style="color:rgba(255,255,255,.8); text-decoration:underline;" onclick="trackCheckout('cordel')">Clique aqui para adquirir por R$ 9,90</a>
+    </p>
+  </div>
+</section>
 
-        // Mostra o próximo slide no carrossel.
-        function showNextSlide() {
-            currentIndex = (currentIndex < testimonials.length - 1) ? currentIndex + 1 : 0;
-            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
-            updateCarouselDisplay();
-        }
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer>
+  <p><strong>© 2025 Leonardo Sampaio</strong> · Todos os direitos reservados.</p>
+  <p style="margin-top:.5rem;">Material 100% digital · Entrega imediata · Garantia de 7 dias</p>
+  <p style="margin-top:.5rem;">Dúvidas? Entre em contato pelo WhatsApp ou e-mail disponível na plataforma de compra.</p>
+</footer>
 
-        // Navega para um slide específico no carrossel.
-        function goToSlide(index) {
-            currentIndex = index;
-            carouselWrapper.scrollLeft = currentIndex * slideFullWidth;
-            updateCarouselDisplay();
-        }
+<!-- ══════════════════════════════════════════════════════
+     STICKY CTA MOBILE
+═══════════════════════════════════════════════════════ -->
+<div id="sticky-cta">
+  <a href="https://pay.kiwify.com.br/M3GiQfv" onclick="trackCheckout('colecao')">
+    🚀 Coleção Completa — 12x R$ 7,00
+  </a>
+</div>
 
-        // Atualiza a classe 'active' nos pontos de paginação para refletir o slide atual.
-        function updateCarouselDisplay() {
-            Array.from(paginationDotsContainer.children).forEach((dot, index) => {
-                if (index === currentIndex) {
-                    dot.classList.add('active');
-                } else {
-                    dot.classList.remove('active');
-                }
-            });
-        }
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════ -->
+<script>
+  // ── CAROUSEL ──
+  (function(){
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if(!track) return;
 
-        // Atualiza o índice do slide atual com base na posição de scroll do carrossel.
-        function updateDotsOnScroll() {
-            if (!carouselWrapper || slideFullWidth === 0) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    let current = 0;
+    let autoTimer;
 
-            const scrollLeft = carouselWrapper.scrollLeft;
-            // Calcula o novo índice arredondando a posição de scroll pela largura total do slide.
-            const newIndex = Math.round(scrollLeft / slideFullWidth);
+    // Build dots
+    slides.forEach((_,i) => {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i===0?' active':'');
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    });
 
-            // If on desktop, and showing two cards, the scroll position might snap
-            // differently. We need to account for which card is "most" in view
-            // The `scroll-snap-type: x mandatory` combined with `scroll-snap-align: center` on cards
-            // means the browser will try to center a card.
-            // So `Math.round(scrollLeft / slideFullWidth)` should be mostly accurate.
-            
-            if (newIndex !== currentIndex) {
-                currentIndex = newIndex;
-                updateCarouselDisplay();
-            }
-        }
+    function getVisible(){
+      return window.innerWidth >= 640 ? 2 : 1;
+    }
 
-        // Adiciona um listener para o evento de redimensionamento da janela.
-        window.addEventListener('resize', () => {
-            // Reinicializa o carrossel para recalcular larguras em caso de redimensionamento.
-            // Debounce o evento de redimensionamento para evitar chamadas excessivas.
-            clearTimeout(window.resizeTimeout);
-            window.resizeTimeout = setTimeout(initializeCarousel, 250);
-        });
+    function goTo(index){
+      const visible = getVisible();
+      const max = slides.length - visible;
+      current = Math.max(0, Math.min(index, max));
+      const slideWidth = slides[0].offsetWidth + 20; // gap
+      track.scrollTo({ left: current * slideWidth, behavior: 'smooth' });
+      dotsContainer.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===current));
+    }
 
-        // Inicializa o carrossel quando o DOM estiver completamente carregado.
-        document.addEventListener('DOMContentLoaded', initializeCarousel);
-    </script>
+    function next(){ goTo(current + 1 >= slides.length - getVisible() + 1 ? 0 : current + 1); }
+    function prev(){ goTo(current - 1 < 0 ? slides.length - getVisible() : current - 1); }
+
+    prevBtn && prevBtn.addEventListener('click', () => { clearInterval(autoTimer); prev(); startAuto(); });
+    nextBtn && nextBtn.addEventListener('click', () => { clearInterval(autoTimer); next(); startAuto(); });
+
+    function startAuto(){ autoTimer = setInterval(next, 4000); }
+    startAuto();
+
+    // Sync dots on scroll
+    track.addEventListener('scroll', () => {
+      const slideWidth = slides[0].offsetWidth + 20;
+      const idx = Math.round(track.scrollLeft / slideWidth);
+      dotsContainer.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+      current = idx;
+    });
+  })();
+
+  // ── ACCORDION / FAQ ──
+  document.querySelectorAll('.accordion-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+      if(!isOpen) item.classList.add('open');
+    });
+  });
+
+  // ── FADE IN ON SCROLL ──
+  (function(){
+    const els = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  })();
+
+  // ── STICKY CTA: hide when footer-cta visible ──
+  (function(){
+    const sticky = document.getElementById('sticky-cta');
+    const footerCta = document.querySelector('.footer-cta');
+    if(!sticky || !footerCta) return;
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { sticky.style.display = e.isIntersecting ? 'none' : ''; });
+    }, { threshold: 0.1 });
+    obs.observe(footerCta);
+  })();
+</script>
+
 </body>
 </html>
-
