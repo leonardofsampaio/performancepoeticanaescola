@@ -16,84 +16,23 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- ══════════════ META PIXEL + CAPI ══════════════ -->
-  <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-    (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-    function generateUUID(){
-      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
-        var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);
-      });
-    }
-
-    function getCookie(name){
-      var v='; '+document.cookie,p=v.split('; '+name+'=');
-      if(p.length===2)return p.pop().split(';').shift();
-      return null;
-    }
-
-    var _pvId = generateUUID();
-    fbq('init','1243155826763791');
-    fbq('track','PageView',{},{eventID:_pvId});
-
-    async function sendCAPI(eventName, customData, userData){
-      customData = customData||{};
-      userData = userData||{};
-      var eventId = generateUUID();
-      var payload = {
-        data:[{
-          event_name: eventName,
-          event_time: Math.floor(Date.now()/1000),
-          event_id: eventId,
-          event_source_url: window.location.href,
-          action_source: 'website',
-          user_data: Object.assign({
-            client_user_agent: navigator.userAgent,
-            fbp: getCookie('_fbp'),
-            fbc: getCookie('_fbc')
-          }, userData),
-          custom_data: customData
-        }]
-      };
-      try{
-        await fetch('https://graph.facebook.com/v19.0/1243155826763791/events?access_token=EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD',{
-          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)
-        });
-      }catch(e){}
-      return eventId;
-    }
-
-    // PageView CAPI
-    window.addEventListener('load',function(){
-      sendCAPI('PageView',{});
-    });
-
-    async function trackCheckout(productName, value){
-      var eventId = generateUUID();
-      if(typeof fbq!=='undefined'){
-        fbq('track','InitiateCheckout',{
-          content_name: productName,
-          value: value,
-          currency: 'BRL'
-        },{eventID: eventId});
-      }
-      await sendCAPI('InitiateCheckout',{
-        content_name: productName,
-        value: value,
-        currency: 'BRL'
-      });
-      // GA4
-      if(typeof gtag!=='undefined'){
-        gtag('event','begin_checkout',{currency:'BRL',value:value,items:[{item_name:productName,price:value}]});
-      }
-    }
-  </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
-  <!-- ══════════════ END PIXEL ══════════════ -->
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1243155826763791');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1H7TNQVG"></script>
