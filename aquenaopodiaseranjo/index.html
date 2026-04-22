@@ -1,73 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- UTMify -->
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
-
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Coleção Tesouro Poético do Professor Consciente — materiais pedagógicos autorais para ensinar racismo, identidade e ancestralidade com poesia. Para professores do 5º ano ao Ensino Médio.">
   <title>Coleção Tesouro Poético do Professor Consciente | Leonardo Sampaio</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Preconnect: avisa o navegador para já se conectar a esses servidores antes de precisar -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- ═══ META PIXEL + CAPI ═══ -->
+  <!-- Google Fonts: display=swap evita que o texto fique invisível enquanto a fonte carrega -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome: ícones (os desenhinhos de escudo, raio, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- ═══ META PIXEL DO FACEBOOK + API DE CONVERSÕES (CAPI) ═══
+       O Pixel registra ações no navegador do visitante.
+       O CAPI envia os mesmos eventos direto pelo servidor,
+       como "seguro extra" caso o navegador bloqueie o Pixel. -->
   <script>
     !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-    var _pixelId = '1243155826763791';
-    var _apiToken = 'EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD';
+    const _pixelId   = '1243155826763791';
+    const _apiToken  = 'EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD';
 
-    function _genUUID(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);});}
+    /* Gera um ID único para cada evento — evita contar o mesmo evento 2x */
+    function _genUUID(){
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){
+        const r=Math.random()*16|0, v=c==='x'?r:(r&0x3|0x8);
+        return v.toString(16);
+      });
+    }
 
-    var _pvId = _genUUID();
+    const _pvId = _genUUID();
     fbq('init', _pixelId);
     fbq('track', 'PageView', {}, {eventID: _pvId});
 
+    /* Envia o evento também pelo servidor (CAPI) */
     async function sendCAPI(eventName, customData){
-      var eid = _genUUID();
-      var payload = {data:[{
-        event_name: eventName,
-        event_time: Math.floor(Date.now()/1000),
-        event_id: eventName==='PageView'?_pvId:eid,
+      const eid = _genUUID();
+      const payload = {data:[{
+        event_name:       eventName,
+        event_time:       Math.floor(Date.now()/1000),
+        event_id:         eventName==='PageView' ? _pvId : eid,
         event_source_url: window.location.href,
-        action_source: 'website',
-        user_data: {client_user_agent: navigator.userAgent},
-        custom_data: customData||{}
+        action_source:    'website',
+        user_data:        { client_user_agent: navigator.userAgent },
+        custom_data:      customData || {}
       }]};
-      try{
+      try {
         await fetch('https://graph.facebook.com/v19.0/'+_pixelId+'/events?access_token='+_apiToken,{
-          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)
+          method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload)
         });
-      }catch(e){}
-      return eid;
+      } catch(e) { /* silencia erros de rede para não quebrar a página */ }
     }
-    window.addEventListener('load',function(){ sendCAPI('PageView',{}); });
+    window.addEventListener('load', () => sendCAPI('PageView', {}));
 
-    function trackCheckout(product, href){
-      var eid = _genUUID();
-      if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product},{eventID:eid});
-      sendCAPI('InitiateCheckout',{content_name:product});
-      setTimeout(function(){ window.location.href=href; },250);
-      return false;
+    /* ═══ FUNÇÃO DE CHECKOUT COM UTM + SCK ═══
+       COMO FUNCIONA:
+       1. Pega os parâmetros UTM da URL atual da página
+          (utm_source, utm_medium, utm_campaign, etc.)
+       2. Monta o parâmetro "sck" que a Kiwify usa para
+          identificar qual campanha gerou a venda
+       3. Cola tudo na URL de destino ANTES de redirecionar
+       4. Dispara os eventos do Pixel e CAPI
+       5. Aguarda 350ms (subiu de 250 para dar tempo ao CAPI)
+          e então abre a URL
+
+       POR QUE ISSO É NECESSÁRIO:
+       O script de passthrough genérico (lá embaixo) roda uma
+       vez na carga da página e altera os href dos links.
+       Mas quando o usuário clica em um botão com onclick=
+       trackCheckout(), o redirecionamento acontecia ANTES
+       dos UTMs serem adicionados. Agora trackCheckout() já
+       cuida de tudo internamente. -->
+    function trackCheckout(product, baseHref) {
+      const eid = _genUUID();
+
+      /* Pega UTMs da URL atual */
+      const sp  = new URLSearchParams(window.location.search);
+      const src = sp.get('utm_source')   || '';
+      const med = sp.get('utm_medium')   || '';
+      const cam = sp.get('utm_campaign') || '';
+      const ter = sp.get('utm_term')     || '';
+      const con = sp.get('utm_content')  || '';
+
+      /* Monta parâmetro sck no formato que a Kiwify entende */
+      const sck = (src || med || cam || ter || con)
+        ? `sck=${src}|${med}|${cam}|${ter}|${con}`
+        : '';
+
+      /* Constrói a URL final com UTMs + sck */
+      let finalUrl = baseHref;
+      const utmStr = sp.toString();  /* todos os utm_* juntos */
+      const extras = [utmStr, sck].filter(Boolean).join('&');
+      if (extras) {
+        finalUrl += (baseHref.includes('?') ? '&' : '?') + extras;
+      }
+
+      /* Dispara eventos de rastreamento */
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', { content_name: product }, { eventID: eid });
+      }
+      sendCAPI('InitiateCheckout', { content_name: product });
+
+      /* Redireciona após 350ms (tempo suficiente para o CAPI responder) */
+      setTimeout(() => { window.location.href = finalUrl; }, 350);
+      return false; /* impede o comportamento padrão do link */
     }
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
-  <!-- ═══ END PIXEL ═══ -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
+         alt="">
+  </noscript>
+  <!-- ═══ FIM DO PIXEL ═══ -->
 
-  <!-- Google Analytics -->
+  <!-- Google Analytics: async não bloqueia o carregamento da página -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T1H7TNQVG"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2T1H7TNQVG');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-2T1H7TNQVG');
+  </script>
 
   <style>
-    /* ═══════════════════════════════════════════
-       CSS CUSTOM PROPERTIES — Tesouro Poético
-    ═══════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════════
+       VARIÁVEIS DE COR — Tesouro Poético
+       Pense nisso como um "painel de controle" de cores.
+       Para mudar uma cor em todo o site, mude só aqui.
+    ═══════════════════════════════════════════════════════ */
     :root {
-      /* Brand palette */
       --text:         #00374C;
       --text-muted:   #4a7080;
       --bg:           #fbfefe;
@@ -77,95 +143,104 @@
       --accent:       #ffba19;
       --accent-d:     #cc8f00;
       --green:        #16a34a;
-      --green-h:      #15803d;
       --red:          #dc2626;
-      --white:        #ffffff;
 
-      /* Shade tokens */
-      --text-800:     #004966;
-      --bg-soft:      #eaf7fc;
-      --primary-50:   #e5f9ff;
-      --secondary-200:#a6e0f2;
-      --accent-100:   #fff0cc;
-
-      /* Liquid Glass recipe */
-      --glass-bg:     rgba(255,255,255,0.72);
-      --glass-bg-dark:rgba(255,255,255,0.08);
-      --glass-border: rgba(255,255,255,0.85);
-      --glass-border-subtle: rgba(255,255,255,0.45);
-      --glass-blur:   blur(24px) saturate(180%);
-      --glass-shadow: 0 8px 32px rgba(0,55,76,.10), 0 2px 8px rgba(0,55,76,.06);
+      /* Liquid Glass: efeito de vidro translúcido */
+      --glass-bg:          rgba(255,255,255,0.72);
+      --glass-border:      rgba(255,255,255,0.85);
+      --glass-blur:        blur(24px) saturate(180%);
+      --glass-shadow:      0 8px 32px rgba(0,55,76,.10), 0 2px 8px rgba(0,55,76,.06);
       --glass-shadow-lift: 0 20px 60px rgba(0,55,76,.16), 0 4px 16px rgba(0,55,76,.08);
 
-      --radius-xl:    2rem;
-      --radius-lg:    1.35rem;
-      --radius:       0.875rem;
-      --shadow:       0 4px 24px rgba(0,55,76,.08);
-      --shadow-md:    0 8px 40px rgba(0,55,76,.13);
-      --shadow-xl:    0 20px 64px rgba(0,55,76,.20);
+      /* Arredondamento dos cantos */
+      --radius-xl: 2rem;
+      --radius-lg: 1.35rem;
+      --radius:    0.875rem;
+
+      /* Sombras */
+      --shadow:    0 4px 24px rgba(0,55,76,.08);
+      --shadow-md: 0 8px 40px rgba(0,55,76,.13);
+      --shadow-xl: 0 20px 64px rgba(0,55,76,.20);
     }
 
+    /* Reset básico: remove margens e define box-sizing */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+
+    /* Scroll suave ao clicar em âncoras (#secao) */
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.68;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* impede scroll horizontal indesejado */
     }
-    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.2;
+    }
     img { max-width: 100%; height: auto; display: block; }
-    a  { text-decoration: none; color: inherit; }
-    .container { max-width: 900px; margin-inline: auto; padding-inline: 1.25rem; }
+    a   { text-decoration: none; color: inherit; }
 
-    /* ═══ UTILITY ═══ */
-    .text-primary { color: var(--primary); }
-    .text-accent  { color: var(--accent); }
-    .text-center  { text-align: center; }
-    .text-white   { color: #fff; }
+    /* Container: caixa central que limita a largura do conteúdo */
+    .container {
+      max-width: 900px;
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
 
-    /* ═══ ANNOUNCE BAR ═══ */
+    /* Foco visível para navegação por teclado (Tab) */
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: var(--radius);
+    }
+
+    /* Classes utilitárias */
+    .text-center { text-align: center; }
+
+    /* ── BARRA DE AVISO NO TOPO ── */
     .announce-bar {
       background: linear-gradient(90deg, var(--text) 0%, var(--primary-d) 100%);
       color: #fff;
       text-align: center;
-      padding: .6rem 1rem;
-      font-size: .82rem;
+      padding: .55rem 1rem;
+      font-size: clamp(.72rem, 2vw, .82rem); /* não estoura em telas pequenas */
       font-weight: 600;
-      letter-spacing: .04em;
+      letter-spacing: .03em;
+      line-height: 1.5;
     }
     .announce-bar i { margin-right: .4rem; color: var(--accent); }
 
-    /* ═══════════════════════════
-       HERO — LIQUID GLASS STYLE
-    ═══════════════════════════ */
+    /* ── HERO (primeira seção) ── */
     .hero {
       background: linear-gradient(148deg, #ebf8ff 0%, #d4f0fa 30%, #e8f5fb 60%, #f7fcfe 100%);
-      color: var(--text);
-      padding: 4.5rem 1.25rem 4rem;
+      padding: 4rem 1.25rem 3.5rem;
       text-align: center;
       position: relative;
       overflow: hidden;
     }
-    /* Orb decorations */
-    .hero::before {
-      content: '';
+    /* Bolinhas decorativas de fundo — aria-hidden no HTML para leitores de tela ignorarem */
+    .hero-orb {
       position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      aria-hidden: true;
+    }
+    .hero-orb-1 {
       top: -80px; right: -80px;
       width: 380px; height: 380px;
       background: radial-gradient(circle, rgba(0,168,219,0.22) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
     }
-    .hero::after {
-      content: '';
-      position: absolute;
+    .hero-orb-2 {
       bottom: -60px; left: -60px;
       width: 300px; height: 300px;
       background: radial-gradient(circle, rgba(140,215,238,0.20) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
     }
     .hero-eyebrow {
       display: inline-block;
@@ -177,43 +252,41 @@
       padding: .4rem 1.2rem;
       font-size: .82rem;
       font-weight: 700;
-      letter-spacing: .08em;
+      letter-spacing: .07em;
       text-transform: uppercase;
       color: var(--primary-d);
       margin-bottom: 1.5rem;
       box-shadow: var(--glass-shadow);
+      position: relative;
+      z-index: 1;
     }
     .hero h1 {
-      font-size: clamp(1.9rem, 5.5vw, 3.5rem);
+      font-size: clamp(1.75rem, 5.5vw, 3.5rem);
       font-weight: 900;
       color: var(--text);
       margin-bottom: 1.25rem;
       position: relative;
       z-index: 1;
     }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--primary);
-    }
+    .hero h1 em { font-style: italic; color: var(--primary); }
     .hero-sub {
-      font-size: clamp(.95rem, 2.5vw, 1.2rem);
+      font-size: clamp(.93rem, 2.5vw, 1.15rem);
       color: var(--text-muted);
       max-width: 640px;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 2.25rem;
       position: relative;
       z-index: 1;
+      line-height: 1.7;
     }
-
-    /* Liquid glass hook box */
     .hero-glass-box {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-xl);
-      padding: 2rem 2.25rem;
+      padding: clamp(1.25rem, 4vw, 2rem) clamp(1rem, 4vw, 2.25rem);
       max-width: 660px;
-      margin: 0 auto 2.5rem;
+      margin: 0 auto 2.25rem;
       box-shadow: var(--glass-shadow-lift);
       position: relative;
       z-index: 1;
@@ -227,26 +300,23 @@
       pointer-events: none;
     }
     .hero-glass-box p {
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       line-height: 1.75;
       color: var(--text);
       margin-bottom: 1rem;
       position: relative;
     }
     .hero-price-tag {
-      font-size: clamp(1.5rem, 4vw, 2.2rem);
+      font-size: clamp(1.2rem, 3.5vw, 1.9rem);
       font-weight: 900;
       color: var(--primary);
       font-family: 'Playfair Display', serif;
       position: relative;
     }
-    .hero-price-tag span {
-      color: var(--accent-d);
-    }
-
+    .hero-price-tag .price-highlight { color: var(--accent-d); }
     .hero-image {
-      max-width: 380px;
-      margin: 2.5rem auto 0;
+      max-width: 360px;
+      margin: 2.25rem auto 0;
       position: relative;
       z-index: 1;
     }
@@ -255,40 +325,42 @@
       box-shadow: var(--shadow-xl), 0 0 0 1px rgba(255,255,255,.8);
     }
 
-    /* ═══ TRUST BAR ═══ */
+    /* ── BARRA DE CONFIANÇA ── */
     .trust-bar {
       background: #fff;
       border-bottom: 1px solid rgba(0,168,219,.12);
-      padding: .85rem 1.25rem;
+      padding: .8rem 1.25rem;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: .4rem 1.75rem;
-      position: relative;
-      z-index: 2;
+      gap: .4rem 1.5rem;
     }
     .trust-item {
       display: flex;
       align-items: center;
       gap: .45rem;
-      font-size: .83rem;
+      font-size: .82rem;
       font-weight: 600;
       color: var(--text-muted);
     }
-    .trust-item i { color: var(--primary); font-size: .9rem; }
+    .trust-item i { color: var(--primary); font-size: .88rem; }
 
-    /* ═══ SECTIONS ═══ */
-    section { padding: 4.5rem 1.25rem; }
-    section.bg-white  { background: #fff; }
-    section.bg-soft   { background: linear-gradient(160deg, #eaf7fc 0%, #f5fbfd 100%); }
-    section.bg-dark   { background: var(--text); color: #fff; }
+    /* ── SEÇÕES GENÉRICAS ── */
+    section { padding: 4rem 1.25rem; }
+    section.bg-white    { background: #fff; }
+    section.bg-soft     { background: linear-gradient(160deg, #eaf7fc 0%, #f5fbfd 100%); }
+    section.bg-dark     { background: var(--text); color: #fff; }
     section.bg-gradient { background: linear-gradient(148deg, #edf7fb 0%, #fbfefe 100%); }
+
+    @media (max-width: 480px) {
+      section { padding: 2.75rem 1.1rem; }
+    }
 
     .section-label {
       display: inline-block;
       font-size: .75rem;
       font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--primary);
       margin-bottom: .65rem;
@@ -298,44 +370,59 @@
       border: 1px solid rgba(0,168,219,.18);
     }
     .section-title {
-      font-size: clamp(1.65rem, 4vw, 2.6rem);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       margin-bottom: 1rem;
       color: var(--text);
     }
     .section-sub {
-      font-size: 1.05rem;
+      font-size: 1.03rem;
       color: var(--text-muted);
       max-width: 640px;
       margin: 0 auto 2rem;
       line-height: 1.7;
     }
     .sep {
-      width: 48px;
-      height: 3px;
+      width: 48px; height: 3px;
       background: linear-gradient(90deg, var(--primary), var(--secondary));
       border-radius: 99px;
-      margin: 1.25rem auto 2rem;
+      margin: 1.1rem auto 1.75rem;
     }
 
-    /* ═══ PAIN / SOLUTION ═══ */
-    .two-col { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-    @media(min-width:640px){ .two-col { grid-template-columns: 1fr 1fr; } }
+    /* ── DOR / SOLUÇÃO ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
 
     .pain-card, .solution-card {
       padding: 1.75rem;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
     }
-    .pain-card    { background: #fff5f5; border: 1.5px solid #fecaca; }
-    .solution-card{ background: #f0fdf4; border: 1.5px solid #bbf7d0; }
-    .pain-card h3    { color: var(--red); margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
-    .solution-card h3{ color: var(--green); margin-bottom: 1rem; font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
+    .pain-card     { background: #fff5f5; border: 1.5px solid #fecaca; }
+    .solution-card { background: #f0fdf4; border: 1.5px solid #bbf7d0; }
+    .pain-card h3 {
+      color: var(--red); margin-bottom: 1rem;
+      font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 700;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .solution-card h3 {
+      color: var(--green); margin-bottom: 1rem;
+      font-family: 'DM Sans', sans-serif; font-size: 1.05rem; font-weight: 700;
+      display: flex; align-items: center; gap: .5rem;
+    }
     .check-list { list-style: none; }
-    .check-list li { display: flex; align-items: flex-start; gap: .65rem; margin-bottom: .8rem; font-size: .96rem; line-height: 1.5; }
-    .icon-x     { color: var(--red); margin-top: .1rem; flex-shrink: 0; }
-    .icon-check { color: var(--green); margin-top: .1rem; flex-shrink: 0; }
+    .check-list li {
+      display: flex; align-items: flex-start;
+      gap: .65rem; margin-bottom: .75rem;
+      font-size: .95rem; line-height: 1.5;
+    }
+    .icon-x     { color: var(--red);   margin-top: .15rem; flex-shrink: 0; }
+    .icon-check { color: var(--green); margin-top: .15rem; flex-shrink: 0; }
 
-    /* Quote box */
+    /* Caixa de falas internas (pensamentos do professor) */
     .quote-box {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
@@ -343,65 +430,62 @@
       border: 1.5px solid var(--glass-border);
       border-left: 4px solid var(--primary);
       border-radius: var(--radius-lg);
-      padding: 1.75rem 2rem;
+      padding: 1.5rem 1.75rem;
       box-shadow: var(--glass-shadow);
       max-width: 640px;
       margin: 2rem auto 0;
       text-align: left;
     }
-    .quote-box .q-lead { font-size: 1rem; font-weight: 700; margin-bottom: .85rem; color: var(--text); }
+    .quote-box .q-lead { font-size: .97rem; font-weight: 700; margin-bottom: .85rem; color: var(--text); }
     .quote-box ul { list-style: none; }
     .quote-box ul li {
-      display: flex;
-      gap: .6rem;
+      display: flex; gap: .6rem;
       margin-bottom: .65rem;
-      font-size: .95rem;
-      color: var(--text-muted);
+      font-size: .93rem; color: var(--text-muted);
       align-items: flex-start;
     }
     .quote-box ul li::before {
       content: '"';
       color: var(--primary);
-      font-size: 1.3rem;
-      line-height: 1;
+      font-size: 1.3rem; line-height: 1;
       flex-shrink: 0;
     }
 
-    /* ═══ SOLUTION BRIDGE BANNER ═══ */
+    /* ── BANNER DE TRANSIÇÃO ── */
     .bridge-banner {
       background: linear-gradient(135deg, var(--primary) 0%, var(--primary-d) 100%);
       color: #fff;
       text-align: center;
-      padding: 2.5rem 1.25rem;
+      padding: 2.25rem 1.25rem;
     }
-    .bridge-banner h3 {
-      font-size: clamp(1.2rem, 3.5vw, 1.9rem);
+    .bridge-banner h2 {
+      font-size: clamp(1.15rem, 3.5vw, 1.85rem);
       font-weight: 700;
       font-family: 'DM Sans', sans-serif;
     }
-    .bridge-banner h3 span { color: var(--accent); }
+    .bridge-banner h2 span { color: var(--accent); }
 
-    /* ═══ PRODUCT BLOCK (TRIPWIRE CORDEL) ═══ */
+    /* ── BLOCO DO PRODUTO ISCA ── */
     .product-inner {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 2.5rem;
+      gap: 2rem;
       align-items: center;
     }
-    @media(min-width:680px){ .product-inner { grid-template-columns: 1fr 1.6fr; } }
-
+    @media (min-width: 680px) {
+      .product-inner { grid-template-columns: 1fr 1.6fr; }
+    }
     .product-img img {
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-xl);
     }
-
     .product-card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-xl);
-      padding: 2.25rem 2rem;
+      padding: 2rem 1.75rem;
       box-shadow: var(--glass-shadow-lift);
       position: relative;
       overflow: hidden;
@@ -412,28 +496,50 @@
       top: 0; left: 0; right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-      border-radius: 99px 99px 0 0;
     }
+    @media (max-width: 480px) { .product-card { padding: 1.5rem 1.1rem; } }
 
-    .price-old { text-decoration: line-through; color: var(--text-muted); font-size: 1rem; }
+    .price-old { text-decoration: line-through; color: var(--text-muted); font-size: .97rem; }
     .price-new {
-      font-size: clamp(2.4rem, 6vw, 3.2rem);
-      font-weight: 900;
-      color: var(--primary);
-      line-height: 1;
-      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3rem);
+      font-weight: 900; color: var(--primary);
+      line-height: 1; font-family: 'Playfair Display', serif;
     }
-    .price-note { font-size: .88rem; color: var(--text-muted); margin-top: .3rem; }
+    .price-note { font-size: .87rem; color: var(--text-muted); margin-top: .3rem; }
 
-    /* Checklist */
+    /* Lista com checkmarks */
     .checklist { list-style: none; }
-    .checklist li { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .85rem; font-size: .97rem; line-height: 1.55; }
+    .checklist li {
+      display: flex; align-items: flex-start;
+      gap: .75rem; margin-bottom: .85rem;
+      font-size: .95rem; line-height: 1.55;
+    }
     .checklist li i { color: var(--accent); font-size: 1rem; margin-top: .2rem; flex-shrink: 0; }
 
-    /* Guarantee box */
+    /* Caixinha "como você recebe" */
+    .access-box {
+      background: rgba(0,168,219,.07);
+      border: 1px solid rgba(0,168,219,.18);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .access-box h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .88rem; font-weight: 700;
+      margin-bottom: .6rem; color: var(--primary-d);
+    }
+    .access-list { list-style: none; }
+    .access-list li {
+      display: flex; align-items: center;
+      gap: .6rem; font-size: .87rem; color: var(--text-muted);
+      margin-bottom: .4rem;
+    }
+    .access-list li i { color: var(--primary); width: 1rem; text-align: center; }
+
+    /* Caixinha de garantia */
     .guarantee-box {
-      display: flex;
-      align-items: flex-start;
+      display: flex; align-items: flex-start;
       gap: 1rem;
       background: rgba(0,168,219,.07);
       border: 1px solid rgba(0,168,219,.18);
@@ -441,165 +547,10 @@
       padding: 1rem 1.25rem;
       margin-top: 1.5rem;
     }
-    .guarantee-box i { font-size: 1.75rem; color: var(--primary); flex-shrink: 0; margin-top: .1rem; }
-    .guarantee-box p { font-size: .92rem; color: var(--text); line-height: 1.6; }
+    .guarantee-box i { font-size: 1.6rem; color: var(--primary); flex-shrink: 0; margin-top: .05rem; }
+    .guarantee-box p { font-size: .91rem; color: var(--text); line-height: 1.6; }
 
-    /* ═══ SECONDARY IMAGE BLOCK ═══ */
-    .secondary-img {
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-      margin: 0 auto 2.5rem;
-      max-width: 480px;
-    }
-
-    /* ═══ COLLECTION MANIFESTO ═══ */
-    .manifesto-quote {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      color: var(--primary-d);
-      border-left: 4px solid var(--accent);
-      padding: 1rem 1.75rem;
-      margin: 2rem auto;
-      max-width: 580px;
-      background: rgba(255,186,25,.06);
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
-
-    /* ═══ MOCKUP SECTION ═══ */
-    .mockup-img {
-      max-width: 480px;
-      margin: 2rem auto;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-    }
-
-    /* ═══ FEATURE LIST ═══ */
-    .feature-list { list-style: none; }
-    .feature-list li { display: flex; align-items: flex-start; gap: .75rem; margin-bottom: .85rem; font-size: .97rem; line-height: 1.55; }
-    .feature-list li i { color: var(--primary); font-size: 1.05rem; margin-top: .2rem; flex-shrink: 0; width: 1.2rem; text-align: center; }
-
-    /* ═══ COMPARISON CARDS ═══ */
-    .compare-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      align-items: stretch;
-    }
-    @media(min-width:700px){ .compare-grid { grid-template-columns: 1fr 1.15fr; } }
-
-    .compare-card {
-      border-radius: var(--radius-xl);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      background: var(--glass-bg);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
-      border: 1.5px solid var(--glass-border);
-      box-shadow: var(--glass-shadow);
-    }
-    .compare-card.main-offer {
-      border: 2.5px solid var(--accent);
-      box-shadow: var(--glass-shadow-lift), 0 0 0 1px rgba(255,186,25,.2);
-      position: relative;
-    }
-    .best-badge {
-      position: absolute;
-      top: -14px; left: 50%;
-      transform: translateX(-50%);
-      background: var(--accent);
-      color: var(--text);
-      font-size: .72rem;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: .3rem 1.25rem;
-      border-radius: 99px;
-      white-space: nowrap;
-    }
-    .compare-card h3 { font-size: 1.3rem; margin-bottom: 1.25rem; }
-    .compare-price { margin-bottom: 1.25rem; }
-    .compare-price .old { text-decoration: line-through; color: var(--text-muted); font-size: .92rem; display: block; }
-    .compare-price .new { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 900; color: var(--primary); line-height: 1; font-family: 'Playfair Display', serif; }
-    .compare-price .new.highlight { color: var(--primary-d); }
-    .compare-price .installment { font-size: .85rem; color: var(--text-muted); display: block; margin-top: .2rem; }
-    .economy-tag {
-      background: rgba(255,186,25,.15);
-      border: 1px solid rgba(255,186,25,.35);
-      border-radius: 99px;
-      display: inline-block;
-      padding: .3rem 1rem;
-      font-size: .82rem;
-      font-weight: 700;
-      color: var(--accent-d);
-      margin-bottom: 1.25rem;
-    }
-    .compare-list { list-style: none; flex: 1; margin-bottom: 1.5rem; }
-    .compare-list li { display: flex; gap: .65rem; align-items: flex-start; margin-bottom: .7rem; font-size: .95rem; line-height: 1.5; }
-    .compare-list li i { color: var(--green); margin-top: .15rem; flex-shrink: 0; }
-    .cta-note { font-size: .8rem; color: var(--text-muted); text-align: center; margin-top: .5rem; }
-
-    /* ═══ COLLECTION BIG OFFER BLOCK ═══ */
-    #oferta-colecao {
-      background: linear-gradient(155deg, var(--text) 0%, #005170 60%, var(--primary-d) 100%);
-    }
-    .collection-glass {
-      background: rgba(255,255,255,0.07);
-      backdrop-filter: blur(28px) saturate(160%);
-      -webkit-backdrop-filter: blur(28px) saturate(160%);
-      border: 1.5px solid rgba(255,255,255,0.18);
-      border-radius: var(--radius-xl);
-      padding: 3rem 2.5rem;
-      max-width: 680px;
-      margin: 0 auto;
-      text-align: center;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      position: relative;
-      overflow: hidden;
-    }
-    .collection-glass::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
-      pointer-events: none;
-    }
-    .collection-glass .install-label {
-      font-size: .78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      color: var(--secondary);
-      margin-bottom: .35rem;
-    }
-    .collection-glass .price-main {
-      font-size: clamp(3rem, 10vw, 5rem);
-      font-weight: 900;
-      color: var(--accent);
-      line-height: 1;
-      font-family: 'Playfair Display', serif;
-    }
-    .collection-glass .price-cash {
-      font-size: 1rem;
-      color: rgba(255,255,255,.65);
-      margin-top: .4rem;
-    }
-    .savings-badge {
-      background: rgba(255,186,25,.18);
-      border: 1px solid rgba(255,186,25,.40);
-      border-radius: 99px;
-      display: inline-block;
-      padding: .38rem 1.4rem;
-      font-size: .88rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin: 1.1rem 0 1.75rem;
-    }
-    .collection-glass .checklist li { color: rgba(255,255,255,.92); }
-    .collection-glass .checklist li i { color: var(--accent); }
-
-    /* ═══ BUTTONS ═══ */
+    /* ── BOTÕES ── */
     .btn {
       display: inline-block;
       font-family: 'DM Sans', sans-serif;
@@ -608,21 +559,24 @@
       letter-spacing: .06em;
       border-radius: 99px;
       cursor: pointer;
-      transition: transform .2s, box-shadow .2s, background .2s, filter .2s;
+      transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
       text-align: center;
       border: none;
       position: relative;
       overflow: hidden;
+      min-height: 48px; /* tamanho mínimo para toque confortável no celular */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     .btn::after {
       content: '';
-      position: absolute;
-      inset: 0;
+      position: absolute; inset: 0;
       background: linear-gradient(180deg, rgba(255,255,255,.15) 0%, transparent 60%);
-      pointer-events: none;
-      border-radius: 99px;
+      pointer-events: none; border-radius: 99px;
     }
-    .btn:hover { transform: translateY(-3px); filter: brightness(1.04); }
+    .btn:hover { transform: translateY(-2px); filter: brightness(1.05); }
+    @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 
     .btn-green {
       background: linear-gradient(135deg, #1ec05c 0%, var(--green) 100%);
@@ -638,33 +592,36 @@
     }
     .btn-primary:hover { box-shadow: 0 10px 28px rgba(0,168,219,.55); }
 
-    .btn-lg  { padding: 1.05rem 2.25rem; font-size: 1.08rem; }
-    .btn-xl  { padding: 1.3rem 3rem; font-size: 1.2rem; }
-    .btn-sm  { padding: .7rem 1.75rem; font-size: .9rem; }
-    .btn-full{ width: 100%; display: block; }
+    .btn-lg   { padding: 1rem 2.25rem;  font-size: 1.05rem; }
+    .btn-xl   { padding: 1.2rem 2.75rem; font-size: 1.15rem; }
+    .btn-full { width: 100%; }
 
+    /* Animação de pulsar — chama atenção para o botão principal */
     .btn-pulse { animation: pulse 2.3s infinite; }
     @keyframes pulse {
       0%,100% { box-shadow: 0 6px 24px rgba(22,163,74,.42); }
       50%      { box-shadow: 0 6px 36px rgba(22,163,74,.72); }
     }
+    @media (prefers-reduced-motion: reduce) { .btn-pulse { animation: none; } }
 
-    /* ═══ TESTIMONIALS CAROUSEL ═══ */
-    .carousel-wrap { position: relative; overflow: hidden; }
+    /* ── CARROSSEL DE DEPOIMENTOS ── */
+    .carousel-wrap { position: relative; }
     .carousel-track {
       display: flex;
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
       scrollbar-width: none;
       -ms-overflow-style: none;
-      gap: 1.25rem;
-      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
       scroll-behavior: smooth;
-      padding: .5rem;
+      padding: .5rem .25rem;
+      /* Evita que o carrossel seja mais largo que a tela */
+      max-width: 100%;
     }
     .carousel-track::-webkit-scrollbar { display: none; }
+
     .carousel-slide {
-      flex: 0 0 calc(100% - 1rem);
+      flex: 0 0 min(100%, 340px);
       scroll-snap-align: center;
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
@@ -672,111 +629,261 @@
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-lg);
       box-shadow: var(--glass-shadow);
-      padding: 1.25rem;
+      padding: 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 260px;
+      min-height: 240px;
     }
-    @media(min-width:640px){ .carousel-slide { flex: 0 0 calc(50% - .625rem); } }
-    .carousel-slide img { width: 100%; height: auto; object-fit: contain; max-height: 240px; border-radius: .5rem; }
-    .carousel-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 1.25rem; }
-    .dot { width: .6rem; height: .6rem; border-radius: 99px; background: rgba(0,168,219,.25); cursor: pointer; transition: background .25s, transform .25s; }
-    .dot.active { background: var(--primary); transform: scale(1.25); }
-    .carousel-arrows { display: none; }
-    @media(min-width:640px){
-      .carousel-arrows { display: flex; justify-content: center; gap: 1rem; margin-top: 1rem; }
-      .carousel-arrows button { background: var(--glass-bg); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: 1px solid var(--glass-border); color: var(--text); width: 2.5rem; height: 2.5rem; border-radius: 99px; box-shadow: var(--shadow); cursor: pointer; font-size: .9rem; display: flex; align-items: center; justify-content: center; transition: background .2s; }
-      .carousel-arrows button:hover { background: rgba(0,168,219,.1); }
+    @media (min-width: 640px) {
+      .carousel-slide { flex: 0 0 calc(50% - .5rem); }
     }
+    .carousel-slide img {
+      width: 100%; height: auto;
+      object-fit: contain; max-height: 240px;
+      border-radius: .5rem;
+    }
+    .carousel-dots {
+      display: flex; justify-content: center;
+      gap: .5rem; margin-top: 1.1rem;
+    }
+    .dot {
+      width: .6rem; height: .6rem;
+      border-radius: 99px;
+      background: rgba(0,168,219,.25);
+      cursor: pointer;
+      border: none;
+      transition: background .25s, transform .25s;
+      /* Aumenta a área de toque sem mudar o visual */
+      padding: .5rem;
+      margin: -.5rem;
+    }
+    .dot.active { background: var(--primary); transform: scale(1.3); }
+    .carousel-arrows {
+      display: flex; justify-content: center;
+      gap: 1rem; margin-top: .85rem;
+    }
+    .carousel-arrows button {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+      width: 2.75rem; height: 2.75rem; /* tamanho mínimo de toque */
+      border-radius: 99px;
+      box-shadow: var(--shadow);
+      cursor: pointer; font-size: .9rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .carousel-arrows button:hover { background: rgba(0,168,219,.1); }
 
-    /* ═══ BENEFITS GRID ═══ */
-    .benefits-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media(min-width:500px){ .benefits-grid { grid-template-columns: 1fr 1fr; } }
+    /* ── GRADE DE BENEFÍCIOS ── */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: 1fr; /* começa como 1 coluna */
+      gap: 1rem;
+    }
+    @media (min-width: 460px) { .benefits-grid { grid-template-columns: 1fr 1fr; } }
+
     .benefit-item {
-      display: flex;
-      align-items: flex-start;
+      display: flex; align-items: flex-start;
       gap: .85rem;
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      padding: 1.25rem;
+      padding: 1.1rem;
       box-shadow: var(--glass-shadow);
     }
-    .benefit-item i { font-size: 1.2rem; color: var(--accent); margin-top: .1rem; flex-shrink: 0; }
-    .benefit-item span { font-size: .95rem; line-height: 1.55; }
+    .benefit-item i   { font-size: 1.1rem; color: var(--accent); margin-top: .1rem; flex-shrink: 0; }
+    .benefit-item span { font-size: .93rem; line-height: 1.5; }
 
-    /* ═══ AUTHOR ═══ */
+    /* ── AUTOR ── */
     .author-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 2.25rem;
-      align-items: center;
-      text-align: center;
+      display: flex; flex-direction: column;
+      gap: 2rem; align-items: center; text-align: center;
     }
-    @media(min-width:680px){ .author-inner { flex-direction: row; text-align: left; } }
+    @media (min-width: 680px) { .author-inner { flex-direction: row; text-align: left; } }
     .author-photo {
-      width: 190px; height: 190px;
-      border-radius: 50%;
-      object-fit: cover;
+      width: 180px; height: 180px;
+      border-radius: 50%; object-fit: cover;
       box-shadow: var(--shadow-md);
       flex-shrink: 0;
       border: 4px solid var(--secondary);
     }
-    .author-text p { font-size: .97rem; line-height: 1.8; margin-bottom: .85rem; color: var(--text-muted); }
+    .author-text p {
+      font-size: .96rem; line-height: 1.8;
+      margin-bottom: .85rem; color: var(--text-muted);
+    }
     .author-text .quote-highlight {
-      font-weight: 700;
-      color: var(--primary);
+      font-weight: 700; color: var(--primary);
       font-style: italic;
       font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
     }
 
-    /* ═══ WHATSAPP BONUS ═══ */
+    /* ── BÔNUS WHATSAPP ── */
     .whatsapp-bonus {
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1.5px solid rgba(255,255,255,.18);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem 1.75rem;
+      max-width: 620px; margin: 0 auto;
+      display: flex; align-items: center;
+      gap: 1.25rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+      flex-direction: column; text-align: center;
+    }
+    @media (min-width: 500px) {
+      .whatsapp-bonus { flex-direction: row; text-align: left; }
+    }
+    .whatsapp-bonus img { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── COLEÇÃO — SEÇÃO ESCURA ── */
+    #oferta-colecao {
+      background: linear-gradient(155deg, var(--text) 0%, #005170 60%, var(--primary-d) 100%);
+      padding: 4rem 1.25rem;
+    }
+    .collection-glass {
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(28px) saturate(160%);
+      -webkit-backdrop-filter: blur(28px) saturate(160%);
+      border: 1.5px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius-xl);
+      padding: clamp(1.5rem, 5vw, 3rem) clamp(1.1rem, 4vw, 2.5rem);
+      max-width: 680px; margin: 0 auto;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      position: relative; overflow: hidden;
+    }
+    .collection-glass::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .collection-glass .install-label {
+      font-size: .78rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .12em;
+      color: var(--secondary); margin-bottom: .35rem;
+    }
+    .collection-glass .price-main {
+      font-size: clamp(2.8rem, 10vw, 5rem);
+      font-weight: 900; color: var(--accent);
+      line-height: 1; font-family: 'Playfair Display', serif;
+    }
+    .collection-glass .price-cash {
+      font-size: .97rem; color: rgba(255,255,255,.65); margin-top: .4rem;
+    }
+    .savings-badge {
+      background: rgba(255,186,25,.18);
+      border: 1px solid rgba(255,186,25,.40);
+      border-radius: 99px;
+      display: inline-block;
+      padding: .38rem 1.25rem;
+      font-size: .87rem; font-weight: 700; color: var(--accent);
+      margin: 1rem 0 1.5rem;
+    }
+    .collection-glass .checklist li { color: rgba(255,255,255,.92); }
+    .collection-glass .checklist li i { color: var(--accent); }
+
+    /* ── COMPARAÇÃO ── */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+    @media (min-width: 700px) {
+      .compare-grid { grid-template-columns: 1fr 1.15fr; }
+    }
+    .compare-card {
+      border-radius: var(--radius-xl);
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column;
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
-      border-radius: var(--radius-xl);
-      padding: 1.75rem 2rem;
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-      box-shadow: var(--glass-shadow-lift);
-      flex-direction: column;
-      text-align: center;
+      box-shadow: var(--glass-shadow);
     }
-    @media(min-width:500px){ .whatsapp-bonus { flex-direction: row; text-align: left; } }
-    .whatsapp-bonus img { width: 72px; height: 72px; border-radius: 50%; flex-shrink: 0; }
-
-    /* ═══ ACCESS BOX ═══ */
-    .access-box {
-      background: rgba(0,168,219,.07);
-      border: 1px solid rgba(0,168,219,.18);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.25rem;
-      margin-bottom: 1.25rem;
+    @media (max-width: 480px) { .compare-card { padding: 1.5rem 1.1rem; } }
+    .compare-card.main-offer {
+      border: 2.5px solid var(--accent);
+      box-shadow: var(--glass-shadow-lift), 0 0 0 1px rgba(255,186,25,.2);
+      position: relative;
     }
-    .access-box h4 { font-family: 'DM Sans',sans-serif; font-size: .9rem; font-weight: 700; margin-bottom: .6rem; color: var(--primary-d); }
-    .access-list { list-style: none; }
-    .access-list li { display: flex; align-items: center; gap: .6rem; font-size: .88rem; color: var(--text-muted); margin-bottom: .4rem; }
-    .access-list li i { color: var(--primary); font-size: .9rem; width: 1rem; text-align: center; }
+    .best-badge {
+      position: absolute; top: -14px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent); color: var(--text);
+      font-size: .72rem; font-weight: 900;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .3rem 1.25rem; border-radius: 99px;
+      white-space: nowrap;
+    }
+    .compare-card h3 { font-size: 1.25rem; margin-bottom: 1.1rem; }
+    .compare-price { margin-bottom: 1.1rem; }
+    .compare-price .old   { text-decoration: line-through; color: var(--text-muted); font-size: .9rem; display: block; }
+    .compare-price .new   { font-size: clamp(1.9rem, 5vw, 2.7rem); font-weight: 900; color: var(--primary); line-height: 1; font-family: 'Playfair Display', serif; }
+    .compare-price .installment { font-size: .83rem; color: var(--text-muted); display: block; margin-top: .2rem; }
+    .economy-tag {
+      background: rgba(255,186,25,.15); border: 1px solid rgba(255,186,25,.35);
+      border-radius: 99px; display: inline-block;
+      padding: .3rem 1rem; font-size: .82rem; font-weight: 700;
+      color: var(--accent-d); margin-bottom: 1.1rem;
+    }
+    .compare-list { list-style: none; flex: 1; margin-bottom: 1.25rem; }
+    .compare-list li {
+      display: flex; gap: .65rem; align-items: flex-start;
+      margin-bottom: .65rem; font-size: .94rem; line-height: 1.5;
+    }
+    .compare-list li i { color: var(--green); margin-top: .15rem; flex-shrink: 0; }
+    .cta-note { font-size: .79rem; color: var(--text-muted); text-align: center; margin-top: .5rem; }
 
-    /* ═══ DELIVERY STEPS ═══ */
-    .delivery-steps { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media(min-width:480px){ .delivery-steps { grid-template-columns: repeat(3,1fr); } }
+    /* ── CITAÇÃO MANIFESTO ── */
+    .manifesto-quote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.05rem, 3vw, 1.45rem);
+      color: var(--primary-d);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.5rem;
+      margin: 2rem auto;
+      max-width: 560px;
+      background: rgba(255,186,25,.06);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      text-align: left;
+    }
+
+    /* ── LISTA DE FEATURES ── */
+    .feature-list { list-style: none; }
+    .feature-list li {
+      display: flex; align-items: flex-start;
+      gap: .75rem; margin-bottom: .85rem;
+      font-size: .96rem; line-height: 1.55;
+    }
+    .feature-list li i {
+      color: var(--primary); font-size: 1rem;
+      margin-top: .2rem; flex-shrink: 0; width: 1.15rem; text-align: center;
+    }
+
+    /* ── PASSOS DE ENTREGA ── */
+    .delivery-steps {
+      display: grid; grid-template-columns: 1fr; gap: 1rem;
+    }
+    @media (min-width: 480px) { .delivery-steps { grid-template-columns: repeat(3, 1fr); } }
     .step {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      padding: 1.5rem 1.25rem;
+      padding: 1.4rem 1.25rem;
       box-shadow: var(--glass-shadow);
       text-align: center;
     }
@@ -784,32 +891,35 @@
       width: 2.75rem; height: 2.75rem;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--primary), var(--primary-d));
-      color: #fff;
-      font-weight: 900;
-      font-size: 1.15rem;
+      color: #fff; font-weight: 900; font-size: 1.1rem;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto .85rem;
       box-shadow: 0 4px 16px rgba(0,168,219,.35);
     }
-    .step p { font-size: .9rem; color: var(--text); line-height: 1.55; }
+    .step p { font-size: .89rem; color: var(--text); line-height: 1.55; }
 
-    /* ═══ QUICK FAQ GRID ═══ */
+    /* ── MINI FAQ (grade de perguntas rápidas) ── */
     .quick-faq-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media(min-width:540px){ .quick-faq-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 540px) { .quick-faq-grid { grid-template-columns: 1fr 1fr; } }
     .quick-faq-item {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1.5px solid var(--glass-border);
       border-radius: var(--radius-lg);
-      padding: 1.35rem;
+      padding: 1.25rem;
       box-shadow: var(--glass-shadow);
     }
-    .quick-faq-item h3 { font-family: 'DM Sans', sans-serif; font-size: .93rem; font-weight: 700; margin-bottom: .4rem; color: var(--text); }
-    .quick-faq-item p { font-size: .88rem; color: var(--text-muted); line-height: 1.55; }
+    .quick-faq-item h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .92rem; font-weight: 700;
+      margin-bottom: .4rem; color: var(--text);
+    }
+    .quick-faq-item p { font-size: .87rem; color: var(--text-muted); line-height: 1.55; }
 
-    /* ═══ FAQ ACCORDION ═══ */
-    .faq-list { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.75rem; }
+    /* ── FAQ ACCORDION ── */
+    /* O accordion esconde e mostra respostas ao clicar nas perguntas */
+    .faq-list { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
     .faq-item {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
@@ -819,64 +929,64 @@
       overflow: hidden;
       box-shadow: var(--glass-shadow);
     }
-    .faq-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 1.5rem;
-      cursor: pointer;
-      gap: 1rem;
+    /* O botão do FAQ (a pergunta clicável) */
+    .faq-btn {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.15rem 1.4rem; gap: 1rem;
       transition: background .2s;
+      text-align: left;
     }
-    .faq-header:hover { background: rgba(0,168,219,.05); }
-    .faq-header h3 { font-family: 'DM Sans', sans-serif; font-size: .97rem; font-weight: 700; flex: 1; color: var(--text); }
-    .faq-icon { transition: transform .3s; font-size: .8rem; color: var(--primary); flex-shrink: 0; }
-    .faq-body { max-height: 0; overflow: hidden; transition: max-height .35s ease-out, padding .3s; padding: 0 1.5rem; font-size: .94rem; line-height: 1.7; color: var(--text-muted); }
-    .faq-item.open .faq-body { max-height: 400px; padding-bottom: 1.25rem; }
-    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-btn:hover { background: rgba(0,168,219,.05); }
+    .faq-btn h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: .96rem; font-weight: 700;
+      flex: 1; color: var(--text); line-height: 1.4;
+    }
+    .faq-icon {
+      transition: transform .3s;
+      font-size: .8rem; color: var(--primary); flex-shrink: 0;
+    }
+    .faq-body {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease-out, padding .3s;
+      padding: 0 1.4rem;
+      font-size: .93rem; line-height: 1.7; color: var(--text-muted);
+    }
+    .faq-item.open .faq-body  { max-height: 400px; padding-bottom: 1.15rem; }
+    .faq-item.open .faq-icon  { transform: rotate(180deg); }
 
-    /* ═══ FOOTER CTA ═══ */
+    /* ── FOOTER CTA ── */
     .footer-cta {
       background: linear-gradient(155deg, var(--text) 0%, #00607f 60%, var(--primary-d) 100%);
-      color: #fff;
-      text-align: center;
-      padding: 5.5rem 1.25rem;
-      position: relative;
-      overflow: hidden;
+      color: #fff; text-align: center;
+      padding: 5rem 1.25rem;
+      position: relative; overflow: hidden;
     }
-    .footer-cta::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M50 50V40h-5v10H35v5h10v10h5V55h10v-5H50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    .footer-cta h2 { font-size: clamp(1.5rem, 4.5vw, 2.7rem); margin-bottom: 1rem; }
+    .footer-cta p {
+      font-size: 1.05rem; opacity: .82;
+      max-width: 540px; margin: 0 auto 2rem;
+      line-height: 1.7;
     }
-    .footer-cta h2 { font-size: clamp(1.65rem, 4.5vw, 2.8rem); margin-bottom: 1rem; position: relative; }
-    .footer-cta p { font-size: 1.08rem; opacity: .82; max-width: 560px; margin: 0 auto 2.25rem; position: relative; line-height: 1.7; }
     .guarantee-footer {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .6rem;
-      font-size: .88rem;
-      opacity: .72;
-      margin-top: 1.25rem;
-      position: relative;
+      display: flex; align-items: center;
+      justify-content: center; gap: .6rem;
+      font-size: .87rem; opacity: .7; margin-top: 1.1rem;
     }
 
-    /* ═══ FOOTER ═══ */
+    /* ── FOOTER ── */
     footer {
-      background: #001f2d;
-      color: rgba(255,255,255,.45);
-      text-align: center;
-      padding: 2rem 1.25rem;
+      background: #001f2d; color: rgba(255,255,255,.4);
+      text-align: center; padding: 2rem 1.25rem;
       font-size: .82rem;
     }
 
-    /* ═══ STICKY CTA MOBILE ═══ */
+    /* ── STICKY CTA MOBILE ── */
+    /* Aparece colado na parte de baixo da tela no celular */
     #sticky-cta {
       display: none;
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
+      position: fixed; bottom: 0; left: 0; right: 0;
       background: linear-gradient(135deg, #1ec05c 0%, var(--green) 100%);
       text-align: center;
       z-index: 999;
@@ -884,105 +994,134 @@
     }
     #sticky-cta a {
       display: block;
-      padding: 1rem 1.25rem;
-      color: #fff;
-      font-weight: 700;
-      font-size: .9rem;
-      letter-spacing: .04em;
+      padding: .85rem 1.25rem;
+      min-height: 52px;
+      color: #fff; font-weight: 700;
+      font-size: .9rem; letter-spacing: .04em;
+      display: flex; align-items: center; justify-content: center;
     }
 
-    /* ═══ FADE IN ON SCROLL ═══ */
-    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    /* ── ANIMAÇÃO DE ENTRADA ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
     .fade-in.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+    }
 
-    /* ═══ RESPONSIVE TWEAKS ═══ */
-    @media(max-width:480px){
-      section { padding: 3rem 1.1rem; }
-      .hero { padding: 3.5rem 1.1rem 3rem; }
-      .collection-glass { padding: 2rem 1.25rem; }
-      .product-card { padding: 1.75rem 1.25rem; }
-      .compare-card { padding: 1.75rem 1.25rem; }
+    /* ── MOCKUP E IMAGEM SECUNDÁRIA ── */
+    .mockup-img {
+      max-width: 460px; margin: 1.75rem auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-xl);
     }
   </style>
 </head>
 <body>
 
-<!-- ═══ ANNOUNCE BAR ═══ -->
-<div class="announce-bar">
-  <i class="fa-solid fa-fire"></i> OFERTA POR TEMPO LIMITADO · Apenas as primeiras 200 compras com este preço especial &nbsp;|&nbsp; 🔒 Acesso digital imediato &nbsp;|&nbsp; 7 dias de garantia incondicional
+<!-- BARRA DE AVISO -->
+<div class="announce-bar" role="banner">
+  <i class="fa-solid fa-fire" aria-hidden="true"></i>
+  OFERTA POR TEMPO LIMITADO · Apenas as primeiras 200 compras com este preço
+  &nbsp;|&nbsp; 🔒 Acesso imediato &nbsp;|&nbsp; 7 dias de garantia
 </div>
 
 <!-- ═══════════════════════════════════════
-     HERO — 1ª DOBRA (SEM BOTÃO CTA)
+     HERO — 1ª DOBRA (sem botão de compra)
 ═══════════════════════════════════════ -->
 <header class="hero">
+  <!-- Esferas decorativas — aria-hidden faz leitores de tela ignorá-las -->
+  <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+  <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
   <div class="container">
-    <div class="hero-eyebrow">✦ Para Professoras e Professores que Querem Fazer Diferença de Verdade</div>
+    <p class="hero-eyebrow">✦ Para Professoras e Professores que Querem Fazer Diferença de Verdade</p>
+
     <h1>
       A poesia que sua sala de aula<br>
       está esperando — e você<br>
       <em>ainda não conhece.</em>
     </h1>
+
     <p class="hero-sub">
-      Ensine racismo, identidade e ancestralidade com segurança, beleza e impacto real. Materiais pedagógicos autorais que transformam temas sensíveis em aulas que seus alunos jamais vão esquecer.
+      Ensine racismo, identidade e ancestralidade com segurança, beleza e impacto real.
+      Materiais pedagógicos autorais que transformam temas sensíveis em aulas que seus alunos jamais vão esquecer.
     </p>
+
     <div class="hero-glass-box fade-in">
-      <p>Comece hoje com o cordel <strong>"A Negra que Não Podia Ser Anjo"</strong> — a obra que já emocionou centenas de educadores pelo Brasil — e descubra como ela pode ser o início de uma prática pedagógica que transforma vidas.</p>
-      <div class="hero-price-tag">
-        Comece por apenas <span style="color:var(--primary)">R$ 9,90</span> &nbsp;·&nbsp; Coleção Completa por <span>R$ 67,70</span>
-      </div>
+      <p>
+        Comece hoje com o cordel <strong>"A Negra que Não Podia Ser Anjo"</strong> — a obra que já emocionou
+        centenas de educadores pelo Brasil — e descubra como ela pode ser o início de uma prática pedagógica
+        que transforma vidas.
+      </p>
+      <p class="hero-price-tag">
+        Comece por <span style="color:var(--primary)">R$ 9,90</span>
+        &nbsp;·&nbsp;
+        Coleção Completa por <span class="price-highlight">R$ 67,70</span>
+      </p>
     </div>
+
     <div class="hero-image fade-in">
-      <img src="assets/capa_principal.png" alt="Capa do cordel A Negra que Não Podia Ser Anjo de Leonardo Sampaio" loading="eager">
+      <img
+        src="assets/capa_principal.png"
+        alt="Capa do cordel A Negra que Não Podia Ser Anjo, de Leonardo Sampaio"
+        loading="eager"
+        fetchpriority="high"
+        width="360"
+      >
     </div>
   </div>
 </header>
 
-<!-- ═══ TRUST BAR ═══ -->
-<div class="trust-bar">
-  <span class="trust-item"><i class="fa-solid fa-shield-halved"></i> Garantia de 7 dias</span>
-  <span class="trust-item"><i class="fa-solid fa-bolt"></i> Acesso imediato</span>
-  <span class="trust-item"><i class="fa-solid fa-file-pdf"></i> 100% digital em PDF</span>
-  <span class="trust-item"><i class="fa-solid fa-check-double"></i> Alinhado à BNCC</span>
-  <span class="trust-item"><i class="fa-brands fa-whatsapp"></i> Boletim Poético exclusivo</span>
+<!-- BARRA DE CONFIANÇA (ícones de garantias) -->
+<div class="trust-bar" role="list" aria-label="Garantias e diferenciais">
+  <span class="trust-item" role="listitem"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Garantia de 7 dias</span>
+  <span class="trust-item" role="listitem"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Acesso imediato</span>
+  <span class="trust-item" role="listitem"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i> 100% digital em PDF</span>
+  <span class="trust-item" role="listitem"><i class="fa-solid fa-check-double" aria-hidden="true"></i> Alinhado à BNCC</span>
+  <span class="trust-item" role="listitem"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Boletim Poético exclusivo</span>
 </div>
 
-<!-- ═══════════════════════════════════════
-     DOR / PROBLEMA
-═══════════════════════════════════════ -->
-<section class="bg-white fade-in">
+<!-- ═══ DOR / PROBLEMA ═══ -->
+<section class="bg-white fade-in" aria-labelledby="dor-titulo">
   <div class="container text-center">
     <span class="section-label">O desafio que você conhece bem</span>
-    <h2 class="section-title">Você sente o peso de abordar temas difíceis em sala?</h2>
-    <div class="sep"></div>
-    <p class="section-sub">Abordar racismo, ancestralidade e identidade negra exige coragem — e o material certo. Sem ele, o professor carrega esse peso sozinho.</p>
+    <h2 class="section-title" id="dor-titulo">Você sente o peso de abordar temas difíceis em sala?</h2>
+    <div class="sep" aria-hidden="true"></div>
+    <p class="section-sub">
+      Abordar racismo, ancestralidade e identidade negra exige coragem — e o material certo.
+      Sem ele, o professor carrega esse peso sozinho.
+    </p>
 
     <div class="two-col" style="margin-bottom:2rem">
       <div class="pain-card">
-        <h3><i class="fa-solid fa-ban icon-x"></i> O jeito que não funciona</h3>
-        <ul class="check-list">
-          <li><i class="fa-solid fa-xmark icon-x"></i><span>Textos frios e genéricos que não representam seus alunos</span></li>
-          <li><i class="fa-solid fa-xmark icon-x"></i><span>Evitar o tema por medo de errar ou não saber conduzir a conversa</span></li>
-          <li><i class="fa-solid fa-xmark icon-x"></i><span>Horas procurando material que nunca está pronto para uso</span></li>
-          <li><i class="fa-solid fa-xmark icon-x"></i><span>Conteúdo desconectado da realidade cultural dos seus alunos</span></li>
+        <h3><i class="fa-solid fa-ban" aria-hidden="true"></i> O jeito que não funciona</h3>
+        <ul class="check-list" aria-label="Problemas comuns sem o material certo">
+          <li><i class="fa-solid fa-xmark icon-x" aria-hidden="true"></i><span>Textos frios e genéricos que não representam seus alunos</span></li>
+          <li><i class="fa-solid fa-xmark icon-x" aria-hidden="true"></i><span>Evitar o tema por medo de errar ou não saber conduzir a conversa</span></li>
+          <li><i class="fa-solid fa-xmark icon-x" aria-hidden="true"></i><span>Horas procurando material que nunca está pronto para uso</span></li>
+          <li><i class="fa-solid fa-xmark icon-x" aria-hidden="true"></i><span>Conteúdo desconectado da realidade cultural dos seus alunos</span></li>
         </ul>
       </div>
       <div class="solution-card">
-        <h3><i class="fa-solid fa-circle-check icon-check"></i> O que realmente transforma</h3>
-        <ul class="check-list">
-          <li><i class="fa-solid fa-check icon-check"></i><span>Poesia que representa, emociona e provoca reflexão genuína</span></li>
-          <li><i class="fa-solid fa-check icon-check"></i><span>Roteiro teatral e proposta pedagógica prontos para usar amanhã</span></li>
-          <li><i class="fa-solid fa-check icon-check"></i><span>Tudo alinhado à BNCC — sem precisar adaptar nada</span></li>
-          <li><i class="fa-solid fa-check icon-check"></i><span>Aulas que seus alunos vão carregar para o resto da vida</span></li>
+        <h3><i class="fa-solid fa-circle-check" aria-hidden="true"></i> O que realmente transforma</h3>
+        <ul class="check-list" aria-label="O que o material oferece">
+          <li><i class="fa-solid fa-check icon-check" aria-hidden="true"></i><span>Poesia que representa, emociona e provoca reflexão genuína</span></li>
+          <li><i class="fa-solid fa-check icon-check" aria-hidden="true"></i><span>Roteiro teatral e proposta pedagógica prontos para usar amanhã</span></li>
+          <li><i class="fa-solid fa-check icon-check" aria-hidden="true"></i><span>Tudo alinhado à BNCC — sem precisar adaptar nada</span></li>
+          <li><i class="fa-solid fa-check icon-check" aria-hidden="true"></i><span>Aulas que seus alunos vão carregar para o resto da vida</span></li>
         </ul>
       </div>
     </div>
 
     <div class="quote-box fade-in">
       <p class="q-lead">Se você já pensou alguma dessas coisas, este material foi feito para você:</p>
-      <ul>
+      <ul aria-label="Pensamentos comuns de professores que buscam este material">
         <li>Quero abordar racismo, mas não sei como começar sem errar...</li>
-        <li>Tenho medo de usar o material errado ou não saber conduzir a conversa com os alunos.</li>
+        <li>Tenho medo de usar o material errado ou não saber conduzir a conversa.</li>
         <li>Me sinto sozinho tentando fazer diferente dentro da escola.</li>
         <li>Queria algo simples, bonito e profundo — pronto para usar.</li>
       </ul>
@@ -990,189 +1129,226 @@
   </div>
 </section>
 
-<!-- ═══ BRIDGE BANNER ═══ -->
-<div class="bridge-banner">
+<!-- BANNER DE TRANSIÇÃO -->
+<div class="bridge-banner" role="presentation">
   <div class="container">
-    <h3>A solução está ao seu alcance — <span>e cabe no seu bolso.</span></h3>
+    <h2>A solução está ao seu alcance — <span>e cabe no seu bolso.</span></h2>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     PRODUTO ISCA — CORDEL
-═══════════════════════════════════════ -->
-<section class="bg-soft fade-in" id="cordel">
+<!-- ═══ PRODUTO ISCA — CORDEL ═══ -->
+<section class="bg-soft fade-in" id="cordel" aria-labelledby="cordel-titulo">
   <div class="container">
-    <div class="text-center" style="margin-bottom:2.5rem">
+    <div class="text-center" style="margin-bottom:2rem">
       <span class="section-label">Passo 1 · O Ponto de Partida</span>
-      <h2 class="section-title">"A Negra que Não Podia Ser Anjo"</h2>
-      <div class="sep"></div>
+      <h2 class="section-title" id="cordel-titulo">"A Negra que Não Podia Ser Anjo"</h2>
+      <div class="sep" aria-hidden="true"></div>
     </div>
 
     <div class="product-inner">
       <div class="product-img">
-        <img src="assets/capa_secundaria.jpg" alt="Capa secundária do cordel A Negra que Não Podia Ser Anjo" loading="lazy">
+        <img
+          src="assets/capa_secundaria.jpg"
+          alt="Capa do cordel A Negra que Não Podia Ser Anjo — versão secundária"
+          loading="lazy"
+          width="320"
+        >
       </div>
       <div>
-        <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1rem;color:var(--text-muted)">
-          Escrito pelo poeta e educador <strong style="color:var(--text)">Leonardo Sampaio</strong>, este cordel narra com beleza e coragem uma experiência que aborda de frente o racismo, a fé e a busca por identidade negra. Com linguagem que prende desde o primeiro verso, é a faísca que inicia uma prática pedagógica mais consciente.
+        <p style="font-size:1.02rem;line-height:1.8;margin-bottom:1rem;color:var(--text-muted)">
+          Escrito pelo poeta e educador <strong style="color:var(--text)">Leonardo Sampaio</strong>, este cordel narra com beleza e
+          coragem uma experiência que aborda de frente o racismo, a fé e a busca por identidade negra.
+          É a faísca que inicia uma prática pedagógica mais consciente.
         </p>
-        <p style="font-size:1rem;line-height:1.75;margin-bottom:1.5rem;color:var(--text-muted)">
-          Não é só um texto bonito para decorar. É um <strong style="color:var(--text)">instrumento pedagógico completo</strong>, pronto para ser colocado em prática na sua próxima aula.
+        <p style="font-size:.97rem;line-height:1.75;margin-bottom:1.5rem;color:var(--text-muted)">
+          Não é só um texto bonito para decorar. É um <strong style="color:var(--text)">instrumento pedagógico completo</strong>,
+          pronto para ser colocado em prática na sua próxima aula.
         </p>
 
         <div class="product-card fade-in">
-          <div style="margin-bottom:1.5rem;text-align:center">
+          <div style="margin-bottom:1.4rem;text-align:center">
             <p class="price-old">De R$ 19,90</p>
-            <p class="price-new">R$ 9,90</p>
+            <p class="price-new" aria-label="Preço: R$ 9,90">R$ 9,90</p>
             <p class="price-note">Acesso vitalício · Entrega imediata por e-mail</p>
           </div>
 
-          <ul class="checklist" style="margin-bottom:1.5rem">
-            <li><i class="fa-solid fa-book"></i><span><strong>Cordel completo em PDF</strong> — leitura, impressão ou uso no digital</span></li>
-            <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> — adaptado para sala de aula e eventos culturais</span></li>
-            <li><i class="fa-solid fa-clipboard-check"></i><span><strong>Proposta Pedagógica alinhada à BNCC</strong> — habilidades e atividades prontas para aplicar</span></li>
+          <ul class="checklist" style="margin-bottom:1.4rem">
+            <li><i class="fa-solid fa-book" aria-hidden="true"></i><span><strong>Cordel completo em PDF</strong> — leitura, impressão ou uso no digital</span></li>
+            <li><i class="fa-solid fa-masks-theater" aria-hidden="true"></i><span><strong>Roteiro Teatral Completo</strong> — adaptado para sala de aula e eventos culturais</span></li>
+            <li><i class="fa-solid fa-clipboard-check" aria-hidden="true"></i><span><strong>Proposta Pedagógica alinhada à BNCC</strong> — habilidades e atividades prontas para aplicar</span></li>
           </ul>
 
           <div class="access-box">
-            <h4><i class="fa-solid fa-box-open" style="margin-right:.4rem"></i> Como você recebe:</h4>
-            <ul class="access-list">
-              <li><i class="fa-solid fa-laptop-code"></i> 100% digital — acesso imediato após confirmação</li>
-              <li><i class="fa-solid fa-envelope"></i> Link de acesso enviado ao seu e-mail pela Kiwify</li>
-              <li><i class="fa-solid fa-print"></i> Pode baixar, imprimir ou usar direto no digital</li>
+            <h4><i class="fa-solid fa-box-open" aria-hidden="true" style="margin-right:.4rem"></i>Como você recebe:</h4>
+            <ul class="access-list" aria-label="Forma de entrega do produto">
+              <li><i class="fa-solid fa-laptop-code" aria-hidden="true"></i> 100% digital — acesso imediato após confirmação</li>
+              <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> Link enviado ao seu e-mail pela Kiwify</li>
+              <li><i class="fa-solid fa-print" aria-hidden="true"></i> Baixe, imprima ou use direto no digital</li>
             </ul>
           </div>
 
-          <div class="guarantee-box">
-            <i class="fa-solid fa-shield-halved"></i>
+          <div class="guarantee-box" role="note">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
             <p><strong>Garantia incondicional de 7 dias.</strong> Se não gostar por qualquer motivo, devolvemos 100% do valor. Sem burocracia, sem perguntas.</p>
           </div>
 
-          <a href="https://leonardosampaio.com.br/intermediariocolecao/"
-             class="btn btn-primary btn-lg btn-full"
-             style="margin-top:1.5rem"
-             onclick="return trackCheckout('cordel-essencial','https://leonardosampaio.com.br/intermediariocolecao/')">
+          <a
+            href="https://leonardosampaio.com.br/intermediariocolecao/"
+            class="btn btn-primary btn-lg btn-full"
+            style="margin-top:1.5rem"
+            aria-label="Comprar o Cordel Essencial por R$ 9,90"
+            onclick="return trackCheckout('cordel-essencial','https://leonardosampaio.com.br/intermediariocolecao/')"
+            rel="noopener"
+          >
             📖 COMEÇAR COM O CORDEL — R$ 9,90
           </a>
-          <p style="font-size:.79rem;color:var(--text-muted);text-align:center;margin-top:.75rem">Compra 100% segura via Kiwify · Acesso imediato</p>
+          <p style="font-size:.78rem;color:var(--text-muted);text-align:center;margin-top:.7rem">
+            Compra 100% segura via Kiwify · Acesso imediato
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     DEPOIMENTOS
-═══════════════════════════════════════ -->
-<section class="bg-gradient fade-in">
+<!-- ═══ DEPOIMENTOS ═══ -->
+<section class="bg-gradient fade-in" aria-labelledby="depoimentos-titulo">
   <div class="container text-center">
     <span class="section-label">Professores que já transformaram suas aulas</span>
-    <h2 class="section-title">O que os educadores estão dizendo</h2>
-    <div class="sep"></div>
-    <div class="carousel-wrap">
-      <div class="carousel-track" id="carousel-track"></div>
-      <div class="carousel-dots" id="carousel-dots"></div>
-      <div class="carousel-arrows">
-        <button id="prev-btn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-        <button id="next-btn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+    <h2 class="section-title" id="depoimentos-titulo">O que os educadores estão dizendo</h2>
+    <div class="sep" aria-hidden="true"></div>
+
+    <div class="carousel-wrap" role="region" aria-label="Carrossel de depoimentos">
+      <div class="carousel-track" id="carousel-track" aria-live="polite"></div>
+      <div class="carousel-dots" id="carousel-dots" role="tablist" aria-label="Navegar entre depoimentos"></div>
+      <div class="carousel-arrows" aria-label="Controles do carrossel">
+        <button id="prev-btn" aria-label="Depoimento anterior">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button id="next-btn" aria-label="Próximo depoimento">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     AUTOR
-═══════════════════════════════════════ -->
-<section class="bg-white fade-in">
+<!-- ═══ AUTOR ═══ -->
+<section class="bg-white fade-in" aria-labelledby="autor-titulo">
   <div class="container">
-    <div class="text-center" style="margin-bottom:2.5rem">
+    <div class="text-center" style="margin-bottom:2rem">
       <span class="section-label">Quem está por trás deste material</span>
-      <h2 class="section-title">Leonardo Sampaio</h2>
-      <div class="sep"></div>
+      <h2 class="section-title" id="autor-titulo">Leonardo Sampaio</h2>
+      <div class="sep" aria-hidden="true"></div>
     </div>
     <div class="author-inner">
-      <img src="assets/foto_leonardo.png" alt="Foto de Leonardo Sampaio, poeta e educador" class="author-photo" loading="lazy">
+      <img
+        src="assets/foto_leonardo.png"
+        alt="Foto de Leonardo Sampaio, poeta e educador, sorrindo"
+        class="author-photo"
+        loading="lazy"
+        width="180" height="180"
+      >
       <div class="author-text">
-        <p>Leonardo Sampaio é poeta, educador e pesquisador de cordel nordestino. Fundador do projeto <strong>Performance Poética na Escola</strong>, ele tem dedicado sua trajetória a aproximar a poesia popular da sala de aula, criando materiais que respeitam a identidade cultural dos estudantes e empoderam os professores.</p>
-        <p>Com obras publicadas e projetos desenvolvidos em escolas públicas e privadas por todo o Brasil, Leonardo acredita que a poesia não é enfeite — é ferramenta de transformação social e pedagógica.</p>
-        <p class="quote-highlight">"Cada cordel que escrevo carrega o desejo de que o educador não esteja sozinho nessa missão. A poesia é uma ponte — entre gerações, entre culturas, entre o estudante e a sua própria história."</p>
+        <p>Leonardo Sampaio é poeta, educador e pesquisador de cordel nordestino. Fundador do projeto
+          <strong>Performance Poética na Escola</strong>, ele tem dedicado sua trajetória a aproximar
+          a poesia popular da sala de aula, criando materiais que respeitam a identidade cultural dos
+          estudantes e empoderam os professores.
+        </p>
+        <p>Com obras publicadas e projetos desenvolvidos em escolas públicas e privadas por todo o Brasil,
+          Leonardo acredita que a poesia não é enfeite — é ferramenta de transformação social e pedagógica.
+        </p>
+        <p class="quote-highlight">
+          "Cada cordel que escrevo carrega o desejo de que o educador não esteja sozinho nessa missão.
+          A poesia é uma ponte — entre gerações, entre culturas, entre o estudante e a sua própria história."
+        </p>
         <p><em style="color:var(--text-muted)">— Leonardo Sampaio, poeta e educador</em></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     BRIDGE — CONVITE À COLEÇÃO
-═══════════════════════════════════════ -->
-<section class="bg-dark text-center fade-in" style="padding:3.5rem 1.25rem">
+<!-- PONTE PARA A COLEÇÃO -->
+<section class="bg-dark text-center fade-in" style="padding:3.25rem 1.25rem" aria-labelledby="ponte-titulo">
   <div class="container">
-    <h2 style="color:#fff;font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:1rem">O cordel foi só o começo.</h2>
-    <p style="color:rgba(255,255,255,.8);font-size:1.1rem;max-width:600px;margin:0 auto 2rem;line-height:1.75">
-      E se você pudesse ter um arsenal completo de materiais autorais para trabalhar educação antirracista com poesia, profundidade e praticidade — durante o ano letivo inteiro?
+    <h2 id="ponte-titulo" style="color:#fff;font-size:clamp(1.4rem,4vw,2.3rem);margin-bottom:1rem">
+      O cordel foi só o começo.
+    </h2>
+    <p style="color:rgba(255,255,255,.8);font-size:1.05rem;max-width:580px;margin:0 auto 2rem;line-height:1.75">
+      E se você pudesse ter um arsenal completo de materiais autorais para trabalhar educação antirracista
+      com poesia, profundidade e praticidade — durante o ano letivo inteiro?
     </p>
-    <a href="#colecao" class="btn btn-green btn-xl btn-pulse">
+    <a
+      href="#colecao"
+      class="btn btn-green btn-xl btn-pulse"
+      aria-label="Conhecer a Coleção Tesouro Poético Completa"
+    >
       🚀 CONHEÇA A COLEÇÃO COMPLETA
     </a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     COLEÇÃO — APRESENTAÇÃO
-═══════════════════════════════════════ -->
-<section class="bg-gradient fade-in" id="colecao">
+<!-- ═══ COLEÇÃO — APRESENTAÇÃO ═══ -->
+<section class="bg-gradient fade-in" id="colecao" aria-labelledby="colecao-titulo">
   <div class="container text-center">
     <span class="section-label">O produto principal</span>
-    <h2 class="section-title">Coleção Tesouro Poético<br>do Professor Consciente</h2>
-    <div class="sep"></div>
-    <p class="section-sub">Um arsenal completo para trabalhar racismo, ancestralidade, espiritualidade, cidadania e justiça social com poesia, profundidade e praticidade — durante o ano letivo inteiro.</p>
+    <h2 class="section-title" id="colecao-titulo">Coleção Tesouro Poético<br>do Professor Consciente</h2>
+    <div class="sep" aria-hidden="true"></div>
+    <p class="section-sub">
+      Um arsenal completo para trabalhar racismo, ancestralidade, espiritualidade, cidadania e justiça social
+      com poesia, profundidade e praticidade — durante o ano letivo inteiro.
+    </p>
 
-    <img src="assets/mockup_colecao.png" alt="Mockup da Coleção Tesouro Poético do Professor Consciente" class="mockup-img fade-in" loading="lazy">
+    <img
+      src="assets/mockup_colecao.png"
+      alt="Mockup mostrando os materiais da Coleção Tesouro Poético do Professor Consciente"
+      class="mockup-img fade-in"
+      loading="lazy"
+      width="460"
+    >
 
-    <div class="manifesto-quote fade-in">
+    <div class="manifesto-quote fade-in" role="blockquote">
       "Aqui a poesia não é enfeite.<br>É ferramenta. É ponte. É despertar."
     </div>
 
-    <h3 style="font-size:1.3rem;margin-bottom:1.5rem;color:var(--text)">Tudo que você vai receber na Coleção:</h3>
-    <ul class="feature-list" style="max-width:660px;margin:0 auto 2rem;text-align:left">
-      <li><i class="fa-solid fa-book-reader"></i><span><strong>Ebook "Performance Poética na Escola"</strong> — 190 páginas de poesias e didática transformadora para enriquecer toda sua prática</span></li>
-      <li><i class="fa-solid fa-scroll"></i><span><strong>5 cordéis transformadores</strong> (incluindo "A Negra que Não Podia Ser Anjo"), cada um com proposta pedagógica alinhada à BNCC</span></li>
-      <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> do cordel "A Negra que Não Podia Ser Anjo" — para encenações e eventos culturais</span></li>
-      <li><i class="fa-solid fa-gift"></i><span><strong>BÔNUS:</strong> Proposta pedagógica individual para cada cordel, com os códigos da BNCC</span></li>
-      <li><i class="fa-solid fa-box-open"></i><span><strong>BÔNUS:</strong> Kit Poético Interdisciplinar — Língua Portuguesa, História e Artes unidas em cordel</span></li>
-      <li><i class="fa-solid fa-pencil-alt"></i><span><strong>BÔNUS:</strong> Caderno de Atividades para Estudantes — mais de 14 atividades prontas para toda a coleção</span></li>
-      <li><i class="fa-solid fa-star"></i><span><strong>BÔNUS:</strong> Frases-Poema para iniciar aulas com reflexão, presença e criatividade</span></li>
-      <li><i class="fa-brands fa-whatsapp"></i><span><strong>BÔNUS:</strong> Boletim Poético no WhatsApp — versos inéditos e reflexões pedagógicas direto no seu celular</span></li>
+    <h3 style="font-size:1.25rem;margin-bottom:1.35rem;color:var(--text)">Tudo que você vai receber na Coleção:</h3>
+    <ul class="feature-list" style="max-width:640px;margin:0 auto 2rem;text-align:left" aria-label="Conteúdo da Coleção Tesouro Poético">
+      <li><i class="fa-solid fa-book-reader" aria-hidden="true"></i><span><strong>Ebook "Performance Poética na Escola"</strong> — 190 páginas de poesias e didática transformadora</span></li>
+      <li><i class="fa-solid fa-scroll" aria-hidden="true"></i><span><strong>5 cordéis transformadores</strong> (incluindo "A Negra que Não Podia Ser Anjo"), cada um com proposta pedagógica BNCC</span></li>
+      <li><i class="fa-solid fa-masks-theater" aria-hidden="true"></i><span><strong>Roteiro Teatral Completo</strong> do cordel "A Negra que Não Podia Ser Anjo" — para encenações e eventos culturais</span></li>
+      <li><i class="fa-solid fa-gift" aria-hidden="true"></i><span><strong>BÔNUS:</strong> Proposta pedagógica individual para cada cordel, com os códigos da BNCC</span></li>
+      <li><i class="fa-solid fa-box-open" aria-hidden="true"></i><span><strong>BÔNUS:</strong> Kit Poético Interdisciplinar — Língua Portuguesa, História e Artes unidas em cordel</span></li>
+      <li><i class="fa-solid fa-pencil-alt" aria-hidden="true"></i><span><strong>BÔNUS:</strong> Caderno de Atividades para Estudantes — mais de 14 atividades prontas</span></li>
+      <li><i class="fa-solid fa-star" aria-hidden="true"></i><span><strong>BÔNUS:</strong> Frases-Poema para iniciar aulas com reflexão, presença e criatividade</span></li>
+      <li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span><strong>BÔNUS:</strong> Boletim Poético no WhatsApp — versos inéditos direto no seu celular</span></li>
     </ul>
 
-    <p style="font-size:1.08rem;font-weight:700;color:var(--text);max-width:560px;margin:0 auto 2rem;line-height:1.6">
-      Não é uma apostila genérica. Não é material raso.<br>
-      <span style="color:var(--primary)">É um convite à consciência. Uma ferramenta de transformação.</span>
-    </p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:640px;margin:0 auto 2.5rem" class="benefits-grid">
-      <div class="benefit-item"><i class="fa-solid fa-graduation-cap"></i><span>Do 5º ano do Ensino Fundamental ao Ensino Médio</span></div>
-      <div class="benefit-item"><i class="fa-solid fa-school"></i><span>Adaptável para escolas públicas e privadas</span></div>
-      <div class="benefit-item"><i class="fa-solid fa-file-pdf"></i><span>100% digital em PDF, otimizado para impressão A4</span></div>
-      <div class="benefit-item"><i class="fa-solid fa-infinity"></i><span>Acesso vitalício — use e reutilize sem limite</span></div>
+    <div class="benefits-grid" style="max-width:620px;margin:0 auto 2.25rem">
+      <div class="benefit-item"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Do 5º ano do Ensino Fundamental ao Ensino Médio</span></div>
+      <div class="benefit-item"><i class="fa-solid fa-school" aria-hidden="true"></i><span>Adaptável para escolas públicas e privadas</span></div>
+      <div class="benefit-item"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i><span>100% digital em PDF, otimizado para impressão A4</span></div>
+      <div class="benefit-item"><i class="fa-solid fa-infinity" aria-hidden="true"></i><span>Acesso vitalício — use e reutilize sem limite</span></div>
     </div>
 
-    <a href="#oferta-colecao" class="btn btn-green btn-xl btn-pulse">
+    <a
+      href="#oferta-colecao"
+      class="btn btn-green btn-xl btn-pulse"
+      aria-label="Ver a oferta completa da Coleção Tesouro Poético"
+    >
       🏆 QUERO A COLEÇÃO COMPLETA
     </a>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     COMPARAÇÃO — CORDEL vs COLEÇÃO
-═══════════════════════════════════════ -->
-<section class="bg-white fade-in" id="comparacao">
+<!-- ═══ COMPARAÇÃO ═══ -->
+<section class="bg-white fade-in" id="comparacao" aria-labelledby="comparacao-titulo">
   <div class="container text-center">
     <span class="section-label">Compare e escolha</span>
-    <h2 class="section-title">Qual nível de transformação você quer?</h2>
-    <div class="sep"></div>
+    <h2 class="section-title" id="comparacao-titulo">Qual nível de transformação você quer?</h2>
+    <div class="sep" aria-hidden="true"></div>
     <p class="section-sub">As duas opções são válidas. Mas há uma que realmente vale cada centavo para sua carreira — e para seus alunos.</p>
 
-    <div class="compare-grid" style="max-width:760px;margin:0 auto">
+    <div class="compare-grid" style="max-width:740px;margin:0 auto">
       <!-- Cordel -->
       <div class="compare-card">
         <h3>O Cordel Essencial</h3>
@@ -1181,13 +1357,18 @@
           <span class="new">R$ 9,90</span>
           <span class="installment">Acesso vitalício · PDF imediato</span>
         </div>
-        <ul class="compare-list">
-          <li><i class="fa-solid fa-check-circle"></i><span>Cordel "A Negra que Não Podia Ser Anjo" em PDF</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Roteiro Teatral Completo</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Proposta Pedagógica BNCC</span></li>
+        <ul class="compare-list" aria-label="O que está incluso no Cordel Essencial">
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Cordel "A Negra que Não Podia Ser Anjo" em PDF</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Roteiro Teatral Completo</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Proposta Pedagógica BNCC</span></li>
         </ul>
-        <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-primary btn-full btn-lg"
-           onclick="return trackCheckout('cordel-essencial','https://leonardosampaio.com.br/intermediariocolecao/')">
+        <a
+          href="https://leonardosampaio.com.br/intermediariocolecao/"
+          class="btn btn-primary btn-full btn-lg"
+          aria-label="Comprar o Cordel Essencial por R$ 9,90"
+          onclick="return trackCheckout('cordel-essencial','https://leonardosampaio.com.br/intermediariocolecao/')"
+          rel="noopener"
+        >
           Começar com o Cordel
         </a>
         <p class="cta-note">🟢 Ótimo ponto de entrada</p>
@@ -1195,125 +1376,135 @@
 
       <!-- Coleção Principal -->
       <div class="compare-card main-offer">
-        <span class="best-badge">⭐ Melhor Oferta</span>
+        <span class="best-badge" aria-label="Melhor oferta">⭐ Melhor Oferta</span>
         <h3 style="margin-top:.75rem">Coleção Completa</h3>
         <div class="compare-price">
           <span class="old">De R$ 97,70</span>
-          <span style="font-size:.9rem;color:var(--text-muted)">12x de</span>
-          <span class="new highlight" style="font-size:2.6rem"> R$ 7,00</span>
+          <span style="font-size:.88rem;color:var(--text-muted)">12x de</span>
+          <span class="new" style="font-size:2.5rem">R$ 7,00</span>
           <span class="installment">ou R$ 67,70 à vista</span>
         </div>
         <div class="economy-tag">✨ Economize R$ 30,00 — tudo incluso!</div>
-        <ul class="compare-list">
-          <li><i class="fa-solid fa-check-circle"></i><span><strong>TUDO do Cordel Essencial</strong></span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Ebook Performance Poética na Escola (190 págs.)</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>5 cordéis transformadores + propostas BNCC</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Caderno de Atividades p/ Estudantes (Bônus)</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Frases-Poema para iniciar aulas (Bônus)</span></li>
-          <li><i class="fa-solid fa-check-circle"></i><span>Boletim Poético no WhatsApp (Bônus)</span></li>
+        <ul class="compare-list" aria-label="O que está incluso na Coleção Completa">
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span><strong>TUDO do Cordel Essencial</strong></span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Ebook Performance Poética (190 págs.)</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>5 cordéis + propostas BNCC</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Caderno de Atividades (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Frases-Poema (Bônus)</span></li>
+          <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i><span>Boletim Poético no WhatsApp (Bônus)</span></li>
         </ul>
-        <a href="https://pay.kiwify.com.br/M3GiQfv" class="btn btn-green btn-full btn-xl btn-pulse"
-           onclick="return trackCheckout('colecao-completa','https://pay.kiwify.com.br/M3GiQfv')">
+        <a
+          href="https://pay.kiwify.com.br/M3GiQfv"
+          class="btn btn-green btn-full btn-xl btn-pulse"
+          aria-label="Comprar a Coleção Completa por 12x de R$ 7,00 ou R$ 67,70 à vista"
+          onclick="return trackCheckout('colecao-completa','https://pay.kiwify.com.br/M3GiQfv')"
+          rel="noopener"
+        >
           ✅ DESBLOQUEIE A COLEÇÃO COMPLETA
         </a>
         <p class="cta-note">🔐 7 dias de garantia incondicional</p>
       </div>
     </div>
-
-    <p style="font-size:.93rem;color:var(--text-muted);margin-top:1.5rem;max-width:560px;margin-inline:auto">
-      A Coleção Completa oferece a solução definitiva para aulas inesquecíveis, com um custo-benefício incomparável.
-    </p>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     OFERTA PRINCIPAL — COLEÇÃO
-═══════════════════════════════════════ -->
-<section id="oferta-colecao" class="fade-in">
+<!-- ═══ OFERTA PRINCIPAL — COLEÇÃO ═══ -->
+<section id="oferta-colecao" class="fade-in" aria-labelledby="oferta-titulo">
   <div class="container text-center">
     <span class="section-label" style="color:var(--secondary)">Garanta agora com preço especial</span>
-    <h2 style="font-size:clamp(1.7rem,4.5vw,2.8rem);margin-bottom:.75rem;color:#fff">Coleção Tesouro Poético</h2>
-    <p style="color:rgba(255,255,255,.72);font-size:1rem;margin-bottom:2rem">A biblioteca mais completa para a educação antirracista com poesia</p>
+    <h2 id="oferta-titulo" style="font-size:clamp(1.6rem,4.5vw,2.7rem);margin-bottom:.75rem;color:#fff">
+      Coleção Tesouro Poético
+    </h2>
+    <p style="color:rgba(255,255,255,.72);font-size:.98rem;margin-bottom:1.75rem">
+      A biblioteca mais completa para a educação antirracista com poesia
+    </p>
 
     <div class="collection-glass fade-in">
       <p class="install-label">Parcelado em até 12x de</p>
-      <p class="price-main">R$ 7,00</p>
+      <p class="price-main" aria-label="12 parcelas de R$ 7,00">R$ 7,00</p>
       <p class="price-cash">ou R$ 67,70 à vista no Pix/boleto</p>
       <div class="savings-badge">✨ Você economiza R$ 30,00 vs. comprar separado</div>
 
-      <ul class="checklist" style="text-align:left;margin-bottom:2rem">
-        <li><i class="fa-solid fa-check"></i><span>Ebook "Performance Poética na Escola" — 190 páginas</span></li>
-        <li><i class="fa-solid fa-check"></i><span>5 cordéis + propostas pedagógicas BNCC</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Roteiro Teatral Completo</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Caderno de Atividades para Estudantes (Bônus)</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Frases-Poema para iniciar aulas (Bônus)</span></li>
-        <li><i class="fa-solid fa-check"></i><span>Boletim Poético no WhatsApp (Bônus)</span></li>
+      <ul class="checklist" style="text-align:left;margin-bottom:1.75rem" aria-label="O que está incluso">
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Ebook "Performance Poética na Escola" — 190 páginas</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>5 cordéis + propostas pedagógicas BNCC</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Roteiro Teatral Completo</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Caderno de Atividades para Estudantes (Bônus)</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Frases-Poema para iniciar aulas (Bônus)</span></li>
+        <li><i class="fa-solid fa-check" aria-hidden="true"></i><span>Boletim Poético no WhatsApp (Bônus)</span></li>
       </ul>
 
-      <a href="https://pay.kiwify.com.br/M3GiQfv"
-         class="btn btn-green btn-xl btn-pulse btn-full"
-         onclick="return trackCheckout('colecao-completa','https://pay.kiwify.com.br/M3GiQfv')">
+      <a
+        href="https://pay.kiwify.com.br/M3GiQfv"
+        class="btn btn-green btn-xl btn-pulse btn-full"
+        aria-label="Garantir a Coleção Completa agora"
+        onclick="return trackCheckout('colecao-completa-oferta','https://pay.kiwify.com.br/M3GiQfv')"
+        rel="noopener"
+      >
         🏆 GARANTIR MINHA COLEÇÃO AGORA
       </a>
-      <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.55);margin-top:1rem">
-        <i class="fa-solid fa-shield-halved"></i>
+
+      <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.9rem">
+        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
         <span>Compra 100% segura via Kiwify · Garantia de 7 dias · Acesso imediato</span>
       </div>
     </div>
 
-    <!-- WhatsApp Bonus -->
-    <div style="margin-top:2.5rem">
-      <div class="whatsapp-bonus fade-in">
-        <img src="assets/whatsapp_logo.png" alt="WhatsApp" loading="lazy">
+    <!-- Bônus WhatsApp -->
+    <div style="margin-top:2.25rem">
+      <div class="whatsapp-bonus fade-in" role="note" aria-label="Bônus exclusivo: Boletim Poético no WhatsApp">
+        <img src="assets/whatsapp_logo.png" alt="Logo WhatsApp" loading="lazy" width="64" height="64">
         <div>
-          <h3 style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:.5rem;color:rgba(255,255,255,.9)">Boletim Poético — Leonardo Sampaio</h3>
-          <p style="font-size:.93rem;color:rgba(255,255,255,.65);line-height:1.65">Ao adquirir qualquer produto, você entra para o <strong style="color:rgba(255,255,255,.85)">Boletim Poético</strong>: versos inéditos, reflexões pedagógicas e inspirações de Leonardo Sampaio entregues direto no seu WhatsApp. Para manter o fogo da educação consciente sempre aceso.</p>
+          <h3 style="font-family:'DM Sans',sans-serif;font-weight:700;font-size:1.02rem;margin-bottom:.5rem;color:rgba(255,255,255,.9)">
+            Boletim Poético — Leonardo Sampaio
+          </h3>
+          <p style="font-size:.91rem;color:rgba(255,255,255,.65);line-height:1.65">
+            Ao adquirir qualquer produto, você entra para o <strong style="color:rgba(255,255,255,.85)">Boletim Poético</strong>:
+            versos inéditos e reflexões pedagógicas de Leonardo Sampaio direto no seu WhatsApp. Para manter
+            o fogo da educação consciente sempre aceso.
+          </p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     COMO FUNCIONA (ENTREGA)
-═══════════════════════════════════════ -->
-<section class="bg-white fade-in">
+<!-- ═══ COMO FUNCIONA ═══ -->
+<section class="bg-white fade-in" aria-labelledby="entrega-titulo">
   <div class="container text-center">
     <span class="section-label">Simples e imediato</span>
-    <h2 class="section-title">Como você recebe seu conteúdo</h2>
-    <div class="sep"></div>
+    <h2 class="section-title" id="entrega-titulo">Como você recebe seu conteúdo</h2>
+    <div class="sep" aria-hidden="true"></div>
     <div class="delivery-steps">
       <div class="step">
-        <div class="step-num">1</div>
+        <div class="step-num" aria-hidden="true">1</div>
         <p><strong>Realize o pagamento</strong> com segurança via Kiwify — Pix, cartão ou boleto</p>
       </div>
       <div class="step">
-        <div class="step-num">2</div>
-        <p><strong>Receba o acesso</strong> por e-mail imediatamente após a confirmação do pagamento</p>
+        <div class="step-num" aria-hidden="true">2</div>
+        <p><strong>Receba o acesso</strong> por e-mail imediatamente após confirmação do pagamento</p>
       </div>
       <div class="step">
-        <div class="step-num">3</div>
+        <div class="step-num" aria-hidden="true">3</div>
         <p><strong>Baixe, imprima</strong> ou use direto no digital — acesso vitalício, para sempre</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     FAQ
-═══════════════════════════════════════ -->
-<section class="bg-soft fade-in">
+<!-- ═══ FAQ ═══ -->
+<section class="bg-soft fade-in" aria-labelledby="faq-titulo">
   <div class="container text-center">
     <span class="section-label">Tire suas dúvidas</span>
-    <h2 class="section-title">Dúvidas antes de adquirir?</h2>
-    <div class="sep"></div>
+    <h2 class="section-title" id="faq-titulo">Dúvidas antes de adquirir?</h2>
+    <div class="sep" aria-hidden="true"></div>
 
-    <div class="quick-faq-grid" style="margin-bottom:2rem;max-width:760px;margin-inline:auto;margin-bottom:2rem">
+    <div class="quick-faq-grid" style="max-width:740px;margin:0 auto 2rem">
       <div class="quick-faq-item">
         <h3>É digital ou físico?</h3>
-        <p>100% digital em PDF, com acesso imediato após a confirmação do pagamento pela Kiwify.</p>
+        <p>100% digital em PDF, com acesso imediato após a confirmação pela Kiwify.</p>
       </div>
       <div class="quick-faq-item">
         <h3>Tem garantia?</h3>
@@ -1325,161 +1516,308 @@
       </div>
       <div class="quick-faq-item">
         <h3>Para qual faixa etária?</h3>
-        <p>Adaptável do 5º ano do Ensino Fundamental ao Ensino Médio, em escolas públicas e privadas.</p>
+        <p>Adaptável do 5º ano do Ensino Fundamental ao Ensino Médio, público e privado.</p>
       </div>
     </div>
 
-    <div class="faq-list" style="text-align:left;max-width:760px;margin-inline:auto">
-      <div class="faq-item">
-        <div class="faq-header"><h3>O que é o cordel "A Negra que Não Podia Ser Anjo"?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">É uma obra poética em formato de cordel, escrita por Leonardo Sampaio, que aborda racismo, fé, ancestralidade e identidade negra de forma sensível e impactante. Acompanha proposta pedagógica, roteiro teatral e bônus para aplicação imediata em sala de aula.</div>
+    <!-- Accordion de perguntas frequentes -->
+    <div class="faq-list" style="text-align:left;max-width:740px;margin-inline:auto" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-1">
+          <h3>O que é o cordel "A Negra que Não Podia Ser Anjo"?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-1" role="region">
+          É uma obra poética em formato de cordel, escrita por Leonardo Sampaio, que aborda racismo, fé,
+          ancestralidade e identidade negra de forma sensível e impactante. Acompanha proposta pedagógica,
+          roteiro teatral e bônus para aplicação imediata em sala de aula.
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-header"><h3>Qual a diferença entre o cordel individual e a Coleção?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">O cordel é uma obra poderosa e completa por si só — uma introdução acessível ao universo de Leonardo. A Coleção Tesouro Poético é um pacote muito mais amplo: 5 cordéis, o ebook de 190 páginas, caderno de atividades, kit interdisciplinar e bônus adicionais para enriquecer o ano letivo inteiro.</div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-2">
+          <h3>Qual a diferença entre o cordel individual e a Coleção?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-2" role="region">
+          O cordel é uma obra poderosa e completa por si só. A Coleção é um pacote muito mais amplo: 5 cordéis,
+          o ebook de 190 páginas, caderno de atividades, kit interdisciplinar e bônus adicionais para enriquecer
+          o ano letivo inteiro.
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-header"><h3>Funciona em escolas públicas?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">Sim! O material foi desenvolvido pensando na realidade das redes pública e privada. É flexível e adaptável a diferentes contextos e projetos pedagógicos, com linguagem e propostas acessíveis para qualquer realidade escolar.</div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-3">
+          <h3>Funciona em escolas públicas?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-3" role="region">
+          Sim! O material foi desenvolvido pensando na realidade das redes pública e privada. É flexível e
+          adaptável a diferentes contextos e projetos pedagógicos.
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-header"><h3>Posso imprimir os materiais?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">Sim! Todos os PDFs são otimizados para impressão em formato A4, podendo ser usados tanto digitalmente quanto em material físico para distribuir aos alunos.</div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-4">
+          <h3>Posso imprimir os materiais?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-4" role="region">
+          Sim! Todos os PDFs são otimizados para impressão em formato A4, podendo ser usados tanto
+          digitalmente quanto em material físico para distribuir aos alunos.
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-header"><h3>Recebo tudo na hora da compra?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">Sim! Assim que a compra for confirmada pela Kiwify, você receberá um e-mail com o link de acesso a todo o conteúdo digital imediatamente. Sem espera.</div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-5">
+          <h3>Recebo tudo na hora da compra?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-5" role="region">
+          Sim! Assim que a compra for confirmada pela Kiwify, você receberá um e-mail com o link de acesso
+          imediatamente. Sem espera.
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-header"><h3>E se eu não gostar?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito(a), basta entrar em contato e devolvemos 100% do valor pago. Sem burocracia, sem perguntas. A satisfação é prioridade.</div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-btn" aria-expanded="false" aria-controls="faq-body-6">
+          <h3>E se eu não gostar?</h3>
+          <i class="fa-solid fa-chevron-down faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-body" id="faq-body-6" role="region">
+          Você tem 7 dias de garantia incondicional. Se por qualquer motivo não ficar satisfeito(a), basta
+          entrar em contato e devolvemos 100% do valor pago. Sem burocracia, sem perguntas.
+        </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     FOOTER CTA
-═══════════════════════════════════════ -->
+<!-- ═══ FOOTER CTA ═══ -->
 <div class="footer-cta">
-  <div class="container" style="position:relative">
+  <div class="container">
     <h2>Pronto(a) para transformar suas aulas com poesia e consciência?</h2>
-    <p>Junte-se a centenas de educadores que já levaram a Coleção Tesouro Poético para a sala de aula — e fizeram diferença de verdade na vida dos seus alunos.</p>
-    <a href="https://pay.kiwify.com.br/M3GiQfv" class="btn btn-green btn-xl btn-pulse"
-       onclick="return trackCheckout('colecao-completa-footer','https://pay.kiwify.com.br/M3GiQfv')">
+    <p>Junte-se a centenas de educadores que já levaram a Coleção Tesouro Poético para a sala de aula
+       — e fizeram diferença de verdade na vida dos seus alunos.</p>
+    <a
+      href="https://pay.kiwify.com.br/M3GiQfv"
+      class="btn btn-green btn-xl btn-pulse"
+      aria-label="Garantir minha Coleção Tesouro Poético agora"
+      onclick="return trackCheckout('colecao-completa-footer','https://pay.kiwify.com.br/M3GiQfv')"
+      rel="noopener"
+    >
       🏆 GARANTIR MINHA COLEÇÃO AGORA
     </a>
     <div class="guarantee-footer">
-      <i class="fa-solid fa-shield-halved"></i>
+      <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
       Sua satisfação garantida ou seu dinheiro de volta em 7 dias
     </div>
   </div>
 </div>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
-  <p>© A Negra que Não Podia Ser Anjo & Coleção Tesouro Poético — Todos os direitos reservados.</p>
+  <p>© A Negra que Não Podia Ser Anjo &amp; Coleção Tesouro Poético — Todos os direitos reservados.</p>
   <p style="margin-top:.4rem">Desenvolvido por Leonardo Sampaio · Performance Poética na Escola</p>
 </footer>
 
-<!-- ═══ STICKY CTA MOBILE ═══ -->
-<div id="sticky-cta">
-  <a href="#oferta-colecao">🏆 VER OFERTA DA COLEÇÃO</a>
+<!-- STICKY CTA MOBILE — aparece ao rolar a página no celular -->
+<div id="sticky-cta" role="complementary" aria-label="Oferta fixada">
+  <a
+    href="#oferta-colecao"
+    aria-label="Ver a oferta da Coleção Tesouro Poético"
+  >
+    🏆 VER OFERTA DA COLEÇÃO
+  </a>
 </div>
+
+<!-- UTMify — colocado antes do </body> para não bloquear a renderização da página -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+        data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids
+        async defer></script>
 
 <!-- ═══ SCRIPTS ═══ -->
 <script>
-  // ── CAROUSEL ──
-  const testimonials = [
-    { img:"assets/depoimento_1.png", alt:"Depoimento 1 - Professor sobre os materiais de Leonardo Sampaio" },
-    { img:"assets/depoimento_2.png", alt:"Depoimento 2 - Professora sobre o cordel" },
-    { img:"assets/depoimento_3.png", alt:"Depoimento 3 - Educador sobre o impacto pedagógico" },
-    { img:"assets/depoimento_4.png", alt:"Depoimento 4 - Professor sobre a coleção" },
-    { img:"assets/depoimento_5.png", alt:"Depoimento 5 - Educadora sobre os resultados em sala" }
-  ];
-  let cur = 0;
-  const track = document.getElementById('carousel-track');
-  const dotsWrap = document.getElementById('carousel-dots');
+// ──────────────────────────────────────────────
+// CARROSSEL DE DEPOIMENTOS
+// Como funciona: cria os slides dinamicamente,
+// permite arrastar, clicar nos dots e usar setas.
+// ──────────────────────────────────────────────
+const testimonials = [
+  { img: 'assets/depoimento_1.png', alt: 'Depoimento 1 de professor sobre os materiais de Leonardo Sampaio' },
+  { img: 'assets/depoimento_2.png', alt: 'Depoimento 2 de professora sobre o cordel' },
+  { img: 'assets/depoimento_3.png', alt: 'Depoimento 3 de educador sobre o impacto pedagógico' },
+  { img: 'assets/depoimento_4.png', alt: 'Depoimento 4 de professor sobre a Coleção' },
+  { img: 'assets/depoimento_5.png', alt: 'Depoimento 5 de educadora sobre os resultados em sala' }
+];
 
-  testimonials.forEach((t, i) => {
-    const s = document.createElement('div');
-    s.className = 'carousel-slide';
-    s.innerHTML = `<img src="${t.img}" alt="${t.alt}" loading="lazy">`;
-    track.appendChild(s);
-    const d = document.createElement('span');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dotsWrap.appendChild(d);
+let cur = 0;
+const track    = document.getElementById('carousel-track');
+const dotsWrap = document.getElementById('carousel-dots');
+
+// Cria um slide e um dot para cada depoimento
+testimonials.forEach((t, i) => {
+  // Slide
+  const s = document.createElement('div');
+  s.className = 'carousel-slide';
+  s.setAttribute('role', 'tabpanel');
+  s.setAttribute('aria-label', 'Depoimento ' + (i + 1));
+  s.innerHTML = '<img src="' + t.img + '" alt="' + t.alt + '" loading="lazy">';
+  track.appendChild(s);
+
+  // Dot (bolinha indicadora)
+  const d = document.createElement('button');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.setAttribute('role', 'tab');
+  d.setAttribute('aria-label', 'Ir para depoimento ' + (i + 1));
+  d.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+  d.addEventListener('click', () => goTo(i));
+  dotsWrap.appendChild(d);
+});
+
+// Calcula a largura de cada slide para saber quanto rolar
+function slideW() {
+  return track.children[0] ? track.children[0].offsetWidth + 16 : 0;
+  // 16 = gap de 1rem entre slides
+}
+
+// Vai para o slide número n
+function goTo(n) {
+  cur = Math.max(0, Math.min(n, testimonials.length - 1));
+  track.scrollLeft = cur * slideW();
+  updateDots();
+}
+
+// Atualiza qual dot está "aceso"
+function updateDots() {
+  [...dotsWrap.children].forEach((d, i) => {
+    d.classList.toggle('active', i === cur);
+    d.setAttribute('aria-selected', i === cur ? 'true' : 'false');
   });
+}
 
-  function slideW(){ return track.children[0] ? track.children[0].offsetWidth + 20 : 0; }
-  function goTo(n){ cur = n; track.scrollLeft = cur * slideW(); updateDots(); }
-  function updateDots(){ [...dotsWrap.children].forEach((d,i) => d.classList.toggle('active', i === cur)); }
+// Botões de seta
+document.getElementById('prev-btn').addEventListener('click', () => {
+  goTo(cur > 0 ? cur - 1 : testimonials.length - 1);
+});
+document.getElementById('next-btn').addEventListener('click', () => {
+  goTo(cur < testimonials.length - 1 ? cur + 1 : 0);
+});
 
-  document.getElementById('prev-btn').addEventListener('click', () => goTo(cur > 0 ? cur - 1 : testimonials.length - 1));
-  document.getElementById('next-btn').addEventListener('click', () => goTo(cur < testimonials.length - 1 ? cur + 1 : 0));
+// Quando o usuário arrasta (scroll), atualiza o dot correspondente
+track.addEventListener('scroll', () => {
+  clearTimeout(track._st);
+  track._st = setTimeout(() => {
+    const n = Math.round(track.scrollLeft / slideW());
+    if (n !== cur) { cur = n; updateDots(); }
+  }, 80);
+});
 
-  track.addEventListener('scroll', () => {
-    clearTimeout(track._st);
-    track._st = setTimeout(() => {
-      const n = Math.round(track.scrollLeft / slideW());
-      if (n !== cur){ cur = n; updateDots(); }
-    }, 80);
-  });
-  window.addEventListener('resize', () => { track.scrollLeft = cur * slideW(); });
+// Ao redimensionar a janela, reposiciona o slide atual
+window.addEventListener('resize', () => {
+  track.scrollLeft = cur * slideW();
+});
 
-  // Auto-advance carousel
-  setInterval(() => goTo(cur < testimonials.length - 1 ? cur + 1 : 0), 4500);
+// Avança automaticamente a cada 4,5 segundos
+const autoSlide = setInterval(() => {
+  goTo(cur < testimonials.length - 1 ? cur + 1 : 0);
+}, 4500);
 
-  // ── FAQ ACCORDION ──
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-header').addEventListener('click', () => {
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
+// Para o avanço automático se o usuário interagir
+track.addEventListener('pointerdown', () => clearInterval(autoSlide));
+dotsWrap.addEventListener('click', () => clearInterval(autoSlide));
+
+// ──────────────────────────────────────────────
+// FAQ ACCORDION
+// Como funciona: clica na pergunta → abre/fecha a resposta.
+// Também funciona com teclado: Tab para navegar, Enter/Espaço para abrir.
+// ──────────────────────────────────────────────
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item    = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+
+    // Fecha todos os outros
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
     });
-  });
 
-  // ── STICKY CTA MOBILE ──
-  const stickyCTA = document.getElementById('sticky-cta');
-  window.addEventListener('scroll', () => {
-    stickyCTA.style.display = window.scrollY > 400 ? 'block' : 'none';
-  });
-
-  // ── FADE IN ON SCROLL ──
-  const fadeEls = document.querySelectorAll('.fade-in');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  }, {threshold: .1});
-  fadeEls.forEach(el => io.observe(el));
-
-  // ── KIWIFY UTM PASSTHROUGH + SCK ──
-  let prefix = ["https://pay.kiwify.com.br"];
-  function getParams() {
-    let t = "", e = window.top.location.href, r = new URL(e);
-    if (null != r) {
-      let a = r.searchParams.get("utm_source"),
-          n = r.searchParams.get("utm_medium"),
-          o = r.searchParams.get("utm_campaign"),
-          m = r.searchParams.get("utm_term"),
-          c = r.searchParams.get("utm_content");
-      -1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`);
+    // Abre este se estava fechado
+    if (!wasOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
     }
-    return t;
-  }
-  !function() {
-    var t = new URLSearchParams(window.location.search);
-    t.toString() && document.querySelectorAll("a").forEach(function(e) {
-      for (let r = 0; r < prefix.length; r++)
-        -1 !== e.href.indexOf(prefix[r]) && (
-          -1 === e.href.indexOf("?")
-            ? e.href += "?" + t.toString() + getParams()
-            : e.href += "&" + t.toString() + getParams()
-        );
-    });
-  }();
+  });
+});
+
+// ──────────────────────────────────────────────
+// STICKY CTA MOBILE
+// Aparece depois que o usuário rola 200px.
+// Isso garante que ele não cubra informações
+// importantes logo no início da página.
+// ──────────────────────────────────────────────
+const stickyCTA = document.getElementById('sticky-cta');
+window.addEventListener('scroll', () => {
+  stickyCTA.style.display = window.scrollY > 200 ? 'block' : 'none';
+}, { passive: true }); // passive: melhora a performance do scroll
+
+// ──────────────────────────────────────────────
+// ANIMAÇÃO DE ENTRADA (fade-in)
+// Como funciona: quando um elemento aparece na
+// tela, ele "emerge" com um efeito suave.
+// IntersectionObserver é mais eficiente que
+// ficar verificando a posição no scroll.
+// ──────────────────────────────────────────────
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target); // para de observar após animar
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// ──────────────────────────────────────────────
+// UTM PASSTHROUGH — REFORÇO PARA LINKS NORMAIS
+// (o trackCheckout() já cuida dos botões com onclick)
+// Este script age nos links que NÃO usam trackCheckout,
+// garantindo que nenhum UTM seja perdido.
+// Roda dentro de DOMContentLoaded para garantir que
+// todos os links já existam no HTML quando este
+// script procurar por eles.
+// ──────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  const kiwifyPrefix = 'https://pay.kiwify.com.br';
+
+  // Pega todos os parâmetros UTM da URL atual da página
+  const sp = new URLSearchParams(window.location.search);
+  if (!sp.toString()) return; // sem UTMs? não precisa fazer nada
+
+  // Monta parâmetro sck
+  const src = sp.get('utm_source')   || '';
+  const med = sp.get('utm_medium')   || '';
+  const cam = sp.get('utm_campaign') || '';
+  const ter = sp.get('utm_term')     || '';
+  const con = sp.get('utm_content')  || '';
+  const sck = (src || med || cam || ter || con)
+    ? ('sck=' + src + '|' + med + '|' + cam + '|' + ter + '|' + con)
+    : '';
+
+  const extras = [sp.toString(), sck].filter(Boolean).join('&');
+
+  // Adiciona os parâmetros em todos os links da Kiwify
+  document.querySelectorAll('a').forEach(function(link) {
+    if (link.href.indexOf(kiwifyPrefix) !== -1) {
+      link.href += (link.href.indexOf('?') === -1 ? '?' : '&') + extras;
+    }
+  });
+});
 </script>
 </body>
 </html>
