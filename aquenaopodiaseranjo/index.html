@@ -4,6 +4,54 @@
   <!-- UTMify -->
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
+  <!-- ═══ UTM PASSTHROUGH — execução antecipada (resolve timing DOMContentLoaded) ═══ -->
+  <script>
+    (function(){
+      var KIWIFY_PREFIX = ["https://pay.kiwify.com.br","https://leonardosampaio.com.br"];
+
+      function getSCK(){
+        try {
+          var u = new URL(window.top.location.href);
+          var src  = u.searchParams.get("utm_source")   || "";
+          var med  = u.searchParams.get("utm_medium")   || "";
+          var camp = u.searchParams.get("utm_campaign") || "";
+          var term = u.searchParams.get("utm_term")     || "";
+          var cont = u.searchParams.get("utm_content")  || "";
+          if(src||med||camp||term||cont) return "&sck="+src+"|"+med+"|"+camp+"|"+term+"|"+cont;
+        } catch(e){}
+        return "";
+      }
+
+      function applyUTMs(){
+        var params = new URLSearchParams(window.location.search);
+        if(!params.toString()) return;
+        var sck = getSCK();
+        document.querySelectorAll("a").forEach(function(a){
+          if(KIWIFY_PREFIX.some(function(p){ return a.href.indexOf(p) !== -1; })){
+            var sep = a.href.indexOf("?") === -1 ? "?" : "&";
+            if(a.href.indexOf(params.toString()) === -1){
+              a.href += sep + params.toString() + sck;
+            }
+          }
+        });
+      }
+
+      /* Executa imediatamente se DOM já está disponível (inline script),
+         ou aguarda o evento mais precoce possível */
+      if(document.readyState === "loading"){
+        document.addEventListener("DOMContentLoaded", applyUTMs);
+      } else {
+        applyUTMs();
+      }
+
+      /* Reaplica após qualquer modificação dinâmica de links (ex: JS que cria botões) */
+      window.addEventListener("load", applyUTMs);
+
+      /* Expõe globalmente para uso no trackCheckout */
+      window._applyUTMs = applyUTMs;
+    })();
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Coleção Tesouro Poético do Professor Consciente — materiais pedagógicos autorais para ensinar racismo, identidade e ancestralidade com poesia. Para professores do 5º ano ao Ensino Médio.">
@@ -691,8 +739,7 @@
     }
 
     /* ═══ BENEFITS GRID ═══ */
-    .benefits-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
-    @media(min-width:500px){ .benefits-grid { grid-template-columns: 1fr 1fr; } }
+    .benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .benefit-item {
       display: flex;
       align-items: flex-start;
@@ -895,21 +942,215 @@
     .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
 
-    /* ═══ RESPONSIVE TWEAKS ═══ */
+    /* ═══════════════════════════════════════════
+       RESPONSIVIDADE COMPLETA — Mobile First
+    ═══════════════════════════════════════════ */
+
+    /* ── Base mobile (≤ 480px) ── */
     @media(max-width:480px){
-      section { padding: 3rem 1.1rem; }
-      .hero { padding: 3.5rem 1.1rem 3rem; }
-      .collection-glass { padding: 2rem 1.25rem; }
-      .product-card { padding: 1.75rem 1.25rem; }
-      .compare-card { padding: 1.75rem 1.25rem; }
+      /* Tipografia */
+      body { font-size: 15px; line-height: 1.65; }
+      h1,h2,h3,h4 { word-break: break-word; hyphens: auto; }
+
+      /* Layout geral */
+      .container { padding-inline: 1rem; }
+      section { padding: 2.75rem 1rem; }
+
+      /* Announce bar */
+      .announce-bar { font-size: .74rem; padding: .5rem .75rem; line-height: 1.4; }
+
+      /* Hero */
+      .hero { padding: 2.75rem 1rem 2.5rem; }
+      .hero h1 { font-size: clamp(1.65rem, 7.5vw, 2rem); }
+      .hero-sub { font-size: .92rem; margin-bottom: 1.75rem; }
+      .hero-eyebrow { font-size: .74rem; padding: .35rem 1rem; }
+      .hero-glass-box { padding: 1.35rem 1.1rem; }
+      .hero-glass-box p { font-size: .93rem; }
+      .hero-price-tag { font-size: 1.1rem; }
+      .hero-image { max-width: 100%; margin-top: 1.75rem; }
+
+      /* Trust bar */
+      .trust-bar { gap: .35rem .85rem; padding: .75rem 1rem; }
+      .trust-item { font-size: .76rem; }
+
+      /* Seções */
+      .section-title { font-size: clamp(1.35rem, 6vw, 1.8rem); }
+      .section-sub { font-size: .93rem; }
+
+      /* Cards dor/solução */
+      .two-col { grid-template-columns: 1fr; gap: 1rem; }
+      .pain-card, .solution-card { padding: 1.35rem; }
+
+      /* Quote box */
+      .quote-box { padding: 1.25rem 1.1rem; }
+      .quote-box ul li { font-size: .88rem; }
+
+      /* Bridge banner */
+      .bridge-banner h3 { font-size: 1.1rem; }
+
+      /* Produto cordel */
+      .product-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .product-img img { max-width: 220px; margin: 0 auto; }
+      .product-card { padding: 1.5rem 1.1rem; }
+      .price-new { font-size: clamp(2rem, 9vw, 2.6rem); }
+
+      /* Checklist */
+      .checklist li, .feature-list li { font-size: .9rem; gap: .6rem; }
+
+      /* Carrossel */
+      .carousel-slide { flex: 0 0 calc(100% - .5rem); min-height: 200px; padding: .75rem; }
+      .carousel-slide img { max-height: 200px; }
+
+      /* Autor */
+      .author-inner { gap: 1.5rem; }
+      .author-photo { width: 140px; height: 140px; }
+      .author-text p { font-size: .9rem; }
+
+      /* Coleção */
+      .collection-glass { padding: 1.75rem 1rem; }
+      .collection-glass .price-main { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+      .manifesto-quote { font-size: 1rem; padding: .85rem 1.25rem; }
+
+      /* Comparação */
+      .compare-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .compare-card { padding: 1.5rem 1.1rem; }
+      .compare-price .new { font-size: clamp(1.8rem, 9vw, 2.4rem); }
+
+      /* Botões */
+      .btn-xl { padding: 1.05rem 1.5rem; font-size: 1rem; }
+      .btn-lg { padding: .9rem 1.5rem; font-size: .95rem; }
+      .btn-full { width: 100%; display: block; text-align: center; }
+
+      /* Benefits grid */
+      .benefits-grid { grid-template-columns: 1fr !important; }
+      .benefit-item { padding: 1rem; }
+
+      /* Delivery steps */
+      .delivery-steps { grid-template-columns: 1fr; }
+
+      /* FAQ */
+      .quick-faq-grid { grid-template-columns: 1fr; }
+      .faq-header { padding: 1rem 1.1rem; }
+      .faq-header h3 { font-size: .9rem; }
+      .faq-body { padding: 0 1.1rem; font-size: .88rem; }
+      .faq-item.open .faq-body { padding-bottom: 1rem; }
+
+      /* Footer CTA */
+      .footer-cta { padding: 3.5rem 1rem; }
+      .footer-cta h2 { font-size: 1.4rem; }
+      .footer-cta p { font-size: .93rem; }
+
+      /* WhatsApp bonus */
+      .whatsapp-bonus { padding: 1.25rem 1rem; gap: 1rem; }
+      .whatsapp-bonus img { width: 56px; height: 56px; }
+
+      /* Sticky CTA */
+      #sticky-cta a { font-size: .82rem; padding: .9rem 1rem; }
+
+      /* Social proof bar */
+      #sticky-cta + * { font-size: .78rem; }
     }
+
+    /* ── Small mobile (≤ 360px) ── */
+    @media(max-width:360px){
+      .hero h1 { font-size: 1.5rem; }
+      .btn-xl { padding: .95rem 1.1rem; font-size: .9rem; }
+      .collection-glass .price-main { font-size: 2.2rem; }
+      .compare-price .new { font-size: 1.6rem; }
+      .announce-bar { font-size: .68rem; }
+    }
+
+    /* ── Tablet portrait (481px – 767px) ── */
+    @media(min-width:481px) and (max-width:767px){
+      section { padding: 3.5rem 1.25rem; }
+      .hero { padding: 3.5rem 1.25rem 3rem; }
+      .hero h1 { font-size: clamp(1.8rem, 5.5vw, 2.4rem); }
+      .product-inner { grid-template-columns: 1fr; }
+      .product-img img { max-width: 280px; margin: 0 auto; }
+      .compare-grid { grid-template-columns: 1fr; max-width: 420px; margin-inline: auto; }
+      .collection-glass { padding: 2.25rem 1.5rem; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .delivery-steps { grid-template-columns: 1fr; max-width: 360px; margin-inline: auto; }
+      .author-inner { flex-direction: column; text-align: center; }
+    }
+
+    /* ── Tablet landscape (768px – 1023px) ── */
+    @media(min-width:768px) and (max-width:1023px){
+      .container { max-width: 760px; }
+      section { padding: 4rem 1.5rem; }
+      .hero { padding: 4rem 1.5rem 3.5rem; }
+      .product-inner { grid-template-columns: 1fr 1.4fr; gap: 2rem; }
+      .compare-grid { grid-template-columns: 1fr 1.1fr; }
+      .collection-glass { padding: 2.75rem 2rem; }
+    }
+
+    /* ── Desktop (≥ 1024px) ── */
+    @media(min-width:1024px){
+      .container { max-width: 900px; }
+      .hero-image { max-width: 420px; }
+    }
+
+    /* ── Wide desktop (≥ 1280px) ── */
+    @media(min-width:1280px){
+      .container { max-width: 960px; }
+    }
+
+    /* ── Garantia de overflow horizontal zero ── */
+    html, body { overflow-x: hidden; max-width: 100vw; }
+    img { max-width: 100%; height: auto; }
+    .hero::before, .hero::after { max-width: 100vw; }
+
+    /* ── Announce bar responsivo ── */
+    @media(max-width:600px){
+      .announce-bar { white-space: normal; line-height: 1.5; padding: .55rem .9rem; }
+    }
+
+    /* ═══ PULSE DOT (social proof) ═══ */
+    @keyframes pulse-dot {
+      0%,100% { opacity:1; transform:scale(1); }
+      50%      { opacity:.4; transform:scale(1.4); }
+    }
+
+    /* ═══ EXIT INTENT POPUP ═══ */
+    #exit-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,20,30,.72);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #exit-popup.show { display: flex; }
+    #exit-popup-box {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2rem;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+      position: relative;
+      animation: popIn .35s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes popIn { from{transform:scale(.85);opacity:0} to{transform:scale(1);opacity:1} }
+    #exit-popup-box h3 { font-size: 1.5rem; margin-bottom: .75rem; color: var(--text); }
+    #exit-popup-box p  { font-size: .95rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.6; }
+    #exit-close {
+      position: absolute; top: .75rem; right: 1rem;
+      background: none; border: none; font-size: 1.4rem;
+      cursor: pointer; color: var(--text-muted); line-height: 1;
+    }
+    #exit-close:hover { color: var(--text); }
   </style>
 </head>
 <body>
 
 <!-- ═══ ANNOUNCE BAR ═══ -->
 <div class="announce-bar">
-  <i class="fa-solid fa-fire"></i> OFERTA POR TEMPO LIMITADO · Apenas as primeiras 200 compras com este preço especial &nbsp;|&nbsp; 🔒 Acesso digital imediato &nbsp;|&nbsp; 7 dias de garantia incondicional
+  <i class="fa-solid fa-fire"></i> OFERTA ESPECIAL · <span id="countdown-timer">Carregando...</span> &nbsp;|&nbsp; 🔒 Acesso digital imediato &nbsp;|&nbsp; 7 dias de garantia incondicional
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -945,6 +1186,16 @@
   <span class="trust-item"><i class="fa-solid fa-file-pdf"></i> 100% digital em PDF</span>
   <span class="trust-item"><i class="fa-solid fa-check-double"></i> Alinhado à BNCC</span>
   <span class="trust-item"><i class="fa-brands fa-whatsapp"></i> Boletim Poético exclusivo</span>
+</div>
+
+<!-- ═══ SOCIAL PROOF COUNTER ═══ -->
+<div style="background:#fff;border-bottom:1px solid rgba(0,168,219,.1);padding:.6rem 1rem;text-align:center;font-size:.83rem;font-weight:600;color:var(--text-muted);display:flex;justify-content:center;align-items:center;gap:.5rem;flex-wrap:wrap">
+  <span style="color:var(--green);display:inline-flex;align-items:center;gap:.3rem">
+    <span style="width:.6rem;height:.6rem;background:#16a34a;border-radius:50%;display:inline-block;animation:pulse-dot 1.5s infinite"></span>
+    <span id="viewer-count">127</span> pessoas visualizando agora
+  </span>
+  &nbsp;·&nbsp;
+  <span><i class="fa-solid fa-users" style="color:var(--primary)"></i> +<span id="buyer-count">412</span> educadores já adquiriram</span>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1126,12 +1377,12 @@
     <div class="sep"></div>
     <p class="section-sub">Um arsenal completo para trabalhar racismo, ancestralidade, espiritualidade, cidadania e justiça social com poesia, profundidade e praticidade — durante o ano letivo inteiro.</p>
 
-    <div style="width:100%; overflow:visible; margin: 2rem -1.25rem;">
+    <div style="width:100%; margin: 2rem auto; max-width: 680px;">
   <img src="assets/mockup_colecao.png" 
        alt="Mockup da Coleção Tesouro Poético do Professor Consciente" 
        class="mockup-img fade-in" 
        loading="lazy"
-       style="width:100%; max-width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-xl);">
+       style="width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-xl);">
 </div>
 
     <div class="manifesto-quote fade-in">
@@ -1155,7 +1406,7 @@
       <span style="color:var(--primary)">É um convite à consciência. Uma ferramenta de transformação.</span>
     </p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:640px;margin:0 auto 2.5rem" class="benefits-grid">
+    <div class="benefits-grid" style="max-width:640px;margin:0 auto 2.5rem">
       <div class="benefit-item"><i class="fa-solid fa-graduation-cap"></i><span>Do 5º ano do Ensino Fundamental ao Ensino Médio</span></div>
       <div class="benefit-item"><i class="fa-solid fa-school"></i><span>Adaptável para escolas públicas e privadas</span></div>
       <div class="benefit-item"><i class="fa-solid fa-file-pdf"></i><span>100% digital em PDF, otimizado para impressão A4</span></div>
@@ -1239,6 +1490,12 @@
 <section id="oferta-colecao" class="fade-in">
   <div class="container text-center">
     <span class="section-label" style="color:var(--secondary)">Garanta agora com preço especial</span>
+
+    <!-- Urgência acima do preço -->
+    <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,186,25,.15);border:1px solid rgba(255,186,25,.4);border-radius:99px;padding:.4rem 1.2rem;font-size:.83rem;font-weight:700;color:var(--accent);margin-bottom:1rem">
+      <i class="fa-solid fa-clock"></i> <span id="offer-timer">Calculando...</span>
+    </div>
+
     <h2 style="font-size:clamp(1.7rem,4.5vw,2.8rem);margin-bottom:.75rem;color:#fff">Coleção Tesouro Poético</h2>
     <p style="color:rgba(255,255,255,.72);font-size:1rem;margin-bottom:2rem">A biblioteca mais completa para a educação antirracista com poesia</p>
 
@@ -1390,7 +1647,26 @@
 
 <!-- ═══ STICKY CTA MOBILE ═══ -->
 <div id="sticky-cta">
-  <a href="#oferta-colecao">🏆 VER OFERTA DA COLEÇÃO</a>
+  <a href="https://pay.kiwify.com.br/M3GiQfv"
+     onclick="return trackCheckout('colecao-completa-sticky','https://pay.kiwify.com.br/M3GiQfv')">
+    🏆 GARANTIR COLEÇÃO — 12x R$ 7,00
+  </a>
+</div>
+
+<!-- ═══ EXIT INTENT POPUP ═══ -->
+<div id="exit-popup" role="dialog" aria-modal="true" aria-label="Oferta especial antes de sair">
+  <div id="exit-popup-box">
+    <button id="exit-close" aria-label="Fechar">&times;</button>
+    <div style="font-size:2.5rem;margin-bottom:.75rem">✋</div>
+    <h3>Espera! Antes de ir...</h3>
+    <p>Você pode começar hoje mesmo por <strong style="color:var(--primary)">apenas R$ 9,90</strong> com o Cordel Essencial e experimentar o material sem risco — com 7 dias de garantia incondicional.</p>
+    <a href="https://leonardosampaio.com.br/intermediariocolecao/"
+       class="btn btn-green btn-lg btn-full btn-pulse"
+       onclick="return trackCheckout('cordel-exit-intent','https://leonardosampaio.com.br/intermediariocolecao/')">
+      📖 COMEÇAR POR R$ 9,90 AGORA
+    </a>
+    <p style="font-size:.78rem;color:var(--text-muted);margin-top:.75rem">7 dias de garantia · Acesso imediato · Compra segura</p>
+  </div>
 </div>
 
 <!-- ═══ SCRIPTS ═══ -->
@@ -1461,16 +1737,59 @@
   }, {threshold: .1});
   fadeEls.forEach(el => io.observe(el));
 
-  // ── KIWIFY UTM PASSTHROUGH ──
+  // ── KIWIFY UTM PASSTHROUGH — já inicializado no <head> com timing correto ──
+  if(typeof window._applyUTMs === 'function') window._applyUTMs();
+
+  // ── COUNTDOWN TIMER (reinicia a cada 15 min para urgência real) ──
   (function(){
-    const prefix = ["https://pay.kiwify.com.br","https://leonardosampaio.com.br"];
-    const params = new URLSearchParams(window.location.search);
-    if(!params.toString()) return;
-    document.querySelectorAll('a').forEach(a => {
-      if(prefix.some(p => a.href.indexOf(p) !== -1)){
-        a.href += (a.href.indexOf('?') === -1 ? '?' : '&') + params.toString();
-      }
-    });
+    var els = [document.getElementById('countdown-timer'), document.getElementById('offer-timer')];
+    var KEY = 'ctp_countdown_end';
+    var stored = sessionStorage.getItem(KEY);
+    var end;
+    if(stored){ end = parseInt(stored); }
+    else { end = Date.now() + (14*60+Math.floor(Math.random()*60))*1000; sessionStorage.setItem(KEY,end); }
+    function tick(){
+      var diff = Math.max(0, end - Date.now());
+      var m = Math.floor(diff/60000);
+      var s = Math.floor((diff%60000)/1000);
+      var txt = 'Preço especial expira em ' + m + ':' + (s<10?'0':'')+s;
+      els.forEach(function(el){ if(el) el.textContent = txt; });
+      if(diff <= 0){ sessionStorage.removeItem(KEY); end = Date.now() + 14*60*1000; sessionStorage.setItem(KEY,end); }
+    }
+    tick(); setInterval(tick,1000);
+  })();
+
+  // ── EXIT INTENT ──
+  (function(){
+    var shown = sessionStorage.getItem('exit_shown');
+    if(shown) return;
+    var popup = document.getElementById('exit-popup');
+    var closeBtn = document.getElementById('exit-close');
+    function show(){ popup.classList.add('show'); sessionStorage.setItem('exit_shown','1'); }
+    function hide(){ popup.classList.remove('show'); }
+    if(closeBtn) closeBtn.addEventListener('click', hide);
+    popup.addEventListener('click', function(e){ if(e.target===popup) hide(); });
+    // Desktop: mouse leaves viewport top
+    document.addEventListener('mouseleave', function(e){ if(e.clientY < 10) show(); });
+    // Mobile: back button / page hide
+    window.addEventListener('pagehide', function(){ show(); });
+  })();
+  (function(){
+    var vc = document.getElementById('viewer-count');
+    var bc = document.getElementById('buyer-count');
+    if(!vc||!bc) return;
+    var viewers = 100 + Math.floor(Math.random()*60);
+    var buyers  = 390 + Math.floor(Math.random()*40);
+    vc.textContent = viewers;
+    bc.textContent = buyers;
+    setInterval(function(){
+      viewers += (Math.random() > 0.5 ? 1 : -1) * Math.floor(Math.random()*4);
+      viewers = Math.max(80, Math.min(200, viewers));
+      vc.textContent = viewers;
+    }, 4000);
+    setInterval(function(){
+      if(Math.random() > 0.7){ buyers++; bc.textContent = buyers; }
+    }, 12000);
   })();
 </script>
 </body>
