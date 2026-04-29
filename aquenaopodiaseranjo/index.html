@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
+  <!-- UTMify -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,7 +51,7 @@
       var eid = _genUUID();
       if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product},{eventID:eid});
       sendCAPI('InitiateCheckout',{content_name:product});
-      setTimeout(function(){ window.location.href = href; }, 250);
+      setTimeout(function(){ window.location.href=href; },250);
       return false;
     }
   </script>
@@ -1596,38 +1597,31 @@
   <p style="margin-top:.4rem">Desenvolvido por Leonardo Sampaio · Performance Poética na Escola</p>
 </footer>
 
-  <!-- UTMify -->
-  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
-
-  <!-- ═══ UTM PASSTHROUGH KIWIFY — instalado após o footer ═══ -->
-  <script>
-    let prefix = ["https://pay.kiwify.com.br"];
-
-    function getParams() {
-      let t = "", e = window.top.location.href, r = new URL(e);
-      if (null != r) {
-        let a = r.searchParams.get("utm_source"),
-            n = r.searchParams.get("utm_medium"),
-            o = r.searchParams.get("utm_campaign"),
-            m = r.searchParams.get("utm_term"),
-            c = r.searchParams.get("utm_content");
-        -1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-      }
-      return t
+<!-- ═══ UTM PASSTHROUGH ═══ -->
+<script>
+  let prefix = ["https://pay.kiwify.com.br"];
+  function getParams() {
+    let t = "",
+        e = window.top.location.href,
+        r = new URL(e);
+    if (null != r) {
+      let a = r.searchParams.get("utm_source"),
+          n = r.searchParams.get("utm_medium"),
+          o = r.searchParams.get("utm_campaign"),
+          m = r.searchParams.get("utm_term"),
+          c = r.searchParams.get("utm_content");
+      -1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
     }
-
-    !function() {
-      var t = new URLSearchParams(window.location.search);
-      t.toString() && document.querySelectorAll("a").forEach(function(e) {
-        for (let r = 0; r < prefix.length; r++)
-          -1 !== e.href.indexOf(prefix[r]) && (
-            -1 === e.href.indexOf("?")
-              ? e.href += "?" + t.toString() + getParams()
-              : e.href += "&" + t.toString() + getParams()
-          )
-      })
-    }();
-  </script>
+    return t
+  }
+  !function() {
+    var t = new URLSearchParams(window.location.search);
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
+      for (let r = 0; r < prefix.length; r++)
+        -1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
+    })
+  }();
+</script>
 
 <!-- ═══ STICKY CTA MOBILE ═══ -->
 <div id="sticky-cta">
@@ -1720,6 +1714,8 @@
     });
   }, {threshold: .1});
   fadeEls.forEach(el => io.observe(el));
+
+
 
   // ── COUNTDOWN TIMER (reinicia a cada 15 min para urgência real) ──
   (function(){
