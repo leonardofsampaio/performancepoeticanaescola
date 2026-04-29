@@ -51,7 +51,8 @@
       var eid = _genUUID();
       if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product},{eventID:eid});
       sendCAPI('InitiateCheckout',{content_name:product});
-      setTimeout(function(){ window.location.href=href; },250);
+      var finalHref = (event && event.currentTarget && event.currentTarget.href) ? event.currentTarget.href : href;
+      setTimeout(function(){ window.location.href=finalHref; },250);
       return false;
     }
   </script>
