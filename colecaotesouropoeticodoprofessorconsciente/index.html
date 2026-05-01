@@ -1,1312 +1,1780 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script
-  src="https://cdn.utmify.com.br/scripts/utms/latest.js"
-  data-utmify-prevent-xcod-sck
-  data-utmify-prevent-subids
-  async
-  defer
-></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesouro Poético dos Professores Conscientes | Aulas com Poesia, BNCC e Cordel</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:700&display=swap" rel="stylesheet">
-    <meta property="og:title" content="Tesouro Poético dos Professores Conscientes | Aulas com Poesia, BNCC e Cordel">
-    <meta property="og:description" content="Descubra um material exclusivo para educadores: poesias, cordéis, BNCC e atividades para aulas inesquecíveis. Transforme suas aulas com arte e significado!">
-    <!-- Chosen Palette: Primary Blue, Accent Yellow, Secondary Light Blue, Text Dark Blue -->
-    <!-- Application Structure Plan: The SPA is structured as a single-page sales funnel. It starts with a strong hero section (headline, mockup, main CTA) to capture attention and provide an immediate call to action. It then proceeds through sections that address user pain points ("O que é essa Coleção?", "Superando os Desafios"), showcase the product features ("Tudo o que você vai ter em mãos" with a carousel for dynamic display), highlight bonuses, provide social proof (testimonials carousel), answer common questions (FAQ accordion), and present the offer with urgency (countdown, scarcity message). The "Quem é Leonardo Sampaio?" section builds authority. This linear flow is designed to guide the user through a persuasive narrative, addressing their needs and objections at each stage, culminating in multiple opportunities to convert. The mobile fixed CTA ensures constant access to the purchase option. -->
-    <!-- Visualization & Content Choices:
-    - Hero Section: Headline, sub-headline, and mockup image (textual content + static image) to immediately convey value and product visualization. Goal: Inform, Engage. Justification: Quick understanding and visual appeal. Method: HTML/CSS.
-    - "O que é essa Coleção?": Textual explanations with bullet points (textual content). Goal: Inform, Explain. Justification: Detail product benefits and differentiation. Method: HTML/CSS.
-    - "Superando os Desafios": Card layout with short text snippets (qualitative insights). Goal: Inform, Empathize. Justification: Address pain points directly. Method: HTML/CSS.
-    - "Reforço da Proposta de Valor": Textual summary to re-engage the reader. Goal: Re-engage, Reinforce Value. Justification: Keep the user engaged with core benefits. Method: HTML/CSS.
-    - "Os Livros e Cordéis da Coleção": Product carousel (quantitative data + qualitative insights). Goal: Inform, Showcase. Justification: Dynamically display multiple product components without clutter. Interaction: Swipe, arrows, dots. Library: Chart.js (for carousel structure, not charts).
-    - "Seus Bônus Exclusivos": List of bonuses (qualitative insights). Goal: Inform, Enhance Value. Justification: Clearly list additional benefits. Method: HTML/CSS.
-    - "Depoimentos": Testimonial carousel (qualitative insights - social proof). Goal: Persuade, Build Trust. Justification: Dynamic presentation of positive feedback. Interaction: Swipe, arrows, dots. Library: Chart.js (for carousel structure, not charts).
-    - "Perguntas Rápidas Antes de Comprar": Short Q&A (textual content). Goal: Inform, Address Objections. Justification: Quick answers to common pre-purchase questions. Method: HTML/CSS.
-    - "Oferta e Preço": Price display, list of inclusions, countdown timer, kits remaining (quantitative data + textual content). Goal: Inform, Urgency, Scarcity. Justification: Clear pricing, strong call to action with time-sensitive elements. Interaction: Dynamic countdown. Method: HTML/CSS + JavaScript.
-    - "Quem é Leonardo Sampaio?": Textual biography and photo (qualitative insights). Goal: Build Authority/Credibility. Justification: Humanize the brand and establish expertise. Method: HTML/CSS.
-    - "Boletim Poético": Textual explanation (qualitative insights). Goal: Inform, Value Add. Justification: Promote additional engagement. Method: HTML/CSS.
-    - "Como você vai receber": List of delivery details (qualitative insights). Goal: Inform, Reassure. Justification: Clarify purchase process and access. Method: HTML/CSS.
-    - "Perguntas Frequentes": Accordion (textual content). Goal: Inform, Address Objections. Justification: Organize detailed FAQs without overwhelming the user. Interaction: Click to expand/collapse. Method: HTML/CSS + JavaScript.
-    - CTAs: Strategically placed buttons (interactive elements). Goal: Convert. Justification: Provide clear paths to purchase at multiple points. Method: HTML/CSS.
-    - Fixed Mobile CTA: Button (interactive element). Goal: Convert. Justification: Always visible call to action on mobile. Method: HTML/CSS + JavaScript.
-    - Countdown Timer: Dynamic text (quantitative data). Goal: Urgency. Justification: Visual representation of time limit. Method: JavaScript.
-    - Kits Remaining: Dynamic text (quantitative data). Goal: Scarcity. Justification: Visual representation of limited stock. Method: JavaScript.
-    - No specific Chart.js or Plotly.js charts are used as the content of this sales page is primarily textual and image-based, with carousels for dynamic display of products and testimonials. The existing carousels are implemented using Slick Carousel, which relies on jQuery and JavaScript for its functionality. The information architecture focuses on a persuasive linear flow, and the interactive elements are primarily the carousels, accordions, and dynamic scarcity indicators, which are handled by the provided JavaScript.
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <meta property="og:image" content="assets/mockup_colecao.png">
-    <meta property="og:url" content="https://seusite.com.br/colecao-tesouro-poetico">
-    <meta property="og:type" content="website">
+  <!-- UTMify -->
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 
-    <!-- Meta Pixel Code (Original) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1243155826763791'); // Seu ID do Pixel do Meta (Original)
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coleção Tesouro Poético do Professor Consciente | Cordel, Poesia e BNCC</title>
+
+  <!-- OG Meta -->
+  <meta property="og:title" content="Coleção Tesouro Poético do Professor Consciente">
+  <meta property="og:description" content="Material completo para professores: cordéis, poesia, BNCC e atividades prontas. Transforme suas aulas com arte e consciência!">
+  <meta property="og:image" content="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/mockup_colecao.png">
+  <meta property="og:type" content="website">
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1243155826763791');
     fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code (Original) -->
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
 
-    <!-- Meta Pixel Code (Novo) -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '959536202816242'); // Novo ID do Pixel do Meta
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=959536202816242&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code (Novo) -->
+  <!-- Conversions API Token embedded -->
+  <script>
+    window.FB_PIXEL_ID = '1243155826763791';
+    window.FB_ACCESS_TOKEN = 'EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD';
+  </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
-    <script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-6633SYS5NB');
-    </script>
-    <!-- End Google tag (gtag.js) -->
+  </script>
 
-    <!-- Slick Carousel CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caveat:wght@700&family=Barlow+Condensed:ital,wght@0,400;0,700;0,900;1,700&family=Crimson+Pro:wght@400;600&display=swap" rel="stylesheet">
 
-    <style>
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-        .font-inter {
-            font-family: 'Inter', sans-serif;
-        }
-        :root {
-            --text: #00374C;
-            --background: #fbfefe;
-            --primary: #00a8db;
-            --secondary: #C9ECF6;
-            --accent: #ffb300;
+  <style>
+    /* ===== DESIGN SYSTEM: Neobrutalism + Literatura de Cordel + Liquid Glass ===== */
+    :root {
+      --amarelo:     #F5C800;   /* Amarelo Xilogravura J.Borges */
+      --preto:       #1A1008;   /* Preto Madeira Gravada */
+      --branco:      #FFFEF5;   /* Branco Papel Cordel */
+      --vermelho:    #C8281E;   /* Vermelho Tinta Xilo */
+      --azul:        #1B6CA8;   /* Azul Sertão */
+      --verde:       #2D7A3A;   /* Verde Mandacaru */
+      --laranja:     #E8640A;   /* Laranja Folheto */
+      --creme:       #FAF3DC;   /* Creme Papel Envelhecido */
 
-            --text-50: #e5f8ff;
-            --text-100: #ccf1ff;
-            --text-200: #99e2ff;
-            --text-300: #66d4ff;
-            --text-400: #33c5ff;
-            --text-500: #00b7ff;
-            --text-600: #0092cc;
-            --text-700: #006e99;
-            --text-800: #004966;
-            --text-900: #002533;
-            --text-950: #00121a;
+      /* Liquid Glass tokens */
+      --glass-bg:    rgba(255,254,245,0.72);
+      --glass-blur:  blur(18px) saturate(180%);
+      --glass-border: 1px solid rgba(245,200,0,0.35);
+      --glass-shadow: 0 8px 32px rgba(26,16,8,0.18), 0 2px 8px rgba(245,200,0,0.12);
 
-            --background-50: #ebfafa;
-            --background-100: #d6f5f5;
-            --background-200: #adebeb;
-            --background-300: #85e0e0;
-            --background-400: #5cd6d6;
-            --background-500: #33cccc;
-            --background-600: #29a3a3;
-            --background-700: #1f7a7a;
-            --background-800: #145252;
-            --background-900: #0a2929;
-            --background-950: #051414;
+      /* Borders neobrutalism */
+      --border-thick: 3px solid var(--preto);
+      --border-xtra:  5px solid var(--preto);
+      --shadow-neo:   6px 6px 0 var(--preto);
+      --shadow-neo-lg: 10px 10px 0 var(--preto);
+      --shadow-neo-yellow: 6px 6px 0 var(--amarelo);
 
-            --primary-50: #e5f9ff;
-            --primary-100: #ccf3ff;
-            --primary-200: #99e7ff;
-            --primary-300: #66dbff;
-            --primary-400: #33cfff;
-            --primary-500: #00c3ff;
-            --primary-600: #009ccc;
-            --primary-700: #007599;
-            --primary-800: #004e66;
-            --primary-900: #002733;
-            --primary-950: #00141a;
+      --font-display: 'Bebas Neue', 'Impact', sans-serif;
+      --font-cordel:  'Caveat', cursive;
+      --font-headline:'Barlow Condensed', sans-serif;
+      --font-body:    'Crimson Pro', Georgia, serif;
+      --radius-neo:   4px;
+    }
 
-            --secondary-50: #e9f7fc;
-            --secondary-100: #d3f0f8;
-            --secondary-200: #a6e0f2;
-            --secondary-300: #7ad1eb;
-            --secondary-400: #4ec1e4;
-            --secondary-500: #21b2de;
-            --secondary-600: #1b8eb1;
-            --secondary-700: #146b85;
-            --secondary-800: #0d4759;
-            --secondary-900: #07242c;
-            --secondary-950: #031216;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-            --accent-50: #fff7e5;
-            --accent-100: #fff0cc;
-            --accent-200: #ffe099;
-            --accent-300: #ffd166;
-            --accent-400: #ffc233;
-            --accent-500: #ffb300;
-            --accent-600: #cc8f00;
-            --accent-700: #996b00;
-            --accent-800: #664700;
-            --accent-900: #332400;
-            --accent-950: #1a1200;
+    html { scroll-behavior: smooth; font-size: 100%; }
 
-            --color-action-green: #28A745;
-            --color-action-green-dark: #1E8449;
-            --color-scarcity-red: #D2463F;
+    body {
+      font-family: var(--font-body);
+      background-color: var(--creme);
+      color: var(--preto);
+      /* Cordel texture overlay */
+      background-image:
+        repeating-linear-gradient(0deg, rgba(26,16,8,0.03) 0px, rgba(26,16,8,0.03) 1px, transparent 1px, transparent 24px),
+        repeating-linear-gradient(90deg, rgba(26,16,8,0.015) 0px, rgba(26,16,8,0.015) 1px, transparent 1px, transparent 48px);
+    }
 
-            --color-white: #FFFFFF;
-        }
+    /* ===== XILO DECORATIVE ELEMENTS ===== */
+    .xilo-border {
+      border-top: 6px solid var(--preto);
+      border-bottom: 6px solid var(--preto);
+      position: relative;
+    }
+    .xilo-border::before, .xilo-border::after {
+      content: '◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆ ◆';
+      position: absolute;
+      top: -14px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 10px;
+      color: var(--amarelo);
+      letter-spacing: 2px;
+      overflow: hidden;
+    }
+    .xilo-border::after { top: auto; bottom: -14px; }
 
-        html {
-            font-size: 100%;
-        }
+    .star-divider {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--vermelho);
+      letter-spacing: 12px;
+      margin: 2rem 0;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            background-color: var(--background);
-            color: var(--text);
-            scrollbar-width: thin;
-            scrollbar-color: var(--text) var(--background);
-        }
-        body::-webkit-scrollbar {
-            width: 8px;
-        }
-        body::-webkit-scrollbar-track {
-            background: var(--background);
-        }
-        body::-webkit-scrollbar-thumb {
-            background-color: var(--text);
-            border-radius: 4px;
-            border: 2px solid var(--background);
-        }
+    /* ===== SECTION WRAPPERS ===== */
+    .section-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
 
-        h1, h2, h3, h4, h5 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
+    section {
+      padding: 4rem 0;
+    }
 
-        h1 {font-size: 3.052rem;}
-        h2 {font-size: 2.441rem;}
-        h3 {font-size: 1.953rem;}
-        h4 {font-size: 1.563rem;}
-        h5 {font-size: 1.25rem;}
-        small {font-size: 0.8rem;}
+    /* ===== TYPOGRAPHY ===== */
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-family: var(--font-headline);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    h3 {
+      font-family: var(--font-headline);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      line-height: 1.7;
+    }
 
-        .fixed-cta {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--primary);
-            padding: 1rem;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
-        }
+    /* ===== NEO BRUTALISM CARDS ===== */
+    .neo-card {
+      background: var(--branco);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      padding: 1.5rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .neo-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--shadow-neo-lg);
+    }
+    .neo-card-yellow {
+      background: var(--amarelo);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      padding: 1.5rem;
+    }
+    .neo-card-red {
+      background: var(--vermelho);
+      color: var(--branco);
+      border: var(--border-thick);
+      box-shadow: 6px 6px 0 var(--amarelo);
+      border-radius: var(--radius-neo);
+      padding: 1.5rem;
+    }
 
-        .accordion-header {
-            cursor: pointer;
-            padding: 1rem;
-            background-color: var(--color-white);
-            border-radius: 0.5rem;
-            margin-bottom: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .accordion-header:hover {
-            background-color: var(--background-50);
-        }
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-            padding: 0 1rem;
-            background-color: var(--color-white);
-            border-radius: 0.5rem;
-            margin-top: -0.5rem;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        .accordion-content.active {
-            max-height: 500px;
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-            transition: max-height 0.5s ease-in, padding 0.5s ease-in;
-        }
-        .accordion-header svg {
-            transition: transform 0.3s ease;
-        }
-        .accordion-header.active svg {
-            transform: rotate(180deg);
-        }
-        .hero-gradient {
-            background: linear-gradient(to bottom, var(--background-50), var(--primary));
-        }
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-            border: 1px solid transparent;
-        }
-        .card-hover-effect:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border-color: var(--text);
-        }
-        @keyframes pulse-cta {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.02);
-            }
-        }
-        .animate-cta-pulse {
-            animation: pulse-cta 1.5s infinite ease-in-out;
-        }
-        .icon-align-middle {
-            vertical-align: middle;
-        }
-        .offer-countdown-banner {
-            background-color: var(--color-scarcity-red);
-            color: var(--color-white);
-            animation: pulse-danger 1.5s infinite ease-in-out;
-            border: 2px solid var(--accent);
-        }
-        @keyframes pulse-danger {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(210, 70, 63, 0.7);
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 0 0 10px rgba(210, 70, 63, 0);
-            }
-        }
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-            20%, 40%, 60%, 80% { transform: translateX(5px); }
-        }
-        .cta-shake {
-            animation: shake 0.5s;
-        }
+    /* ===== LIQUID GLASS PANEL ===== */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: var(--glass-border);
+      box-shadow: var(--glass-shadow);
+      border-radius: 12px;
+      padding: 2rem;
+    }
 
-        #testimonials-section {
-            padding-left: 0;
-            padding-right: 0;
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: var(--primary);
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-        main.container {
-            padding-left: 0;
-            padding-right: 0;
-            max-width: none;
-        }
-        main section:not(#testimonials-section) {
-            padding-left: 1rem;
-            padding-right: 1rem;
-            max-width: 960px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        @media (min-width: 768px) {
-            main section:not(#testimonials-section) {
-                max-width: 1024px;
-            }
-        }
-        @media (min-width: 1024px) {
-            main section:not(#testimonials-section) {
-                max-width: 1280px;
-            }
-        }
+    /* ===== TRAPEZOIDAL BUTTONS ===== */
+    .btn-primary {
+      display: inline-block;
+      background: var(--amarelo);
+      color: var(--preto);
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      clip-path: polygon(8px 0%, calc(100% - 8px) 0%, 100% 50%, calc(100% - 8px) 100%, 8px 100%, 0% 50%);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.12s, box-shadow 0.12s;
+      position: relative;
+      animation: pulse-btn 2s ease-in-out infinite;
+    }
+    .btn-primary:hover {
+      transform: translate(-4px, -4px);
+      box-shadow: var(--shadow-neo-lg);
+      animation: none;
+    }
+    .btn-primary:active {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--preto);
+    }
 
+    .btn-buy {
+      display: inline-block;
+      background: var(--verde);
+      color: var(--branco);
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1.2rem 3rem;
+      border: var(--border-xtra);
+      box-shadow: 8px 8px 0 var(--preto);
+      clip-path: polygon(12px 0%, calc(100% - 12px) 0%, 100% 50%, calc(100% - 12px) 100%, 12px 100%, 0% 50%);
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.12s, box-shadow 0.12s;
+      animation: pulse-btn 1.8s ease-in-out infinite;
+    }
+    .btn-buy:hover {
+      transform: translate(-5px, -5px);
+      box-shadow: 13px 13px 0 var(--preto);
+      animation: none;
+    }
 
-        .slick-slider {
-            width: 100%;
-            margin: 0;
-            padding-bottom: 2rem;
-        }
+    @keyframes pulse-btn {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.025); }
+    }
 
-        .testimonial-slick-slider .slick-slide, .product-slick-slider .slick-slide {
-            background-color: var(--secondary);
-            border-radius: 0.75rem;
-            display: flex !important;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 250px;
-            font-weight: bold;
-            transform: scale(0.8);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            margin: 0 10px;
-            cursor: grab;
-            position: relative;
-            padding: 0;
-            overflow: hidden;
-            border: 4px solid var(--secondary);
-        }
+    /* ===== CORDEL TITLE BADGE ===== */
+    .cordel-badge {
+      display: inline-block;
+      font-family: var(--font-cordel);
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      background: var(--vermelho);
+      color: var(--branco);
+      padding: 0.3rem 1.2rem;
+      border: 2px solid var(--preto);
+      transform: rotate(-1.5deg);
+      box-shadow: 3px 3px 0 var(--preto);
+    }
 
-        .testimonial-slick-slider .slick-center, .product-slick-slider .slick-center {
-            background-color: var(--color-white);
-            transform: scale(1);
-            opacity: 1;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            border: 44px solid var(--accent);
-        }
+    /* ===== STAMP ===== */
+    .stamp {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      letter-spacing: 0.1em;
+      border: 4px solid var(--vermelho);
+      color: var(--vermelho);
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      transform: rotate(-8deg);
+      opacity: 0.9;
+      box-shadow: inset 0 0 0 2px var(--vermelho);
+    }
 
-        .testimonial-slick-slider .slick-slide img, .product-slick-slider .slick-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 0.5rem;
-            box-shadow: none;
-        }
+    /* ===== HERO SECTION ===== */
+    #hero {
+      background-color: var(--amarelo);
+      border-bottom: 6px solid var(--preto);
+      padding: 4rem 0 0;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .slick-prev, .slick-next {
-            font-size: 0;
-            line-height: 1;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: block;
-            width: 40px;
-            height: 40px;
-            padding: 0;
-            cursor: pointer;
-            color: transparent;
-            border: none;
-            outline: none;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 50%;
-            z-index: 100;
-            transition: background-color 0.3s ease;
-        }
-        .slick-prev:hover, .slick-next:hover {
-            background: rgba(0, 0, 0, 0.5);
-        }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 12px;
+      background: repeating-linear-gradient(90deg, var(--preto) 0, var(--preto) 20px, var(--amarelo) 20px, var(--amarelo) 40px);
+    }
 
-        .slick-prev:before, .slick-next:before {
-            font-family: 'Arial', sans-serif;
-            font-size: 30px;
-            line-height: 1;
-            color: var(--color-white);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    .hero-tag {
+      font-family: var(--font-cordel);
+      font-size: 1.3rem;
+      color: var(--preto);
+      display: inline-block;
+      background: var(--branco);
+      border: 2px solid var(--preto);
+      padding: 0.2rem 1rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 3px 3px 0 var(--preto);
+    }
 
-        .slick-prev {
-            left: -15px;
-        }
-        .slick-next {
-            right: -15px;
-        }
-        .slick-prev:before {
-            content: '\2039';
-        }
-        .slick-next:before {
-            content: '\203A';
-        }
+    .hero-headline-wrap {
+      background: var(--preto);
+      display: inline-block;
+      padding: 0.5rem 1.5rem;
+      margin: 0.8rem 0;
+    }
 
-        .slick-dots {
-            bottom: -30px;
-            margin: 0;
-        }
-        .slick-dots li {
-            position: relative;
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            margin: 0 6px;
-            padding: 0;
-            cursor: pointer;
-        }
-        .slick-dots li button {
-            font-size: 0;
-            line-height: 0;
-            display: block;
-            width: 15px;
-            height: 15px;
-            cursor: pointer;
-            color: transparent;
-            border: none;
-            outline: none;
-            background-color: transparent;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
-        .slick-dots li button:before {
-            font-family: 'Arial', sans-serif;
-            font-size: 15px;
-            line-height: 15px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 15px;
-            height: 15px;
-            content: '•';
-            text-align: center;
-            opacity: 1;
-            color: var(--secondary);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            transition: color 0.3s ease;
-        }
-        .slick-dots li.slick-active button:before {
-            color: var(--accent);
-        }
-        .slick-dots li button:hover:before {
-            color: var(--accent-300);
-        }
+    .hero-sub {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-family: var(--font-headline);
+      font-weight: 700;
+      max-width: 640px;
+      line-height: 1.4;
+    }
 
-        .slick-arrow.slick-hidden {
-            display: none !important;
-        }
-    </style>
+    .hero-image-wrap {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .hero-image-wrap img {
+      max-width: 100%;
+      width: 600px;
+      display: block;
+      filter: drop-shadow(12px 12px 0 rgba(26,16,8,0.35));
+    }
+
+    .hero-bonus-tag {
+      position: absolute;
+      top: -20px;
+      right: 5%;
+      background: var(--vermelho);
+      color: var(--branco);
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+      border: 3px solid var(--preto);
+      box-shadow: 4px 4px 0 var(--preto);
+      transform: rotate(3deg);
+      text-transform: uppercase;
+      max-width: 220px;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ===== PAIN POINTS ===== */
+    #dor {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .dor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .dor-card {
+      border: 2px solid var(--amarelo);
+      padding: 1.5rem;
+      border-radius: var(--radius-neo);
+      position: relative;
+    }
+
+    .dor-card .icon-big {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ===== WHAT IS ===== */
+    #oque {
+      background: var(--creme);
+    }
+
+    .check-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+    }
+    .check-list li::before {
+      content: '✦';
+      color: var(--verde);
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    /* ===== PRODUCTS CAROUSEL ===== */
+    #produtos {
+      background: var(--amarelo);
+      border-top: 6px solid var(--preto);
+      border-bottom: 6px solid var(--preto);
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1.5rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      flex: 0 0 calc(33.333% - 1rem);
+      min-width: 260px;
+    }
+
+    .product-card {
+      background: var(--branco);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      overflow: hidden;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-bottom: var(--border-thick);
+      display: block;
+    }
+
+    .product-card-body {
+      padding: 1.25rem;
+      flex: 1;
+    }
+
+    .product-card-body h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card-body p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .carousel-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .carousel-btn {
+      background: var(--preto);
+      color: var(--amarelo);
+      border: 2px solid var(--preto);
+      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      transition: background 0.15s;
+      border-radius: 2px;
+    }
+
+    .carousel-btn:hover { background: var(--vermelho); }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .carousel-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--preto);
+      opacity: 0.3;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .carousel-dot.active { opacity: 1; background: var(--vermelho); }
+
+    /* ===== BONUS ===== */
+    #bonus {
+      background: var(--branco);
+      border-bottom: 6px solid var(--preto);
+    }
+
+    .bonus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .bonus-item {
+      background: var(--creme);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo-yellow);
+      border-radius: var(--radius-neo);
+      padding: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .bonus-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    #depoimentos {
+      background: var(--vermelho);
+      color: var(--branco);
+      border-top: 6px solid var(--preto);
+      border-bottom: 6px solid var(--preto);
+    }
+
+    .test-carousel {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+    }
+    .test-carousel::-webkit-scrollbar { display: none; }
+
+    .test-slide {
+      flex: 0 0 280px;
+      scroll-snap-align: start;
+    }
+
+    .test-slide img {
+      width: 100%;
+      border: 4px solid var(--amarelo);
+      box-shadow: 6px 6px 0 var(--preto);
+      border-radius: 4px;
+      display: block;
+    }
+
+    /* ===== FAQ ===== */
+    #faq {
+      background: var(--creme);
+    }
+
+    .accordion-item {
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background: var(--branco);
+      padding: 1.1rem 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border: none;
+      width: 100%;
+      text-align: left;
+      color: var(--preto);
+      transition: background 0.15s;
+    }
+
+    .accordion-header:hover { background: var(--amarelo); }
+    .accordion-header.open { background: var(--amarelo); }
+
+    .accordion-header svg {
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .accordion-header.open svg { transform: rotate(180deg); }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      background: var(--branco);
+      padding: 0 1.5rem;
+    }
+    .accordion-body.open {
+      max-height: 400px;
+      padding: 1rem 1.5rem;
+    }
+
+    /* ===== OFFER SECTION ===== */
+    #oferta {
+      background: var(--preto);
+      color: var(--branco);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #oferta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(245,200,0,0.04) 30px,
+        rgba(245,200,0,0.04) 60px
+      );
+    }
+
+    .price-display {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .price-old {
+      font-family: var(--font-headline);
+      font-size: 1.8rem;
+      text-decoration: line-through;
+      opacity: 0.5;
+    }
+
+    .price-new {
+      font-family: var(--font-display);
+      font-size: clamp(4rem, 12vw, 8rem);
+      color: var(--amarelo);
+      line-height: 1;
+      display: block;
+    }
+
+    .price-label {
+      font-family: var(--font-headline);
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin-top: 0.25rem;
+    }
+
+    .countdown-box {
+      background: var(--vermelho);
+      border: 3px solid var(--amarelo);
+      box-shadow: 0 0 0 3px var(--preto), 6px 6px 0 var(--amarelo);
+      border-radius: var(--radius-neo);
+      padding: 1.25rem 2rem;
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 500px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .countdown-label {
+      font-family: var(--font-headline);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+
+    .countdown-time {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      color: var(--amarelo);
+      letter-spacing: 0.1em;
+    }
+
+    .kits-left {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: var(--branco);
+    }
+
+    /* ===== GUARANTEE ===== */
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      background: rgba(255,254,245,0.08);
+      border: 2px solid rgba(245,200,0,0.4);
+      border-radius: 8px;
+      padding: 1.5rem;
+      max-width: 560px;
+      margin: 2rem auto;
+    }
+
+    .guarantee-icon {
+      font-size: 3.5rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== AUTHOR ===== */
+    #autor {
+      background: var(--branco);
+      border-top: 6px solid var(--preto);
+    }
+
+    .autor-photo {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border: var(--border-xtra);
+      box-shadow: var(--shadow-neo);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ===== HOW TO RECEIVE ===== */
+    #entrega {
+      background: var(--creme);
+    }
+
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    .step-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--branco);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      padding: 1rem 1.25rem;
+    }
+
+    .step-num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--amarelo);
+      -webkit-text-stroke: 2px var(--preto);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    /* ===== SECTION HEADERS ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header .overline {
+      display: block;
+      font-family: var(--font-cordel);
+      font-size: 1.3rem;
+      color: var(--vermelho);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header h2 {
+      display: inline-block;
+      background: var(--preto);
+      color: var(--amarelo);
+      padding: 0.3rem 1.2rem;
+    }
+
+    .section-header.light h2 {
+      background: var(--amarelo);
+      color: var(--preto);
+    }
+
+    .section-header.on-dark h2 {
+      background: var(--amarelo);
+      color: var(--preto);
+    }
+
+    .section-header .subtitle {
+      margin-top: 1rem;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== FIXED MOBILE CTA ===== */
+    #mobile-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: var(--verde);
+      border-top: 4px solid var(--preto);
+      z-index: 999;
+      text-align: center;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+    }
+
+    #mobile-cta a {
+      display: block;
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--branco);
+      text-decoration: none;
+    }
+
+    /* ===== UTILITY ===== */
+    .text-center { text-align: center; }
+    .text-yellow { color: var(--amarelo); }
+    .text-red { color: var(--vermelho); }
+    .text-green { color: var(--verde); }
+    .text-white { color: var(--branco); }
+
+    .mb-1 { margin-bottom: 0.5rem; }
+    .mb-2 { margin-bottom: 1rem; }
+    .mb-3 { margin-bottom: 1.5rem; }
+    .mb-4 { margin-bottom: 2rem; }
+    .mb-6 { margin-bottom: 3rem; }
+    .mt-2 { margin-top: 1rem; }
+    .mt-4 { margin-top: 2rem; }
+    .mt-6 { margin-top: 3rem; }
+
+    .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flex-col { flex-direction: column; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      #mobile-cta { display: block; }
+
+      body { padding-bottom: 80px; }
+
+      .carousel-slide {
+        flex: 0 0 calc(85% - 0.75rem);
+      }
+
+      .autor-wrap {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .guarantee-box {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .carousel-slide {
+        flex: 0 0 calc(50% - 0.75rem);
+      }
+    }
+
+    /* ===== SCARCITY PULSE ===== */
+    @keyframes danger-pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(200,40,30,0.5), 0 0 0 3px var(--preto), 6px 6px 0 var(--amarelo); }
+      50% { box-shadow: 0 0 0 10px rgba(200,40,30,0), 0 0 0 3px var(--preto), 6px 6px 0 var(--amarelo); }
+    }
+
+    .countdown-box { animation: danger-pulse 2s ease-in-out infinite; }
+
+    /* ===== Cordel woodcut pattern ornament ===== */
+    .cordel-ornament {
+      text-align: center;
+      font-size: 1.8rem;
+      line-height: 1;
+      margin: 1.5rem 0;
+      color: var(--vermelho);
+      letter-spacing: 1.5rem;
+    }
+
+    .stripe-bar {
+      height: 10px;
+      background: repeating-linear-gradient(90deg, var(--vermelho) 0, var(--vermelho) 20px, var(--amarelo) 20px, var(--amarelo) 40px, var(--preto) 40px, var(--preto) 60px);
+    }
+
+    /* Quick Q&A grid */
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .qa-item {
+      background: var(--branco);
+      border: var(--border-thick);
+      box-shadow: var(--shadow-neo);
+      border-radius: var(--radius-neo);
+      padding: 1rem 1.25rem;
+    }
+
+    .qa-q {
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: var(--vermelho);
+      margin-bottom: 0.3rem;
+    }
+
+    .qa-a {
+      font-size: 1rem;
+      color: var(--preto);
+    }
+  </style>
 </head>
-<body class="font-inter">
+<body>
 
-    <header class="text-center py-8 hero-gradient text-[var(--text)] relative overflow-hidden w-full pt-8" id="hero-section">
-        <div class="absolute inset-0 bg-gradient-to-br from-transparent to-transparent opacity-70"></div>
-        <h3 class="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text)] mb-2 relative z-10">
-            Para Educadores & Educadoras conscientes
-        </h3>
-        <h1 class="font-playfair text-4xl sm:text-5xl md:text-5xl font-bold leading-tight mb-3 px-4 text-[var(--text)] relative z-10">
-            Transforme suas aulas com poesia, arte e consciência — materiais prontos, aplicáveis e emocionantes.
-        </h1>
-        <h4 class="font-playfair text-xl sm:text-xl md:text-2xl font-semibold px-4 max-w-3xl mx-auto mb-5 text-[var(--text)] opacity-90 relative z-10">
-            A Coleção Tesouro Poético entrega tudo pronto: cordéis, livro, propostas pedagógicas, roteiro teatral, atividades para alunos — com temas sociais que seus alunos PRECISAM escutar.
-        </h4>
+<!-- ================================================================
+  HERO SECTION — primeira dobra, sem botão CTA
+================================================================ -->
+<section id="hero">
+  <div class="section-wrap">
+    <div style="text-align:center; padding-bottom: 2rem;">
+      <span class="cordel-badge" style="margin-bottom:1.5rem; display:inline-block;">✦ Para Professoras e Professores Conscientes ✦</span>
 
-        <div class="mt-8 relative z-10">
-            <img src="assets/mockup_colecao.png" alt="Mockup da Coleção Tesouro Poético, mostrando um tablet, um celular e livros" class="w-full max-w-2xl mx-auto rounded-xl shadow-lg border-4 border-white" loading="lazy">
-            <div class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full inline-block shadow-lg text-sm sm:text-base border-2 border-white relative z-10 mt-6">
-                🎁 BÔNUS EXCLUSIVO: Proposta Pedagógica exclusiva com os códigos da BNCC para cada cordel!
+      <h1 style="color: var(--preto); margin-bottom: 0.75rem;">
+        Suas aulas<br>
+        <span class="hero-headline-wrap" style="color:var(--amarelo);">merecem</span><br>
+        poesia real
+      </h1>
+
+      <p class="hero-sub" style="color: var(--preto); margin: 1.5rem auto; max-width: 620px;">
+        Material completo, pronto para aplicar — cordéis, ebook, propostas pedagógicas com BNCC e atividades para alunos. Temas que importam: racismo, ancestralidade, cidadania, espiritualidade e justiça social.
+      </p>
+
+      <div class="hero-image-wrap">
+        <img
+          src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/mockup_colecao.png"
+          alt="Coleção Tesouro Poético do Professor Consciente — mockup completo"
+          loading="eager"
+        >
+        <div class="hero-bonus-tag">
+          🎁 BÔNUS: Proposta Pedagógica com códigos BNCC para cada cordel!
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- stripe -->
+<div class="stripe-bar"></div>
+
+<!-- ================================================================
+  DOR — Problemas do professor (tráfego frio)
+================================================================ -->
+<section id="dor">
+  <div class="section-wrap">
+    <div class="section-header">
+      <span class="overline" style="color: var(--amarelo);">Se você é professor(a)...</span>
+      <h2 style="background:var(--vermelho); color:var(--branco);">Você conhece essa dor</h2>
+    </div>
+
+    <div class="dor-grid">
+      <div class="dor-card">
+        <span class="icon-big">⏰</span>
+        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">Sem tempo para criar</h3>
+        <p>Você passa horas procurando materiais, e no final das contas ainda precisa adaptar tudo do zero.</p>
+      </div>
+      <div class="dor-card">
+        <span class="icon-big">😔</span>
+        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">Conteúdo raso</h3>
+        <p>Os materiais disponíveis não tratam temas sociais com a profundidade que seus alunos precisam escutar.</p>
+      </div>
+      <div class="dor-card">
+        <span class="icon-big">📋</span>
+        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">BNCC sem clareza</h3>
+        <p>Você sabe que precisa seguir a BNCC, mas conectar cultura popular às competências é trabalhoso demais.</p>
+      </div>
+    </div>
+
+    <div class="cordel-ornament" style="color:var(--amarelo);">★ ★ ★</div>
+
+    <div class="glass-panel" style="background: rgba(245,200,0,0.08); border-color: rgba(245,200,0,0.3); max-width:640px; margin: 0 auto; text-align:center;">
+      <p style="font-family: var(--font-headline); font-size:1.4rem; font-weight:700; line-height:1.4; color:var(--branco);">
+        E se tudo isso já viesse pronto, com cordel, roteiro teatral, atividades e BNCC mapeada — para você só aplicar?
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  O QUE É — CTA 1
+================================================================ -->
+<section id="oque">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">A solução completa</span>
+      <h2>O que é a Coleção Tesouro Poético?</h2>
+      <p class="subtitle">Um kit 100% digital para professoras e professores que querem aulas com arte, consciência e impacto real.</p>
+    </div>
+
+    <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
+      <div style="flex:1; min-width:280px;">
+        <img
+          src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/mockupcompleto.png"
+          alt="Coleção Tesouro Poético completa"
+          style="width:100%; border: var(--border-xtra); box-shadow: var(--shadow-neo-lg); border-radius: var(--radius-neo);"
+          loading="lazy"
+        >
+      </div>
+      <div style="flex:1; min-width:280px;">
+        <p style="font-size:1.1rem; margin-bottom:1.5rem; font-family: var(--font-headline); font-weight:700; text-transform:uppercase; color:var(--vermelho);">
+          ✦ A poesia aqui não é enfeite. É ferramenta.
+        </p>
+        <ul class="check-list">
+          <li>Simples de aplicar — tudo já vem pronto para a sala de aula</li>
+          <li>Temas sociais que seus alunos <em>precisam</em> escutar (racismo, cidadania, ancestralidade)</li>
+          <li>Conteúdo 100% alinhado à BNCC com os códigos já mapeados</li>
+          <li>Funciona para escolas públicas e privadas</li>
+          <li>Do 5º ano do Fundamental ao Ensino Médio</li>
+          <li>Baixo investimento — impacto duradouro</li>
+          <li>Perfeito para projetos interdisciplinares</li>
+          <li>Fomenta oralidade, empatia e protagonismo estudantil</li>
+        </ul>
+        <div style="margin-top:2rem; text-align:center;">
+          <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+            📚 QUERO A COLEÇÃO COMPLETA!
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  PRODUTOS — Livros e Cordéis
+================================================================ -->
+<section id="produtos">
+  <div class="section-wrap">
+    <div class="section-header" style="text-align:center;">
+      <span class="overline" style="color: var(--preto);">O que você vai receber</span>
+      <h2 style="background: var(--preto); color:var(--amarelo);">Os Livros e Cordéis da Coleção</h2>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="prodCarousel">
+
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_performance_poetica.jpg" alt="Ebook Performance Poética na Escola" loading="lazy">
+            <div class="product-card-body">
+              <h3>Ebook: Performance Poética na Escola</h3>
+              <p>+190 páginas de poemas, cordéis e trovas — inclusão, ancestralidade e cultura popular em cada verso.</p>
             </div>
+          </div>
         </div>
 
-        <!-- CTA principal leva para a seção de oferta -->
-        <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block mt-8 animate-cta-pulse relative z-10" id="main-cta-hero" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-            📚 QUERO A COLEÇÃO COMPLETA AGORA!
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_a_negra_que_nao_podia_ser_anjo.jpg" alt="A Negra que Não Podia Ser Anjo" loading="lazy">
+            <div class="product-card-body">
+              <h3>A Negra que Não Podia Ser Anjo</h3>
+              <p>Cordel sobre racismo e fé que emociona e transforma. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_o_pobre_nao_pode_ter_voz.jpg" alt="Pobre Não Pode Ter Voz" loading="lazy">
+            <div class="product-card-body">
+              <h3>Pobre Não Pode Ter Voz</h3>
+              <p>Cordel que ecoa a luta de líderes por justiça e igualdade. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_consequencia_do_voto.jpg" alt="Consequência do Voto" loading="lazy">
+            <div class="product-card-body">
+              <h3>Consequência do Voto</h3>
+              <p>Versos diretos que desafiam a apatia política. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_crencas_e_religioes_no_mundo.jpg" alt="Crenças e Religiões do Mundo" loading="lazy">
+            <div class="product-card-body">
+              <h3>Crenças e Religiões do Mundo</h3>
+              <p>Cordel que promove respeito à diversidade religiosa. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-slide">
+          <div class="product-card">
+            <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_lendas_racismo_e_brincadeiras_africanas.jpg" alt="Lendas, Racismo e Brincadeiras Africanas" loading="lazy">
+            <div class="product-card-body">
+              <h3>Lendas, Racismo e Brincadeiras Africanas</h3>
+              <p>Cordel que revela o racismo velado e celebra a memória quilombola. <strong>Com BNCC.</strong></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="prodPrev" aria-label="Anterior">‹</button>
+      <div class="carousel-dots" id="prodDots"></div>
+      <button class="carousel-btn" id="prodNext" aria-label="Próximo">›</button>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        ⏳ GARANTIR MINHA COLEÇÃO ANTES QUE ACABE!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  BONUS
+================================================================ -->
+<section id="bonus">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">Só quem comprar agora recebe</span>
+      <h2>Seus Bônus Exclusivos</h2>
+      <p class="subtitle">Além dos cordéis e do ebook, você ainda leva gratuitamente:</p>
+    </div>
+
+    <div class="bonus-grid">
+      <div class="bonus-item">
+        <span class="bonus-icon">📖</span>
+        <div>
+          <strong>Ebook Performance Poética na Escola</strong>
+          <p style="font-size:0.95rem;">+190 páginas de poesia crítica e autoral para sua prática pedagógica.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-icon">🎭</span>
+        <div>
+          <strong>Roteiro Teatral Completo</strong>
+          <p style="font-size:0.95rem;">Peça montada sobre "A Negra que Não Podia Ser Anjo" — pronta para encenar.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-icon">✍️</span>
+        <div>
+          <strong>Caderno de Atividades para Alunos</strong>
+          <p style="font-size:0.95rem;">+14 propostas prontas para a turma — sem você precisar criar nada.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-icon">📦</span>
+        <div>
+          <strong>Kit Interdisciplinar em Cordel</strong>
+          <p style="font-size:0.95rem;">Português, História e Artes integrados em um único material.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-icon">✨</span>
+        <div>
+          <strong>Frases-Poema para Abrir Aulas</strong>
+          <p style="font-size:0.95rem;">Provoque reflexão desde o primeiro minuto da sua aula.</p>
+        </div>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-icon">📲</span>
+        <div>
+          <strong>Boletim Poético no WhatsApp</strong>
+          <p style="font-size:0.95rem;">Versos inéditos de Leonardo Sampaio direto no seu celular para nunca faltar inspiração.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        🔥 APROVEITAR ESSA OFERTA ÚNICA AGORA!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  VALOR REFORÇADO — mid-page hook
+================================================================ -->
+<section style="background: var(--azul); color: var(--branco); padding: 3.5rem 0; border-top: 6px solid var(--preto); border-bottom: 6px solid var(--preto);">
+  <div class="section-wrap" style="text-align:center;">
+    <!-- Xilo ornament SVG -->
+    <svg width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:1.5rem; opacity:0.7;">
+      <path d="M5 20 Q20 5 40 20 Q60 35 75 20" stroke="#F5C800" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <circle cx="40" cy="20" r="5" fill="#F5C800"/>
+      <circle cx="10" cy="20" r="3" fill="#C8281E"/>
+      <circle cx="70" cy="20" r="3" fill="#C8281E"/>
+    </svg>
+
+    <p style="font-family: var(--font-cordel); font-size: 1.5rem; color: var(--amarelo); margin-bottom: 1rem;">
+      Já imaginou chegar na segunda-feira com tudo pronto?
+    </p>
+    <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; max-width: 700px; margin: 0 auto 1.5rem;">
+      Cada aula sua pode virar um momento que o aluno lembra pra vida toda
+    </h2>
+    <p style="max-width: 580px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.2rem); opacity: 0.88; line-height: 1.7;">
+      Com cordel, poesia e cultura popular como ferramentas pedagógicas, você não está apenas cumprindo a BNCC — você está plantando semente de consciência. E tudo isso por menos do que uma pizza com a família.
+    </p>
+
+    <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-top:2.5rem;">
+      <div style="background:rgba(255,254,245,0.08); border:2px solid rgba(245,200,0,0.4); border-radius:4px; padding:1.25rem 2rem; min-width:180px;">
+        <p style="font-family:var(--font-display); font-size:2.8rem; color:var(--amarelo); line-height:1;">+190</p>
+        <p style="font-family:var(--font-headline); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.8;">Páginas de poesia</p>
+      </div>
+      <div style="background:rgba(255,254,245,0.08); border:2px solid rgba(245,200,0,0.4); border-radius:4px; padding:1.25rem 2rem; min-width:180px;">
+        <p style="font-family:var(--font-display); font-size:2.8rem; color:var(--amarelo); line-height:1;">5</p>
+        <p style="font-family:var(--font-headline); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.8;">Cordéis com BNCC</p>
+      </div>
+      <div style="background:rgba(255,254,245,0.08); border:2px solid rgba(245,200,0,0.4); border-radius:4px; padding:1.25rem 2rem; min-width:180px;">
+        <p style="font-family:var(--font-display); font-size:2.8rem; color:var(--amarelo); line-height:1;">+14</p>
+        <p style="font-family:var(--font-headline); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.8;">Atividades prontas</p>
+      </div>
+      <div style="background:rgba(255,254,245,0.08); border:2px solid rgba(245,200,0,0.4); border-radius:4px; padding:1.25rem 2rem; min-width:180px;">
+        <p style="font-family:var(--font-display); font-size:2.8rem; color:var(--amarelo); line-height:1;">7</p>
+        <p style="font-family:var(--font-headline); font-size:0.9rem; text-transform:uppercase; letter-spacing:0.08em; opacity:0.8;">Dias de garantia</p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')" style="background:var(--amarelo); color:var(--preto);">
+        🎯 QUERO ENSINAR COM POESIA E PROPÓSITO!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  DEPOIMENTOS
+================================================================ -->
+<section id="depoimentos">
+  <div class="section-wrap">
+    <div class="section-header on-dark" style="text-align:center;">
+      <span class="overline" style="color:var(--amarelo);">Quem já tem, aprova</span>
+      <h2>O que os professores dizem</h2>
+    </div>
+
+    <div class="test-carousel" id="testCarousel">
+      <div class="test-slide">
+        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_1.png" alt="Depoimento 1" loading="lazy">
+      </div>
+      <div class="test-slide">
+        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_2.png" alt="Depoimento 2" loading="lazy">
+      </div>
+      <div class="test-slide">
+        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_3.png" alt="Depoimento 3" loading="lazy">
+      </div>
+      <div class="test-slide">
+        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_4.png" alt="Depoimento 4" loading="lazy">
+      </div>
+      <div class="test-slide">
+        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_5.png" alt="Depoimento 5" loading="lazy">
+      </div>
+    </div>
+
+    <p style="text-align:center; margin-top:1rem; font-family:var(--font-cordel); font-size:1.1rem; color:var(--amarelo); opacity:0.8;">
+      ← deslize para ver mais →
+    </p>
+  </div>
+</section>
+
+<!-- ================================================================
+  PERGUNTAS RÁPIDAS
+================================================================ -->
+<section id="qrapidas" style="background: var(--branco); border-top: 6px solid var(--preto);">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">Dúvidas rápidas</span>
+      <h2>Antes de comprar, saiba:</h2>
+    </div>
+
+    <div class="qa-grid">
+      <div class="qa-item">
+        <p class="qa-q">É físico ou digital?</p>
+        <p class="qa-a">Digital — em PDF, com acesso imediato pelo seu e-mail.</p>
+      </div>
+      <div class="qa-item">
+        <p class="qa-q">Tem garantia?</p>
+        <p class="qa-a">Sim — garantia incondicional de 7 dias. Se não gostar, devolvemos tudo.</p>
+      </div>
+      <div class="qa-item">
+        <p class="qa-q">Posso parcelar?</p>
+        <p class="qa-a">Sim! As opções de parcelamento aparecem no checkout da Kiwify.</p>
+      </div>
+      <div class="qa-item">
+        <p class="qa-q">Para qual série?</p>
+        <p class="qa-a">Adaptável do 5º ano do Fundamental ao Ensino Médio.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- stripe -->
+<div class="stripe-bar"></div>
+
+<!-- ================================================================
+  OFERTA — SEÇÃO PRINCIPAL DE COMPRA
+================================================================ -->
+<section id="oferta">
+  <div class="section-wrap">
+    <div style="position:relative; z-index:1;">
+
+      <div class="section-header" style="text-align:center;">
+        <span class="overline" style="color:var(--amarelo);">Oferta por tempo limitado</span>
+        <h2 style="background:var(--amarelo); color:var(--preto);">Tudo isso por apenas:</h2>
+      </div>
+
+      <!-- Price -->
+      <div class="price-display">
+        <p class="price-old">De R$ 97,70</p>
+        <span class="price-new">R$ 67,70</span>
+        <p class="price-label">✨ Você economiza R$ 30,00 — acesso vitalício + atualizações futuras</p>
+      </div>
+
+      <!-- Countdown -->
+      <div class="countdown-box">
+        <p class="countdown-label">🔥 Esta oferta expira em:</p>
+        <div class="countdown-time" id="countdown-timer">00:00:00</div>
+        <p class="kits-left" id="kits-remaining">Carregando...</p>
+      </div>
+
+      <!-- What's included -->
+      <div class="neo-card" style="max-width:600px; margin: 2rem auto; background:rgba(255,254,245,0.08); border-color: rgba(245,200,0,0.5); color:var(--branco);">
+        <h3 style="color:var(--amarelo); margin-bottom:1rem; font-size:1.3rem;">Você recebe tudo isso:</h3>
+        <ul class="check-list">
+          <li style="color:var(--branco);">Ebook <strong>Performance Poética na Escola</strong> (190 páginas)</li>
+          <li style="color:var(--branco);"><strong>5 cordéis transformadores</strong> com propostas pedagógicas BNCC</li>
+          <li style="color:var(--branco);"><strong>Roteiro teatral completo</strong> — "A Negra que Não Podia Ser Anjo"</li>
+          <li style="color:var(--branco);"><strong>Caderno de atividades</strong> para alunos (+14 propostas)</li>
+          <li style="color:var(--branco);">Kit interdisciplinar (Português, História e Artes) em Cordel</li>
+          <li style="color:var(--branco);">Frases-poema para abrir aulas com reflexão</li>
+          <li style="color:var(--branco);">Boletim Poético exclusivo no WhatsApp</li>
+        </ul>
+      </div>
+
+      <!-- MAIN BUY CTA -->
+      <div style="text-align:center; margin:2.5rem 0;">
+        <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy" id="main-cta-offer">
+          ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
         </a>
+        <p style="margin-top:1rem; font-family:var(--font-headline); font-size:0.95rem; opacity:0.7;">
+          📩 Entrega digital imediata via Kiwify
+        </p>
+      </div>
 
-        <section class="bg-[var(--primary)] rounded-lg shadow-xl p-6 sm:p-8 mt-12 mx-auto text-center max-w-4xl">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 pt-4">
-                ✨ Veja a Coleção Completa!
-            </h2>
-            <div class="flex justify-center items-center mb-8">
-                <img src="assets/mockupcompleto.png" alt="Mockup da Coleção Tesouro Poético completa, mostrando todos os materiais juntos" class="w-full max-w-3xl rounded-xl shadow-lg border-4 border-white" loading="lazy">
-            </div>
-            <!-- CTA leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                🎯 GARANTA SUA COLEÇÃO COMPLETA AGORA!
-            </a>
-        </section>
-
-    </header>
-
-    <main class="container mx-auto py-8">
-
-        <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                � O QUE É ESSA COLEÇÃO?
-            </h2>
-            <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-4 max-w-3xl mx-auto text-left">
-                A Coleção Tesouro Poético dos Professores Conscientes é o seu <strong class="font-bold text-[var(--primary)]">guia completo e inspirador</strong> para transformar a sala de aula! Com ela, você terá <strong class="font-bold text-[var(--text)]">tudo pronto para aplicar</strong>, economizando seu tempo e garantindo aulas impactantes. É um pacote digital pensado para educadores que desejam trabalhar temas como <strong class="font-bold text-[var(--text)]">racismo, ancestralidade, espiritualidade, cidadania e justiça social</strong> de forma sensível, profunda e prática.
-            </p>
-
-            <div class="max-w-3xl mx-auto mb-6">
-                <p class="font-inter text-xl sm:text-2xl text-[var(--text)] font-bold mb-2 text-left">
-                    <span class="text-[var(--accent)] text-4xl leading-none icon-align-middle">✨</span> Aqui, a poesia não é apenas um enfeite.
-                </p>
-                <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-4 text-left">
-                    É uma ferramenta poderosa, uma ponte para o autoconhecimento e um convite direto à transformação.
-                </p>
-            </div>
-
-            <div class="max-w-3xl mx-auto mb-6 bg-[var(--background-50)] p-4 rounded-lg shadow-inner">
-                <p class="font-inter text-xl sm:text-2xl text-[var(--text)] font-bold mb-2 text-left">
-                    <span class="text-[var(--color-scarcity-red)] text-4xl leading-none icon-align-middle">🚫</span> Não é uma apostila genérica.
-                </p>
-                <p class="font-inter text-lg sm:text-xl text-[var(--text)] text-left">
-                    Não é um material superficial. Não é poesia para apenas decorar o conteúdo.
-                </p>
-            </div>
-
-            <p class="font-inter text-lg sm:text-xl text-[var(--text)] mb-6 max-w-3xl mx-auto text-left">
-                Descubra como aplicar cultura, poesia e justiça social em sala de aula com a Coleção Tesouro Poético dos Professores Conscientes, mesmo que você nunca tenha trabalhado com cordel ou poesia antes.
-            </p>
-            <ul class="space-y-3 text-lg sm:text-xl text-[var(--text)] max-w-2xl mx-auto font-inter">
-                <li class="flex items-center">
-                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Simples de aplicar em sala de aula.
-                </li>
-                <li class="flex items-center">
-                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Conteúdo com alto valor social, cultural e pedagógico.
-                </li>
-                <li class="flex items-center">
-                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Baixo investimento, impacto duradouro.
-                </li>
-                <li class="flex items-center">
-                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Perfeito para projetos interdisciplinares e datas comemorativas.
-                </li>
-                <li class="flex items-center">
-                    <span class="text-[var(--color-action-green)] text-3xl mr-4">✔</span> Fomenta o protagonismo estudantil, a oralidade e a empatia.
-                </li>
-            </ul>
-        </section>
-
-        <section class="bg-[var(--secondary)] rounded-lg shadow-xl p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-8 text-center pt-4">
-                Superando os Desafios do Educador Consciente
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Não crie nada do zero — o material está todo pronto, é só aplicar.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Chega de repetir os mesmos conteúdos rasos que não geram impacto.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Comece a usar hoje mesmo. Já vem com cordéis, roteiro e propostas aplicáveis.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Deixe seus colegas impressionados com a profundidade das suas aulas.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Outros professores já estão se destacando com esse material.</p>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-md text-center border-b-4 border-[var(--accent)]">
-                    <p class="font-inter text-md text-[var(--text)]">Ensine com prazer, propósito e presença.</p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                    🧠 QUERO TRANSFORMAR MINHAS AULAS HOJE!
-                </a>
-            </div>
-        </section>
-
-        <!-- Nova Seção: Reforço da Proposta de Valor no Meio da Página -->
-        <section class="bg-[var(--background-50)] rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto text-center">
-            <p class="font-playfair text-xl sm:text-2xl md:text-3xl font-bold text-[var(--text)] leading-tight max-w-3xl mx-auto">
-                Prepare-se para uma revolução em sua prática pedagógica. A Coleção Tesouro Poético é a chave para aulas mais envolventes, significativas e transformadoras, capacitando você a abordar temas cruciais com sensibilidade e impacto. Não apenas ensine, inspire!
-            </p>
-        </section>
-
-        <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto" id="products-section">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-8 text-center pt-4">
-                📖 Os Livros e Cordéis da Coleção:
-            </h2>
-
-            <div class="product-slick-slider">
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--accent)] mr-3">📖</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Ebook: Performance Poética na Escola</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um livro digital com poemas, cordéis e trovas, abordando inclusão, ancestralidade e cultura popular.</p>
-                    <img src="assets/capa_performance_poetica.jpg" alt="Capa do Ebook Performance Poética na Escola" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--text)] mr-3">📜</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">A Negra que Não Podia Ser Anjo</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel poderoso sobre racismo e fé que emociona e transforma. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_a_negra_que_nao_podia_ser_anjo.jpg" alt="Capa do cordel A Negra que Não Podia Ser Anjo" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--text)] mr-3">📜</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Pobre Não Pode Ter Voz</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel que ecoa a luta de líderes por justiça e igualdade. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_o_pobre_nao_pode_ter_voz.jpg" alt="Capa do cordel O Pobre Não Pode Ter Voz" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--text)] mr-3">📜</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Consequência do Voto</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Versos diretos que desafiam a apatia política. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_consequencia_do_voto.jpg" alt="Capa do cordel Consequência do Voto" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--text)] mr-3">📜</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Crenças e Religiões do Mundo</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Cordel educativo que promove o respeito à diversidade religiosa. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_crencas_e_religioes_no_mundo.jpg" alt="Capa do cordel Crenças e Religiões do Mundo" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-                <div class="bg-[var(--background-50)] p-6 rounded-lg shadow-md card-hover-effect flex flex-col items-center">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-5xl text-[var(--text)] mr-3">📜</span>
-                        <h3 class="font-inter text-xl font-semibold text-[var(--text)]">Lendas, racismo e brincadeiras africanas</h3>
-                    </div>
-                    <p class="font-inter text-md text-[var(--text)] text-center mb-4">Um cordel que revela o racismo velado e celebra a memória quilombola. <strong class="text-[var(--text)]">(Com Proposta Pedagógica BNCC)</strong></p>
-                    <img src="assets/capa_lendas_racismo_e_brincadeiras_africanas.jpg" alt="Capa do cordel Lendas, Racismo e Brincadeiras Africanas" class="mt-auto w-full max-w-[200px] sm:max-w-[250px] mx-auto rounded-md shadow-sm" loading="lazy">
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                    ⏳ GARANTA SUA COLEÇÃO ANTES QUE ACABE!
-                </a>
-            </div>
-        </section>
-
-        <section class="bg-[var(--secondary)] text-[var(--text)] rounded-lg shadow-xl p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-            <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-[var(--text)] pt-4 text-center">
-                Seus Bônus Exclusivos te esperam!
-            </h2>
-            <p class="font-inter text-lg sm:text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-[var(--text)] text-center">
-                Ao adquirir a Coleção Tesouro Poético, você recebe um pacote 100% digital com:
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">📖</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Livro digital: Performance Poética na Escola (+190 páginas de poesia crítica e autoral).
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">📜</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        5 cordéis temáticos (racismo, espiritualidade, cidadania, ancestralidade, etc.).
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">🎁</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Propostas pedagógicas completas, com códigos da BNCC para cada cordel.
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">🎭</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Roteiro teatral completo do cordel “A Negra que Não Podia Ser Anjo”.
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">📦</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Kit interdisciplinar (Português, História e Artes) em Cordel.
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">✍️</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Caderno de atividades para alunos com mais de 14 propostas.
-                    </p>
-                </div>
-                <div class="flex items-center bg-white rounded-lg p-4 shadow-md text-left border-l-4 border-[var(--accent)]">
-                    <span class="text-4xl text-[var(--accent)] mr-4">✨</span>
-                    <p class="font-inter text-lg text-[var(--text)]">
-                        Frases-poema para iniciar aulas com reflexão e criatividade.
-                    </p>
-                </div>
-            </div>
-            <div class="text-center mt-12">
-                <!-- CTA leva para a seção de oferta -->
-                <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                    🔥 APROVEITAR ESSA OFERTA ÚNICA AGORA!
-                </a>
-            </div>
-        </section>
-
-
-        <section class="text-center mb-12 mx-4 md:mx-auto">
-            <p class="font-inter text-xl sm:text-2xl text-[var(--text)] mb-6 max-w-3xl mx-auto">
-                <strong class="font-bold">Transforme cada aula em um momento de escuta, poesia e consciência — com materiais prontos para aplicar, cordéis potentes, e um roteiro que já impactou centenas de educadores no Brasil inteiro.</strong>
-            </p>
-            <!-- CTA leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                    🎯 QUERO ENSINAR COM POESIA E PROPÓSITO!
-                </a>
-            </section>
-
-            <section class="mb-12 text-center" id="testimonials-section">
-                <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 pt-4">
-                    💬 Depoimentos
-                </h2>
-                <div class="testimonial-slick-slider">
-                    <div>
-                        <img src="assets/depoimento_1.png" alt="Depoimento de professor 1: Amei as suas publicações, Comprei seu livro online" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
-                    </div>
-                    <div>
-                        <img src="assets/depoimento_2.png" alt="Depoimento de professor 2: Amei, Que maravilha!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
-                    </div>
-                    <div>
-                        <img src="assets/depoimento_3.png" alt="Depoimento de professor 3: Professor Leonardo, seus ensinamentos serão alicerce para o futuro dessas crianças" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
-                    </div>
-                    <div>
-                        <img src="assets/depoimento_4.png" alt="Depoimento de professor 4: Fantástico, Uauuu!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
-                    </div>
-                    <div>
-                        <img src="assets/depoimento_5.png" alt="Depoimento de professor 5: Marco Binatti - MARAVILHA!!!" class="mx-auto rounded-lg shadow-md border-4 border-[var(--accent)]" loading="lazy">
-                    </div>
-                </div>
-            </section>
-
-            <section class="bg-[var(--background-50)] rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-                <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                    ❓ Perguntas Rápidas Antes de Comprar:
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto text-[var(--text)]">
-                    <div class="flex items-start">
-                        <span class="text-[var(--text)] text-2xl mr-3 font-bold icon-align-middle">Q:</span>
-                        <p class="font-inter text-lg">É um material físico ou digital? <br><span class="font-semibold text-[var(--color-action-green)]">R: Digital, em PDF, com acesso imediato.</span></p>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-[var(--text)] text-2xl mr-3 font-bold icon-align-middle">Q:</span>
-                        <p class="font-inter text-lg">Tem garantia? <br><span class="font-semibold text-[var(--color-action-green)]">R: Sim, garantia incondicional de 7 dias.</span></p>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-[var(--text)] text-2xl mr-3 font-bold icon-align-middle">Q:</span>
-                        <p class="font-inter text-lg">Posso parcelar? <br><span class="font-semibold text-[var(--color-action-green)]">R: Sim, opções de parcelamento disponíveis no checkout.</span></p>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="text-[var(--text)] text-2xl mr-3 font-bold icon-align-middle">Q:</span>
-                        <p class="font-inter text-lg">As propostas são para todas as séries? <br><span class="font-semibold text-[var(--color-action-green)]">R: Adaptáveis do 5º ano do Fundamental ao Ensino Médio.</span></p>
-                    </div>
-                </div>
-                <div class="text-center mt-8">
-                    <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                        ✅ SIM, QUERO ESSE MATERIAL EXCLUSIVO!
-                    </a>
-                </div>
-            </section>
-
-            <section class="bg-[var(--secondary)] text-[var(--text)] rounded-lg shadow-xl p-6 sm:p-8 mb-12 text-center mx-4 md:mx-auto" id="offer-section">
-                <h2 class="font-playfair text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text)] mb-6 pt-4">
-                    📦 Tudo isso por apenas:
-                </h2>
-                <div class="mb-6">
-                    <p class="font-playfair text-2xl sm:text-3xl md:text-4xl line-through opacity-75 text-[var(--text)]">De R$ 97,70</p>
-                    <p class="font-playfair text-6xl sm:text-7xl md:text-8xl font-bold text-[var(--text)] leading-none mb-2">
-                        R$ 67,70
-                    </p>
-                    <p class="font-inter text-lg sm:text-xl font-semibold text-[var(--text)]">(acesso vitalício + atualizações futuras)</p>
-                    <p class="font-inter text-xl sm:text-2xl font-bold text-[var(--text)] mt-2">
-                        ✨ Economize R$ 30,00!
-                    </p>
-                </div>
-
-                <p class="font-inter text-lg sm:text-xl md:text-2xl mb-6 max-w-2xl mx-auto text-[var(--text)]">
-                    <strong class="font-bold text-[var(--text)]">Garanta acesso imediato a um pacote completo que inclui:</strong>
-                </p>
-                <ul class="list-disc list-inside text-left mx-auto max-w-md space-y-2 text-lg sm:text-xl mb-8 font-inter text-[var(--text)]">
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">📚</span> O Ebook <strong class="font-semibold">Performance Poética na Escola</strong>: 190 páginas de poesias.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">📜</span> <strong class="font-semibold">5 cordéis transformadores</strong> com propostas pedagógicas alinhadas à BNCC.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎁</span> <strong class="font-semibold">Bônus Exclusivo</strong>: Uma proposta pedagógica para cada cordel contendo os códigos da BNCC.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">🎭</span> <strong class="font-semibold">Bônus Extra</strong>: Um roteiro teatral completo sobre o cordel “A negra que não podia ser anjo”.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-alone">✍️</span> <strong class="font-semibold">Bônus Essencial</strong>: CADERNO DE ATIVIDADES PARA ESTUDANTES com mais de 14 atividades.</li>
-                    <li><span class="text-[var(--text)] text-xl mr-2 icon-align-middle">✨</span> <strong class="font-semibold">Bônus Inspirador</strong>: Frases-Poema para Começar Aulas com Reflexão.</li>
-                </ul>
-
-                <div class="offer-countdown-banner font-bold py-4 px-6 rounded-lg mb-4 shadow-xl text-xl sm:text-2xl flex flex-col items-center justify-center space-y-2">
-                    <p>💥 OFERTA EXCLUSIVA: SÓ AS PRIMEIRAS 200 COMPRAS COM ESTE PREÇO!</p>
-                    <p id="countdown-timer" class="text-3xl font-bold"></p>
-                    <p id="kits-remaining" class="text-lg"></p>
-                </div>
-               
-                <p class="font-inter text-lg sm:text-xl font-semibold mb-4 text-[var(--text)]">
-                    <span class="text-[var(--text)] text-2xl mr-2">📩</span> Entrega digital imediata.
-                </p>
-                <p class="font-inter text-lg sm:text-xl font-semibold mb-8 text-[var(--text)]">
-                    <span class="text-[var(--text)] text-2xl mr-2">💳</span> <strong class="text-[var(--text)]">Garantia Incondicional de 7 Dias</strong> ou seu dinheiro de volta.
-                    </p>
-                
-                <!-- ESTE É O ÚLTIMO CTA QUE LEVA PARA A KIWIFY -->
-                <a href="https://pay.kiwify.com.br/ZP2vT08" class="cta-button-shake bg-[var(--accent)] text-[var(--text)] font-bold py-4 px-8 rounded-full text-xl sm:text-2xl md:text-3xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" id="main-cta-offer" onclick="window.location.href = 'https://pay.kiwify.com.br/ZP2vT08' + getParams(); return false;">
-                    ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
-                </a>
-                <button onclick="scrollToTop()" class="md:hidden mt-8 bg-[var(--text)] text-white font-bold py-3 px-6 rounded-full text-base shadow-lg hover:bg-[var(--text-700)] transition-colors duration-300">
-                    ⬆️ Voltar ao Topo
-                </button>
-            </section>
-            
-            <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto flex flex-col md:flex-row items-center justify-center gap-8">
-                <div class="md:w-1/3 text-center">
-                    <img src="assets/foto_leonardo.jpg" alt="Foto de Leonardo Sampaio, autor e educador-poeta." class="rounded-full w-64 h-64 object-cover mx-auto mb-4 shadow-lg border-4 border-[var(--accent)]" loading="lazy">
-                    <h3 class="font-playfair text-xl sm:text-2xl font-bold text-[var(--text)]">Leonardo Sampaio</h3>
-                </div>
-                <div class="md:w-2/3 text-lg sm:text-xl text-[var(--text)] font-inter">
-                    <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-4 text-center md:text-left pt-4">
-                        QUEM É LEONARDO SAMPAIO?
-                    </h2>
-                    <p class="mb-4">
-                        Leonardo Sampaio é um <strong class="font-semibold text-[var(--text)]">verdadeiro artesão da palavra e da educação</strong>, um poeta-pedagogo que transforma salas de aula em palcos e livros em atos de resistência cultural. Natural de Abaiara, no coração do Cariri cearense, cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.
-                    </p>
-                    <p class="mb-4">
-                        Com formação em Pedagogia e especialização focada em comunidades quilombolas e negras, Leonardo é um educador que caminha de mãos dadas com Paulo Freire e dança ao som dos tambores da ancestralidade. É também membro fundador da <strong class="font-semibold text-[var(--text)]">Academia Afrocearense de Letras (AAFROCEL)</strong>.
-                    </p>
-                    <p class="mb-4">
-                        Com mais de uma década no magistério, sua jornada una o formal e o popular, o lírico e o didático. Leonardo atua como professor da rede municipal de Fortaleza, mas sua missão é fazer da educação uma experiência poética e transformadora, onde cada rima e verso abrem portas para um mundo mais inclusivo e consciente.
-                    </p>
-                    <p class="font-bold text-[var(--text)] mb-4">
-                        Com Leonardo Sampaio, a palavra vira ação, o poema vira inspiração, e a sala de aula... bem, essa vira uma verdadeira festa de cordel e cidadania!
-                    </p>
-                    <p class="font-inter text-lg font-semibold text-[var(--text)]">
-                        Junte-se a mim e a centenas de educadores que já estão transformando suas salas de aula!
-                    </p>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-                <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                    ✨ Boletim Poético de Leonardo Sampaio
-                </h2>
-                <p class="font-inter text-lg sm:text-xl text-[var(--text)] max-w-3xl mx-auto mb-6">
-                    Ao adquirir a Coleção Tesouro Poético, você ganha acesso exclusivo ao <strong class="font-semibold">Boletim Poético</strong>: versos inéditos de Leonardo Sampaio, direto no seu WhatsApp, para manter a inspiração sempre viva!
-                </p>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto">
-                <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                    📲 Como você vai receber o seu Tesouro Poético
-                </h2>
-                <ul class="space-y-3 text-lg sm:text-xl text-[var(--text)] max-w-2xl mx-auto font-inter">
-                    <li class="flex items-center justify-center">
-                        <span class="text-[var(--accent)] text-2xl mr-3 icon-align-middle">📧</span> Após a confirmação da compra, você receberá acesso **imediato** por e-mail.
-                    </li>
-                    <li class="flex items-center justify-center">
-                        <span class="text-[var(--accent)] text-2xl mr-3 icon-align-middle">📄</span> Todo o conteúdo é em formato digital (PDF) — prático, leve e imprimível.
-                    </li>
-                    <li class="flex items-center justify-center">
-                        <span class="text-[var(--accent)] text-2xl mr-3 icon-align-middle">⭐</span> Acesso vitalício e a todas as futuras atualizações da coleção.
-                    </li>
-                </ul>
-                <div class="text-center mt-12">
-                    <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg sm:text-xl shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
-                    </a>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-lg shadow-lg p-6 sm:p-8 mb-12 mx-4 md:mx-auto" id="faq-section">
-                <h2 class="font-playfair text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text)] mb-6 text-center pt-4">
-                    📌 Perguntas Frequentes
-                </h2>
-
-                <div class="space-y-4 max-w-3xl mx-auto">
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-1">
-                            <span class="text-lg sm:text-xl font-inter">O que é a Coleção Tesouro Poético?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-1" class="accordion-content text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="font-inter text-md sm:text-lg py-4">É um conjunto de materiais digitais exclusivos para educadores, incluindo ebooks, cordéis com propostas pedagógicas alinhadas à BNCC, caderno de atividades para alunos, frases-poema e um roteiro teatral completo. Tudo para enriquecer suas aulas com poesia e temas sociais relevantes.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-2">
-                            <span class="text-lg sm:text-xl font-inter">Como receberei os materiais após a compra?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-2" class="accordion-content text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="font-inter text-md sm:text-lg py-4">Todos os materiais são digitais (PDFs, e-books, etc.) e serão enviados automaticamente para o seu e-mail imediatamente após a confirmação do pagamento. Você terá acesso vitalício e poderá baixar e imprimir quando quiser.</p>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-3">
-                            <span class="text-lg sm:text-xl font-inter">É indicado para qual faixa etária?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-3" class="accordion-content font-inter text-md sm:text-lg text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="py-4">Do 5º ano do Fundamental ao Ensino Médio — com sugestões de adaptação por faixa etária para maximizar o impacto em cada série.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-4">
-                            <span class="text-lg sm:text-xl font-inter">Posso imprimir os materiais?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-4" class="accordion-content font-inter text-md sm:text-lg text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="py-4">Sim! Todos os PDFs são otimizados para impressão em formato A4, permitindo que você os utilize tanto digitalmente quanto em material físico.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-5">
-                            <span class="text-lg sm:text-xl font-inter">Funciona em escolas públicas?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-5" class="accordion-content font-inter text-md sm:text-lg text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="py-4">Sim! O material foi pensado e desenvolvido especialmente para a realidade e o contexto das redes pública e privada, sendo flexível e adaptável às suas necessidades.</p>
-                        </div>
-                    </div>
-
-                    <div class="accordion-item">
-                        <div class="accordion-header flex justify-between items-center bg-[var(--color-white)] text-[var(--text)] font-semibold rounded-lg p-4 shadow-sm" tabindex="0" role="button" aria-expanded="false" aria-controls="faq-content-6">
-                            <span class="text-lg sm:text-xl font-inter">Recebo tudo na hora?</span>
-                            <svg class="w-6 h-6 transform rotate-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </div>
-                        <div id="faq-content-6" class="accordion-content font-inter text-md sm:text-lg text-[var(--text)]" role="region" aria-hidden="true">
-                            <p class="py-4">Sim! Assim que a sua compra for confirmada, você receberá um e-mail com as instruções e o link para acessar todo o conteúdo digital da coleção imediatamente.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-8">
-                    <!-- CTA leva para a seção de oferta -->
-                    <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 inline-block animate-cta-pulse" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
-                    </a>
-                </div>
-            </section>
-
-        </main>
-
-        <div class="fixed-cta md:hidden">
-            <!-- CTA fixo mobile leva para a seção de oferta -->
-            <a href="#offer-section" class="bg-[var(--accent)] text-[var(--text)] font-bold py-3 px-6 rounded-full text-lg w-full block text-center shadow-lg hover:bg-[var(--accent-600)] transform hover:scale-105 transition-all duration-300 animate-cta-pulse cta-button-shake" onclick="document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' }); return false;">
-                📱 COMPRAR AGORA!
-            </a>
+      <!-- Guarantee -->
+      <div class="guarantee-box">
+        <div class="guarantee-icon">🛡️</div>
+        <div>
+          <p style="font-family:var(--font-headline); font-weight:900; font-size:1.3rem; color:var(--amarelo); text-transform:uppercase;">Garantia Incondicional de 7 Dias</p>
+          <p style="font-size:1rem; opacity:0.85;">Se por qualquer motivo você não ficar satisfeito(a), basta pedir o reembolso em até 7 dias. Sem burocracia, sem perguntas.</p>
         </div>
+      </div>
 
-        <footer class="bg-[var(--primary)] text-white py-8 px-4 text-center text-sm">
-            <div class="container mx-auto max-w-4xl">
-                <p class="mb-4">
-                    © <span id="current-year"></span> Coleção Tesouro Poético. Todos os direitos reservados.
-                </p>
-                <div class="flex justify-center items-center mt-4 space-x-4 flex-wrap gap-2">
-                    <p class="text-white text-xs md:text-sm font-semibold w-full mt-2">
-                        <span class="text-[var(--accent)]">✔️</span> Sua satisfação garantida ou seu dinheiro de volta.
-                    </p>
-                </div>
-            </div>
-        </footer>
+      <!-- Payment icons -->
+      <p style="text-align:center; font-family:var(--font-headline); font-size:0.9rem; opacity:0.6; margin-top:1.5rem; letter-spacing:0.08em;">
+        💳 Pagamento seguro • PIX • Cartão • Boleto • Parcelamento disponível
+      </p>
+    </div>
+  </div>
+</section>
 
+<!-- ================================================================
+  AUTOR — Leonardo Sampaio
+================================================================ -->
+<section id="autor">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">Quem criou isso?</span>
+      <h2>Leonardo Sampaio</h2>
+    </div>
 
-        <!-- jQuery CDN -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <!-- Slick Carousel JS -->
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <div class="autor-wrap" style="display:flex; gap:2.5rem; align-items:center; flex-wrap:wrap;">
+      <div style="text-align:center; flex-shrink:0;">
+        <img
+          src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/foto_leonardo.jpg"
+          alt="Foto de Leonardo Sampaio, educador e poeta"
+          class="autor-photo"
+          loading="lazy"
+        >
+      </div>
+      <div style="flex:1; min-width:260px;">
+        <p style="margin-bottom:1.2rem;">
+          Leonardo Sampaio é um <strong>poeta-pedagogo que transforma salas de aula em palcos</strong> e livros em atos de resistência cultural. Natural de Abaiara, no coração do Cariri cearense, cresceu imerso em aboios, cordéis e ritmos populares que moldaram seu olhar crítico e apaixonado.
+        </p>
+        <p style="margin-bottom:1.2rem;">
+          Com formação em Pedagogia e especialização em comunidades quilombolas e negras, é também membro fundador da <strong>Academia Afrocearense de Letras (AAFROCEL)</strong> e professor da rede municipal de Fortaleza há mais de uma década.
+        </p>
+        <p style="margin-bottom:1.5rem;">
+          Sua missão: fazer de cada aula uma experiência poética e transformadora — onde rima e verso abrem portas para um mundo mais inclusivo e consciente.
+        </p>
+        <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+          🎯 QUERO APRENDER COM LEONARDO!
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Script de rastreamento e parâmetros de URL -->
-        <script>
-            // A função generateEventId() foi removida pois não é mais necessária para o InitiateCheckout no lado do cliente.
+<!-- ================================================================
+  BOLETIM POÉTICO
+================================================================ -->
+<section style="background: var(--amarelo); border-top: 6px solid var(--preto); padding: 3rem 0; text-align:center;">
+  <div class="section-wrap">
+    <div class="cordel-badge" style="display:inline-block; margin-bottom:1.5rem;">✦ Bônus especial ✦</div>
+    <h2 style="color:var(--preto); margin-bottom:1rem;">Boletim Poético de Leonardo Sampaio</h2>
+    <p style="max-width:580px; margin:0 auto; font-size:1.1rem; color:var(--preto); line-height:1.7;">
+      Ao adquirir a Coleção, você ganha acesso ao <strong>Boletim Poético</strong>: versos inéditos de Leonardo Sampaio direto no seu WhatsApp — para manter a inspiração sempre viva entre uma aula e outra.
+    </p>
+    <p style="margin-top:1.5rem; font-family:var(--font-cordel); font-size:1.4rem; color:var(--preto); opacity:0.75;">
+      "A palavra que chega toda semana é a que transforma devagar."
+    </p>
+  </div>
+</section>
 
-            // As funções trackInitiateCheckoutPixelAndRedirect() e trackInitiateCheckoutPixelAndScroll() foram removidas.
-            // O disparo do evento InitiateCheckout agora será feito exclusivamente pela Kiwify.
+<!-- ================================================================
+  COMO RECEBER
+================================================================ -->
+<section id="entrega">
+  <div class="section-wrap">
+    <div class="section-header light" style="text-align:center;">
+      <span class="overline">Simples assim</span>
+      <h2>Como você vai receber</h2>
+    </div>
 
-            let prefix = ["https://pay.kiwify.com.br"];
+    <div class="steps-list">
+      <div class="step-item">
+        <span class="step-num">01</span>
+        <div>
+          <strong style="font-family:var(--font-headline); font-size:1.1rem; text-transform:uppercase;">Compra confirmada</strong>
+          <p>Você finaliza o pedido na plataforma Kiwify com segurança total.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">02</span>
+        <div>
+          <strong style="font-family:var(--font-headline); font-size:1.1rem; text-transform:uppercase;">Acesso imediato</strong>
+          <p>Em segundos você recebe o acesso completo à plataforma Kiwify com todos os materiais.</p>
+        </div>
+      </div>
+      <div class="step-item">
+        <span class="step-num">03</span>
+        <div>
+          <strong style="font-family:var(--font-headline); font-size:1.1rem; text-transform:uppercase;">Baixe e aplique</strong>
+          <p>PDF otimizado para leitura digital e impressão em A4. Acesso vitalício com todas as atualizações futuras.</p>
+        </div>
+      </div>
+    </div>
 
-            function getParams() {
-                let t = "",
-                    e = window.top.location.href,
-                    r = new URL(e);
-                if (null != r) {
-                    let a = r.searchParams.get("utm_source"),
-                        n = r.searchParams.get("utm_medium"),
-                        o = r.searchParams.get("utm_campaign"),
-                        m = r.searchParams.get("utm_term"),
-                        c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-                }
-                return t
-            }! function() {
-                var t = new URLSearchParams(window.location.search);
-                t.toString() && document.querySelectorAll("a").forEach(function(e) {
-                    // Para links internos que levam para a seção de oferta, o onclick agora faz apenas o scroll suave.
-                    if (e.getAttribute('href') === '#offer-section') {
-                        e.onclick = function() {
-                            document.querySelector('#offer-section').scrollIntoView({ behavior: 'smooth' });
-                            return false; // Previne o comportamento padrão do link
-                        };
-                    } else if (e.id === "main-cta-offer") {
-                        // Para o CTA final que leva para a Kiwify, o onclick agora faz apenas o redirecionamento.
-                        // O InitiateCheckout do Pixel do Meta no lado do cliente foi removido.
-                        e.onclick = function() {
-                            window.location.href = "https://pay.kiwify.com.br/ZP2vT08" + getParams();
-                            return false; // Previne o comportamento padrão do link
-                        };
-                        // Adiciona os parâmetros UTM ao link da Kiwify
-                        if (-1 === e.href.indexOf("?")) {
-                            e.href += "?" + t.toString() + getParams();
-                        } else {
-                            e.href += "&" + t.toString() + getParams();
-                        }
-                    }
-                })
-            }();
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        ⬇️ LIBERAR MEU ACESSO AGORA!
+      </a>
+    </div>
+  </div>
+</section>
 
+<!-- ================================================================
+  FAQ
+================================================================ -->
+<section id="faq" style="background:var(--branco); border-top:6px solid var(--preto);">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">Perguntas frequentes</span>
+      <h2>Ainda tem dúvidas?</h2>
+    </div>
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    // Garante que o scroll suave funcione para links internos
-                    // Esta parte do código agora é mais robusta para lidar com os hrefs internos
-                    const targetId = this.getAttribute('href');
-                    if (targetId.startsWith('#')) {
-                        e.preventDefault();
-                        document.querySelector(targetId).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
+    <div style="max-width:700px; margin:0 auto;">
 
-            const fixedCta = document.querySelector('.fixed-cta');
-            const heroSection = document.querySelector('header');
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          O que é exatamente a Coleção Tesouro Poético?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>É um kit 100% digital exclusivo para educadores com: ebook de +190 páginas, 5 cordéis com propostas pedagógicas BNCC, caderno de atividades para alunos, roteiro teatral e muito mais. Tudo pronto para aplicar em sala de aula.</p>
+        </div>
+      </div>
 
-            window.addEventListener('scroll', () => {
-                const scrollThreshold = window.innerHeight * 0.2;
-                const nearingEnd = (window.scrollY + window.innerHeight > document.body.scrollHeight - 200);
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Como recebo os materiais depois da compra?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>A entrega acontece pela plataforma Kiwify. Após confirmar o pagamento, você recebe acesso imediato a todos os materiais em formato digital (PDF). O acesso é vitalício.</p>
+        </div>
+      </div>
 
-                if (window.scrollY > scrollThreshold && !nearingEnd) {
-                    fixedCta.style.display = 'flex';
-                } else {
-                    fixedCta.style.display = 'none';
-                }
-            });
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          É indicado para qual faixa etária de alunos?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>Do 5º ano do Ensino Fundamental ao Ensino Médio — com sugestões de adaptação por faixa etária para maximizar o impacto em cada série.</p>
+        </div>
+      </div>
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Posso imprimir os materiais?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>Sim! Todos os PDFs são otimizados para impressão em A4. Você pode usar digitalmente ou imprimir quantas vezes quiser para suas turmas.</p>
+        </div>
+      </div>
 
-            document.addEventListener('DOMContentLoaded', () => {
-                const accordionHeaders = document.querySelectorAll('.accordion-header');
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Funciona em escolas públicas?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>Sim! O material foi criado pensando especialmente na realidade das redes pública e privada, sendo flexível e adaptável a qualquer contexto escolar.</p>
+        </div>
+      </div>
 
-                accordionHeaders.forEach(header => {
-                    const contentId = header.getAttribute('aria-controls');
-                    const content = document.getElementById(contentId);
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Tem garantia mesmo se eu não gostar?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>Sim! Garantia incondicional de 7 dias. Se não ficar satisfeito(a) por qualquer motivo, você solicita o reembolso completo — sem burocracia.</p>
+        </div>
+      </div>
 
-                    if (content) {
-                        header.setAttribute('aria-expanded', header.classList.contains('active'));
+    </div>
 
-                        header.addEventListener('click', () => {
-                            const currentItem = header.closest('.accordion-item');
-                            const icon = header.querySelector('svg');
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
+      </a>
+    </div>
+  </div>
+</section>
 
-                            const isActive = header.classList.toggle('active');
-                            content.classList.toggle('active');
+<!-- ================================================================
+  FINAL CTA
+================================================================ -->
+<section style="background:var(--amarelo); border-top:6px solid var(--preto); padding:3rem 0; text-align:center;">
+  <div class="section-wrap">
+    <div class="cordel-badge" style="font-size:1.1rem; margin-bottom:1.5rem; display:inline-block;">✦ Decisão simples ✦</div>
+    <h2 style="color:var(--preto); margin-bottom:1rem; font-size:clamp(2rem,5vw,3.5rem);">
+      Suas aulas nunca mais serão as mesmas
+    </h2>
+    <p style="max-width:540px; margin:0 auto 2rem; font-size:1.15rem; color:var(--preto);">
+      Centenas de professores já estão transformando suas salas de aula com cordel, poesia e consciência. A Coleção Tesouro Poético está te esperando.
+    </p>
+    <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy">
+      🎯 GARANTIR MINHA COLEÇÃO AGORA — R$ 67,70
+    </a>
+    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--preto); opacity:0.7; font-family:var(--font-headline);">
+      🛡️ Garantia de 7 dias • Acesso imediato • Entrega pela Kiwify
+    </p>
+  </div>
+</section>
 
-                            header.setAttribute('aria-expanded', isActive);
+<!-- Footer -->
+<footer style="background:var(--preto); color:rgba(255,254,245,0.5); text-align:center; padding:2rem 1rem; font-family:var(--font-headline); font-size:0.9rem; letter-spacing:0.05em;">
+  <p>© 2025 Leonardo Sampaio — Todos os direitos reservados</p>
+  <p style="margin-top:0.5rem;">Produto digital entregue pela plataforma Kiwify</p>
+</footer>
 
-                            icon.classList.toggle('rotate-180');
+<!-- ================================================================
+  FIXED MOBILE CTA
+================================================================ -->
+<div id="mobile-cta">
+  <a href="https://pay.kiwify.com.br/ZP2vT08">
+    📱 COMPRAR AGORA — R$ 67,70
+  </a>
+</div>
 
-                            if (isActive) {
-                                setTimeout(() => {
-                                    content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                                }, 350);
-                            }
+<!-- ================================================================
+  JAVASCRIPT
+================================================================ -->
+<script>
+  // Smooth scroll
+  function smoothScroll(target) {
+    const el = document.querySelector(target);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return false;
+  }
 
-                            accordionHeaders.forEach(otherHeader => {
-                                if (otherHeader !== header) {
-                                    const otherItem = otherHeader.closest('.accordion-item');
-                                    const otherContentId = otherHeader.getAttribute('aria-controls');
-                                    const otherContent = document.getElementById(otherContentId);
-                                    const otherIcon = otherHeader.querySelector('svg');
+  // All anchor links with hash
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      smoothScroll(a.getAttribute('href'));
+    });
+  });
 
-                                    if (otherHeader.classList.contains('active')) {
-                                        otherHeader.classList.remove('active');
-                                        otherContent.classList.remove('active');
-                                        otherHeader.setAttribute('aria-expanded', 'false');
-                                        otherIcon.classList.remove('rotate-180');
-                                    }
-                                }
-                            });
-                        });
+  // ===== PRODUCT CAROUSEL =====
+  (function() {
+    const track = document.getElementById('prodCarousel');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prodPrev');
+    const nextBtn = document.getElementById('prodNext');
+    const dotsContainer = document.getElementById('prodDots');
 
-                        header.addEventListener('keydown', (event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                                event.preventDefault();
-                                header.click();
-                            }
-                        });
-                    }
-                });
+    let current = 0;
 
-                const currentYearSpan = document.getElementById('current-year');
-                if (currentYearSpan) {
-                    currentYearSpan.textContent = new Date().getFullYear();
-                }
+    function getSlidesPerView() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
 
-                const ctaButtons = document.querySelectorAll('.cta-button-shake');
-                let hasShaken = false;
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getSlidesPerView());
+    }
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && !hasShaken) {
-                            const button = entry.target;
-                            setTimeout(() => {
-                                if (!button.matches(':hover') && !button.matches(':focus')) {
-                                    button.classList.add('cta-shake');
-                                    button.addEventListener('animationend', () => {
-                                        button.classList.remove('cta-shake');
-                                    }, { once: true });
-                                    hasShaken = true;
-                                }
-                            }, 4000);
-                        }
-                    });
-                }, { threshold: 0.8 });
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      const total = getMaxIndex() + 1;
+      for (let i = 0; i < total; i++) {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === current ? ' active' : '');
+        d.setAttribute('aria-label', 'Slide ' + (i+1));
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
+    }
 
-                ctaButtons.forEach(button => {
-                    observer.observe(button);
-                });
+    function updateDots() {
+      document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
 
-                if (typeof jQuery !== 'undefined') {
-                    $(document).ready(function(){
-                        $('.testimonial-slick-slider').slick({
-                            infinite: true,
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 3000,
-                            dots: true,
-                            arrows: true,
-                            centerMode: true,
-                            centerPadding: '0px',
-                            responsive: [
-                                {
-                                    breakpoint: 1024,
-                                    settings: {
-                                        slidesToShow: 3,
-                                        arrows: true,
-                                        dots: true,
-                                        centerPadding: '0px'
-                                    }
-                                },
-                                {
-                                    breakpoint: 768,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        arrows: true,
-                                        dots: true,
-                                        centerMode: true,
-                                        centerPadding: '60px'
-                                    }
-                                },
-                                {
-                                    breakpoint: 480,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        arrows: false,
-                                        dots: true,
-                                        centerMode: true,
-                                        centerPadding: '40px'
-                                    }
-                                }
-                            ]
-                        });
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, getMaxIndex()));
+      const slideWidth = slides[0].offsetWidth + 24; // gap 1.5rem ≈ 24px
+      track.style.transform = `translateX(-${current * slideWidth}px)`;
+      updateDots();
+    }
 
-                        $('.product-slick-slider').slick({
-                            infinite: true,
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            autoplay: true,
-                            autoplaySpeed: 4000,
-                            dots: true,
-                            arrows: true,
-                            responsive: [
-                                {
-                                    breakpoint: 1024,
-                                    settings: {
-                                        slidesToShow: 2,
-                                        arrows: true,
-                                        dots: true
-                                    }
-                                },
-                                {
-                                    breakpoint: 768,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        arrows: true,
-                                        dots: true
-                                    }
-                                },
-                                {
-                                    breakpoint: 480,
-                                    settings: {
-                                        slidesToShow: 1,
-                                        arrows: false,
-                                        dots: true
-                                    }
-                                }
-                            ]
-                        });
-                    });
-                }
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
 
-                const countdownTimer = document.getElementById('countdown-timer');
-                const kitsRemaining = document.getElementById('kits-remaining');
+    // Auto advance
+    setInterval(() => goTo(current >= getMaxIndex() ? 0 : current + 1), 4000);
 
-                const endDate = new Date();
-                endDate.setHours(endDate.getHours() + 24);
+    buildDots();
+    window.addEventListener('resize', () => { buildDots(); goTo(0); });
+  })();
 
-                let currentKitsCount = 37; // Variável para controlar a contagem regressiva dos kits
-                const resetKitsCount = 37; // Valor para reiniciar a contagem
-                const minKits = 5; // Define o valor mínimo para a contagem de kits
+  // ===== ACCORDION =====
+  document.querySelectorAll('.accordion-header').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
 
-                function updateCountdown() {
-                    const now = new Date().getTime();
-                    const distance = endDate.getTime() - now;
+      // Close all
+      document.querySelectorAll('.accordion-header').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
 
-                    if (distance < 0) {
-                        countdownTimer.innerHTML = "OFERTA ENCERRADA!";
-                        kitsRemaining.innerHTML = "Todos os kits foram vendidos!";
-                        return;
-                    }
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        body.classList.add('open');
+      }
+    });
+  });
 
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // ===== COUNTDOWN =====
+  (function() {
+    const timerEl = document.getElementById('countdown-timer');
+    const kitsEl = document.getElementById('kits-remaining');
 
-                    countdownTimer.innerHTML = `Válido por: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    const KEY = 'tesouro_end';
+    let endDate;
 
-                    // Lógica para a contagem regressiva dos kits: vai até 5 e recomeça em 37
-                    if (currentKitsCount > minKits) {
-                        currentKitsCount--; // Decrementa um por um
-                    } else {
-                        currentKitsCount = resetKitsCount; // Recomeça a contagem em 37
-                    }
-                    
-                    kitsRemaining.innerHTML = `Apenas ${currentKitsCount} kits restantes com esse valor!`;
+    try {
+      const stored = localStorage.getItem(KEY);
+      if (stored) {
+        endDate = new Date(parseInt(stored));
+      } else {
+        endDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
+        localStorage.setItem(KEY, endDate.getTime());
+      }
+    } catch(e) {
+      // Fallback if localStorage is unavailable
+      endDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    }
 
-                }
+    let kits = 37;
+    const minKits = 5;
 
-                setInterval(updateCountdown, 1000);
-                updateCountdown();
-            });
-        </script>
-    </body>
+    function update() {
+      const dist = endDate - Date.now();
+      if (dist <= 0) {
+        timerEl.textContent = 'OFERTA ENCERRADA!';
+        kitsEl.textContent = 'Todos os kits foram vendidos!';
+        return;
+      }
+      const h = Math.floor(dist / 3600000);
+      const m = Math.floor((dist % 3600000) / 60000);
+      const s = Math.floor((dist % 60000) / 1000);
+      timerEl.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+
+      kits = kits > minKits ? kits - 1 : 37;
+      kitsEl.textContent = '⚠️ Apenas ' + kits + ' vagas restantes com este preço!';
+    }
+
+    update();
+    setInterval(update, 1000);
+  })();
+
+  // ===== MOBILE CTA scroll trigger =====
+  (function() {
+    const cta = document.getElementById('mobile-cta');
+    let shown = false;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400 && !shown) {
+        cta.style.display = 'block';
+        shown = true;
+      }
+    }, { passive: true });
+  })();
+
+  // ===== Facebook CAPI helper (purchase event) =====
+  document.querySelectorAll('a[href*="kiwify"]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'InitiateCheckout', { value: 67.70, currency: 'BRL' });
+      }
+    });
+  });
+</script>
+
+</body>
 </html>
-�
