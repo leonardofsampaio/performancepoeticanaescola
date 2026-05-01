@@ -443,10 +443,13 @@
 
     .product-card img {
       width: 100%;
-      height: 280px;
-      object-fit: cover;
+      height: auto;
+      aspect-ratio: 3/4;
+      object-fit: contain;
+      background: var(--creme);
       border-bottom: var(--border-thick);
       display: block;
+      padding: 0.5rem;
     }
 
     .product-card-body {
@@ -538,19 +541,21 @@
       border-bottom: 6px solid var(--preto);
     }
 
-    .test-carousel {
+    .test-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .test-carousel-track {
       display: flex;
       gap: 1.5rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-      padding-bottom: 1rem;
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
     }
-    .test-carousel::-webkit-scrollbar { display: none; }
 
     .test-slide {
-      flex: 0 0 280px;
+      flex: 0 0 calc(33.333% - 1rem);
+      min-width: 280px;
       scroll-snap-align: start;
     }
 
@@ -561,6 +566,49 @@
       border-radius: 4px;
       display: block;
     }
+
+    .test-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .test-btn {
+      background: var(--preto);
+      color: var(--amarelo);
+      border: 3px solid var(--amarelo);
+      font-size: 1.6rem;
+      width: 54px;
+      height: 54px;
+      cursor: pointer;
+      font-family: var(--font-display);
+      transition: background 0.15s, transform 0.1s;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .test-btn:hover { background: var(--amarelo); color: var(--preto); }
+    .test-btn:active { transform: translate(2px, 2px); }
+
+    .test-dots {
+      display: flex;
+      gap: 8px;
+    }
+    .test-dot {
+      width: 12px;
+      height: 12px;
+      background: var(--branco);
+      opacity: 0.35;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      transition: opacity 0.2s, background 0.2s;
+    }
+    .test-dot.active { opacity: 1; background: var(--amarelo); }
 
     /* ===== FAQ ===== */
     #faq {
@@ -965,7 +1013,7 @@
           loading="eager"
         >
         <div class="hero-bonus-tag">
-          🎁 BÔNUS: Proposta Pedagógica com códigos BNCC para cada cordel!
+          BÔNUS: Proposta Pedagógica com códigos BNCC para cada cordel!
         </div>
       </div>
     </div>
@@ -1271,27 +1319,31 @@
       <h2>O que os professores dizem</h2>
     </div>
 
-    <div class="test-carousel" id="testCarousel">
-      <div class="test-slide">
-        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_1.png" alt="Depoimento 1" loading="lazy">
-      </div>
-      <div class="test-slide">
-        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_2.png" alt="Depoimento 2" loading="lazy">
-      </div>
-      <div class="test-slide">
-        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_3.png" alt="Depoimento 3" loading="lazy">
-      </div>
-      <div class="test-slide">
-        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_4.png" alt="Depoimento 4" loading="lazy">
-      </div>
-      <div class="test-slide">
-        <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_5.png" alt="Depoimento 5" loading="lazy">
+    <div class="test-carousel-wrapper">
+      <div class="test-carousel-track" id="testCarousel">
+        <div class="test-slide">
+          <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_1.png" alt="Depoimento 1" loading="lazy">
+        </div>
+        <div class="test-slide">
+          <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_2.png" alt="Depoimento 2" loading="lazy">
+        </div>
+        <div class="test-slide">
+          <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_3.png" alt="Depoimento 3" loading="lazy">
+        </div>
+        <div class="test-slide">
+          <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_4.png" alt="Depoimento 4" loading="lazy">
+        </div>
+        <div class="test-slide">
+          <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/depoimento_5.png" alt="Depoimento 5" loading="lazy">
+        </div>
       </div>
     </div>
 
-    <p style="text-align:center; margin-top:1rem; font-family:var(--font-cordel); font-size:1.1rem; color:var(--amarelo); opacity:0.8;">
-      ← deslize para ver mais →
-    </p>
+    <div class="test-nav">
+      <button class="test-btn" id="testPrev" aria-label="Depoimento anterior">‹</button>
+      <div class="test-dots" id="testDots"></div>
+      <button class="test-btn" id="testNext" aria-label="Próximo depoimento">›</button>
+    </div>
   </div>
 </section>
 
@@ -1689,7 +1741,68 @@
     window.addEventListener('resize', () => { buildDots(); goTo(0); });
   })();
 
-  // ===== ACCORDION =====
+  // ===== TESTIMONIALS CAROUSEL =====
+  (function() {
+    const track = document.getElementById('testCarousel');
+    const slides = track.querySelectorAll('.test-slide');
+    const prevBtn = document.getElementById('testPrev');
+    const nextBtn = document.getElementById('testNext');
+    const dotsContainer = document.getElementById('testDots');
+
+    let current = 0;
+
+    function getSlidesPerView() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 600) return 2;
+      return 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getSlidesPerView());
+    }
+
+    function buildDots() {
+      dotsContainer.innerHTML = '';
+      const total = getMaxIndex() + 1;
+      for (let i = 0; i < total; i++) {
+        const d = document.createElement('button');
+        d.className = 'test-dot' + (i === current ? ' active' : '');
+        d.setAttribute('aria-label', 'Depoimento ' + (i+1));
+        d.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      dotsContainer.querySelectorAll('.test-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function goTo(idx) {
+      current = Math.max(0, Math.min(idx, getMaxIndex()));
+      const slideWidth = slides[0].offsetWidth + 24;
+      track.style.transform = `translateX(-${current * slideWidth}px)`;
+      updateDots();
+    }
+
+    prevBtn.addEventListener('click', () => goTo(current - 1));
+    nextBtn.addEventListener('click', () => goTo(current + 1));
+
+    // Touch / swipe support
+    let touchStartX = 0;
+    track.parentElement.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    track.parentElement.addEventListener('touchend', e => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+
+    // Auto advance
+    setInterval(() => goTo(current >= getMaxIndex() ? 0 : current + 1), 5000);
+
+    buildDots();
+    window.addEventListener('resize', () => { buildDots(); goTo(0); });
+  })();
   document.querySelectorAll('.accordion-header').forEach(btn => {
     btn.addEventListener('click', () => {
       const body = btn.nextElementSibling;
