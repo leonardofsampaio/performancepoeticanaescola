@@ -908,23 +908,11 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       #mobile-cta { display: block; }
-
       body { padding-bottom: 80px; }
-
-      .carousel-slide {
-        flex: 0 0 calc(85% - 0.75rem);
-      }
-
-      .autor-wrap {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .guarantee-box {
-        flex-direction: column;
-        text-align: center;
-      }
+      .autor-wrap { flex-direction: column; align-items: center; text-align: center; }
+      .guarantee-box { flex-direction: column; text-align: center; }
+      .jeito-grid { grid-template-columns: 1fr !important; }
+      .carousel-slide { flex: 0 0 calc(85% - 0.75rem); }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -996,16 +984,16 @@
 <section id="hero">
   <div class="section-wrap">
     <div style="text-align:center; padding-bottom: 2rem;">
-      <span class="cordel-badge" style="margin-bottom:1.5rem; display:inline-block;">✦ Para Professoras e Professores Conscientes ✦</span>
+      <span class="cordel-badge" style="margin-bottom:1.5rem; display:inline-block;">✦ Para Professoras e Professores da Educação Básica ✦</span>
 
       <h1 style="color: var(--preto); margin-bottom: 0.75rem;">
-        Suas aulas<br>
-        <span class="hero-headline-wrap" style="color:var(--amarelo);">merecem</span><br>
-        poesia real
+        Atividades prontas,<br>
+        <span class="hero-headline-wrap" style="color:var(--amarelo);">cordéis autorais</span><br>
+        e BNCC mapeada
       </h1>
 
-      <p class="hero-sub" style="color: var(--preto); margin: 1.5rem auto; max-width: 620px;">
-        Material completo, pronto para aplicar — cordéis, ebook, propostas pedagógicas com BNCC e atividades para alunos. Temas que importam: racismo, ancestralidade, cidadania, espiritualidade e justiça social.
+      <p class="hero-sub" style="color: var(--preto); margin: 1.5rem auto; max-width: 640px;">
+        A coleção que está transformando salas de aula em todo o Brasil — poesia crítica, roteiros prontos, interdisciplinaridade real e aplicação imediata. Com beleza, consciência e afeto.
       </p>
 
       <div class="hero-image-wrap">
@@ -1037,27 +1025,32 @@
 
     <div class="dor-grid">
       <div class="dor-card">
-        <span class="icon-big">⏰</span>
-        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">Sem tempo para criar</h3>
-        <p>Você passa horas procurando materiais, e no final das contas ainda precisa adaptar tudo do zero.</p>
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">Baixando PDFs aleatórios</h3>
+        <p>Materiais soltos da internet, sem conexão entre si e sem relação com a realidade dos seus alunos.</p>
       </div>
       <div class="dor-card">
-        <span class="icon-big">😔</span>
-        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">Conteúdo raso</h3>
-        <p>Os materiais disponíveis não tratam temas sociais com a profundidade que seus alunos precisam escutar.</p>
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">Textos prontos e frios</h3>
+        <p>Tentando trabalhar racismo, cidadania ou ancestralidade com conteúdos que não tocam e não transformam.</p>
       </div>
       <div class="dor-card">
-        <span class="icon-big">📋</span>
-        <h3 style="color:var(--amarelo); font-size:1.2rem; margin-bottom:0.5rem;">BNCC sem clareza</h3>
-        <p>Você sabe que precisa seguir a BNCC, mas conectar cultura popular às competências é trabalhoso demais.</p>
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">Tempo perdido buscando</h3>
+        <p>Horas procurando atividades para "encaixar" em datas comemorativas, adaptando tudo do zero, sozinho(a).</p>
+      </div>
+      <div class="dor-card">
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">Currículo que não representa</h3>
+        <p>Sentindo-se sozinho(a) diante de um currículo que silencia identidades, histórias e realidades dos seus alunos.</p>
+      </div>
+      <div class="dor-card">
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">As mesmas atividades todo ano</h3>
+        <p>Repetindo o que já não engaja, sem tempo ou energia para inovar dentro da rotina da escola pública.</p>
       </div>
     </div>
 
     <div class="cordel-ornament" style="color:var(--amarelo);">★ ★ ★</div>
 
-    <div class="glass-panel" style="background: rgba(245,200,0,0.08); border-color: rgba(245,200,0,0.3); max-width:640px; margin: 0 auto; text-align:center;">
-      <p style="font-family: var(--font-headline); font-size:1.4rem; font-weight:700; line-height:1.4; color:var(--branco);">
-        E se tudo isso já viesse pronto, com cordel, roteiro teatral, atividades e BNCC mapeada — para você só aplicar?
+    <div class="glass-panel" style="background: rgba(245,200,0,0.08); border-color: rgba(245,200,0,0.3); max-width:680px; margin: 0 auto; text-align:center;">
+      <p style="font-family: var(--font-headline); font-size:1.4rem; font-weight:700; line-height:1.5; color:var(--branco);">
+        E se você tivesse em mãos um material que já vem pronto, alinhado à BNCC, com poesia que toca de verdade — para você só aplicar?
       </p>
     </div>
   </div>
@@ -1069,9 +1062,9 @@
 <section id="oque">
   <div class="section-wrap">
     <div class="section-header light">
-      <span class="overline">A solução completa</span>
+      <span class="overline">Uma nova forma de ensinar</span>
       <h2>O que é a Coleção Tesouro Poético?</h2>
-      <p class="subtitle">Um kit 100% digital para professoras e professores que querem aulas com arte, consciência e impacto real.</p>
+      <p class="subtitle">Um conjunto de materiais pedagógicos autorais criado para transformar a sala de aula em um espaço vivo de leitura, criação, identidade e reflexão crítica — por meio da poesia.</p>
     </div>
 
     <div style="display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap;">
@@ -1084,22 +1077,22 @@
         >
       </div>
       <div style="flex:1; min-width:280px;">
-        <p style="font-size:1.1rem; margin-bottom:1.5rem; font-family: var(--font-headline); font-weight:700; text-transform:uppercase; color:var(--vermelho);">
-          ✦ A poesia aqui não é enfeite. É ferramenta.
+        <p style="font-size:1.15rem; margin-bottom:1.5rem; font-family: var(--font-headline); font-weight:700; text-transform:uppercase; color:var(--vermelho); line-height:1.4;">
+          Mais do que conteúdo — são experiências pedagógicas que estimulam:
         </p>
         <ul class="check-list">
-          <li>Simples de aplicar — tudo já vem pronto para a sala de aula</li>
-          <li>Temas sociais que seus alunos <em>precisam</em> escutar (racismo, cidadania, ancestralidade)</li>
-          <li>Conteúdo 100% alinhado à BNCC com os códigos já mapeados</li>
-          <li>Funciona para escolas públicas e privadas</li>
-          <li>Do 5º ano do Fundamental ao Ensino Médio</li>
-          <li>Baixo investimento — impacto duradouro</li>
-          <li>Perfeito para projetos interdisciplinares</li>
-          <li>Fomenta oralidade, empatia e protagonismo estudantil</li>
+          <li>Leitura crítica e escrita criativa dos alunos</li>
+          <li>Reflexão sobre identidade, ancestralidade e justiça</li>
+          <li>Participação ativa e protagonismo estudantil</li>
+          <li>Trabalho com temas sensíveis com beleza e escuta</li>
+          <li>Interdisciplinaridade real entre Português, História e Artes</li>
+          <li>Alinhamento total à BNCC — códigos já mapeados</li>
+          <li>Aplicação imediata — nada para adaptar do zero</li>
+          <li>Repertório válido para usar o ano todo</li>
         </ul>
         <div style="margin-top:2rem; text-align:center;">
           <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
-            📚 QUERO A COLEÇÃO COMPLETA!
+            QUERO TRANSFORMAR MINHAS AULAS
           </a>
         </div>
       </div>
@@ -1275,13 +1268,13 @@
     </svg>
 
     <p style="font-family: var(--font-cordel); font-size: 1.5rem; color: var(--amarelo); margin-bottom: 1rem;">
-      Já imaginou chegar na segunda-feira com tudo pronto?
+      Com essa coleção, você vai poder:
     </p>
     <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 6vw, 4rem); letter-spacing: 0.02em; text-transform: uppercase; line-height: 1.1; max-width: 700px; margin: 0 auto 1.5rem;">
-      Cada aula sua pode virar um momento que o aluno lembra pra vida toda
+      Tornar suas aulas mais vivas — sem criar tudo do zero
     </h2>
-    <p style="max-width: 580px; margin: 0 auto; font-size: clamp(1rem, 2vw, 1.2rem); opacity: 0.88; line-height: 1.7;">
-      Com cordel, poesia e cultura popular como ferramentas pedagógicas, você não está apenas cumprindo a BNCC — você está plantando semente de consciência. E tudo isso por menos do que uma pizza com a família.
+    <p style="max-width: 600px; margin: 0 auto 2rem; font-size: clamp(1.05rem, 2vw, 1.25rem); opacity: 0.9; line-height: 1.75;">
+      Economize tempo com materiais já estruturados. Trabalhe temas importantes com leveza e profundidade. Crie experiências que conectam escola e realidade — e que seus alunos não vão esquecer.
     </p>
 
     <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; margin-top:2.5rem;">
@@ -1390,6 +1383,117 @@
 <div class="stripe-bar"></div>
 
 <!-- ================================================================
+  JEITO ERRADO vs JEITO CERTO — Mecanismo do Problema/Solução
+================================================================ -->
+<section style="background: var(--creme); border-top: 6px solid var(--preto); padding: 4rem 0;">
+  <div class="section-wrap">
+    <div class="section-header light" style="text-align:center;">
+      <span class="overline">Por que a maioria não consegue</span>
+      <h2>O que muda com a coleção certa</h2>
+    </div>
+
+    <div class="jeito-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 860px; margin: 0 auto;">
+
+      <!-- JEITO ERRADO -->
+      <div style="background: var(--preto); color: var(--branco); border: var(--border-thick); box-shadow: var(--shadow-neo); border-radius: var(--radius-neo); padding: 1.75rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
+          <span style="font-size:1.8rem; line-height:1;">✗</span>
+          <h3 style="font-size:1.2rem; color: var(--vermelho); text-transform:uppercase;">Sem a coleção</h3>
+        </div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.9rem;">
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.9;">
+            <span style="color:var(--vermelho); flex-shrink:0; margin-top:0.15rem;">—</span>
+            Baixar PDFs aleatórios sem conexão entre si
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.9;">
+            <span style="color:var(--vermelho); flex-shrink:0; margin-top:0.15rem;">—</span>
+            Tentar trabalhar temas difíceis com textos frios e distantes
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.9;">
+            <span style="color:var(--vermelho); flex-shrink:0; margin-top:0.15rem;">—</span>
+            Adaptar tudo manualmente — e ainda assim não funcionar
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.9;">
+            <span style="color:var(--vermelho); flex-shrink:0; margin-top:0.15rem;">—</span>
+            Repetir as mesmas atividades sem engajamento real
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.9;">
+            <span style="color:var(--vermelho); flex-shrink:0; margin-top:0.15rem;">—</span>
+            Sentir que falta conexão entre currículo e realidade dos alunos
+          </li>
+        </ul>
+      </div>
+
+      <!-- JEITO CERTO -->
+      <div style="background: var(--verde); color: var(--branco); border: var(--border-thick); box-shadow: var(--shadow-neo); border-radius: var(--radius-neo); padding: 1.75rem;">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1.25rem;">
+          <span style="font-size:1.8rem; line-height:1;">✓</span>
+          <h3 style="font-size:1.2rem; color: var(--amarelo); text-transform:uppercase;">Com a coleção</h3>
+        </div>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:0.9rem;">
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.95;">
+            <span style="color:var(--amarelo); flex-shrink:0; margin-top:0.15rem;">✦</span>
+            Usar a poesia como ponte entre conteúdo e consciência
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.95;">
+            <span style="color:var(--amarelo); flex-shrink:0; margin-top:0.15rem;">✦</span>
+            Trabalhar temas sensíveis com beleza, escuta e profundidade
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.95;">
+            <span style="color:var(--amarelo); flex-shrink:0; margin-top:0.15rem;">✦</span>
+            Transformar leitura em experiência coletiva e ativa
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.95;">
+            <span style="color:var(--amarelo); flex-shrink:0; margin-top:0.15rem;">✦</span>
+            Aplicar cordéis com proposta pedagógica e BNCC — prontos
+          </li>
+          <li style="display:flex; gap:0.6rem; align-items:flex-start; font-size:1.05rem; line-height:1.6; opacity:0.95;">
+            <span style="color:var(--amarelo); flex-shrink:0; margin-top:0.15rem;">✦</span>
+            Oferecer aos alunos uma educação que respeita e representa
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;">
+      <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
+        QUERO ENSINAR DO JEITO CERTO
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================
+  CONEXÃO EMOCIONAL — aquecimento final antes da oferta
+================================================================ -->
+<section style="background: var(--preto); color: var(--branco); padding: 4rem 0; border-top: 6px solid var(--amarelo);">
+  <div class="section-wrap" style="max-width: 720px; text-align: center;">
+    <span class="cordel-badge" style="display:inline-block; margin-bottom:1.5rem; background: var(--amarelo); color: var(--preto);">✦ Uma palavra sobre o que você faz ✦</span>
+
+    <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 6vw, 3.8rem); color: var(--amarelo); text-transform: uppercase; line-height: 1.1; margin-bottom: 1.5rem;">
+      Ensinar também é tocar, escutar e provocar
+    </h2>
+
+    <p style="font-size: clamp(1.1rem, 2vw, 1.3rem); line-height: 1.8; opacity: 0.9; margin-bottom: 1.5rem;">
+      E quando a palavra ganha vida dentro da sala de aula, algo muda — no ambiente, nos alunos e no próprio educador. Essa coleção nasce exatamente desse lugar.
+    </p>
+
+    <p style="font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.8; opacity: 0.85; margin-bottom: 2rem;">
+      Se você busca um material que vá além do conteúdo tradicional e ajude a construir experiências reais na sala de aula — com poesia, prática e propósito — essa coleção é para você.
+    </p>
+
+    <p style="font-family: var(--font-cordel); font-size: 1.6rem; color: var(--amarelo); margin-bottom: 2rem; line-height: 1.5;">
+      "Uma coleção que vai renovar seu repertório didático para aplicar ao longo do ano — e fortalecer o vínculo entre professor, aluno e comunidade."
+    </p>
+
+    <a href="#oferta" class="btn-buy" onclick="smoothScroll('#oferta')">
+      GARANTIR MINHA COLEÇÃO — R$ 67,70
+    </a>
+  </div>
+</section>
+
+<!-- ================================================================
   OFERTA — SEÇÃO PRINCIPAL DE COMPRA
 ================================================================ -->
 <section id="oferta">
@@ -1397,7 +1501,7 @@
     <div style="position:relative; z-index:1;">
 
       <div class="section-header" style="text-align:center;">
-        <span class="overline" style="color:var(--amarelo);">Oferta por tempo limitado</span>
+        <span class="overline" style="color:var(--amarelo);">Pagamento único. Acesso imediato. Uso ilimitado.</span>
         <h2 style="background:var(--amarelo); color:var(--preto);">Tudo isso por apenas:</h2>
       </div>
 
@@ -1432,10 +1536,10 @@
       <!-- MAIN BUY CTA -->
       <div style="text-align:center; margin:2.5rem 0;">
         <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy" id="main-cta-offer">
-          ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
+          QUERO ACESSAR A COLEÇÃO COMPLETA
         </a>
-        <p style="margin-top:1rem; font-family:var(--font-headline); font-size:0.95rem; opacity:0.7;">
-          📩 Entrega digital imediata via Kiwify
+        <p style="margin-top:1rem; font-family:var(--font-headline); font-size:1rem; opacity:0.7;">
+          Entrega digital imediata via Kiwify
         </p>
       </div>
 
@@ -1575,17 +1679,17 @@
 
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          Como recebo os materiais depois da compra?
+          O material é físico?
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="accordion-body">
-          <p>A entrega acontece pela plataforma Kiwify. Após confirmar o pagamento, você recebe acesso imediato a todos os materiais em formato digital (PDF). O acesso é vitalício.</p>
+          <p>Não. Todo o conteúdo é digital (PDF). Você recebe o acesso imediato pela plataforma Kiwify logo após a confirmação do pagamento — sem espera.</p>
         </div>
       </div>
 
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
-          É indicado para qual faixa etária de alunos?
+          Posso usar os materiais em sala de aula?
           <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
         </button>
         <div class="accordion-body">
@@ -1627,7 +1731,7 @@
 
     <div style="text-align:center; margin-top:2.5rem;">
       <a href="#oferta" class="btn-primary" onclick="smoothScroll('#oferta')">
-        ⏳ LIBERAR MEU ACESSO COM BÔNUS AGORA!
+        QUERO ACESSAR A COLEÇÃO AGORA
       </a>
     </div>
   </div>
@@ -1638,18 +1742,18 @@
 ================================================================ -->
 <section style="background:var(--amarelo); border-top:6px solid var(--preto); padding:3rem 0; text-align:center;">
   <div class="section-wrap">
-    <div class="cordel-badge" style="font-size:1.1rem; margin-bottom:1.5rem; display:inline-block;">✦ Decisão simples ✦</div>
+    <div class="cordel-badge" style="font-size:1.1rem; margin-bottom:1.5rem; display:inline-block;">✦ Para educadores que acreditam na palavra ✦</div>
     <h2 style="color:var(--preto); margin-bottom:1rem; font-size:clamp(2rem,5vw,3.5rem);">
-      Suas aulas nunca mais serão as mesmas
+      Se você quer ir além do conteúdo tradicional — essa coleção é para você
     </h2>
-    <p style="max-width:540px; margin:0 auto 2rem; font-size:1.15rem; color:var(--preto);">
-      Centenas de professores já estão transformando suas salas de aula com cordel, poesia e consciência. A Coleção Tesouro Poético está te esperando.
+    <p style="max-width:560px; margin:0 auto 2rem; font-size:1.2rem; color:var(--preto); line-height:1.7;">
+      Garanta agora sua coleção completa com cordéis, ebook, atividades prontas e BNCC mapeada. Acesso imediato, uso ilimitado, e uma educação que respeita, representa e desperta.
     </p>
     <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy">
-      🎯 GARANTIR MINHA COLEÇÃO AGORA — R$ 67,70
+      GARANTA AGORA — R$ 67,70
     </a>
-    <p style="margin-top:1.2rem; font-size:0.95rem; color:var(--preto); opacity:0.7; font-family:var(--font-headline);">
-      🛡️ Garantia de 7 dias • Acesso imediato • Entrega pela Kiwify
+    <p style="margin-top:1.2rem; font-size:1rem; color:var(--preto); opacity:0.7; font-family:var(--font-headline);">
+      Garantia de 7 dias • Acesso imediato • Entrega pela Kiwify
     </p>
   </div>
 </section>
