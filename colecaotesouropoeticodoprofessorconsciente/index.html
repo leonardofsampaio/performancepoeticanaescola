@@ -1939,14 +1939,16 @@
 
     try {
       const stored = localStorage.getItem(KEY);
-      if (stored) {
-        endDate = new Date(parseInt(stored));
+      const storedTime = stored ? parseInt(stored) : 0;
+      // Only reuse stored timer if it's still in the future AND within 24h window
+      if (storedTime > Date.now()) {
+        endDate = new Date(storedTime);
       } else {
+        // Reset: always give a fresh 24h countdown
         endDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
         localStorage.setItem(KEY, endDate.getTime());
       }
     } catch(e) {
-      // Fallback if localStorage is unavailable
       endDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
     }
 
@@ -1956,9 +1958,10 @@
     function update() {
       const dist = endDate - Date.now();
       if (dist <= 0) {
-        timerEl.textContent = 'OFERTA ENCERRADA!';
-        kitsEl.textContent = 'Todos os kits foram vendidos!';
-        return;
+        // Auto-reset: start a fresh 24h countdown
+        try { localStorage.removeItem(KEY); } catch(e) {}
+        endDate = new Date(Date.now() + 24 * 60 * 60 * 1000);
+        try { localStorage.setItem(KEY, endDate.getTime()); } catch(e) {}
       }
       const h = Math.floor(dist / 3600000);
       const m = Math.floor((dist % 3600000) / 60000);
@@ -1966,7 +1969,7 @@
       timerEl.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
 
       kits = kits > minKits ? kits - 1 : 37;
-      kitsEl.textContent = '⚠️ Apenas ' + kits + ' vagas restantes com este preço!';
+      kitsEl.textContent = 'Apenas ' + kits + ' vagas restantes com este preço!';
     }
 
     update();
