@@ -308,6 +308,8 @@
       font-weight: 600;
       letter-spacing: .02em;
       position: relative; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
+      gap: .5rem; flex-wrap: wrap;
     }
     #top-strip strong { color: var(--gold-lt); }
 
@@ -1083,23 +1085,6 @@
     @media (min-width: 769px) { #sticky { display: none; } }
 
     /* ═══════════════════════════════════════
-       URGENCY STRIP
-    ═══════════════════════════════════════ */
-    #urgency-strip {
-      background: linear-gradient(90deg, var(--gold-dk) 0%, var(--gold) 50%, var(--gold-dk) 100%);
-      color: var(--ink);
-      text-align: center;
-      padding: .6rem 1rem;
-      font-size: .88rem;
-      font-weight: 700;
-      letter-spacing: .02em;
-      position: relative; z-index: 10;
-      display: flex; align-items: center; justify-content: center; gap: .6rem;
-      flex-wrap: wrap;
-    }
-    #urgency-strip .u-icon { font-size: 1rem; }
-
-    /* ═══════════════════════════════════════
        MOBILE SPECIFIC IMPROVEMENTS
     ═══════════════════════════════════════ */
     @media (max-width: 480px) {
@@ -1143,16 +1128,9 @@
      TOP STRIP
 ═══════════════════════════════════════ -->
 <div id="top-strip">
-  ✊ Poesia com causa — <strong>Coleção completa por R$ 67,70</strong> · Acesso imediato via Kiwify
+  ✊ Poesia com causa · <strong>Coleção completa por R$ 67,70</strong> · Acesso imediato · <strong>Garantia 7 dias</strong>
 </div>
 
-
-<!-- urgency strip -->
-<div id="urgency-strip">
-  <span class="u-icon">⏰</span>
-  <span>Oferta por tempo limitado — acesso vitalício + todas as atualizações futuras incluídas</span>
-  <span class="u-icon">⏰</span>
-</div>
 <!-- ═══════════════════════════════════════
      HERO — SEM BOTÃO NA 1ª DOBRA
 ═══════════════════════════════════════ -->
@@ -1294,10 +1272,78 @@
       <span class="s-pill"><i class="fas fa-check"></i> Família, leitura e protagonismo</span>
     </div>
 
-    <p class="reveal" style="font-family:'Fraunces',serif;font-style:italic;font-size:1.12rem;color:var(--ink-mid);transition-delay:.2s">
-      "Quando a poesia fala da vida do aluno, o que nunca participou levanta a mão."<br>
-      <span style="font-size:.88rem;font-style:normal;color:var(--ink-lt);font-family:'DM Sans',sans-serif;">— Leonardo Sampaio, educador, poeta e autor</span>
-    </p>
+    <!-- Prova social inline — aumenta credibilidade antes da oferta -->
+    <div class="glass reveal" style="max-width:580px;margin:2rem auto 0;padding:1.5rem 1.75rem;transition-delay:.2s">
+      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:1.1rem;color:var(--ink-mid);line-height:1.7;margin-bottom:.75rem">
+        "Quando a poesia fala da vida do aluno, o que nunca participou levanta a mão."
+      </p>
+      <div style="display:flex;align-items:center;gap:.75rem;">
+        <div style="width:40px;height:40px;border-radius:50%;background:var(--terra-pale);display:flex;align-items:center;justify-content:center;color:var(--terra);font-size:.9rem;flex-shrink:0;">
+          <i class="fas fa-user"></i>
+        </div>
+        <div>
+          <strong style="font-size:.9rem;color:var(--ink);display:block;">Leonardo Sampaio</strong>
+          <span style="font-size:.8rem;color:var(--ink-lt);">Professor · 11 anos de escola pública · Fortaleza-CE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PARA QUEM É — antes do produto para ativar identidade
+═══════════════════════════════════════ -->
+<section id="para-quem" class="sp" style="background:var(--white);">
+  <div class="wrap center">
+    <div class="reveal">
+      <span class="sec-tag">É para você?</span>
+      <h2 class="sec-title">Este material foi feito para o professor que <em>ensina com causa</em>.</h2>
+    </div>
+
+    <div class="for-whom-grid" style="margin-top:2rem">
+      <div class="fw-item glass reveal" style="transition-delay:.05s">
+        <span class="fw-icon">✊</span>
+        <div>
+          <strong>Você trabalha consciência negra e ancestralidade</strong>
+          <p>e quer textos literários autorais de verdade — não fichas genéricas sobre o tema.</p>
+        </div>
+      </div>
+      <div class="fw-item glass reveal" style="transition-delay:.1s">
+        <span class="fw-icon">🌍</span>
+        <div>
+          <strong>Você acredita em educação antirracista</strong>
+          <p>e busca material que trabalhe racismo, inclusão e diversidade com profundidade e beleza literária.</p>
+        </div>
+      </div>
+      <div class="fw-item glass reveal" style="transition-delay:.15s">
+        <span class="fw-icon">📚</span>
+        <div>
+          <strong>Você quer trabalhar leitura de forma viva</strong>
+          <p>usando cordel, poemas e trovas que falam da vida real dos seus alunos — não do livro didático.</p>
+        </div>
+      </div>
+      <div class="fw-item glass reveal" style="transition-delay:.2s">
+        <span class="fw-icon">🏫</span>
+        <div>
+          <strong>Você ensina em escola pública</strong>
+          <p>e quer um material criado de dentro da realidade da rede pública — não adaptado para ela.</p>
+        </div>
+      </div>
+      <div class="fw-item glass reveal" style="transition-delay:.25s">
+        <span class="fw-icon">🎯</span>
+        <div>
+          <strong>Você ensina do 5º ano ao Ensino Médio</strong>
+          <p>e precisa de propostas que possam ser adaptadas para diferentes faixas etárias sem perder a profundidade.</p>
+        </div>
+      </div>
+      <div class="fw-item glass reveal" style="transition-delay:.3s">
+        <span class="fw-icon">🌱</span>
+        <div>
+          <strong>Você acredita que Paulo Freire ainda tem razão</strong>
+          <p>e quer que seus alunos saiam da sua aula mais críticos, mais conscientes e mais inteiros.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1348,7 +1394,7 @@
           </div>
           <a href="https://pay.kiwify.com.br/IdXCsnh" class="btn-ghost"
              onclick="sendFBEvent('InitiateCheckout',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">
-            Quero só o ebook →
+            Quero o ebook — R$ 29,70 →
           </a>
         </div>
 
@@ -1427,21 +1473,21 @@
     </div>
 
     <div class="col-price-card reveal">
-      <div class="col-price-from">Itens separados: R$ 149,00</div>
+      <div class="col-price-from">7 itens que separados custariam R$ 149,00</div>
       <div class="col-price-num"><sup>R$</sup>67<sup>,70</sup></div>
-      <div class="col-price-note">Acesso vitalício · PDF · Entrega via Kiwify</div>
-      <div class="col-price-save">✓ Você economiza mais de R$ 80,00</div>
+      <div class="col-price-note">Acesso vitalício · PDF · Entrega imediata via Kiwify</div>
+      <div class="col-price-save">✓ Você economiza mais de R$ 80,00 — e leva tudo de uma vez</div>
     </div>
 
     <div class="btn-pair reveal" style="transition-delay:.1s">
       <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green lg"
          onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
-        🎁 Quero minha Coleção completa por R$ 67,70
+        ✊ Quero ensinar com causa — Coleção R$ 67,70
       </a>
       <div class="or-divider">ou</div>
       <a href="https://pay.kiwify.com.br/IdXCsnh" class="btn-ghost" style="color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.25);"
          onclick="sendFBEvent('InitiateCheckout',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">
-        Quero só o ebook por R$ 29,70
+        Começar com o ebook — R$ 29,70
       </a>
     </div>
   </div>
@@ -1538,70 +1584,13 @@
     <div class="btn-pair reveal" style="margin-top:2.5rem;transition-delay:.2s">
       <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green lg"
          onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
-        🎁 Quero a Coleção completa — R$ 67,70
+        ✊ Quero ensinar com causa — Coleção R$ 67,70
       </a>
       <div class="or-divider">ou</div>
       <a href="https://pay.kiwify.com.br/IdXCsnh" class="btn-ghost"
          onclick="sendFBEvent('InitiateCheckout',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">
-        Prefiro começar com o ebook — R$ 29,70
+        Quero o ebook — R$ 29,70
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     PARA QUEM É
-═══════════════════════════════════════ -->
-<section id="para-quem" class="sp">
-  <div class="wrap center">
-    <div class="reveal">
-      <span class="sec-tag">É para você?</span>
-      <h2 class="sec-title">Este material foi feito para o professor que <em>ensina com causa</em>.</h2>
-    </div>
-
-    <div class="for-whom-grid" style="margin-top:2rem">
-      <div class="fw-item glass reveal" style="transition-delay:.05s">
-        <span class="fw-icon">✊</span>
-        <div>
-          <strong>Você trabalha consciência negra e ancestralidade</strong>
-          <p>e quer textos literários autorais de verdade — não fichas genéricas sobre o tema.</p>
-        </div>
-      </div>
-      <div class="fw-item glass reveal" style="transition-delay:.1s">
-        <span class="fw-icon">🌍</span>
-        <div>
-          <strong>Você acredita em educação antirracista</strong>
-          <p>e busca material que trabalhe racismo, inclusão e diversidade com profundidade e beleza literária.</p>
-        </div>
-      </div>
-      <div class="fw-item glass reveal" style="transition-delay:.15s">
-        <span class="fw-icon">📚</span>
-        <div>
-          <strong>Você quer trabalhar leitura de forma viva</strong>
-          <p>usando cordel, poemas e trovas que falam da vida real dos seus alunos — não do livro didático.</p>
-        </div>
-      </div>
-      <div class="fw-item glass reveal" style="transition-delay:.2s">
-        <span class="fw-icon">🏫</span>
-        <div>
-          <strong>Você ensina em escola pública</strong>
-          <p>e quer um material criado de dentro da realidade da rede pública — não adaptado para ela.</p>
-        </div>
-      </div>
-      <div class="fw-item glass reveal" style="transition-delay:.25s">
-        <span class="fw-icon">🎯</span>
-        <div>
-          <strong>Você ensina do 5º ano ao Ensino Médio</strong>
-          <p>e precisa de propostas que possam ser adaptadas para diferentes faixas etárias sem perder a profundidade.</p>
-        </div>
-      </div>
-      <div class="fw-item glass reveal" style="transition-delay:.3s">
-        <span class="fw-icon">🌱</span>
-        <div>
-          <strong>Você acredita que Paulo Freire ainda tem razão</strong>
-          <p>e quer que seus alunos saiam da sua aula mais críticos, mais conscientes e mais inteiros.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1643,6 +1632,13 @@
         <p class="autor-text">
           São 11 anos de performance poética em sala de aula. Este material não foi pensado numa mesa — foi <strong>construído ao vivo, com as crianças, diante dos alunos que me desenhavam enquanto eu declamava.</strong>
         </p>
+        <div style="margin-top:1.75rem;">
+          <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green"
+             onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
+            ✊ Quero ensinar com causa — Coleção R$ 67,70
+          </a>
+          <p style="margin-top:.6rem;font-size:.8rem;color:var(--ink-lt);">Ou <a href="https://pay.kiwify.com.br/IdXCsnh" style="color:var(--terra);font-weight:600;" onclick="sendFBEvent('InitiateCheckout',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">começar com o ebook — R$ 29,70</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -1700,6 +1696,15 @@
 
     <div class="car-dots" id="carDots"></div>
   </div>
+
+  <!-- CTA após depoimentos — calor emocional no pico -->
+  <div style="text-align:center;padding:2rem 1.5rem 0;position:relative;z-index:1;">
+    <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green lg"
+       onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
+      ✊ Quero ensinar com causa — Coleção R$ 67,70
+    </a>
+    <p style="margin-top:.75rem;font-size:.82rem;color:var(--ink-lt);">Garantia incondicional de 7 dias · Acesso imediato</p>
+  </div>
 </section>
 
 <!-- ═══════════════════════════════════════
@@ -1713,6 +1718,13 @@
       <p>
         Compre, acesse e use o material. Se por qualquer motivo — qualquer mesmo — você não ficar satisfeito, basta nos avisar em até 7 dias e devolvemos 100% do valor. Sem questionamentos, sem burocracia. Risco zero para você.
       </p>
+      <div style="margin-top:1.5rem;">
+        <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green"
+           onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
+          ✊ Quero ensinar com causa — R$ 67,70
+        </a>
+        <p style="margin-top:.6rem;font-size:.8rem;color:var(--ink-lt);">Acesso imediato · 7 dias de garantia · Risco zero</p>
+      </div>
     </div>
   </div>
 </section>
@@ -1798,12 +1810,22 @@
         </div>
       </div>
     </div>
+
+    <!-- CTA após FAQ — dúvida resolvida = intenção máxima de compra -->
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green lg"
+         onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
+        ✊ Quero ensinar com causa — Coleção R$ 67,70
+      </a>
+      <div class="or-divider" style="margin:.4rem 0">ou</div>
+      <a href="https://pay.kiwify.com.br/IdXCsnh" class="btn-ghost"
+         onclick="sendFBEvent('InitiateCheckout',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">
+        Quero o ebook — R$ 29,70
+      </a>
+      <p style="margin-top:.75rem;font-size:.82rem;color:var(--ink-lt);">Garantia 7 dias · Acesso imediato via Kiwify</p>
+    </div>
   </div>
 </section>
-
-<!-- ═══════════════════════════════════════
-     WAVE → CTA FINAL
-═══════════════════════════════════════ -->
 <div class="wv" style="background:var(--white);">
   <svg viewBox="0 0 1440 56" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
     <path d="M0,28 C360,56 1080,0 1440,28 L1440,56 L0,56Z" fill="var(--terra)"/>
@@ -1823,26 +1845,26 @@
         <em>merece a poesia que você acredita.</em>
       </h2>
       <p class="cta-sub">
-        Consciência negra, ancestralidade, inclusão, valores humanos — tudo isso em 196 páginas de literatura autoral criada dentro da escola, para seus alunos. Com as ferramentas pedagógicas para transformar cada poema em uma aula que eles vão lembrar.
+        Consciência negra, ancestralidade, inclusão, valores humanos — tudo isso em 196 páginas de literatura autoral criada dentro da escola pública, para seus alunos. Com as ferramentas pedagógicas para transformar cada poema em uma aula que eles vão carregar para a vida.
       </p>
     </div>
 
     <div class="final-price-box reveal" style="transition-delay:.1s">
-      <div class="fp-from">Itens separados: R$ 149,00</div>
+      <div class="fp-from">7 itens separados: R$ 149,00</div>
       <div class="fp-price"><sup>R$</sup>67<sup>,70</sup></div>
-      <div class="fp-note">Coleção Tesouro Poético · Acesso imediato · Garantia 7 dias</div>
-      <div class="fp-save">✓ Você economiza mais de R$ 80,00</div>
+      <div class="fp-note">Coleção completa · Acesso imediato · Garantia incondicional 7 dias</div>
+      <div class="fp-save">✓ Você economiza mais de R$ 80,00 — e leva tudo de uma vez</div>
     </div>
 
     <div class="btn-pair reveal" style="transition-delay:.15s">
       <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green lg"
          onclick="sendFBEvent('Purchase',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
-        🎁 Quero minha Coleção completa por R$ 67,70
+        ✊ Quero ensinar com causa — Coleção R$ 67,70
       </a>
       <div class="or-divider" style="color:rgba(255,255,255,.6)">ou</div>
       <a href="https://pay.kiwify.com.br/IdXCsnh" class="btn-ghost" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.3);"
          onclick="sendFBEvent('Purchase',{value:29.70,currency:'BRL',content_name:'Performance Poetica'})">
-        Quero só o ebook por R$ 29,70
+        Quero o ebook — R$ 29,70
       </a>
     </div>
 
@@ -1875,7 +1897,7 @@
   <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green"
      style="display:block;text-align:center;font-size:1rem;"
      onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
-    🎁 Quero a Coleção completa — R$ 67,70
+    ✊ Quero ensinar com causa — R$ 67,70
   </a>
 </div>
 
