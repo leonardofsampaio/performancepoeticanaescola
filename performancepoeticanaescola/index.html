@@ -693,20 +693,19 @@
       -webkit-backdrop-filter:blur(20px);
       border:1.5px solid rgba(255,255,255,.18);
       border-radius:var(--r-xl);
-      padding:2rem 2.25rem;
-      max-width:460px; margin:0 auto 2rem;
+      padding:1.25rem 2.25rem 2rem;
+      max-width:460px; margin:2rem auto 2rem;
       text-align:center;
       position:relative;
     }
-    .col-price-card::before {
-      content:'🏆 MELHOR ESCOLHA';
-      position:absolute; top:-15px; left:50%;
-      transform:translateX(-50%);
+    .col-price-badge {
+      display:inline-block;
       background:var(--green); color:#fff;
       font-size:.78rem; font-weight:800;
-      padding:.25rem .9rem;
+      padding:.3rem 1rem;
       border-radius:var(--r-pill);
       white-space:nowrap;
+      margin-bottom:1rem;
     }
     .col-price-from{font-size:.86rem;color:rgba(255,255,255,.38);text-decoration:line-through;margin-bottom:.25rem;}
     .col-price-num{
@@ -1492,6 +1491,7 @@
     </div>
 
     <div class="col-price-card reveal">
+      <div class="col-price-badge">🏆 MELHOR ESCOLHA</div>
       <div class="col-price-from">7 itens que separados custariam R$ 149,00</div>
       <div class="col-price-num"><sup>R$</sup>67<sup>,70</sup></div>
       <div class="col-price-note">Acesso vitalício · PDF · Entrega imediata via Kiwify</div>
