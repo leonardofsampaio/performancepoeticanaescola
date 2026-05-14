@@ -312,6 +312,8 @@
       gap: .5rem; flex-wrap: wrap;
     }
     #top-strip strong { color: var(--gold-lt); }
+    .ts-sep { opacity: .4; }
+    @media (max-width: 540px) { .ts-sep { display: none; } }
 
     /* ═══════════════════════════════════════
        HERO (sem botão na 1ª dobra)
@@ -1128,7 +1130,11 @@
      TOP STRIP
 ═══════════════════════════════════════ -->
 <div id="top-strip">
-  ✊ Poesia com causa · <strong>Coleção completa por R$ 67,70</strong> · Acesso imediato · <strong>Garantia 7 dias</strong>
+  <span>🛡️ <strong>Garantia incondicional de 7 dias</strong></span>
+  <span class="ts-sep">·</span>
+  <span>⚡ Acesso imediato após a compra</span>
+  <span class="ts-sep">·</span>
+  <span>✊ Material criado <strong>dentro da escola pública</strong></span>
 </div>
 
 <!-- ═══════════════════════════════════════
