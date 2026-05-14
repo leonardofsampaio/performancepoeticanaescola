@@ -1909,10 +1909,9 @@
      STICKY MOBILE CTA
 ═══════════════════════════════════════ -->
 <div id="sticky">
-  <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-green"
-     style="display:block;text-align:center;font-size:1rem;"
-     onclick="sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'})">
-    ✊ Quero ensinar com causa — R$ 67,70
+  <a href="#comparacao" id="sticky-btn" class="btn-green"
+     style="display:block;text-align:center;font-size:1rem;">
+    📖 Ver os materiais disponíveis ↓
   </a>
 </div>
 
@@ -1930,14 +1929,34 @@
   }, { threshold: 0.1 });
   reveals.forEach(function(r){ obs.observe(r); });
 
-  /* ── Sticky mobile CTA ── */
-  var sticky = document.getElementById('sticky');
-  var hero   = document.getElementById('hero');
-  window.addEventListener('scroll', function(){
-    if(!sticky||!hero) return;
-    if(hero.getBoundingClientRect().bottom < 0){ sticky.classList.add('on'); }
-    else { sticky.classList.remove('on'); }
-  }, { passive: true });
+  /* ── Sticky mobile CTA — contexto inteligente ── */
+  var sticky    = document.getElementById('sticky');
+  var stickyBtn = document.getElementById('sticky-btn');
+  var hero      = document.getElementById('hero');
+  var colecao   = document.getElementById('colecao');
+
+  function updateSticky(){
+    if(!sticky || !hero) return;
+    // Mostra após o hero sair da tela
+    if(hero.getBoundingClientRect().bottom < 0){
+      sticky.classList.add('on');
+    } else {
+      sticky.classList.remove('on');
+      return;
+    }
+    // Após a seção da Coleção entrar na tela → vira CTA de compra
+    if(colecao && colecao.getBoundingClientRect().top < window.innerHeight * 0.5){
+      stickyBtn.href = 'https://pay.kiwify.com.br/ZP2vT08';
+      stickyBtn.textContent = '✊ Quero ensinar com causa — R$ 67,70';
+      stickyBtn.onclick = function(){ sendFBEvent('InitiateCheckout',{value:67.70,currency:'BRL',content_name:'Colecao Tesouro Poetico'}); };
+    } else {
+      stickyBtn.href = '#comparacao';
+      stickyBtn.textContent = '📖 Ver os materiais disponíveis ↓';
+      stickyBtn.onclick = null;
+    }
+  }
+
+  window.addEventListener('scroll', updateSticky, { passive: true });
 
   /* ── FAQ accordion ── */
   document.querySelectorAll('.faq-btn').forEach(function(btn){
