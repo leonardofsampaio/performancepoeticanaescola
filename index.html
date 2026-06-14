@@ -344,14 +344,32 @@ p{font-size:1rem;line-height:1.75}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
 .about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;
   border-radius:var(--rl);box-shadow:var(--lg)}
-.about-landscape{
-  width:100%;aspect-ratio:16/9;object-fit:cover;
-  border-radius:var(--rm);box-shadow:var(--sm);
-  margin-top:1rem}
-.photo-cap{
-  font-size:.8rem;color:var(--gr5);font-style:italic;
-  margin-top:.6rem;line-height:1.55;
-  padding-top:.6rem;border-top:1px solid var(--gr1)}
+
+/* Paisagem full-width do Sítio Gangorra — após a seção Sobre */
+.cariri-section{
+  position:relative;width:100%;overflow:hidden;
+  display:block;line-height:0;
+  margin:0;padding:0}
+.cariri-img{
+  width:100%;height:480px;
+  object-fit:cover;object-position:center 40%;
+  display:block;margin:0}
+.cariri-overlay{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(0,0,0,.65) 100%);
+  pointer-events:none}
+.cariri-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:4rem 1.5rem 1.75rem;
+  line-height:1.6}
+.cariri-caption p{
+  max-width:1160px;margin:0 auto;
+  font-size:.95rem;line-height:1.65;
+  color:rgba(255,255,255,.92);
+  font-style:italic;font-family:'Fraunces',serif}
 /* AGENTE 1: gancho pessoal antes da bio formal */
 .about-hook{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;
   color:var(--g7);border-left:4px solid var(--d5);
@@ -588,7 +606,9 @@ p{font-size:1rem;line-height:1.75}
   /* About */
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .about-photo{max-height:420px;object-position:top}
-  .about-landscape{aspect-ratio:16/9;max-height:200px}
+  .cariri-img{height:280px}
+  .cariri-caption{padding:3rem 1.25rem 1.25rem}
+  .cariri-caption p{font-size:.88rem}
 
   /* Guarantee */
   .guar-card{flex-direction:column;text-align:center;padding:1.75rem 1.25rem}
@@ -647,6 +667,11 @@ p{font-size:1rem;line-height:1.75}
 
   /* Sticky CTA */
   .mob-sticky .btn{font-size:.9rem}
+
+  /* Cariri landscape */
+  .cariri-img{height:220px}
+  .cariri-caption{padding:2.5rem 1rem 1rem}
+  .cariri-caption p{font-size:.82rem}
 }
 
 /* 360px — very small screens */
@@ -669,6 +694,11 @@ p{font-size:1rem;line-height:1.75}
   /* Sticky smaller */
   .mob-sticky{padding:.85rem 1rem}
   .mob-sticky .btn{font-size:.82rem;padding:.8rem}
+
+  /* Cariri landscape */
+  .cariri-img{height:180px}
+  .cariri-caption{padding:2rem .85rem .85rem}
+  .cariri-caption p{font-size:.78rem}
 }
 </style>
 </head>
@@ -1195,10 +1225,6 @@ p{font-size:1rem;line-height:1.75}
         <img src="assets/images/whatsapp-image-2024-10-14-at-21.20.02.jpeg-867x1156.jpg"
              alt="Leonardo Sampaio, poeta e educador"
              class="about-photo" loading="lazy">
-        <img src="assets/images/472337635-9281382325218297-5045941384737158225-n.jpg-1440x1080.jpg"
-             alt="Sítio Gangorra em Abaiara (CE), onde Leonardo Sampaio cresceu"
-             class="about-landscape" loading="lazy">
-        <p class="photo-cap">📍 Sítio Gangorra, em Abaiara (CE), onde cresceu. Foto do irmão Sávio Sampaio.</p>
       </div>
       <div class="reveal reveal-d1">
         <span class="badge bg" style="margin-bottom:1rem">Sobre o autor</span>
@@ -1247,6 +1273,20 @@ p{font-size:1rem;line-height:1.75}
     </div>
   </div>
 </section>
+
+
+<!-- ═══════════ PAISAGEM SÍTIO GANGORRA ═══════════ -->
+<div class="cariri-section" role="img" aria-label="Vista do Sítio Gangorra em Abaiara, Cariri cearense">
+  <img
+    src="https://leonardosampaio.com.br/assets/images/472337635-9281382325218297-5045941384737158225-n.jpg-1440x1080.jpg"
+    alt="Açude e vegetação nativa do Sítio Gangorra, Abaiara (CE), ao entardecer"
+    class="cariri-img"
+    loading="lazy">
+  <div class="cariri-overlay" aria-hidden="true"></div>
+  <div class="cariri-caption">
+    <p>A foto é no Sítio Gangorra, onde morei e cresci durante minha infância. O fotógrafo é o meu irmão, Sávio Sampaio.</p>
+  </div>
+</div>
 
 
 <!-- ═══════════ CITAÇÃO ═══════════ -->
