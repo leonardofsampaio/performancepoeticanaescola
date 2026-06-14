@@ -344,9 +344,6 @@ p{font-size:1rem;line-height:1.75}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
 .about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;
   border-radius:var(--rl);box-shadow:var(--lg)}
-.photo-cap{background:var(--g7);color:#fff;border-radius:var(--r8);
-  padding:1rem 1.25rem;margin-top:1.25rem;
-  font-size:.84rem;font-style:italic;color:rgba(255,255,255,.88)}
 /* AGENTE 1: gancho pessoal antes da bio formal */
 .about-hook{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;
   color:var(--g7);border-left:4px solid var(--d5);
@@ -454,7 +451,7 @@ p{font-size:1rem;line-height:1.75}
 
 /* ═══ RAFAEL MONTENEGRO — NOVOS COMPONENTES ═══ */
 
-/* Jornada esteira (mini path) */
+/* Jornada esteira (mini path — navegação interna, não CTA de compra) */
 .ep-wrap{background:var(--ow);border-radius:var(--rm);border:1px solid var(--gr1);
   padding:1.25rem 1.5rem;margin-bottom:2.5rem}
 .ep-label{font-size:.72rem;font-weight:700;text-transform:uppercase;
@@ -462,17 +459,24 @@ p{font-size:1rem;line-height:1.75}
 .ep-row{display:flex;align-items:center;gap:0;flex-wrap:nowrap;overflow-x:auto;
   scrollbar-width:none;padding-bottom:.25rem}
 .ep-row::-webkit-scrollbar{display:none}
-.ep-step{text-align:center;padding:.6rem .9rem;border-radius:var(--r8);
-  flex-shrink:0;min-width:88px;transition:var(--ease)}
-.ep-step:hover{background:var(--g1)}
-.ep-step a{display:block;text-decoration:none}
-.ep-price{display:block;font-family:'Fraunces',serif;font-weight:700;
-  font-size:.95rem;color:var(--g7)}
-.ep-name{display:block;font-size:.72rem;color:var(--gr5);margin-top:.2rem;line-height:1.3}
+.ep-step{flex-shrink:0;min-width:108px}
+.ep-step a{display:block;text-align:center;padding:.6rem .9rem;
+  border-radius:var(--r8);text-decoration:none;
+  transition:var(--ease);border:1px solid transparent}
+.ep-step a:hover{background:#fff;border-color:var(--gr1);
+  box-shadow:var(--xs);transform:translateY(-2px)}
+/* nome é o principal; preço é informação secundária */
+.ep-name{display:block;font-size:.8rem;font-weight:600;
+  color:var(--g8);line-height:1.3;margin-bottom:.25rem}
+.ep-price{display:block;font-size:.72rem;color:var(--gr5)}
+/* destaque: coleção completa */
+.ep-step.ep-top a{background:var(--d1);border-color:var(--d4)}
+.ep-step.ep-top a:hover{background:var(--d1);border-color:var(--d5);
+  box-shadow:var(--sm)}
+.ep-step.ep-top .ep-name{color:var(--d7)}
 .ep-step.ep-top .ep-price{color:var(--d7)}
-.ep-step.ep-top{background:var(--d1);border:1.5px solid var(--d4)}
-.ep-arrow{color:var(--gr3);font-size:.85rem;flex-shrink:0;padding:0 .15rem;
-  line-height:1;margin-top:-.6rem}
+.ep-arrow{color:var(--gr3);font-size:.85rem;flex-shrink:0;padding:0 .2rem;
+  line-height:1;align-self:center}
 
 /* "Para quem é / não é" no produto featured */
 .pf-for-whom{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
@@ -489,65 +493,173 @@ p{font-size:1rem;line-height:1.75}
   border-bottom:2px solid var(--g1);transition:var(--ease)}
 .about-trans a:hover{border-color:var(--g7)}
 
-/* ===================== RESPONSIVE ===================== */
+/* ======================== RESPONSIVE ======================== */
+
+/* 1024px — tablet landscape */
 @media(max-width:1024px){
   .pillars-grid{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:repeat(2,1fr)}
 }
+
+/* 900px — tablet portrait */
 @media(max-width:900px){
-  .pf{grid-template-columns:220px 1fr;gap:2rem;padding:2rem}
+  .pf{grid-template-columns:200px 1fr;gap:2rem;padding:2rem}
   .pf-price{font-size:2.2rem}
   .about-grid{gap:3rem}
+  .intro-grid{gap:3rem}
+  .doc-grid{gap:3rem}
 }
+
+/* 768px — mobile */
 @media(max-width:768px){
   :root{--nh:64px}
-  .section{padding:4rem 0}
-  .section-sm{padding:2.75rem 0}
+
+  /* Sections */
+  .section{padding:3.5rem 0}
+  .section-sm{padding:2.25rem 0}
+
+  /* Navbar */
   .nb-links,.nb-cta{display:none}
   .hamburger{display:flex}
-  .hero{padding:4rem 0 3.5rem}
-  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
-  .hero-media{order:-1}
-  .hero-img{max-width:260px}
-  .hero-qcard{position:static;margin-top:.75rem}
-  .hero-sub{max-width:none;font-size:1rem}
-  .hero-ctas{flex-direction:column}
-  .hero-ctas .btn{width:100%}
-  .stats-row{gap:0}
-  .stat{padding:.85rem 1.5rem;min-width:130px}
+
+  /* Hero */
+  .hero{padding:3rem 0}
+  .hero-grid{grid-template-columns:1fr;gap:2rem;text-align:center}
+  .hero-media{order:-1;display:flex;flex-direction:column;align-items:center}
+  .hero-img{max-width:270px;width:100%}
+  .hero-qcard{position:static;margin-top:.75rem;left:auto;right:auto;text-align:left}
+  .hero-badge{display:flex;justify-content:center}
+  .hero h1{font-size:clamp(1.75rem,6vw,2.4rem)}
+  .hero-sub{max-width:none;font-size:.97rem;text-align:left}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-trust{flex-wrap:wrap;justify-content:center;gap:.4rem .75rem}
+  .hero-trust-dot{display:none}
+
+  /* Proof bar */
+  .proof-sep{display:none}
+  .proof-items{flex-wrap:wrap;justify-content:center;gap:.6rem 1.5rem}
+
+  /* Stats */
+  .stats-bar{padding:2rem 0}
+  .stats-row{flex-wrap:wrap}
+  .stat{min-width:40%;flex:1 1 40%;padding:.85rem 1rem}
   .stat-n{font-size:2rem}
-  .intro-grid{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0}
+  .stat-sep{display:none}
+
+  /* Intro */
+  .intro-grid{grid-template-columns:1fr;gap:2rem;padding:2.5rem 0}
   .intro-verse{max-width:100%}
+  .intro-links{flex-wrap:wrap;gap:.4rem .6rem}
+
+  /* Pain */
   .pain-grid{grid-template-columns:1fr;gap:2rem}
-  .pillars-grid{grid-template-columns:1fr}
-  .doc-grid{grid-template-columns:1fr;gap:2.5rem}
-  .pf{grid-template-columns:1fr}
-  .pf-cover{max-width:220px;margin:0 auto;aspect-ratio:2/3;width:100%;object-fit:cover}
+
+  /* Pillars */
+  .pillars-grid{grid-template-columns:1fr;gap:1.25rem}
+
+  /* Documentary */
+  .doc-grid{grid-template-columns:1fr;gap:2rem}
+
+  /* Esteira path */
+  .ep-wrap{padding:1rem 1.1rem}
+  .ep-step a{padding:.45rem .55rem}
+  .ep-name{font-size:.72rem}
+  .ep-price{font-size:.65rem}
+  .ep-label{font-size:.65rem}
+
+  /* Products */
+  .pf{grid-template-columns:1fr;padding:1.75rem 1.5rem}
+  .pf-cover{max-width:200px;margin:0 auto;aspect-ratio:2/3;width:100%;object-fit:cover}
+  .pf-price{font-size:2rem}
+  .pf-for-whom{justify-content:flex-start}
+  .start-guide-inner{flex-direction:column;align-items:flex-start;gap:.65rem}
   .g2{grid-template-columns:1fr}
   .g3{grid-template-columns:repeat(2,1fr)}
+
+  /* About */
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
-  .guar-card{flex-direction:column;text-align:center;padding:2rem 1.5rem}
-  .footer-inner{flex-direction:column;text-align:center}
-  .footer-links{justify-content:center}
-  .proof-sep{display:none}
-  .proof-items{gap:1rem}
+  .about-photo{max-height:420px;object-position:top}
+
+  /* Guarantee */
+  .guar-card{flex-direction:column;text-align:center;padding:1.75rem 1.25rem}
+
+  /* CTA strip */
+  .cta-strip{padding:3.5rem 0}
+  .cta-btns{flex-direction:column;align-items:stretch}
+  .cta-btns .btn{width:100%;justify-content:center}
+
+  /* Social */
+  .social-grid{gap:.75rem}
+
+  /* Footer */
+  .footer-inner{flex-direction:column;text-align:center;gap:1rem}
+  .footer-links{justify-content:center;flex-wrap:wrap;gap:.75rem 1.25rem}
+
+  /* Mobile sticky CTA */
   .mob-sticky{display:block}
-  body{padding-bottom:80px}
-  .start-guide-inner{flex-direction:column;align-items:flex-start;gap:.75rem}
-  .ep-step{min-width:76px;padding:.5rem .5rem}
-  .ep-price{font-size:.85rem}
-  .ep-name{font-size:.65rem}
+  body{padding-bottom:76px}
 }
+
+/* 480px — small mobile */
 @media(max-width:480px){
-  h1{font-size:1.9rem}
-  h2{font-size:1.55rem}
+  .container{padding:0 1rem}
+
+  h1{font-size:1.8rem}
+  h2{font-size:1.45rem}
+  h3{font-size:1.2rem}
+
+  /* Hero */
+  .hero-img{max-width:230px}
+  .hero h1{font-size:1.8rem}
+
+  /* Stats — 2×2 grid */
+  .stat{min-width:48%;flex:1 1 48%}
+  .stat-n{font-size:1.9rem}
+  .stat-l{font-size:.72rem}
+
+  /* Proof items */
+  .proof-items{flex-direction:column;align-items:center;gap:.5rem}
+
+  /* Products */
   .g3{grid-template-columns:1fr}
-  .cta-btns{flex-direction:column}
-  .cta-btns .btn{width:100%}
-  .pf-price{font-size:2rem}
+  .pf{padding:1.25rem 1rem}
+  .pf-price{font-size:1.85rem}
+
+  /* CTA strip */
+  .cta-strip p{font-size:.95rem}
+
+  /* Social */
   .social-grid{flex-direction:column;align-items:stretch}
   .social-link{justify-content:center}
-  .stat-sep{display:none}
+
+  /* Footer */
+  .footer-verse p{font-size:.9rem}
+
+  /* Sticky CTA */
+  .mob-sticky .btn{font-size:.9rem}
+}
+
+/* 360px — very small screens */
+@media(max-width:360px){
+  .container{padding:0 .85rem}
+
+  h1{font-size:1.65rem}
+
+  /* Stats stack */
+  .stat{min-width:100%;flex:1 1 100%}
+
+  /* Hero */
+  .hero-img{max-width:200px}
+  .hero-qcard p{font-size:.85rem}
+
+  /* Featured product */
+  .pf-cover{max-width:160px}
+  .pf-price{font-size:1.65rem}
+
+  /* Sticky smaller */
+  .mob-sticky{padding:.85rem 1rem}
+  .mob-sticky .btn{font-size:.82rem;padding:.8rem}
 }
 </style>
 </head>
@@ -598,7 +710,7 @@ p{font-size:1rem;line-height:1.75}
         </div>
         <h1>Professor(a): quando o texto certo aparece, até o aluno mais distante <em>se conecta</em></h1>
         <p class="hero-sub">
-          Poemas, cordéis e propostas pedagógicas prontas para usar amanhã — escritos por um professor da rede pública que passou anos procurando exatamente esses materiais, e que decidiu criá-los.
+          Poemas, cordéis e propostas pedagógicas prontas para usar amanhã — escritos por um educador popular cearense que passou décadas nas escolas públicas procurando exatamente esses materiais, e que decidiu criá-los.
         </p>
         <!-- AGENTE 1: ouro = ação de compra (primária); outline = scroll (secundária) -->
         <div class="hero-ctas">
@@ -632,7 +744,7 @@ p{font-size:1rem;line-height:1.75}
 <div class="proof-bar" role="complementary">
   <div class="container">
     <div class="proof-items">
-      <div class="proof-item"><span>🎓</span><span>Criado por professor em atividade</span></div>
+      <div class="proof-item"><span>🎓</span><span>Criado a partir de décadas em sala de aula pública</span></div>
       <div class="proof-sep" aria-hidden="true"></div>
       <div class="proof-item"><span>📋</span><span>Propostas pedagógicas com BNCC</span></div>
       <div class="proof-sep" aria-hidden="true"></div>
@@ -649,21 +761,16 @@ p{font-size:1rem;line-height:1.75}
   <div class="container">
     <div class="stats-row">
       <div class="stat reveal">
-        <span class="stat-n">10+</span>
-        <span class="stat-l">anos de magistério</span>
+        <span class="stat-n">40+</span>
+        <span class="stat-l">anos de militância</span>
       </div>
       <div class="stat-sep" aria-hidden="true"></div>
       <div class="stat reveal reveal-d1">
-        <span class="stat-n">8</span>
+        <span class="stat-n">20+</span>
         <span class="stat-l">obras publicadas</span>
       </div>
       <div class="stat-sep" aria-hidden="true"></div>
       <div class="stat reveal reveal-d2">
-        <span class="stat-n">5</span>
-        <span class="stat-l">cordéis autorais</span>
-      </div>
-      <div class="stat-sep" aria-hidden="true"></div>
-      <div class="stat reveal reveal-d3">
         <span class="stat-n">Brasil</span>
         <span class="stat-l">escolas de todo o país</span>
       </div>
@@ -679,7 +786,7 @@ p{font-size:1rem;line-height:1.75}
       <div class="intro-body reveal">
         <p class="intro-saudacao">Olá, professor(a).</p>
         <h2 id="intro-heading" style="margin-bottom:1.1rem">Bem-vindo(a) ao meu espaço</h2>
-        <p>Eu me chamo Leonardo — sou poeta, cordelista e professor da rede pública municipal de Fortaleza há mais de uma década. Aqui você encontra tudo que criei ao longo dos anos dentro e fora da sala de aula.</p>
+        <p>Eu me chamo Leonardo — sou poeta, cordelista, educador popular e memorialista cearense. Nasci em Abaiara, no Cariri, cresci ouvindo aboio de vaqueiro, repente de violeiro e cordel nas feiras, e dediquei décadas à educação pública e à luta antirracista.</p>
         <p>Aprendi que <strong>poesia não é enfeite de aula</strong>. É a ferramenta mais poderosa para despertar atenção, criar pertencimento e fazer um aluno sentir que a escola existe para ele.</p>
         <p>Estes materiais nasceram porque eu precisava deles. E agora quero que sejam seus também.</p>
         <div class="intro-links">
@@ -745,7 +852,7 @@ p{font-size:1rem;line-height:1.75}
         <div class="sol-card">
           <span class="badge bg" style="margin-bottom:1rem">✨ A solução que você procurava</span>
           <h3>Material que nasce de quem vive a escola de verdade</h3>
-          <p>Leonardo Sampaio não escreveu esses materiais num escritório. Escreveu em resposta direta às necessidades que viveu como professor da rede pública — porque a escola real exigia soluções reais.</p>
+          <p>Leonardo Sampaio não escreveu esses materiais num escritório. Escreveu a partir de décadas de militância na educação pública, convivendo com comunidades periféricas, indígenas, quilombolas e negras — porque a escola real exigia soluções reais.</p>
           <p>Poemas e cordéis que <strong>seus alunos ouvem, sentem e lembram</strong> — porque falam da vida deles, da cultura deles e da identidade deles.</p>
           <p style="color:var(--g7);font-weight:500">Você baixa hoje. Usa amanhã. Sem horas de preparo, sem adaptação complexa.</p>
           <a href="#materiais" class="btn btn-primary" style="margin-top:1.5rem">Ver os materiais pedagógicos →</a>
@@ -774,7 +881,7 @@ p{font-size:1rem;line-height:1.75}
           <rect x="20" y="14" width="12" height="10" rx="1"/>
         </svg>
         <h4>Nasceu dentro da escola</h4>
-        <p>Cada texto foi escrito por um professor em atividade, como resposta a situações reais da sala de aula pública — não por uma editora distante da realidade.</p>
+        <p>Cada texto nasceu de décadas de vivência em sala de aula pública, em comunidades periféricas, quilombolas e indígenas — não de um escritório de editora distante da realidade do professor brasileiro.</p>
       </div>
 
       <div class="pillar reveal reveal-d1">
@@ -836,43 +943,42 @@ p{font-size:1rem;line-height:1.75}
     </div>
 
     <!-- RAFAEL MONTENEGRO: esteira como jornada, não lista -->
+    <!-- Visão geral da esteira: orienta o visitante, não vende diretamente -->
     <div class="ep-wrap reveal">
-      <span class="ep-label">📍 Sua jornada de aprendizado — comece onde faz sentido agora</span>
+      <span class="ep-label">📍 Visão geral dos materiais — clique para ir direto à categoria</span>
       <div class="ep-row" role="list">
+
         <div class="ep-step" role="listitem">
-          <a href="https://pay.kiwify.com.br/sjQRqu9" target="_blank" rel="noopener">
-            <span class="ep-price">R$5,70</span>
+          <a href="#tier-individuais">
             <span class="ep-name">Cordéis individuais</span>
+            <span class="ep-price">a partir de R$5,70</span>
           </a>
         </div>
         <span class="ep-arrow" aria-hidden="true">›</span>
+
         <div class="ep-step" role="listitem">
-          <a href="https://pay.kiwify.com.br/90lBhmV" target="_blank" rel="noopener">
-            <span class="ep-price">R$9–19</span>
-            <span class="ep-name">Cordél + pedagogia</span>
+          <a href="#tier-pedagogia">
+            <span class="ep-name">Cordel + pedagogia</span>
+            <span class="ep-price">R$9,90 – R$19,90</span>
           </a>
         </div>
         <span class="ep-arrow" aria-hidden="true">›</span>
+
         <div class="ep-step" role="listitem">
-          <a href="https://pay.kiwify.com.br/IdXCsnh" target="_blank" rel="noopener">
-            <span class="ep-price">R$29,70</span>
-            <span class="ep-name">Livro digital</span>
+          <a href="#tier-kits">
+            <span class="ep-name">Livro e kits</span>
+            <span class="ep-price">R$29,70 – R$37,70</span>
           </a>
         </div>
         <span class="ep-arrow" aria-hidden="true">›</span>
-        <div class="ep-step" role="listitem">
-          <a href="https://pay.kiwify.com.br/ciKNz3R" target="_blank" rel="noopener">
-            <span class="ep-price">R$37,70</span>
-            <span class="ep-name">Kit intermediário</span>
-          </a>
-        </div>
-        <span class="ep-arrow" aria-hidden="true">›</span>
+
         <div class="ep-step ep-top" role="listitem">
-          <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener">
-            <span class="ep-price">R$67,70 ★</span>
-            <span class="ep-name">Coleção completa</span>
+          <a href="#tier-colecao">
+            <span class="ep-name">Coleção completa ★</span>
+            <span class="ep-price">R$67,70</span>
           </a>
         </div>
+
       </div>
     </div>
 
@@ -890,7 +996,7 @@ p{font-size:1rem;line-height:1.75}
     </div>
 
     <!-- DESTAQUE -->
-    <div class="tier">
+    <div class="tier" id="tier-colecao">
       <div class="tier-hd" aria-hidden="true">
         <span class="tier-lbl">✨ Mais completo — kit definitivo</span>
         <div class="tier-rule"></div>
@@ -928,7 +1034,7 @@ p{font-size:1rem;line-height:1.75}
     </div>
 
     <!-- KITS E LIVROS -->
-    <div class="tier">
+    <div class="tier" id="tier-kits">
       <div class="tier-hd" aria-hidden="true">
         <span class="tier-lbl">📚 Kits e livros</span>
         <div class="tier-rule"></div>
@@ -970,7 +1076,7 @@ p{font-size:1rem;line-height:1.75}
     </div>
 
     <!-- CORDÉIS COM KIT PEDAGÓGICO -->
-    <div class="tier">
+    <div class="tier" id="tier-pedagogia">
       <div class="tier-hd" aria-hidden="true">
         <span class="tier-lbl">📜 Cordéis com proposta pedagógica</span>
         <div class="tier-rule"></div>
@@ -1013,7 +1119,7 @@ p{font-size:1rem;line-height:1.75}
 
     <!-- CORDÉIS INDIVIDUAIS -->
     <!-- AGENTE 1: CTAs mudados de "Comprar" para "Quero este Cordel" -->
-    <div class="tier">
+    <div class="tier" id="tier-individuais">
       <div class="tier-hd" aria-hidden="true">
         <span class="tier-lbl">📝 Cordéis individuais — entrada ideal</span>
         <div class="tier-rule"></div>
@@ -1084,32 +1190,40 @@ p{font-size:1rem;line-height:1.75}
       <div class="reveal reveal-d1">
         <span class="badge bg" style="margin-bottom:1rem">Sobre o autor</span>
         <h2 id="about-heading">Leonardo Sampaio</h2>
-        <!-- AGENTE 1: gancho pessoal — conexão imediata com a dor do professor -->
         <p class="about-hook">
-          "Antes de criar esses materiais, eu era o professor que ficava nas madrugadas procurando um texto que fizesse sentido na realidade dos meus alunos. Quase nunca encontrava. Então comecei a escrever."
+          "Cresci ouvindo aboio de vaqueiro, repente de violeiro e cordel nas feiras do Cariri — e aprendi, desde pequeno, que a poesia não é enfeite. É a forma mais honesta de contar o mundo."
         </p>
-        <p class="about-lead">Poeta-pedagogo, cordelista e educador popular — com mais de uma década formando cidadãos nas escolas públicas do Ceará.</p>
+        <p class="about-lead">Poeta, cordelista, educador popular e memorialista cearense, com uma vida dedicada à luta antirracista, à justiça social e à valorização das culturas afro-brasileira, indígena e nordestina.</p>
         <div class="about-body">
-          <p>Natural de Abaiara, no coração do Cariri cearense, Leonardo cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.</p>
-          <p>Formado em Pedagogia com especialização voltada para comunidades quilombolas e negras, é um educador que caminha de mãos dadas com Paulo Freire e dança ao som dos tambores da ancestralidade.</p>
-          <p>Professor da rede municipal de Fortaleza, sua missão é fazer da educação uma experiência poética e transformadora — onde cada rima e verso abrem portas para um mundo mais inclusivo e consciente.</p>
+          <p>Natural de Abaiara, no Cariri cearense, Leonardo cresceu no meio rural em contato com a miscigenação de culturas portuguesa, indígena e africana que marca a vida abaiarense. Ouviu o aboio dos vaqueiros, o repente dos violeiros, a poesia de cordel, o reisado de congo, a dança do coco, o baião e o pífano com zabumba. Conviveu com ferreiros, carpinteiros, parteiras e rezadeiras — e com brincadeiras de infância que reconheceria, em estudos posteriores, como parte da herança afro-brasileira.</p>
+          <p>Na década de 1980, integrou-se às Comunidades Eclesiais de Base (CEBs), participando da fundação da CEB Frei Tito, na Favela da Fumaça, no Pici, em Fortaleza. Quando a Igreja progressista passou a sofrer perseguição, redirecionou sua militância para a Educação Popular, formando-se pelo Instituto Paulo Freire e tomando a Pedagogia do Oprimido como referência. Atuou junto a comunidades periféricas, indígenas, ciganas, quilombolas e negras, e foi um dos fundadores do Espaço Cultural Frei Tito de Alencar (ESCUTA), integrando redes de economia solidária e educação cidadã pelo Brasil.</p>
+          <p>Graduou-se em Pedagogia e concluiu pós-graduação em Formação de Professores de Comunidades Quilombolas, com ênfase em História e Cultura Africana e Afrodescendente, pela Universidade Federal do Ceará (UFC). Ingressou por concurso na Rede Municipal de Ensino de Fortaleza, onde atuou até se aposentar. Hoje é professor aposentado pelo INSS e pela Prefeitura, e permanece ativo como escritor, produtor cultural e educador popular — autor de mais de 20 obras entre cordéis, poesias, memórias e textos pedagógicos.</p>
+          <p>Foi nas CEBs que conheceu sua companheira, Lúcia Vasconcelos, educadora popular e missionária igualmente engajada. Juntos formaram uma família com três filhos: Leonardo Filho, professor, filósofo e psicanalista; Leandson, filósofo, professor mestre e escritor; e Luan, acadêmico de História.</p>
         </div>
         <div class="creds" role="list">
           <div class="cred" role="listitem">
+            <span class="cred-icon">🗺️</span>
+            <span class="cred-text">Natural de Abaiara, Cariri cearense — raízes na cultura nordestina, afro-brasileira e indígena</span>
+          </div>
+          <div class="cred" role="listitem">
             <span class="cred-icon">🎓</span>
-            <span class="cred-text">Pedagogo com especialização em educação quilombola e comunidades negras</span>
+            <span class="cred-text">Pedagogo — pós-graduação em Comunidades Quilombolas e Cultura Africana e Afrodescendente (UFC)</span>
           </div>
           <div class="cred" role="listitem">
             <span class="cred-icon">✍️</span>
-            <span class="cred-text">Membro fundador da Academia Afrocearense de Letras — AAFROCEL</span>
+            <span class="cred-text">Sócio fundador da AAFROCEL, Cadeira 06 — única academia afro de letras do Brasil</span>
+          </div>
+          <div class="cred" role="listitem">
+            <span class="cred-icon">📚</span>
+            <span class="cred-text">Membro da ACE, ALMECE, Academia Internacional de Literatura Brasileira e União Brasileira de Trovadores (UBT)</span>
           </div>
           <div class="cred" role="listitem">
             <span class="cred-icon">🏫</span>
-            <span class="cred-text">Professor ativo na rede municipal de Fortaleza há mais de 10 anos</span>
+            <span class="cred-text">Professor aposentado pela rede municipal de Fortaleza e pelo INSS — permanece ativo como educador popular e escritor</span>
           </div>
           <div class="cred" role="listitem">
-            <span class="cred-icon">📖</span>
-            <span class="cred-text">Autor de múltiplos cordéis e livros de poesia pedagógica</span>
+            <span class="cred-icon">🌱</span>
+            <span class="cred-text">Fundador do Espaço Cultural Frei Tito de Alencar (ESCUTA), Pici/Fortaleza — ex-gestor público e assessor parlamentar</span>
           </div>
         </div>
         <!-- RAFAEL MONTENEGRO: "Sobre" deve terminar abrindo caminho para a esteira -->
