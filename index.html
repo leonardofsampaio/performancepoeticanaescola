@@ -1,490 +1,1368 @@
 <!DOCTYPE html>
-<html  >
+<html lang="pt-BR">
 <head>
 
 <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1243155826763791');
-fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1243155826763791');fbq('track','PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FKYFE95NG8"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
+  window.dataLayer=window.dataLayer||[];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FKYFE95NG8');
+  gtag('js',new Date());gtag('config','G-FKYFE95NG8');
 </script>
 
-  <!-- Site made with Mobirise Website Builder v6.0.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v6.0.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/mbr-192x127.jpg" type="image/x-icon">
-  <meta name="description" content="Este é o espaço oficial de Leonardo Sampaio, poeta-pedagogo, educador da escola pública e defensor da arte como prática de liberdade.">
-  
-  
-  <title>Leonardo Sampaio</title>
-  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/parallax/jarallax.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=j1hm41"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=j1hm41" type="text/css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Material pedagógico criado por um educador da escola pública. Poemas, cordéis e propostas pedagógicas prontas para transformar suas aulas — alinhados à BNCC.">
+<title>Leonardo Sampaio — Poeta, Cordelista e Educador</title>
+<link rel="icon" href="assets/images/mbr-192x127.jpg" type="image/jpeg">
+<link rel="preload" as="image" href="assets/Feira%20do%20Cordel%20Brasileiro_Retratos_01082025_CCF_%C2%A9%20%C3%81lvaro%20Bravo%20J%C3%BAnior-053.jpg">
 
-  
-  
-  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ==============================================
+   TOKENS
+   Verde floresta · Dourado cordel · Terracota
+   Fraunces (literária) + Inter (corpo)
+============================================== */
+:root{
+  --g9:#0D2B16;--g8:#14421E;--g7:#1B5528;--g6:#226A33;--g1:#E8F5EC;
+  --d7:#9A6E04;--d5:#C8900A;--d4:#E0A820;--d1:#FFF6DC;
+  --c7:#8A3324;--c5:#B84934;--c1:#FCEAE6;
+  --w:#FFFFFF;--ow:#F7FAF7;
+  --gr1:#E6E9E5;--gr3:#C0C5BF;--gr5:#7A8579;--gr7:#4A5249;
+  --tx:#1A1E19;
+  --r4:4px;--r8:8px;--rm:14px;--rl:22px;--rf:100px;
+  --xs:0 1px 4px rgba(0,0,0,.06);
+  --sm:0 2px 10px rgba(0,0,0,.07);
+  --md:0 4px 22px rgba(0,0,0,.11);
+  --lg:0 8px 44px rgba(0,0,0,.15);
+  --ease:all .22s ease;
+  --nh:72px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--tx);background:var(--w);
+  line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block;object-fit:cover}
+a{text-decoration:none;color:inherit}
+ul,ol{list-style:none}
+button{cursor:pointer;background:none;border:none;padding:0}
+h1,h2,h3,h4,blockquote{font-family:'Fraunces',Georgia,serif;font-weight:700;line-height:1.18}
+h1{font-size:clamp(2.1rem,5vw,3.6rem)}
+h2{font-size:clamp(1.7rem,4vw,2.6rem)}
+h3{font-size:clamp(1.25rem,2.5vw,1.85rem)}
+h4{font-size:clamp(1rem,2vw,1.3rem)}
+p{font-size:1rem;line-height:1.75}
+
+/* Layout */
+.container{max-width:1160px;margin:0 auto;padding:0 1.5rem}
+.section{padding:5.5rem 0}
+.section-sm{padding:3.5rem 0}
+.section-alt{background:var(--ow)}
+.section-dark{background:var(--g9);color:var(--w)}
+
+/* Scroll-reveal — AGENTE 3 */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+
+/* Badges */
+.badge{display:inline-flex;align-items:center;gap:.4rem;font-size:.72rem;
+  font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.32rem .9rem;border-radius:var(--rf)}
+.bg{background:var(--g1);color:var(--g7)}
+.bd{background:var(--d1);color:var(--d7)}
+.bc{background:var(--c1);color:var(--c7)}
+.bw{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28)}
+.bdark{background:rgba(255,255,255,.1);color:rgba(255,255,255,.9)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:.85rem 2rem;border-radius:var(--r8);font-family:'Inter',sans-serif;
+  font-size:.95rem;font-weight:600;border:2px solid transparent;
+  transition:var(--ease);white-space:nowrap;cursor:pointer}
+.btn-primary{background:var(--g7);color:#fff;border-color:var(--g7)}
+.btn-primary:hover{background:var(--g8);border-color:var(--g8);
+  transform:translateY(-1px);box-shadow:var(--md)}
+.btn-gold{background:var(--d5);color:#fff;border-color:var(--d5)}
+.btn-gold:hover{background:var(--d7);border-color:var(--d7);
+  transform:translateY(-1px);box-shadow:var(--md)}
+.btn-ow{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn-ow:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.btn-og{background:transparent;color:var(--g7);border-color:var(--g7)}
+.btn-og:hover{background:var(--g7);color:#fff}
+.btn-clay{background:var(--c5);color:#fff;border-color:var(--c5)}
+.btn-clay:hover{background:var(--c7);transform:translateY(-1px)}
+.btn-lg{padding:1.1rem 2.6rem;font-size:1.05rem}
+.btn-sm{padding:.55rem 1.2rem;font-size:.83rem}
+.btn-full{width:100%;justify-content:center}
+
+/* ===================== NAVBAR ===================== */
+.navbar{position:sticky;top:0;z-index:1000;background:#fff;
+  border-bottom:1px solid var(--gr1);box-shadow:var(--xs)}
+.nb-inner{display:flex;align-items:center;justify-content:space-between;
+  height:var(--nh);gap:1.5rem}
+.nb-brand{display:flex;align-items:center;gap:.75rem;flex-shrink:0}
+.nb-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--g1)}
+.nb-name{font-family:'Fraunces',serif;font-size:1.15rem;font-weight:700;
+  color:var(--g8);white-space:nowrap}
+.nb-links{display:flex;align-items:center;gap:.1rem}
+.nb-link{font-size:.88rem;font-weight:500;color:var(--gr7);
+  padding:.48rem .78rem;border-radius:var(--r4);transition:var(--ease)}
+.nb-link:hover{color:var(--g7);background:var(--g1)}
+.nb-cta{margin-left:.5rem;flex-shrink:0}
+.hamburger{display:none;flex-direction:column;justify-content:space-between;
+  width:24px;height:17px}
+.hamburger span{display:block;width:100%;height:2px;background:var(--tx);
+  border-radius:2px;transition:var(--ease)}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mob-drawer{display:none;flex-direction:column;padding:1.25rem 1.5rem 1.75rem;
+  gap:.25rem;border-top:1px solid var(--gr1);background:#fff}
+.mob-drawer.open{display:flex}
+.mob-link{font-size:1rem;font-weight:500;color:var(--gr7);
+  padding:.8rem 0;border-bottom:1px solid var(--gr1);transition:var(--ease)}
+.mob-link:hover{color:var(--g7)}
+.mob-link:last-of-type{border-bottom:none}
+
+/* ===================== HERO ===================== */
+/* AGENTE 3: textura diagonal (papel artesanal/xilogravura) em vez de xadrez */
+.hero{background:linear-gradient(150deg,var(--g9) 0%,var(--g8) 55%,#163E20 100%);
+  color:#fff;padding:6rem 0 5rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;opacity:.08;
+  background-image:repeating-linear-gradient(-45deg,
+    rgba(255,255,255,.5) 0px,rgba(255,255,255,.5) 1px,
+    transparent 1px,transparent 14px)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;position:relative}
+.hero-badge{margin-bottom:1.4rem}
+.hero h1{color:#fff;margin-bottom:1.4rem}
+/* AGENTE 1: itálico em ouro para a palavra-chave emocional */
+.hero h1 em{font-style:italic;color:#F5C842}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.85);
+  line-height:1.8;margin-bottom:2.25rem;max-width:520px}
+/* AGENTE 1: gold = ação de compra (mais urgente), outline = scroll */
+.hero-ctas{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:2.25rem}
+.hero-trust{display:flex;align-items:center;gap:.65rem;
+  font-size:.86rem;color:rgba(255,255,255,.65)}
+.hero-trust-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.3)}
+.hero-media{position:relative}
+.hero-img{width:100%;max-width:400px;margin:0 auto;border-radius:var(--rl);
+  object-fit:cover;aspect-ratio:3/4;box-shadow:var(--lg);
+  border:3px solid rgba(255,255,255,.12)}
+.hero-qcard{position:absolute;bottom:-1rem;left:-1.5rem;right:1rem;
+  background:rgba(10,30,14,.9);backdrop-filter:blur(12px);
+  border-radius:var(--rm);padding:1.25rem 1.4rem;
+  border-left:4px solid #F5C842}
+.hero-qcard p{font-family:'Fraunces',serif;font-style:italic;
+  font-size:.93rem;color:rgba(255,255,255,.9);line-height:1.6;margin-bottom:.4rem}
+.hero-qcard cite{font-size:.78rem;color:#F5C842;font-style:normal;font-weight:600}
+
+/* ===================== PROOF BAR ===================== */
+.proof-bar{background:var(--g7);padding:1.1rem 0}
+.proof-items{display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:center;gap:2rem}
+.proof-item{display:flex;align-items:center;gap:.55rem;
+  font-size:.88rem;color:rgba(255,255,255,.92);font-weight:500}
+.proof-sep{width:1px;height:18px;background:rgba(255,255,255,.2)}
+
+/* AGENTE 2: stats bar com números reais de credibilidade */
+.stats-bar{background:var(--g9);padding:2.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.stats-row{display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:center;gap:0}
+.stat{text-align:center;padding:1rem 2.5rem;flex:1;min-width:140px}
+.stat-n{display:block;font-family:'Fraunces',serif;font-size:2.4rem;
+  font-weight:700;color:#F5C842;line-height:1}
+.stat-l{display:block;font-size:.82rem;color:rgba(255,255,255,.6);
+  margin-top:.35rem;text-transform:uppercase;letter-spacing:.06em}
+.stat-sep{width:1px;height:54px;background:rgba(255,255,255,.1);
+  align-self:center;flex-shrink:0}
+
+/* AGENTE 2: intro pessoal — o visitante é recebido por Leonardo antes da venda */
+.intro-section{background:var(--ow);border-bottom:1px solid var(--gr1)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;padding:4rem 0}
+.intro-saudacao{font-family:'Fraunces',serif;font-size:1.1rem;
+  color:var(--g6);font-style:italic;margin-bottom:1rem;font-weight:400}
+.intro-body p{color:var(--gr7);font-size:.97rem;margin-bottom:.9rem}
+.intro-body strong{color:var(--g8)}
+.intro-links{display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;
+  flex-wrap:wrap}
+.intro-link{font-size:.9rem;font-weight:600;color:var(--g7);
+  border-bottom:2px solid var(--g1);padding-bottom:.1rem;
+  transition:var(--ease)}
+.intro-link:hover{color:var(--g8);border-color:var(--g7)}
+.intro-link-sep{color:var(--gr3);font-size:.9rem}
+.intro-verse-wrap{display:flex;justify-content:center}
+.intro-verse{background:var(--w);border-radius:var(--rl);
+  padding:2.25rem 2rem;border:1px solid var(--gr1);
+  border-left:5px solid var(--d5);box-shadow:var(--sm);
+  position:relative;max-width:360px}
+.intro-verse-mark{font-family:'Fraunces',serif;font-size:4rem;
+  color:var(--d4);line-height:.8;display:block;margin-bottom:.5rem}
+.intro-verse p{font-family:'Fraunces',serif;font-style:italic;
+  font-size:1.08rem;line-height:1.7;color:var(--g8)}
+.intro-verse cite{display:block;margin-top:.85rem;font-size:.82rem;
+  color:var(--d7);font-style:normal;font-weight:600}
+
+/* ===================== SECTION HEADER ===================== */
+.sh{margin-bottom:3.5rem}
+.sh.c{text-align:center}
+.sh .eye{margin-bottom:1rem}
+.sh h2{margin-bottom:.9rem}
+.sh .lead{font-size:1.05rem;color:var(--gr5);line-height:1.7;max-width:580px}
+.sh.c .lead{margin:0 auto}
+
+/* ===================== PAIN ===================== */
+.pain-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.pain-list{display:flex;flex-direction:column;gap:.85rem;margin-top:1.5rem}
+.pain-item{display:flex;align-items:flex-start;gap:.9rem;
+  background:var(--c1);border-radius:var(--r8);
+  padding:1rem 1.2rem;border-left:3px solid var(--c5)}
+.pain-emoji{font-size:1.2rem;flex-shrink:0;margin-top:.05rem}
+.pain-text p{font-size:.93rem;color:var(--gr7);line-height:1.65}
+.pain-text strong{color:var(--c7)}
+.sol-card{background:var(--g1);border-radius:var(--rm);
+  padding:2rem 1.75rem;border:1px solid rgba(34,106,51,.18)}
+.sol-card h3{color:var(--g8);margin-bottom:1rem}
+.sol-card p{color:var(--gr7);font-size:.95rem}
+.sol-card p+p{margin-top:.85rem}
+
+/* ===================== PILARES ===================== */
+/* AGENTE 3: substituir emojis por ícones SVG consistentes */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.pillar{background:#fff;border-radius:var(--rm);padding:2.25rem 1.75rem;
+  border:1px solid var(--gr1);box-shadow:var(--xs);text-align:center;
+  transition:var(--ease)}
+.pillar:hover{transform:translateY(-5px);box-shadow:var(--md);border-color:var(--g1)}
+.pillar-icon{width:52px;height:52px;margin:0 auto 1.25rem;
+  color:var(--g7);stroke:currentColor;fill:none;stroke-width:1.8;
+  stroke-linecap:round;stroke-linejoin:round}
+.pillar h4{color:var(--g8);margin-bottom:.7rem}
+.pillar p{font-size:.9rem;color:var(--gr5);line-height:1.7}
+
+/* ===================== DOCUMENTARY ===================== */
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.doc-text h2{color:#fff;margin-bottom:1.1rem}
+.doc-text p{color:rgba(255,255,255,.8);font-size:.96rem;line-height:1.75}
+.doc-text p+p{margin-top:.85rem}
+.video-frame{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
+  border-radius:var(--rm);box-shadow:var(--lg);
+  border:2px solid rgba(255,255,255,.08)}
+.video-frame iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}
+
+/* ===================== PRODUCTS ===================== */
+.tier{margin-bottom:3rem}
+.tier-hd{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+.tier-lbl{font-size:.75rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--gr3);white-space:nowrap}
+.tier-rule{flex:1;height:1px;background:var(--gr1)}
+
+/* AGENTE 2: guia de entrada para o visitante perdido */
+.start-guide{background:var(--d1);border-radius:var(--rm);
+  padding:1.2rem 1.5rem;border:1px solid rgba(200,144,10,.2);
+  margin-bottom:2.5rem}
+.start-guide-inner{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.sg-text{flex:1;min-width:200px}
+.sg-text strong{font-size:.96rem;color:var(--g8);display:block;margin-bottom:.2rem}
+.sg-text span{font-size:.88rem;color:var(--gr7)}
+
+/* Featured card */
+.pf{display:grid;grid-template-columns:260px 1fr;gap:2.5rem;
+  background:linear-gradient(135deg,var(--g9) 0%,var(--g8) 100%);
+  border-radius:var(--rl);padding:2.5rem;box-shadow:var(--lg);
+  position:relative;overflow:hidden}
+.pf::after{content:'';position:absolute;top:-80px;right:-80px;
+  width:320px;height:320px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);
+  pointer-events:none}
+.pf-ribbon{position:absolute;top:1.4rem;right:1.4rem;
+  background:var(--d5);color:#fff;font-size:.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.06em;
+  padding:.3rem 1rem;border-radius:var(--rf)}
+.pf-cover{width:100%;aspect-ratio:2/3;object-fit:cover;
+  border-radius:var(--rm);box-shadow:var(--lg);
+  border:2px solid rgba(255,255,255,.1);transition:transform .3s ease}
+.pf:hover .pf-cover{transform:scale(1.02)}
+.pf-body h3{color:#fff;font-size:1.75rem;margin-bottom:.55rem}
+.pf-old{color:rgba(255,255,255,.45);text-decoration:line-through;font-size:.92rem;margin-bottom:.2rem}
+.pf-price{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:700;
+  color:#F5C842;line-height:1;margin-bottom:1.1rem}
+.pf-desc{color:rgba(255,255,255,.82);font-size:.95rem;line-height:1.72;margin-bottom:1.4rem}
+.pf-list{margin-bottom:1.75rem}
+.pf-list li{color:rgba(255,255,255,.85);font-size:.9rem;
+  padding:.35rem 0 .35rem 1.5rem;position:relative;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.pf-list li:last-child{border-bottom:none}
+.pf-list li::before{content:'✓';position:absolute;left:0;
+  color:#F5C842;font-weight:700}
+
+/* Grids */
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+
+/* Product card */
+.pc{background:#fff;border-radius:var(--rm);border:1px solid var(--gr1);
+  box-shadow:var(--xs);overflow:hidden;display:flex;flex-direction:column;
+  transition:var(--ease)}
+.pc:hover{transform:translateY(-5px);box-shadow:var(--md);border-color:var(--g1)}
+.pc-cw{overflow:hidden;flex-shrink:0}
+.pc-img{width:100%;aspect-ratio:2/3;object-fit:cover;
+  transition:transform .3s ease;display:block}
+.pc:hover .pc-img{transform:scale(1.04)}
+.pc-body{padding:1.2rem 1.15rem 1.3rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+.pc-title{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;
+  color:var(--g8);line-height:1.35}
+.pc-desc{font-size:.85rem;color:var(--gr5);line-height:1.65;flex:1}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;
+  gap:.5rem;margin-top:.4rem;padding-top:.9rem;border-top:1px solid var(--gr1)}
+.pc-price{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:700;color:var(--g7)}
+
+/* ===================== ABOUT ===================== */
+/* AGENTE 2: seção About reimaginada com gancho pessoal */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+.about-photo{width:100%;aspect-ratio:3/4;object-fit:cover;
+  border-radius:var(--rl);box-shadow:var(--lg)}
+.photo-cap{background:var(--g7);color:#fff;border-radius:var(--r8);
+  padding:1rem 1.25rem;margin-top:1.25rem;
+  font-size:.84rem;font-style:italic;color:rgba(255,255,255,.88)}
+/* AGENTE 1: gancho pessoal antes da bio formal */
+.about-hook{font-family:'Fraunces',serif;font-style:italic;font-size:1.15rem;
+  color:var(--g7);border-left:4px solid var(--d5);
+  padding:.75rem 1.2rem;margin-bottom:1.5rem;
+  background:var(--d1);border-radius:0 var(--r8) var(--r8) 0}
+.about-lead{font-size:1.1rem;font-weight:500;color:var(--g7);
+  margin-bottom:1.5rem;line-height:1.65}
+.about-body p{color:var(--gr7);font-size:.96rem;margin-bottom:.9rem}
+.creds{display:flex;flex-direction:column;gap:.75rem;margin-top:1.75rem}
+.cred{display:flex;align-items:flex-start;gap:.85rem;
+  background:var(--ow);border-radius:var(--r8);
+  padding:.85rem 1rem;border:1px solid var(--gr1)}
+.cred-icon{font-size:1.15rem;flex-shrink:0;margin-top:.05rem}
+.cred-text{font-size:.88rem;color:var(--gr7);line-height:1.55}
+
+/* ===================== QUOTE ===================== */
+.quote-section{background:var(--d1);border-top:4px solid var(--d4);
+  border-bottom:4px solid var(--d4);padding:5rem 0;text-align:center}
+.q-mark{font-size:5rem;color:var(--d4);line-height:.9;
+  font-family:'Fraunces',serif;display:block;margin-bottom:.5rem}
+.q-text{font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(1.4rem,3.5vw,2.1rem);line-height:1.5;
+  color:var(--g8);max-width:760px;margin:0 auto 1.5rem}
+.q-author{font-size:.95rem;color:var(--d7);font-weight:600;letter-spacing:.02em}
+
+/* ===================== GUARANTEE ===================== */
+.guar-wrap{max-width:820px;margin:0 auto}
+.guar-card{display:flex;gap:2rem;align-items:center;
+  background:#fff;border-radius:var(--rl);
+  border:2px solid var(--gr1);box-shadow:var(--xs);padding:2.75rem}
+.guar-icon{font-size:4.5rem;flex-shrink:0;line-height:1}
+.guar-title{font-size:1.5rem;color:var(--g8);margin-bottom:.75rem}
+.guar-body p{color:var(--gr5);font-size:.96rem}
+.guar-body p+p{margin-top:.75rem}
+.guar-hl{color:var(--g7)!important;font-weight:600!important;font-size:1.02rem!important}
+
+/* ===================== FAQ ===================== */
+.faq-grid{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:1rem}
+.faq-item{border:1px solid var(--gr1);border-radius:var(--r8);
+  background:#fff;overflow:hidden}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1.2rem 1.4rem;cursor:pointer;transition:var(--ease);
+  font-weight:600;font-size:.96rem;color:var(--g8)}
+.faq-q:hover{background:var(--ow)}
+.faq-ic{font-size:1.2rem;flex-shrink:0;transition:transform .22s ease;color:var(--gr5)}
+.faq-item.open .faq-ic{transform:rotate(45deg);color:var(--g7)}
+.faq-a{display:none;padding:0 1.4rem 1.3rem;
+  font-size:.93rem;color:var(--gr5);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q{color:var(--g7);background:var(--g1)}
+
+/* ===================== FINAL CTA ===================== */
+.cta-strip{background:linear-gradient(135deg,var(--g9),var(--g8));
+  padding:5rem 0;text-align:center;position:relative;overflow:hidden}
+.cta-strip::before{content:'';position:absolute;inset:0;opacity:.06;
+  background-image:repeating-linear-gradient(-45deg,
+    rgba(255,255,255,.5) 0px,rgba(255,255,255,.5) 1px,
+    transparent 1px,transparent 14px)}
+.cta-strip h2{color:#fff;margin-bottom:1rem;position:relative}
+.cta-strip p{color:rgba(255,255,255,.78);max-width:540px;
+  margin:0 auto 2rem;font-size:1.05rem;position:relative}
+.cta-btns{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:1rem;position:relative}
+
+/* ===================== SOCIAL ===================== */
+.social-section{padding:4rem 0}
+.social-grid{display:flex;flex-wrap:wrap;justify-content:center;
+  gap:1rem;margin-top:2.5rem}
+.social-link{display:flex;align-items:center;gap:.75rem;
+  background:#fff;border:1px solid var(--gr1);
+  border-radius:var(--rm);padding:.85rem 1.5rem;
+  transition:var(--ease);box-shadow:var(--xs);
+  font-weight:500;font-size:.93rem;color:var(--gr7)}
+.social-link:hover{border-color:var(--g6);color:var(--g7);
+  transform:translateY(-2px);box-shadow:var(--md)}
+.si{font-size:1.25rem}
+
+/* ===================== FOOTER ===================== */
+.footer{background:var(--tx);padding:0}
+.footer-verse{text-align:center;padding:2.5rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-verse p{font-family:'Fraunces',serif;font-style:italic;
+  font-size:.98rem;color:rgba(255,255,255,.55);line-height:1.9;
+  max-width:480px;margin:0 auto}
+.footer-verse p::before{content:'"';color:var(--d4);font-size:1.2rem}
+.footer-verse p::after{content:'"';color:var(--d4);font-size:1.2rem}
+.footer-base{padding:1.5rem 0}
+.footer-inner{display:flex;flex-wrap:wrap;align-items:center;
+  justify-content:space-between;gap:1.25rem}
+.footer-brand{display:flex;align-items:center;gap:.65rem}
+.footer-logo{width:34px;height:34px;border-radius:50%;object-fit:cover;
+  border:1px solid rgba(255,255,255,.15)}
+.footer-name{color:rgba(255,255,255,.9);font-family:'Fraunces',serif;font-size:1rem}
+.footer-links{display:flex;gap:1.5rem}
+.footer-link{font-size:.84rem;color:rgba(255,255,255,.45);transition:var(--ease)}
+.footer-link:hover{color:#fff}
+.footer-copy{font-size:.83rem;color:rgba(255,255,255,.4)}
+
+/* CTA fixo no mobile */
+.mob-sticky{display:none;position:fixed;bottom:0;left:0;right:0;
+  background:#fff;padding:1rem 1.25rem;
+  padding-bottom:calc(1rem + env(safe-area-inset-bottom,0px));
+  border-top:1px solid var(--gr1);box-shadow:0 -4px 20px rgba(0,0,0,.1);
+  z-index:998}
+
+/* ═══ RAFAEL MONTENEGRO — NOVOS COMPONENTES ═══ */
+
+/* Jornada esteira (mini path) */
+.ep-wrap{background:var(--ow);border-radius:var(--rm);border:1px solid var(--gr1);
+  padding:1.25rem 1.5rem;margin-bottom:2.5rem}
+.ep-label{font-size:.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:.07em;color:var(--gr5);margin-bottom:1rem;display:block}
+.ep-row{display:flex;align-items:center;gap:0;flex-wrap:nowrap;overflow-x:auto;
+  scrollbar-width:none;padding-bottom:.25rem}
+.ep-row::-webkit-scrollbar{display:none}
+.ep-step{text-align:center;padding:.6rem .9rem;border-radius:var(--r8);
+  flex-shrink:0;min-width:88px;transition:var(--ease)}
+.ep-step:hover{background:var(--g1)}
+.ep-step a{display:block;text-decoration:none}
+.ep-price{display:block;font-family:'Fraunces',serif;font-weight:700;
+  font-size:.95rem;color:var(--g7)}
+.ep-name{display:block;font-size:.72rem;color:var(--gr5);margin-top:.2rem;line-height:1.3}
+.ep-step.ep-top .ep-price{color:var(--d7)}
+.ep-step.ep-top{background:var(--d1);border:1.5px solid var(--d4)}
+.ep-arrow{color:var(--gr3);font-size:.85rem;flex-shrink:0;padding:0 .15rem;
+  line-height:1;margin-top:-.6rem}
+
+/* "Para quem é / não é" no produto featured */
+.pf-for-whom{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem}
+.fw-yes,.fw-no{font-size:.82rem;padding:.3rem .75rem;border-radius:var(--rf)}
+.fw-yes{background:rgba(255,255,255,.1);color:rgba(255,255,255,.85)}
+.fw-no{background:rgba(200,60,30,.25);color:rgba(255,200,180,.9)}
+
+/* About → Produtos transition */
+.about-trans{background:var(--g1);border-radius:var(--r8);
+  padding:1.25rem 1.5rem;margin-top:1.75rem;
+  border-left:4px solid var(--g7)}
+.about-trans p{font-size:.93rem;color:var(--g8);line-height:1.65}
+.about-trans a{color:var(--g7);font-weight:700;
+  border-bottom:2px solid var(--g1);transition:var(--ease)}
+.about-trans a:hover{border-color:var(--g7)}
+
+/* ===================== RESPONSIVE ===================== */
+@media(max-width:1024px){
+  .pillars-grid{grid-template-columns:repeat(2,1fr)}
+  .g3{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .pf{grid-template-columns:220px 1fr;gap:2rem;padding:2rem}
+  .pf-price{font-size:2.2rem}
+  .about-grid{gap:3rem}
+}
+@media(max-width:768px){
+  :root{--nh:64px}
+  .section{padding:4rem 0}
+  .section-sm{padding:2.75rem 0}
+  .nb-links,.nb-cta{display:none}
+  .hamburger{display:flex}
+  .hero{padding:4rem 0 3.5rem}
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-media{order:-1}
+  .hero-img{max-width:260px}
+  .hero-qcard{position:static;margin-top:.75rem}
+  .hero-sub{max-width:none;font-size:1rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn{width:100%}
+  .stats-row{gap:0}
+  .stat{padding:.85rem 1.5rem;min-width:130px}
+  .stat-n{font-size:2rem}
+  .intro-grid{grid-template-columns:1fr;gap:2.5rem;padding:3rem 0}
+  .intro-verse{max-width:100%}
+  .pain-grid{grid-template-columns:1fr;gap:2rem}
+  .pillars-grid{grid-template-columns:1fr}
+  .doc-grid{grid-template-columns:1fr;gap:2.5rem}
+  .pf{grid-template-columns:1fr}
+  .pf-cover{max-width:220px;margin:0 auto;aspect-ratio:2/3;width:100%;object-fit:cover}
+  .g2{grid-template-columns:1fr}
+  .g3{grid-template-columns:repeat(2,1fr)}
+  .about-grid{grid-template-columns:1fr;gap:2.5rem}
+  .guar-card{flex-direction:column;text-align:center;padding:2rem 1.5rem}
+  .footer-inner{flex-direction:column;text-align:center}
+  .footer-links{justify-content:center}
+  .proof-sep{display:none}
+  .proof-items{gap:1rem}
+  .mob-sticky{display:block}
+  body{padding-bottom:80px}
+  .start-guide-inner{flex-direction:column;align-items:flex-start;gap:.75rem}
+  .ep-step{min-width:76px;padding:.5rem .5rem}
+  .ep-price{font-size:.85rem}
+  .ep-name{font-size:.65rem}
+}
+@media(max-width:480px){
+  h1{font-size:1.9rem}
+  h2{font-size:1.55rem}
+  .g3{grid-template-columns:1fr}
+  .cta-btns{flex-direction:column}
+  .cta-btns .btn{width:100%}
+  .pf-price{font-size:2rem}
+  .social-grid{flex-direction:column;align-items:stretch}
+  .social-link{justify-content:center}
+  .stat-sep{display:none}
+}
+</style>
 </head>
 <body>
-  
-  <section data-bs-version="5.1" class="menu menu2 cid-uIy96lz5l2" once="menu" id="menu-5-uIy96lz5l2">
-	
 
-	<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-		<div class="container">
-			<div class="navbar-brand">
-				<span class="navbar-logo">
-					<a href="index.html#top">
-						<img src="assets/images/mbr-192x127.jpg" alt="Mobirise Website Builder" style="height: 4.3rem;">
-					</a>
-				</span>
-				<span class="navbar-caption-wrap"><a class="navbar-caption text-black text-primary display-4" href="index.html#top">Leonardo Sampaio</a></span>
-			</div>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-				<div class="hamburger">
-					<span></span>
-					<span></span>
-					<span></span>
-					<span></span>
-				</div>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-						<a class="nav-link link text-black text-primary display-4" href="index.html#article12-6">Sobre</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link link text-black text-primary display-4" href="index.html#follow-us-2-uIy96lC9bu" aria-expanded="false">Contato</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link link text-black text-primary display-4" href="https://leonardofsampaio.blogspot.com/" target="_blank">Blog</a>
-					</li><li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="index.html#article02-2" target="_blank">Autor</a></li></ul>
-				
-				<div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="index.html#pricing04-b" target="_blank">Coleção Tesouro Poético dos Professores Conscientes</a></div>
-			</div>
-		</div>
-	</nav>
-</section>
-
-<section data-bs-version="5.1" class="header09 startm5 cid-uLk4kwOoTw mbr-fullscreen" id="header09-7">	
-    
-	
-	
-	<div class="container-fluid">
-		<div class="row">
-			<div class="content-wrap col-12 col-md-8">
-				<h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1"><strong>Transforme a experiência em sala de aula através da poesia e da cultura popular!&nbsp;</strong></h1>
-				
-				<p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">
-					Desperte nos alunos pertencimento, criatividade e consciência social, com um material nascido da prática educativa real.
-				</p>
-				
-			</div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="header13 cid-uNi3HMn65y" id="header13-g">
-  
-
-  
-  
-
-  <div class="align-center container">
-    <div class="row justify-content-center">
-      <div class="col-md-12 mb-5 content-head">
-        <h1 class="mbr-section-title mbr-fonts-style display-1">
-          <strong>Coleção Tesouro Poético dos Professores Conscientes</strong></h1>
-        
-        <div class="mbr-section-btn mt-4"><a class="btn btn-primary display-7" href="https://pay.kiwify.com.br/ZP2vT08" target="_blank">SIM, QUERO ESTE PODEROSO MATERIAL PEDAGÓGICO!</a></div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-8">
-        <img src="assets/images/coleo.png-1010x449.png" alt="Mobirise Website Builder" title="">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="header13 cid-uLjQ1yfWR9" id="header13-4">
-  
-
-  
-  
-
-  <div class="align-center container">
-    <div class="row justify-content-center">
-      <div class="col-md-12 mb-5 content-head">
-        <h1 class="mbr-section-title mbr-fonts-style display-1"><strong>BNCC + Cultura negra: esse combo transforma!</strong></h1>
-        <p class="mbr-text mbr-fonts-style mt-4 display-7">Ensinar é mais do que transmitir conteúdo. É preciso tocar, escutar, pertencer. Poesia é palavra viva, é memória pulsando dentro da educação.<br>Esse material nasce do chão da escola e caminha junto com quem educa de verdade.<br><br>Conheça os livros de poesias que nasceram da vivência real de um professor em sala, com textos que dialogam com a escola, com os alunos e com os temas que atravessam o cotidiano de quem ensina.<br>
-<br>Poemas, cordéis e trovas escritos por um educador, que já foram usados por colegas em datas comemorativas, rodas de leitura, feiras culturais e momentos pedagógicos cheios de significado.
-<br>
-<br></p>
-        <div class="mbr-section-btn mt-4"><a class="btn btn-primary display-7" href="https://pay.kiwify.com.br/ZP2vT08" target="_blank">QUERO FAZER PARTE DISSO!</a></div>
-      </div>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-12 col-md-7">
-        <img src="assets/images/vai-1080-x-1200-px-1.png-1080x1200.png" alt="Mobirise Website Builder" title="">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="header12 cid-uNi01PjVMh" id="header12-f">
-  
-  
-
-  <div class="text-center container-fluid">
-    <div class="row mb-4 justify-content-center">
-      <div class="col-12 col-md-9">
-        <img class="w-100" src="assets/images/7.png-1025x867.png" alt="Mobirise Website Builder">
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-12 content-head">
-        
-        <p class="mbr-text mbr-fonts-style mb-4 display-7">1 Ebook: <br>Performance Poética na Escola<br>5 Cordéis:<br>Pobre não pode ter voz<br>A negra que não podia ser anjo<br>Consequência do voto<br>Religiões do mundo<br>Lendas, racismo e brincadeiras africanas<br><br>Cada cordel com uma proposta pedagogica com as normas da BNCC.<br>Um roteiro de peça de teatro baseado no cordel "A negra que não podia ser anjo"<br>Um Kit Poético Interdisciplinar - Língua Portuguesa, Historia e Artes em Cordel.<br>Um Caderno de atividades para estudantes.</p>
-        
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="article07 cid-uLk5FAHDcV" id="article07-8">
-  
-
-  
-  
+<!-- ═══════════ NAVBAR ═══════════ -->
+<header class="navbar" id="topo">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="card col-md-12 col-lg-10">
-        <div class="card-wrapper">
-          <h3 class="card-title mbr-fonts-style mbr-white mt-3 mb-4 display-2">
-            <strong>Educar com arte!</strong></h3>
-          <div class="row card-box align-left">
-            <div class="item features-without-image col-12">
-              <div class="item-wrapper">
-                
-                <p class="mbr-text mbr-fonts-style display-7">
-                  Muitos educadores tentam inovar usando materiais genéricos, desconectados da realidade dos alunos. Projetos rasos, datas comemorativas sem significado real, atividades frias que não despertam emoção. O ensino se torna mais uma obrigatoriedade sem alma.
-                </p>
-              </div>
-            </div>
-            <div class="item features-without-image col-12">
-              <div class="item-wrapper">
-                
-                <p class="mbr-text mbr-fonts-style display-7">
-                  O que funciona é levar para a sala de aula textos vivos, que dialogam com a cultura, a identidade e as emoções dos estudantes. Um material que foi criado dentro da escola, feito para educadores que vivem a educação real.
-                </p>
-              </div>
-            </div>
-            <div class="item features-without-image col-12">
-              <div class="item-wrapper">
-                
-                <p class="mbr-text mbr-fonts-style display-7">
-                  A coleção Tesouro Poético dos Professores Conscientes contém poesias, cordéis e trovas desenvolvidos a partir da experiência do autor em sala de aula. Cada poema foi escrito como resposta a uma necessidade real do cotidiano escolar: celebrar datas importantes, estimular a reflexão, incluir as vozes diversas da comunidade escolar.
-                </p>
-              </div>
-            </div>
-            <div class="item features-without-image col-12">
-              <div class="item-wrapper">
-                
-                <p class="mbr-text mbr-fonts-style display-7">Professores que usam arte em suas aulas não são apenas transmissores de conhecimento: são criadores de experiências que os alunos levam para a vida inteira. São reconhecidos, celebrados e lembrados. Criam salas de aula que respiram cultura, afeto e pertencimento.<br></p>
-              </div>
+    <div class="nb-inner">
+      <a href="#topo" class="nb-brand">
+        <img src="assets/images/mbr-192x127.jpg" alt="Logo Leonardo Sampaio" class="nb-logo">
+        <span class="nb-name">Leonardo Sampaio</span>
+      </a>
+      <nav class="nb-links" aria-label="Menu principal">
+        <a href="#sobre" class="nb-link">Sobre</a>
+        <a href="#materiais" class="nb-link">Produtos</a>
+        <a href="#documentario" class="nb-link">Conteúdo</a>
+        <a href="https://leonardofsampaio.blogspot.com/" target="_blank" rel="noopener" class="nb-link">Blog</a>
+        <a href="#contato" class="nb-link">Contato</a>
+      </nav>
+      <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+         class="btn btn-gold btn-sm nb-cta">Ver Coleção →</a>
+      <button class="hamburger" id="hambBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mob-drawer" id="mobDrawer" aria-label="Menu mobile">
+    <a href="#sobre" class="mob-link">Sobre</a>
+    <a href="#materiais" class="mob-link">Produtos</a>
+    <a href="#documentario" class="mob-link">Conteúdo</a>
+    <a href="https://leonardofsampaio.blogspot.com/" target="_blank" rel="noopener" class="mob-link">Blog</a>
+    <a href="#contato" class="mob-link">Contato</a>
+    <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+       class="btn btn-gold btn-full" style="margin-top:.75rem">Ver Coleção Completa →</a>
+  </nav>
+</header>
+
+
+<!-- ═══════════ HERO ═══════════ -->
+<!-- AGENTE 1: H1 centrado no professor, não no produto -->
+<section class="hero" aria-label="Apresentação">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">
+          <span class="badge bw">📚 Material criado dentro da escola pública</span>
+        </div>
+        <h1>Professor(a): quando o texto certo aparece, até o aluno mais distante <em>se conecta</em></h1>
+        <p class="hero-sub">
+          Poemas, cordéis e propostas pedagógicas prontas para usar amanhã — escritos por um professor da rede pública que passou anos procurando exatamente esses materiais, e que decidiu criá-los.
+        </p>
+        <!-- AGENTE 1: ouro = ação de compra (primária); outline = scroll (secundária) -->
+        <div class="hero-ctas">
+          <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+             class="btn btn-gold btn-lg">Ver Coleção Completa →</a>
+          <a href="#materiais" class="btn btn-ow btn-lg">Explorar os materiais ↓</a>
+        </div>
+        <div class="hero-trust">
+          <span>✅ Alinhado à BNCC</span>
+          <span class="hero-trust-dot"></span>
+          <span>⚡ Entrega imediata</span>
+          <span class="hero-trust-dot"></span>
+          <span>🛡️ Garantia 7 dias</span>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/Feira%20do%20Cordel%20Brasileiro_Retratos_01082025_CCF_%C2%A9%20%C3%81lvaro%20Bravo%20J%C3%BAnior-053.jpg"
+             alt="Leonardo Sampaio na Feira do Cordel Brasileiro"
+             class="hero-img" loading="eager">
+        <div class="hero-qcard">
+          <p>"Ler a vida, ler o mundo, é mesmo que viajar — conhecer como ele é, é permitir enxergar."</p>
+          <cite>— Leonardo Sampaio</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PROOF BAR ═══════════ -->
+<div class="proof-bar" role="complementary">
+  <div class="container">
+    <div class="proof-items">
+      <div class="proof-item"><span>🎓</span><span>Criado por professor em atividade</span></div>
+      <div class="proof-sep" aria-hidden="true"></div>
+      <div class="proof-item"><span>📋</span><span>Propostas pedagógicas com BNCC</span></div>
+      <div class="proof-sep" aria-hidden="true"></div>
+      <div class="proof-item"><span>🌍</span><span>Escolas em todo o Brasil</span></div>
+      <div class="proof-sep" aria-hidden="true"></div>
+      <div class="proof-item"><span>🔁</span><span>Garantia de 7 dias</span></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ STATS (AGENTE 2) ═══════════ -->
+<div class="stats-bar" aria-label="Números do autor">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat reveal">
+        <span class="stat-n">10+</span>
+        <span class="stat-l">anos de magistério</span>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat reveal reveal-d1">
+        <span class="stat-n">8</span>
+        <span class="stat-l">obras publicadas</span>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat reveal reveal-d2">
+        <span class="stat-n">5</span>
+        <span class="stat-l">cordéis autorais</span>
+      </div>
+      <div class="stat-sep" aria-hidden="true"></div>
+      <div class="stat reveal reveal-d3">
+        <span class="stat-n">Brasil</span>
+        <span class="stat-l">escolas de todo o país</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════ INTRO PESSOAL (AGENTE 2 — seção nova) ═══════════ -->
+<section class="intro-section" aria-labelledby="intro-heading">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-body reveal">
+        <p class="intro-saudacao">Olá, professor(a).</p>
+        <h2 id="intro-heading" style="margin-bottom:1.1rem">Bem-vindo(a) ao meu espaço</h2>
+        <p>Eu me chamo Leonardo — sou poeta, cordelista e professor da rede pública municipal de Fortaleza há mais de uma década. Aqui você encontra tudo que criei ao longo dos anos dentro e fora da sala de aula.</p>
+        <p>Aprendi que <strong>poesia não é enfeite de aula</strong>. É a ferramenta mais poderosa para despertar atenção, criar pertencimento e fazer um aluno sentir que a escola existe para ele.</p>
+        <p>Estes materiais nasceram porque eu precisava deles. E agora quero que sejam seus também.</p>
+        <div class="intro-links">
+          <a href="#materiais" class="intro-link">Ver os materiais</a>
+          <span class="intro-link-sep">·</span>
+          <a href="#sobre" class="intro-link">Minha história</a>
+          <span class="intro-link-sep">·</span>
+          <a href="https://leonardofsampaio.blogspot.com/" target="_blank" rel="noopener" class="intro-link">Blog</a>
+          <span class="intro-link-sep">·</span>
+          <a href="#documentario" class="intro-link">Documentário</a>
+        </div>
+      </div>
+      <div class="intro-verse-wrap reveal reveal-d2">
+        <div class="intro-verse">
+          <span class="intro-verse-mark" aria-hidden="true">"</span>
+          <p>Com palavras que ensinam<br>
+             e com arte que transforma,<br>
+             a escola vira poesia<br>
+             e a poesia reforma.</p>
+          <cite>— Leonardo Sampaio</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ PROBLEMA / DOR ═══════════ -->
+<section class="section" aria-labelledby="pain-heading">
+  <div class="container">
+    <div class="pain-grid">
+      <div>
+        <span class="badge bc" style="margin-bottom:1rem">😓 Reconhece esse cenário?</span>
+        <h2 id="pain-heading">Você já se sentiu assim?</h2>
+        <div class="pain-list">
+          <div class="pain-item reveal">
+            <span class="pain-emoji" aria-hidden="true">📅</span>
+            <div class="pain-text">
+              <p><strong>Chega segunda-feira</strong> e o livro didático não inspira ninguém — nem você, nem seus alunos. Você sente que está só cumprindo protocolo.</p>
             </div>
           </div>
-          <div class="mbr-section-btn"><a class="btn btn-success display-7" href="https://pay.kiwify.com.br/ZP2vT08" target="_blank">QUERO AGORA!</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="article12 cid-uLjThGOaZf" id="article12-6">    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2"><strong>Sobre o conteúdo:</strong></h3>
-                
-                <p class="mbr-text mbr-fonts-style display-7">Performance Poética na Escola é um livro digital com mais de 190 páginas de poesias criadas ao longo de anos de experiência em escolas públicas. As temáticas vão da Consciência Negra ao Dia da Mulher, do Carnaval ao Dia do Índio, passando por Direitos Humanos, cultura popular, identidade, memória e cotidiano.<br>
-<br>O livro se destaca por sua abordagem acessível e criativa, ideal para professores que buscam inovar em sala de aula, educadores populares, e amantes da literatura brasileira. Com textos que vão da emoção ao humor, da crítica social à celebração das raízes culturais, Performance Poética na Escola é um convite para transformar o aprendizado em uma verdadeira experiência artística.<br>
-<br>◉ Poemas prontos para usar em datas comemorativas ou projetos escolares, sem precisar reinventar a roda.<br>
-<br>◉ Um só livro, várias possibilidades de uso ao longo do ano letivo.<br>
-<br>◉ Pode ser aplicado ainda hoje em sala, sem preparação complexa.
-<br><br>◉ Educadores relatam que foram reconhecidos por projetos a partir desses textos.<br>
-<br>◉ Uma educação com mais arte, escuta e emoção — sem perder tempo.<br>
-<br>◉ Chega de materiais genéricos que não conversam com a realidade da escola.
-<br><br>◉ Enquanto muitos ainda buscam conteúdo, alguns já encantam com poesia.<br>
-<br><strong>Destaques da Obra:</strong><br>Poemas e cordéis que estimulam a leitura e o pensamento crítico.
-<br>
-<br>Reflexões sobre inclusão, racismo, ancestralidade e cidadania.
-<br>
-<br>﻿﻿﻿﻿﻿﻿﻿﻿Ilustrações feitas por crianças, que enriquecem a obra com um toque autêntico e criativo.</p>
+          <div class="pain-item reveal reveal-d1">
+            <span class="pain-emoji" aria-hidden="true">🔍</span>
+            <div class="pain-text">
+              <p><strong>Gasta horas pesquisando</strong> no Google materiais que precisam de tanta adaptação que acaba sendo mais fácil não usar nada.</p>
             </div>
-        </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="pricing04 startm5 cid-uLk98rtffZ" id="pricing04-b">
-  
-  
-  
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-4">
-        <div class="col-12 col-md-12">
-          <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2"><strong>Esta oferta pode terminar em breve.</strong></h5>
-          <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">📩 Entrega digital imediata.<div>&nbsp;💳 Garantia de 7 dias ou seu dinheiro de volta.</div></h6>
-         
-        </div>
-      </div>
-
-      <div class="col-lg-8 side-features">
-        
-        <div class="item features-without-image col-12 col-md-6 col-lg-6 item-mb active">
-          <div class="item-wrapper">
-            <div class="item-head">
-              <h5 class="item-title mbr-fonts-style mb-0 display-7"><em>De R$ 97,70 por apenas</em></h5>
-              <h6 class="item-subtitle mbr-fonts-style mb-0 display-2"><strong>R$ 67,70!</strong></h6>
+          </div>
+          <div class="pain-item reveal reveal-d2">
+            <span class="pain-emoji" aria-hidden="true">🗓️</span>
+            <div class="pain-text">
+              <p><strong>Datas comemorativas chegam</strong> — Consciência Negra, Dia da Mulher, Dia dos Povos Indígenas — e falta um texto que realmente conecte com seus alunos.</p>
             </div>
-            <div class="item-content">
-              <p class="mbr-text mbr-fonts-style display-7">- O Ebook Performance Poética na Escola: 190 páginas de poesias criadas ao longo de anos de experiência em escolas públicas.<br>- 5 cordéis transformadores.<br><br><strong>Bônus</strong>:<br>- Uma proposta pedagógica para cada cordel contendo os códigos da BNCC.<br>- Um roteiro teatral completo sobre o cordel “A negra que não podia ser anjo” para aplicar em sala ou evento.<br>- Kit Poético Interdisciplinar - Língua Portuguesa, Historia e Artes em Cordel<br>- CADERNO DE ATIVIDADES PARA ESTUDANTES<br>- Frases-Poema para Começar Aulas com Reflexão<br></p>
-              
-              
+          </div>
+          <div class="pain-item reveal reveal-d3">
+            <span class="pain-emoji" aria-hidden="true">😶</span>
+            <div class="pain-text">
+              <p><strong>Seus alunos parecem ausentes:</strong> os corpos estão presentes, mas a atenção e o interesse fugiram pela janela há muito tempo.</p>
             </div>
-            <div class="mbr-section-btn item-footer"><a href="https://pay.kiwify.com.br/ZP2vT08" class="btn item-btn btn-success display-7" target="_blank">QUERO LER AGORA!</a></div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section data-bs-version="5.1" class="article12 cid-uLk70FY058" id="article12-9">    
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2"><strong>COMO FUNCIONA A ENTREGA:</strong></h3>
-                
-                <p class="mbr-text mbr-fonts-style display-7">Após a compra, o ebook é liberado para download imediato. Pode ser lido no celular, tablet, computador ou impresso e distribuído entre os alunos com facilidade.</p>
-            </div>
+      <div class="reveal">
+        <div class="sol-card">
+          <span class="badge bg" style="margin-bottom:1rem">✨ A solução que você procurava</span>
+          <h3>Material que nasce de quem vive a escola de verdade</h3>
+          <p>Leonardo Sampaio não escreveu esses materiais num escritório. Escreveu em resposta direta às necessidades que viveu como professor da rede pública — porque a escola real exigia soluções reais.</p>
+          <p>Poemas e cordéis que <strong>seus alunos ouvem, sentem e lembram</strong> — porque falam da vida deles, da cultura deles e da identidade deles.</p>
+          <p style="color:var(--g7);font-weight:500">Você baixa hoje. Usa amanhã. Sem horas de preparo, sem adaptação complexa.</p>
+          <a href="#materiais" class="btn btn-primary" style="margin-top:1.5rem">Ver os materiais pedagógicos →</a>
         </div>
-    </div>
-</section>
-
-<section data-bs-version="5.1" class="header10 cid-uLkcwb064w" id="header10-d">
-	
-
-	
-	
-
-	<div class="text-center container">
-	  <div class="row justify-content-center">
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-md-12 content-text mb-5">
-				<h5 class="mbr-section-title mbr-fonts-style display-1"><strong>Documentário: 
-</strong><div><strong>﻿Performance poética na escola</strong></div></h5>
-				<p class="mbr-text mbr-fonts-style mt-4 display-7">
-					Um documentário que mergulha na experiência única de educadores e alunos ao explorarem a poesia como ferramenta de ensino. Acompanhe como o livro de Leonardo Sampaio inspira salas de aula pelo Brasil, unindo cordéis, trovas e cultura popular para promover cidadania, inclusão e aprendizado criativo. Descubra histórias emocionantes de transformação e o poder da arte na construção de um ensino mais humano e libertador.
-				</p>
-				
-
-			</div>
-			<div class="mbr-figure col-12 col-md-9"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/rMp6um_TeVE?rel=0&amp;amp;&amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="start article2 cid-uIynftSJR7" id="article02-2">
-	
-
-	
-	
-
-	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-12 col-md-12 col-lg-6 image-wrapper">
-				<img class="w-100" src="assets/images/whatsapp-image-2024-10-14-at-21.20.02.jpeg-867x1156.jpg" alt="Mobirise Website Builder">
-			</div>
-			<div class="col-12 col-md-12 col-lg">
-				<div class="text-wrapper align-left">
-					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Leonardo Sampaio</strong></h1>
-					<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">Leonardo Sampaio é um verdadeiro artesão da palavra e da educação, um poeta-pedagogo que transforma salas de aula em palcos e livros em atos de resistência cultural. Natural de Abaiara, no coração do Cariri cearense, cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.
-<br>
-<br>Formado em Pedagogia e com uma especialização focada em comunidades quilombolas e negras, Leonardo é um educador que caminha de mãos dadas com Paulo Freire e dança ao som dos tambores da ancestralidade. É também membro fundador da Academia Afrocearense de Letras (AAFROCEL).
-<br>
-<br>Com mais de uma década no magistério, sua jornada une o formal e o popular, o lírico e o didático. Leonardo atua como professor da rede municipal de Fortaleza, mas não se engane: ele é muito mais do que um profissional de lousa e giz. Sua missão é fazer da educação uma experiência poética e transformadora, onde cada rima e verso abrem portas para um mundo mais inclusivo e consciente.
-<br>
-<br>Com Leonardo Sampaio, a palavra vira ação, o poema vira inspiração, e a sala de aula... bem, essa vira uma verdadeira festa de cordel e cidadania!</p>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section data-bs-version="5.1" class="header18 cid-uIy96lzb5J mbr-fullscreen mbr-parallax-background" id="hero-15-uIy96lzb5J">
-  
-
-  <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(0, 0, 0);"></div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="content-wrap col-12 col-md-12">
-        
-        
-        <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">A foto é no Sitio Gangorra, onde morei e cresci durante minha infância, o fotografo é o meu irmão, Savio Sampaio.</p>
-        
       </div>
     </div>
   </div>
 </section>
 
-<section data-bs-version="5.1" class="article14 cid-uIy96lAERv" id="generic-text-11-uIy96lAERv">
-    
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-10">
-                <h3 class="mbr-section-title mbr-fonts-style display-2">
-                    <strong>"Ler a vida, ler o mundo</strong><br><strong>É mesmo que viajar</strong><br><strong>Conhecer como ele é</strong><br><strong>É permitir enxergar</strong><br><strong>Ciência e a natureza</strong><br><strong>É conhecer outro lugar"</strong></h3>
-                <p class="mbr-section-subtitle mbr-fonts-style mt-4 display-7">Leonardo Sampaio</p>
-            </div>
-        </div>
+
+<!-- ═══════════ PILARES ═══════════ -->
+<!-- AGENTE 3: ícones SVG inline substituem emojis genéricos -->
+<section class="section section-alt" aria-labelledby="pillars-heading">
+  <div class="container">
+    <div class="sh c">
+      <div class="eye"><span class="badge bg">O diferencial</span></div>
+      <h2 id="pillars-heading">Por que esses materiais funcionam?</h2>
+      <p class="lead">Três razões pelas quais educadores de todo o Brasil escolhem esses materiais em vez dos genéricos.</p>
     </div>
+    <div class="pillars-grid">
+
+      <div class="pillar reveal">
+        <svg class="pillar-icon" viewBox="0 0 52 52" aria-hidden="true">
+          <path d="M26 6L6 22v24h12V32h16v14h12V22z"/>
+          <path d="M22 46V32h8v14"/>
+          <rect x="20" y="14" width="12" height="10" rx="1"/>
+        </svg>
+        <h4>Nasceu dentro da escola</h4>
+        <p>Cada texto foi escrito por um professor em atividade, como resposta a situações reais da sala de aula pública — não por uma editora distante da realidade.</p>
+      </div>
+
+      <div class="pillar reveal reveal-d1">
+        <svg class="pillar-icon" viewBox="0 0 52 52" aria-hidden="true">
+          <rect x="12" y="4" width="28" height="44" rx="3"/>
+          <path d="M20 20l4 4 8-8"/>
+          <line x1="20" y1="32" x2="32" y2="32"/>
+          <line x1="20" y1="38" x2="28" y2="38"/>
+        </svg>
+        <h4>Alinhado à BNCC</h4>
+        <p>As propostas pedagógicas incluem os códigos de habilidades da Base Nacional Curricular Comum, prontas para usar sem precisar construir do zero.</p>
+      </div>
+
+      <div class="pillar reveal reveal-d2">
+        <svg class="pillar-icon" viewBox="0 0 52 52" aria-hidden="true">
+          <path d="M30 6L14 28h14L22 46l16-22H24z"/>
+        </svg>
+        <h4>Aplique amanhã</h4>
+        <p>Baixe hoje, use amanhã. Cordéis, poemas e roteiros prontos para leitura, encenação, projeto interdisciplinar ou datas comemorativas — sem horas de preparo.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section data-bs-version="5.1" class="social05 cid-uIy96lC9bu" id="follow-us-2-uIy96lC9bu">
-    
 
-    
-
-    <div class="container">
-        <div class="row">
-            <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
-                <strong>Siga Leonardo Sampaio</strong>
-            </h3>
-            <div class="col-12">
-                <div class="social-row">
-                    <div class="soc-item">
-                        <a href="https://www.facebook.com/profile.php?id=61571357654332" target="_blank">
-                            <span class="mbr-iconfont socicon-facebook socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="http://wa.me/558585010330" target="_blank">
-                            <span class="mbr-iconfont socicon-whatsapp socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://www.instagram.com/leonardo.poetaeducador/" target="_blank">
-                            <span class="mbr-iconfont socicon-instagram socicon"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://www.youtube.com/@leonardofsampaio" target="_blank">
-                            <span class="mbr-iconfont mobi-mbri-video-play mobi-mbri"></span>
-                        </a>
-                    </div>
-                    <div class="soc-item">
-                        <a href="https://leonardofsampaio.blogspot.com/" target="_blank">
-                            <span class="mbr-iconfont socicon-blogger socicon"></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+<!-- ═══════════ DOCUMENTÁRIO ═══════════ -->
+<section class="section section-dark" id="documentario" aria-labelledby="doc-heading">
+  <div class="container">
+    <div class="doc-grid">
+      <div class="reveal">
+        <span class="badge bdark" style="margin-bottom:1.25rem">🎬 Documentário</span>
+        <h2 id="doc-heading">Performance Poética na Escola</h2>
+        <p>Um documentário que mergulha na experiência única de educadores e alunos ao explorarem a poesia como ferramenta de ensino e transformação humana.</p>
+        <p>Acompanhe como o trabalho de Leonardo inspira salas de aula pelo Brasil — unindo cordéis, trovas e cultura popular para promover cidadania, inclusão e aprendizado criativo.</p>
+        <p>Histórias reais de professores(as) que encontraram na poesia o caminho para um ensino mais humano e libertador.</p>
+        <a href="https://www.youtube.com/watch?v=rMp6um_TeVE" target="_blank" rel="noopener"
+           class="btn btn-ow" style="margin-top:1.5rem">Assistir no YouTube →</a>
+      </div>
+      <div class="reveal reveal-d1">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/rMp6um_TeVE?rel=0&showinfo=0"
+                  allowfullscreen loading="lazy"
+                  title="Documentário: Performance Poética na Escola"></iframe>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
-<section data-bs-version="5.1" class="footer3 cid-uIy96lCVtJ" once="footers" id="footer-6-uIy96lCVtJ">
 
+<!-- ═══════════ PRODUTOS / ESTEIRA ═══════════ -->
+<section class="section" id="materiais" aria-labelledby="products-heading">
+  <div class="container">
+    <div class="sh c">
+      <div class="eye"><span class="badge bg">📦 Esteira de materiais pedagógicos</span></div>
+      <h2 id="products-heading">Escolha onde começar</h2>
+      <p class="lead">De uma entrada acessível ao kit mais completo para o ano letivo inteiro. Entrega digital imediata e garantia de 7 dias em todos.</p>
+    </div>
+
+    <!-- RAFAEL MONTENEGRO: esteira como jornada, não lista -->
+    <div class="ep-wrap reveal">
+      <span class="ep-label">📍 Sua jornada de aprendizado — comece onde faz sentido agora</span>
+      <div class="ep-row" role="list">
+        <div class="ep-step" role="listitem">
+          <a href="https://pay.kiwify.com.br/sjQRqu9" target="_blank" rel="noopener">
+            <span class="ep-price">R$5,70</span>
+            <span class="ep-name">Cordéis individuais</span>
+          </a>
+        </div>
+        <span class="ep-arrow" aria-hidden="true">›</span>
+        <div class="ep-step" role="listitem">
+          <a href="https://pay.kiwify.com.br/90lBhmV" target="_blank" rel="noopener">
+            <span class="ep-price">R$9–19</span>
+            <span class="ep-name">Cordél + pedagogia</span>
+          </a>
+        </div>
+        <span class="ep-arrow" aria-hidden="true">›</span>
+        <div class="ep-step" role="listitem">
+          <a href="https://pay.kiwify.com.br/IdXCsnh" target="_blank" rel="noopener">
+            <span class="ep-price">R$29,70</span>
+            <span class="ep-name">Livro digital</span>
+          </a>
+        </div>
+        <span class="ep-arrow" aria-hidden="true">›</span>
+        <div class="ep-step" role="listitem">
+          <a href="https://pay.kiwify.com.br/ciKNz3R" target="_blank" rel="noopener">
+            <span class="ep-price">R$37,70</span>
+            <span class="ep-name">Kit intermediário</span>
+          </a>
+        </div>
+        <span class="ep-arrow" aria-hidden="true">›</span>
+        <div class="ep-step ep-top" role="listitem">
+          <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener">
+            <span class="ep-price">R$67,70 ★</span>
+            <span class="ep-name">Coleção completa</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAFAEL: guia de orientação para o visitante que não sabe por onde começar -->
+    <div class="start-guide reveal">
+      <div class="start-guide-inner">
+        <span style="font-size:1.5rem" aria-hidden="true">🤔</span>
+        <div class="sg-text">
+          <strong>Nunca conheceu o trabalho do Leonardo?</strong>
+          <span>Comece por um cordel individual (R$5,70) — baixo risco, alto impacto, entrega imediata.</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/sjQRqu9" target="_blank" rel="noopener"
+           class="btn btn-og btn-sm">Começar por aqui →</a>
+      </div>
+    </div>
+
+    <!-- DESTAQUE -->
+    <div class="tier">
+      <div class="tier-hd" aria-hidden="true">
+        <span class="tier-lbl">✨ Mais completo — kit definitivo</span>
+        <div class="tier-rule"></div>
+      </div>
+      <div class="pf reveal">
+        <span class="pf-ribbon">🏆 Mais popular</span>
+        <img src="assets/ChatGPT-Image-1-de-mai.-de-2026,-19_33_39.png"
+             alt="Coleção Tesouro Poético dos Professores Conscientes"
+             class="pf-cover" loading="lazy">
+        <div class="pf-body">
+          <h3>Coleção Tesouro Poético dos Professores Conscientes</h3>
+          <p class="pf-old">De R$ 97,70</p>
+          <p class="pf-price">R$ 67,70</p>
+          <p class="pf-desc">O kit definitivo para educadores que querem transformar o ensino com poesia, cultura e consciência. Tudo para um ano letivo inteiro de aulas significativas — em um único download.</p>
+          <!-- RAFAEL MONTENEGRO: para quem é / para quem não é — qualifica o visitante -->
+          <div class="pf-for-whom">
+            <span class="fw-yes">✓ Professores do EF e EM</span>
+            <span class="fw-yes">✓ Quem busca material BNCC</span>
+            <span class="fw-yes">✓ Quem quer usar agora</span>
+            <span class="fw-no">✗ Não é para coordenação apenas</span>
+          </div>
+          <ul class="pf-list" aria-label="O que está incluído">
+            <li>Ebook "Performance Poética na Escola" — mais de 190 páginas</li>
+            <li>5 cordéis temáticos autorais completos</li>
+            <li>Proposta pedagógica com BNCC para cada cordel</li>
+            <li>Roteiro teatral completo baseado em "A Negra que Não Podia Ser Anjo"</li>
+            <li>Kit Poético Interdisciplinar — Português, História e Artes</li>
+            <li>Caderno de atividades para estudantes</li>
+            <li>Frases-Poema para iniciar aulas com reflexão</li>
+          </ul>
+          <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+             class="btn btn-gold btn-lg">Quero a Coleção Completa →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- KITS E LIVROS -->
+    <div class="tier">
+      <div class="tier-hd" aria-hidden="true">
+        <span class="tier-lbl">📚 Kits e livros</span>
+        <div class="tier-rule"></div>
+      </div>
+      <div class="g2">
+        <div class="pc reveal">
+          <div class="pc-cw">
+            <img src="assets/Gemini_Generated_Image_5m0wc5m0wc5m0wc5.png"
+                 alt="Kit Intermediário" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <span class="badge bg" style="align-self:flex-start;font-size:.68rem">Kit completo</span>
+            <p class="pc-title">Kit Intermediário – Amplie sua Prática com Poesia e Consciência</p>
+            <p class="pc-desc">Todos os cordéis autorais com propostas pedagógicas prontas. Um conjunto completo para trabalhar poesia, identidade e consciência ao longo de todo o ano letivo.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 37,70</span>
+              <a href="https://pay.kiwify.com.br/ciKNz3R" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Kit →</a>
+            </div>
+          </div>
+        </div>
+        <div class="pc reveal reveal-d1">
+          <div class="pc-cw">
+            <img src="assets/print-capa.png"
+                 alt="Performance Poética na Escola" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <span class="badge bd" style="align-self:flex-start;font-size:.68rem">Livro digital</span>
+            <p class="pc-title">Performance Poética na Escola</p>
+            <p class="pc-desc">Mais de 190 páginas de poesias criadas ao longo de anos em escolas públicas. Temas como Consciência Negra, Dia da Mulher, Carnaval, Direitos Humanos e cultura popular.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 29,70</span>
+              <a href="https://pay.kiwify.com.br/IdXCsnh" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Livro →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORDÉIS COM KIT PEDAGÓGICO -->
+    <div class="tier">
+      <div class="tier-hd" aria-hidden="true">
+        <span class="tier-lbl">📜 Cordéis com proposta pedagógica</span>
+        <div class="tier-rule"></div>
+      </div>
+      <div class="g2">
+        <div class="pc reveal">
+          <div class="pc-cw">
+            <img src="assets/Capa-a-negra-que-nao-podia-ser-anjo.png"
+                 alt="A Negra que Não Podia Ser Anjo" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <span class="badge bc" style="align-self:flex-start;font-size:.68rem">Cordel + Pedagogia + Teatro</span>
+            <p class="pc-title">A Negra que Não Podia Ser Anjo</p>
+            <p class="pc-desc">Um cordel impactante sobre racismo e fé. Inclui proposta pedagógica alinhada à BNCC e roteiro teatral completo pronto para aplicar com seus alunos.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 19,90</span>
+              <a href="https://pay.kiwify.com.br/HGMnovm" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Cordel →</a>
+            </div>
+          </div>
+        </div>
+        <div class="pc reveal reveal-d1">
+          <div class="pc-cw">
+            <img src="assets/Capa.jpg"
+                 alt="História de Frei Tito de Alencar Lima" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <span class="badge bg" style="align-self:flex-start;font-size:.68rem">Cordel autoral</span>
+            <p class="pc-title">História de Frei Tito de Alencar Lima em Cordel</p>
+            <p class="pc-desc">A história do mártir cearense contada em versos. Ideal para trabalhar resistência, memória, história do Ceará e identidade nordestina.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 9,90</span>
+              <a href="https://pay.kiwify.com.br/90lBhmV" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Cordel →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CORDÉIS INDIVIDUAIS -->
+    <!-- AGENTE 1: CTAs mudados de "Comprar" para "Quero este Cordel" -->
+    <div class="tier">
+      <div class="tier-hd" aria-hidden="true">
+        <span class="tier-lbl">📝 Cordéis individuais — entrada ideal</span>
+        <div class="tier-rule"></div>
+      </div>
+      <div class="g3">
+        <div class="pc reveal">
+          <div class="pc-cw">
+            <img src="assets/Capa-Crencas-e-religioes-no-mundo.png"
+                 alt="Crenças e Religiões no Mundo" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <p class="pc-title">Crenças e Religiões no Mundo</p>
+            <p class="pc-desc">Uma jornada poética por diversas espiritualidades. Ideal para combater a intolerância e estimular o respeito às diferenças.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 5,70</span>
+              <a href="https://pay.kiwify.com.br/sjQRqu9" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Cordel</a>
+            </div>
+          </div>
+        </div>
+        <div class="pc reveal reveal-d1">
+          <div class="pc-cw">
+            <img src="assets/Capa-Consequencia-do-voto.png"
+                 alt="Consequência do Voto" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <p class="pc-title">Consequência do Voto</p>
+            <p class="pc-desc">Um poema que desperta consciência política, cidadania e senso crítico. Ideal para aulas sobre democracia e desigualdade.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 5,70</span>
+              <a href="https://pay.kiwify.com.br/tB6zGP6" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Cordel</a>
+            </div>
+          </div>
+        </div>
+        <div class="pc reveal reveal-d2">
+          <div class="pc-cw">
+            <img src="assets/Capa-Lendas-racismo-e-brincadeiras-africanas-.png"
+                 alt="Lendas, Racismo e Brincadeiras Africanas" class="pc-img" loading="lazy">
+          </div>
+          <div class="pc-body">
+            <p class="pc-title">Lendas, Racismo e Brincadeiras Africanas</p>
+            <p class="pc-desc">Poesia, crítica social e saberes ancestrais para a sala de aula. Mostra o valor da cultura negra de forma sensível e pedagógica.</p>
+            <div class="pc-foot">
+              <span class="pc-price">R$ 5,70</span>
+              <a href="https://pay.kiwify.com.br/hI3ZfoF" target="_blank" rel="noopener"
+                 class="btn btn-primary btn-sm">Quero este Cordel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════ SOBRE (RAFAEL MONTENEGRO + AGENTES 1 e 2) ═══════════ -->
+<!-- Gancho pessoal antes da bio formal + posição mantida com intro acima -->
+<section class="section section-alt" id="sobre" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <img src="assets/images/whatsapp-image-2024-10-14-at-21.20.02.jpeg-867x1156.jpg"
+             alt="Leonardo Sampaio, poeta e educador"
+             class="about-photo" loading="lazy">
+      </div>
+      <div class="reveal reveal-d1">
+        <span class="badge bg" style="margin-bottom:1rem">Sobre o autor</span>
+        <h2 id="about-heading">Leonardo Sampaio</h2>
+        <!-- AGENTE 1: gancho pessoal — conexão imediata com a dor do professor -->
+        <p class="about-hook">
+          "Antes de criar esses materiais, eu era o professor que ficava nas madrugadas procurando um texto que fizesse sentido na realidade dos meus alunos. Quase nunca encontrava. Então comecei a escrever."
+        </p>
+        <p class="about-lead">Poeta-pedagogo, cordelista e educador popular — com mais de uma década formando cidadãos nas escolas públicas do Ceará.</p>
+        <div class="about-body">
+          <p>Natural de Abaiara, no coração do Cariri cearense, Leonardo cresceu imerso em um caldeirão cultural onde aboios, cordéis e ritmos populares moldaram seu olhar crítico e apaixonado pelo mundo.</p>
+          <p>Formado em Pedagogia com especialização voltada para comunidades quilombolas e negras, é um educador que caminha de mãos dadas com Paulo Freire e dança ao som dos tambores da ancestralidade.</p>
+          <p>Professor da rede municipal de Fortaleza, sua missão é fazer da educação uma experiência poética e transformadora — onde cada rima e verso abrem portas para um mundo mais inclusivo e consciente.</p>
+        </div>
+        <div class="creds" role="list">
+          <div class="cred" role="listitem">
+            <span class="cred-icon">🎓</span>
+            <span class="cred-text">Pedagogo com especialização em educação quilombola e comunidades negras</span>
+          </div>
+          <div class="cred" role="listitem">
+            <span class="cred-icon">✍️</span>
+            <span class="cred-text">Membro fundador da Academia Afrocearense de Letras — AAFROCEL</span>
+          </div>
+          <div class="cred" role="listitem">
+            <span class="cred-icon">🏫</span>
+            <span class="cred-text">Professor ativo na rede municipal de Fortaleza há mais de 10 anos</span>
+          </div>
+          <div class="cred" role="listitem">
+            <span class="cred-icon">📖</span>
+            <span class="cred-text">Autor de múltiplos cordéis e livros de poesia pedagógica</span>
+          </div>
+        </div>
+        <!-- RAFAEL MONTENEGRO: "Sobre" deve terminar abrindo caminho para a esteira -->
+        <div class="about-trans reveal">
+          <p>Se a minha trajetória ressoou com o que você vive na escola todos os dias, <a href="#materiais">veja os materiais que criei</a> para que você não precise passar pela madrugada que eu passei procurando o texto certo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CITAÇÃO ═══════════ -->
+<section class="quote-section" aria-label="Verso do autor">
+  <div class="container">
+    <span class="q-mark" aria-hidden="true">"</span>
+    <blockquote>
+      <p class="q-text">
+        Ler a vida, ler o mundo<br>
+        É mesmo que viajar<br>
+        Conhecer como ele é<br>
+        É permitir enxergar<br>
+        Ciência e a natureza<br>
+        É conhecer outro lugar
+      </p>
+      <footer class="q-author">— Leonardo Sampaio</footer>
+    </blockquote>
+  </div>
+</section>
+
+
+<!-- ═══════════ GARANTIA ═══════════ -->
+<section class="section" aria-labelledby="guar-heading">
+  <div class="container">
+    <div class="sh c" style="margin-bottom:2.5rem">
+      <h2 id="guar-heading">Risco zero. Transformação garantida.</h2>
+    </div>
+    <div class="guar-wrap reveal">
+      <div class="guar-card">
+        <div class="guar-icon" aria-hidden="true">🛡️</div>
+        <div class="guar-body">
+          <h3 class="guar-title">Garantia de 7 dias</h3>
+          <p>Se por qualquer motivo você não ficar satisfeito(a) com o material, basta entrar em contato dentro de 7 dias após a compra e devolvemos 100% do seu investimento — sem perguntas, sem burocracia.</p>
+          <p class="guar-hl">Você não assume risco nenhum. Se não transformar suas aulas, não fica com nada seu.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="section section-alt" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="sh c">
+      <div class="eye"><span class="badge bg">Dúvidas frequentes</span></div>
+      <h2 id="faq-heading">Perguntas de quem ainda não conhece</h2>
+    </div>
+    <div class="faq-grid" role="list">
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Funciona para qual etapa de ensino?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Indicado principalmente para o Ensino Fundamental (anos finais) e Ensino Médio. Muitos textos se adaptam também aos anos iniciais, dependendo da mediação. As propostas pedagógicas indicam as habilidades BNCC de cada etapa.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Preciso de algum preparo especial para usar?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Não. Os materiais chegam prontos — é só baixar e aplicar. Cada cordel vem com roteiro de uso, sugestões de abordagem e atividades. Nenhum treinamento ou equipamento especial é necessário.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Como e quando recebo o material?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">A entrega é 100% digital e imediata. Assim que o pagamento é confirmado, você recebe um e-mail com o link para download. Pode ser lido no celular, tablet ou computador, e impresso quando necessário.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Posso usar com alunos de diferentes regiões do Brasil?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Sim. Embora os textos tenham raízes na cultura nordestina e afro-brasileira, os temas — identidade, ancestralidade, cidadania, consciência política — são universais. Professores de todo o Brasil já usam e relatam ótima recepção.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>Qual a diferença entre os produtos? Por onde começo?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Os <strong>cordéis individuais (R$5,70)</strong> são a entrada ideal — baixo investimento, experiência imediata. A <strong>Coleção Tesouro Poético (R$67,70)</strong> é o kit mais completo, com tudo para o ano letivo inteiro. Entre um e outro, há opções em todos os patamares.</div>
+      </div>
+      <div class="faq-item reveal" role="listitem">
+        <button class="faq-q" aria-expanded="false">
+          <span>E se eu não gostar?</span>
+          <span class="faq-ic" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-a">Sem problema. Você tem 7 dias após a compra para pedir reembolso integral — sem precisar justificar. Basta entrar em contato e devolvemos tudo. Acreditamos tanto na qualidade que assumimos todo o risco por você.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CTA FINAL (AGENTE 1) ═══════════ -->
+<!-- AGENTE 1: headline com ação e consequência, não passivo -->
+<section class="cta-strip" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading">A próxima aula inesquecível dos seus alunos começa aqui</h2>
+    <p>Junte-se a educadores de todo o Brasil que transformaram o ensino com poesia, cultura e consciência. Entrega imediata. Garantia de 7 dias.</p>
+    <div class="cta-btns">
+      <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+         class="btn btn-gold btn-lg">Quero a Coleção Completa — R$ 67,70 →</a>
+      <a href="#materiais" class="btn btn-ow btn-lg">Ver todos os materiais</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ REDES SOCIAIS ═══════════ -->
+<section class="social-section" id="contato" aria-labelledby="social-heading">
+  <div class="container">
+    <div class="sh c" style="margin-bottom:0">
+      <h2 id="social-heading">Siga e acompanhe</h2>
+      <p class="lead">Novidades, poemas e reflexões sobre educação e cultura popular.</p>
+    </div>
+    <nav class="social-grid" aria-label="Redes sociais">
+      <a href="https://www.instagram.com/leonardo.poetaeducador/" target="_blank" rel="noopener" class="social-link">
+        <span class="si" aria-hidden="true">📸</span><span>Instagram</span>
+      </a>
+      <a href="https://www.youtube.com/@leonardofsampaio" target="_blank" rel="noopener" class="social-link">
+        <span class="si" aria-hidden="true">▶️</span><span>YouTube</span>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61571357654332" target="_blank" rel="noopener" class="social-link">
+        <span class="si" aria-hidden="true">👥</span><span>Facebook</span>
+      </a>
+      <a href="https://wa.me/558585010330" target="_blank" rel="noopener" class="social-link">
+        <span class="si" aria-hidden="true">💬</span><span>WhatsApp</span>
+      </a>
+      <a href="https://leonardofsampaio.blogspot.com/" target="_blank" rel="noopener" class="social-link">
+        <span class="si" aria-hidden="true">✍️</span><span>Blog</span>
+      </a>
+    </nav>
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER (AGENTE 3 — verso de encerramento) ═══════════ -->
+<footer class="footer">
+  <!-- AGENTE 3: verso no rodapé reforça a identidade poética do autor -->
+  <div class="footer-verse">
+    <p>Com palavras que ensinam e com arte que transforma,
+a escola vira poesia e a poesia reforma.</p>
+  </div>
+  <div class="footer-base">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/images/mbr-192x127.jpg" alt="Logo" class="footer-logo">
+          <span class="footer-name">Leonardo Sampaio</span>
+        </div>
+        <nav class="footer-links" aria-label="Links do rodapé">
+          <a href="#sobre" class="footer-link">Sobre</a>
+          <a href="#materiais" class="footer-link">Materiais</a>
+          <a href="#documentario" class="footer-link">Documentário</a>
+          <a href="https://leonardofsampaio.blogspot.com/" target="_blank" rel="noopener" class="footer-link">Blog</a>
+          <a href="#contato" class="footer-link">Contato</a>
+        </nav>
+        <p class="footer-copy">© 2025 Leonardo Sampaio. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════ MOBILE STICKY CTA (AGENTE 3) ═══════════ -->
+<div class="mob-sticky" id="mobSticky" aria-label="Compra rápida mobile">
+  <a href="https://pay.kiwify.com.br/ZP2vT08" target="_blank" rel="noopener"
+     class="btn btn-gold btn-full">Ver Coleção Completa — R$ 67,70 →</a>
+</div>
+
+
+<!-- ═══════════ SCRIPTS ═══════════ -->
 <script>
-    let prefix = ["https://pay.kiwify.com.br"];
+// --- Hamburger ---
+const hambBtn=document.getElementById('hambBtn');
+const mobDrawer=document.getElementById('mobDrawer');
+hambBtn.addEventListener('click',()=>{
+  const o=hambBtn.classList.toggle('open');
+  mobDrawer.classList.toggle('open');
+  hambBtn.setAttribute('aria-expanded',o);
+});
+mobDrawer.querySelectorAll('a[href^="#"]').forEach(l=>l.addEventListener('click',()=>{
+  hambBtn.classList.remove('open');
+  mobDrawer.classList.remove('open');
+  hambBtn.setAttribute('aria-expanded',false);
+}));
 
-function getParams() {
-    let t = "",
-        e = window.top.location.href,
-        r = new URL(e);
-    if (null != r) {
-        let a = r.searchParams.get("utm_source"),
-            n = r.searchParams.get("utm_medium"),
-            o = r.searchParams.get("utm_campaign"),
-            m = r.searchParams.get("utm_term"),
-            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-    }
-    return t
-}! function() {
-    var t = new URLSearchParams(window.location.search);
-    t.toString() && document.querySelectorAll("a").forEach(function(e) {
-        for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
-    })
-}(); </script>
+// --- Scroll suave com offset de navbar ---
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href').slice(1);
+    const el=document.getElementById(id);
+    if(!el)return;
+    e.preventDefault();
+    window.scrollTo({top:el.getBoundingClientRect().top+window.scrollY-82,behavior:'smooth'});
+  });
+});
 
+// --- FAQ accordion ---
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.closest('.faq-item');
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded',false);
+    });
+    if(!isOpen){item.classList.add('open');q.setAttribute('aria-expanded',true);}
+  });
+});
 
-        
+// --- AGENTE 3: scroll-reveal (IntersectionObserver) ---
+const rObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('is-visible');rObs.unobserve(e.target);}
+  });
+},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>rObs.observe(el));
 
-    
+// --- AGENTE 3: mobile sticky CTA (aparece após o hero sair da tela) ---
+const mobSticky=document.getElementById('mobSticky');
+const heroEl=document.querySelector('.hero');
+if(heroEl&&mobSticky){
+  const heroObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      mobSticky.style.display=e.isIntersecting?'none':'block';
+    });
+  },{threshold:0});
+  heroObs.observe(heroEl);
+}
 
-    <div class="container">
-        <div class="row">
-            <div class="row-links">
-                <ul class="header-menu">
-                  
-                  
-                  
-                  
-                <li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="index.html#article02-2" class="text-white text-primary">Sobre</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="https://leonardofsampaio.blogspot.com/" class="text-white text-primary" target="_blank">Blog</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="index.html#features-17-uIy96lBm2V" class="text-white text-primary">Livros</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5"></li></ul>
-              </div>
+// --- UTM pass-through para links Kiwify ---
+(function(){
+  const p=new URLSearchParams(window.location.search);
+  if(!p.toString())return;
+  document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(a=>{
+    a.href+=((a.href.includes('?')?'&':'?')+p.toString());
+  });
+})();
+</script>
 
-            
-            <div class="col-12 mt-4">
-                <p class="mbr-fonts-style copyright display-7">© 2025 Leonardo Sampaio. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </div>
-</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="leonardosampaio.com.br" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/builder/ai-website-generator.html"></a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>   
-  
 </body>
 </html>
