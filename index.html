@@ -351,8 +351,9 @@ p{font-size:1rem;line-height:1.75}
   display:block;line-height:0;
   margin:0;padding:0}
 .cariri-img{
-  width:100%;height:480px;
-  object-fit:cover;object-position:center 40%;
+  width:100%;
+  aspect-ratio:21/9;
+  object-fit:cover;object-position:center 30%;
   display:block;margin:0}
 .cariri-overlay{
   position:absolute;top:0;left:0;right:0;bottom:0;
@@ -606,7 +607,7 @@ p{font-size:1rem;line-height:1.75}
   /* About */
   .about-grid{grid-template-columns:1fr;gap:2.5rem}
   .about-photo{max-height:420px;object-position:top}
-  .cariri-img{height:280px}
+  .cariri-img{height:280px;aspect-ratio:auto}
   .cariri-caption{padding:3rem 1.25rem 1.25rem}
   .cariri-caption p{font-size:.88rem}
 
@@ -669,7 +670,7 @@ p{font-size:1rem;line-height:1.75}
   .mob-sticky .btn{font-size:.9rem}
 
   /* Cariri landscape */
-  .cariri-img{height:220px}
+  .cariri-img{height:220px;aspect-ratio:auto}
   .cariri-caption{padding:2.5rem 1rem 1rem}
   .cariri-caption p{font-size:.82rem}
 }
@@ -696,7 +697,7 @@ p{font-size:1rem;line-height:1.75}
   .mob-sticky .btn{font-size:.82rem;padding:.8rem}
 
   /* Cariri landscape */
-  .cariri-img{height:180px}
+  .cariri-img{height:180px;aspect-ratio:auto}
   .cariri-caption{padding:2rem .85rem .85rem}
   .cariri-caption p{font-size:.78rem}
 }
