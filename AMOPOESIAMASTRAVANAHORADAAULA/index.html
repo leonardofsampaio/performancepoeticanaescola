@@ -625,31 +625,124 @@ footer{
 }
 
 /* ================= RESPONSIVO ================= */
-@media (max-width: 900px){
-  .hero .wrap{grid-template-columns:1fr; gap:32px;}
-  .hero-img-wrap{order:-1; max-width:360px; margin:0 auto;}
-  .scene-grid{grid-template-columns:1fr; gap:18px;}
-  .mec-grid{grid-template-columns:1fr;}
-  .autor-grid{grid-template-columns:1fr; text-align:center;}
-  .autor-book-img{max-width:220px;}
-  .autor-book-stats{justify-content:center;}
+
+/* --- Tablet largo (≤ 1024px) --- */
+@media (max-width: 1024px){
+  .scene-grid{grid-template-columns:1fr 1fr;}
+  .mec-grid{grid-template-columns:1fr 1fr;}
   .ref-grid{grid-template-columns:1fr 1fr;}
-  .prova-grid{grid-template-columns:1fr 1fr;}
-  .prova-card:nth-child(4){grid-column:auto;}
-  .cards-oferta{grid-template-columns:1fr;}
-  .kit-row{grid-template-columns:60px 1fr;}
-  section{padding:56px 0;}
-  body{padding-bottom:78px;}
+  .tabela-comp{font-size:14px;}
 }
 
-@media (max-width:560px){
-  body{font-size:16.5px;}
-  .ref-grid{grid-template-columns:1fr;}
-  .prova-grid{grid-template-columns:1fr;}
+/* --- Tablet / mobile largo (≤ 900px) --- */
+@media (max-width: 900px){
+  section{padding:52px 0;}
+
+  /* Hero */
+  .hero{padding:40px 0 48px;}
+  .hero .wrap{grid-template-columns:1fr; gap:28px;}
+  .hero-img-wrap{order:-1; max-width:320px; margin:0 auto;}
+  .hero h1{font-size:clamp(26px,6vw,38px);}
+  .hero .lead{font-size:17px;}
+  .hero-trust{gap:12px;}
+
+  /* Cenas */
+  .scene-grid{grid-template-columns:1fr; gap:16px;}
+
+  /* Mecanismo */
+  .mec-grid{grid-template-columns:1fr; gap:16px;}
+
+  /* Autor */
+  .autor-grid{grid-template-columns:1fr; gap:32px; text-align:center;}
+  .autor-book-img{max-width:200px;}
+  .autor-book-stats{justify-content:center;}
+  .autor .lead{font-size:17px;}
+
+  /* Conteúdo */
+  .ref-grid{grid-template-columns:1fr 1fr;}
+  .kit-row{grid-template-columns:56px 1fr; gap:14px;}
+
+  /* Oferta */
+  .cards-oferta{grid-template-columns:1fr; gap:36px;}
+  .offer-card.principal{margin-top:12px;}
+  .offer-cover{max-height:180px;}
+  .offer-card.principal .offer-cover{max-height:200px;}
+
+  /* Tabela — scroll horizontal */
+  .tabela-comp-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch; border-radius:10px;}
+  .tabela-comp{min-width:520px; font-size:13.5px;}
+  .tabela-comp th, .tabela-comp td{padding:12px 12px;}
+
+  /* FAQ */
+  .faq-q{font-size:15.5px;}
+
+  /* CTA final */
   .final .btn{min-width:0; width:100%;}
-  .tabela-comp{font-size:13px;}
-  .tabela-comp th, .tabela-comp td{padding:10px 8px;}
+  .garantia-badge{flex-direction:column; text-align:center; border-radius:14px; padding:16px 18px;}
+
+  /* Espaço para sticky bar */
+  body{padding-bottom:84px;}
 }
+
+/* --- Mobile (≤ 600px) --- */
+@media (max-width: 600px){
+  section{padding:44px 0;}
+  .wrap{padding:0 16px;}
+
+  body{font-size:16px;}
+  .lead{font-size:16.5px;}
+  h2{font-size:clamp(24px,6.5vw,32px);}
+
+  /* Hero */
+  .hero{padding:32px 0 40px;}
+  .hero-img-wrap{max-width:260px;}
+  .hero-trust{flex-direction:column; gap:10px; align-items:flex-start;}
+  .scroll-cue{font-size:13px;}
+
+  /* Cenas */
+  .scene-card{padding:22px 18px;}
+  .scene-card .quote-mark{font-size:40px;}
+
+  /* Ref cards */
+  .ref-grid{grid-template-columns:1fr;}
+
+  /* Kit list */
+  .kit-row{grid-template-columns:1fr; gap:6px;}
+  .kit-row .aula-tag{font-size:13px; padding-top:0;}
+
+  /* Carrossel */
+  .carousel-arrow{width:38px; height:38px;}
+
+  /* Oferta */
+  .offer-card{padding:24px 18px;}
+  .offer-price{font-size:34px;}
+  .offer-list li{font-size:14.5px;}
+
+  /* Tabela */
+  .tabela-comp{min-width:460px; font-size:12.5px;}
+  .tabela-comp th, .tabela-comp td{padding:10px 8px;}
+
+  /* FAQ */
+  .faq-q{font-size:15px; padding:18px 2px;}
+
+  /* Sticky bar */
+  .sticky-bar{padding:10px 12px;}
+  .sticky-bar .btn{font-size:14px; padding:13px 16px;}
+}
+
+/* --- Mobile pequeno (≤ 400px) --- */
+@media (max-width: 400px){
+  .hero h1{font-size:clamp(22px,7vw,28px);}
+  .hero-img-wrap{max-width:220px;}
+  .eyebrow{font-size:11px; letter-spacing:1px;}
+  .offer-price{font-size:30px;}
+  .garantia-badge{font-size:13px;}
+  .tabela-comp{min-width:400px; font-size:11.5px;}
+  .tabela-comp th, .tabela-comp td{padding:8px 6px;}
+  .mec-item{flex-direction:column; gap:8px;}
+  .mec-item .num{font-size:26px; width:auto;}
+}
+
 </style>
 </head>
 <body>
@@ -933,6 +1026,7 @@ footer{
       </div>
     </div>
 
+    <div class="tabela-comp-wrap">
     <table class="tabela-comp">
       <thead>
         <tr>
@@ -949,6 +1043,7 @@ footer{
         <tr><td>Repertório para o ano letivo inteiro</td><td>—</td><td class="check-yes">✓</td></tr>
       </tbody>
     </table>
+    </div>
   </div>
 </section>
 
