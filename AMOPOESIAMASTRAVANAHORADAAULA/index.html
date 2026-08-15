@@ -124,6 +124,10 @@ h3{font-size:clamp(18px,2.4vw,23px);margin-bottom:8px;}
 .autor .lead{color:var(--bege);}
 .autor-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
 .autor-tag{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:5px 13px;font-size:12.5px;color:var(--bege);}
+/* Foto do autor */
+.autor-foto-wrap{text-align:center;margin-bottom:20px;}
+.autor-foto{width:130px;height:130px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid rgba(255,255,255,.22);box-shadow:0 8px 28px rgba(0,0,0,.45);display:inline-block;}
+
 /* Vídeo */
 .video-bloco{margin-top:52px;}
 .video-tit{text-align:center;margin-bottom:20px;}
@@ -292,6 +296,7 @@ footer{background:var(--bege);border-top:1px solid var(--areia);padding:28px 0;t
 
   /* Autor */
   .autor-grid{grid-template-columns:1fr;gap:26px;text-align:center;}
+  .autor-foto{width:110px;height:110px;}
   .autor-img{max-width:200px;}
   .autor-stats{justify-content:center;}
   .autor-tags{justify-content:center;}
@@ -368,6 +373,7 @@ footer{background:var(--bege);border-top:1px solid var(--areia);padding:28px 0;t
   .item-ico{width:30px;height:30px;}
 
   /* Autor */
+  .autor-foto{width:96px;height:96px;}
   .autor-img{max-width:180px;}
   .a-num{font-size:32px;}
   .autor p{font-size:15.5px;}
@@ -655,6 +661,9 @@ footer{background:var(--bege);border-top:1px solid var(--areia);padding:28px 0;t
   <div class="wrap">
     <div class="autor-grid">
       <div style="text-align:center;">
+        <div class="autor-foto-wrap">
+          <img src="assets/foto_leonardo.png" class="autor-foto" alt="Foto de Leonardo Sampaio, poeta e educador popular cearense">
+        </div>
         <img src="assets/capa_performance_poetica.png" class="autor-img" alt="Capa do livro Performance Poética na Escola, de Leonardo Sampaio">
         <div class="autor-stats">
           <div class="a-stat"><span class="a-num">20+</span><span class="a-lbl">Obras publicadas</span></div>
