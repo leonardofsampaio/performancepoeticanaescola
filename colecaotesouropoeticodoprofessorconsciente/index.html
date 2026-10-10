@@ -11,50 +11,33 @@
   <meta property="og:image" content="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/mockup_colecao.png">
   <meta property="og:type" content="website">
 
-  <!-- ═══ META PIXEL + CAPI ═══ -->
+  <!-- Meta Pixel Code -->
   <script>
-    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '959536202816242');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=959536202816242&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-    var _pixelId = '1243155826763791';
-    var _apiToken = 'EAAIrp13iL6UBREmOAr3Nac6UEMmG4bEhWO0hK6TJBcWRjZC1UatUB5FNxYtrjpZAdDZCSwS1ZCZBKVw2ZAerZCnSrwyLKWJdFaH1S9FZCkejZCrhn5eBDVLVSkLfOgir3Ll2Ah0TARTIDnmupwMTqLFERKCVEs7zipSxvMq4NOsXfe2kzKEZCFROwSO4pn0y9XjNROSQZDZD';
-
-    function _genUUID(){return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,function(c){var r=Math.random()*16|0,v=c=='x'?r:(r&0x3|0x8);return v.toString(16);});}
-
-    var _pvId = _genUUID();
-    fbq('init', _pixelId);
-    fbq('track', 'PageView', {}, {eventID: _pvId});
-
-    async function sendCAPI(eventName, customData){
-      var eid = _genUUID();
-      var payload = {data:[{
-        event_name: eventName,
-        event_time: Math.floor(Date.now()/1000),
-        event_id: eventName==='PageView'?_pvId:eid,
-        event_source_url: window.location.href,
-        action_source: 'website',
-        user_data: {client_user_agent: navigator.userAgent},
-        custom_data: customData||{}
-      }]};
-      try{
-        await fetch('https://graph.facebook.com/v19.0/'+_pixelId+'/events?access_token='+_apiToken,{
-          method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)
-        });
-      }catch(e){}
-      return eid;
-    }
-    window.addEventListener('load',function(){ sendCAPI('PageView',{}); });
-
+  <!-- Evento de checkout usado pelos botões de compra -->
+  <script>
     function trackCheckout(product, href){
-      var eid = _genUUID();
-      if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product},{eventID:eid});
-      sendCAPI('InitiateCheckout',{content_name:product});
+      if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product});
       var finalHref = (event && event.currentTarget && event.currentTarget.href) ? event.currentTarget.href : href;
       setTimeout(function(){ window.location.href=finalHref; },250);
       return false;
     }
   </script>
-  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1243155826763791&ev=PageView&noscript=1"/></noscript>
-  <!-- ═══ END PIXEL ═══ -->
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
