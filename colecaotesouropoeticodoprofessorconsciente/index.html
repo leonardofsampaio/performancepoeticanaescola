@@ -12,32 +12,22 @@
   <meta property="og:type" content="website">
 
   <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '959536202816242');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=959536202816242&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
-
-  <!-- Evento de checkout usado pelos botões de compra -->
-  <script>
-    function trackCheckout(product, href){
-      if(typeof fbq!=='undefined') fbq('track','InitiateCheckout',{content_name:product});
-      var finalHref = (event && event.currentTarget && event.currentTarget.href) ? event.currentTarget.href : href;
-      setTimeout(function(){ window.location.href=finalHref; },250);
-      return false;
-    }
-  </script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '959536202816242');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=959536202816242&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6633SYS5NB"></script>
@@ -139,7 +129,7 @@
     /* ===== TYPOGRAPHY ===== */
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-size: clamp(2.1rem, 7vw, 5rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
       text-transform: uppercase;
@@ -951,16 +941,16 @@
 <section id="hero">
   <div class="section-wrap">
     <div style="text-align:center; padding-bottom: 2rem;">
-      <span class="cordel-badge" style="margin-bottom:1.5rem; display:inline-block;">✦ Para quem acredita no poder transformador da educação ✦</span>
+      <span class="cordel-badge" style="margin-bottom:1.5rem; display:inline-block;">✦ Para professoras e professores do 5º ano ao Ensino Médio ✦</span>
 
       <h1 style="color: var(--preto); margin-bottom: 0.75rem;">
-        Nas suas mãos,<br>
-        <span class="hero-headline-wrap" style="color:var(--amarelo);">a poesia vira palco</span><br>
-        e o aluno, protagonista
+        Transforme suas aulas com a coleção que<br>
+        <span class="hero-headline-wrap" style="color:var(--amarelo);">conscientiza, encanta</span><br>
+        e educa
       </h1>
 
       <p class="hero-sub" style="color: var(--preto); margin: 1.5rem auto; max-width: 660px;">
-        Cordéis autorais, roteiros prontos e propostas pedagógicas com BNCC — para professoras e professores que ensinam com consciência, rima e propósito real. Tudo pronto para aplicar amanhã.
+        Descubra como aplicar cultura, poesia e justiça social em sala de aula com a Coleção Tesouro Poético dos Professores Conscientes — mesmo que você nunca tenha trabalhado com cordel ou poesia antes. Cordéis autorais com proposta pedagógica e códigos da BNCC, prontos para aplicar já na próxima aula.
       </p>
 
       <div class="hero-image-wrap">
@@ -1004,8 +994,8 @@
         <p>Racismo, ancestralidade e fé pedem cuidado. Um texto frio ou mal escolhido gera silêncio, constrangimento ou conflito, e é você quem segura a conversa na turma.</p>
       </div>
       <div class="dor-card">
-        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">O aluno não se vê no currículo</h3>
-        <p>Quando o material não representa a história dos seus alunos, a turma percebe. O projeto vira só mais uma data no calendário, sem engajamento real.</p>
+        <h3 style="color:var(--amarelo); font-size:1.15rem; margin-bottom:0.5rem;">Medo de não saber trabalhar com poesia</h3>
+        <p>Quem nunca usou cordel em sala costuma achar que precisa ser especialista. Sem um caminho pronto, o tema fica de fora e a aula segue com materiais que não engajam.</p>
       </div>
     </div>
 
@@ -1013,11 +1003,25 @@
 
     <div class="glass-panel" style="background: rgba(245,200,0,0.08); border-color: rgba(245,200,0,0.3); max-width:680px; margin: 0 auto; text-align:center;">
       <p style="font-family: var(--font-headline); font-size:1.4rem; font-weight:700; line-height:1.5; color:var(--branco);">
-        Você não precisa começar do zero.
+        Você não precisa começar do zero, nem ser especialista em poesia.
       </p>
       <p style="font-family: var(--font-cordel); font-size:1.2rem; color: var(--amarelo); margin-top: 1rem; opacity: 0.85;">
         Cordéis autorais com proposta pedagógica e códigos da BNCC, roteiro teatral e atividades — prontos para aplicar já na próxima aula.
       </p>
+    </div>
+  </div>
+</section>
+
+<section id="para-quem" style="background: var(--branco); border-top: 6px solid var(--preto); padding: 3.5rem 0;">
+  <div class="section-wrap">
+    <div class="section-header light">
+      <span class="overline">Esta coleção é para você que...</span>
+      <h2>Para quem é a coleção?</h2>
+    </div>
+    <div class="qa-grid">
+      <div class="qa-item"><span class="step-num" style="display:block; margin-bottom:0.5rem;">01</span><p class="qa-a"><strong>Quer criar aulas vivas</strong>, emocionantes e cheias de significado.</p></div>
+      <div class="qa-item"><span class="step-num" style="display:block; margin-bottom:0.5rem;">02</span><p class="qa-a"><strong>Quer ser referência na escola</strong> por unir cultura e cidadania.</p></div>
+      <div class="qa-item"><span class="step-num" style="display:block; margin-bottom:0.5rem;">03</span><p class="qa-a"><strong>Quer ter orgulho</strong> da própria prática pedagógica.</p></div>
     </div>
   </div>
 </section>
@@ -1084,7 +1088,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_performance_poetica.jpg" alt="Ebook Performance Poética na Escola" loading="lazy">
             <div class="product-card-body">
               <h3>Ebook: Performance Poética na Escola</h3>
-              <p>Mais de 190 páginas reunindo poemas, cordéis, trovas e quadras autorais. Uma obra que conecta cultura popular, identidade negra, ancestralidade indígena e justiça social — com propostas para transformar a leitura em experiência coletiva e viva.</p>
+              <p>Mais de 190 páginas de poemas, cordéis, trovas e quadras criados por um educador popular a partir da vivência em sala de aula. Inclusão, ancestralidade, consciência negra, cultura popular e datas comemorativas: um material poético, sensível e aplicável.</p>
             </div>
           </div>
         </div>
@@ -1094,7 +1098,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_a_negra_que_nao_podia_ser_anjo.jpg" alt="A Negra que Não Podia Ser Anjo" loading="lazy">
             <div class="product-card-body">
               <h3>A Negra que Não Podia Ser Anjo</h3>
-              <p>Um cordel que narra um fato real vivido pelo autor em Abaiara-CE: uma menina negra pintada de branca para poder coroar a padroeira — e expulsa quando sua cor aparece. Um texto que abre debates poderosos sobre racismo estrutural, fé e dignidade. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+              <p>Um cordel poderoso sobre racismo e fé que emociona, provoca e transforma. Baseado em um fato real vivido pelo autor em Abaiara-CE: leve essa reflexão à sua turma! <strong>Com Proposta Pedagógica BNCC.</strong></p>
             </div>
           </div>
         </div>
@@ -1104,7 +1108,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_o_pobre_nao_pode_ter_voz.jpg" alt="Pobre Não Pode Ter Voz" loading="lazy">
             <div class="product-card-body">
               <h3>Pobre Não Pode Ter Voz</h3>
-              <p>Do assassinato de Marielle ao martírio de Chico Mendes, passando por Zumbi, Luther King e Mandela — este cordel nomeia quem lutou e pagou com a vida por defender os pobres. Uma obra que ensina luta de classes com versos acessíveis e impactantes. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+              <p>Um cordel que ecoa a luta de líderes perseguidos por sonhar com justiça e igualdade, de Zumbi a Marielle. Um grito poético contra a desigualdade. <strong>Com Proposta Pedagógica BNCC.</strong></p>
             </div>
           </div>
         </div>
@@ -1114,7 +1118,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_consequencia_do_voto.jpg" alt="Consequência do Voto" loading="lazy">
             <div class="product-card-body">
               <h3>Consequência do Voto</h3>
-              <p>Desemprego, miséria e desigualdade como resultado de escolhas eleitorais — esse cordel explica de forma direta o que é o Centrão, a diferença entre sistemas políticos e o que significa votar de forma consciente. Educação política em versos, sem simplismos. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+              <p>Versos diretos que desafiam a apatia política. Uma leitura urgente sobre voto consciente, miséria e desigualdade. <strong>Com Proposta Pedagógica BNCC.</strong></p>
             </div>
           </div>
         </div>
@@ -1124,7 +1128,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_crencas_e_religioes_no_mundo.jpg" alt="Crenças e Religiões do Mundo" loading="lazy">
             <div class="product-card-body">
               <h3>Crenças e Religiões do Mundo</h3>
-              <p>Espiritismo, Candomblé, Islamismo, Judaísmo, Budismo, Hinduísmo, Ateísmo e Cristianismo — todos tratados com respeito e profundidade. Um cordel que distingue fé de religião e propõe diálogo interreligioso real em sala de aula. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+              <p>Um cordel educativo que promove o respeito à diversidade religiosa com poesia, história e sensibilidade, do Candomblé ao Islamismo, do Budismo ao Cristianismo. <strong>Com Proposta Pedagógica BNCC.</strong></p>
             </div>
           </div>
         </div>
@@ -1134,7 +1138,7 @@
             <img src="https://leonardosampaio.com.br/colecaotesouropoeticodoprofessorconsciente/assets/capa_lendas_racismo_e_brincadeiras_africanas.jpg" alt="Lendas, Racismo e Brincadeiras Africanas" loading="lazy">
             <div class="product-card-body">
               <h3>Lendas, Racismo e Brincadeiras Africanas</h3>
-              <p>Nascido de uma pesquisa no Quilombo Cercadão e na UFC, este cordel une memória afrobrasileira, lendas populares do Cariri e o racismo velado nas figuras do demônio negro. Uma obra que conecta infância, cultura e consciência de forma que o aluno nunca mais vai esquecer. <strong>Com Proposta Pedagógica BNCC.</strong></p>
+              <p>Uma infância entre lendas, brincadeiras e resistência. Um cordel que revela o racismo velado e celebra a memória quilombola, nascido de pesquisa no Quilombo Cercadão. <strong>Com Proposta Pedagógica BNCC.</strong></p>
             </div>
           </div>
         </div>
@@ -1169,10 +1173,10 @@
 
     <div class="bonus-grid">
       <div class="bonus-item">
-        <span class="bonus-icon">📖</span>
+        <span class="bonus-icon">📋</span>
         <div>
-          <strong>Ebook Performance Poética na Escola</strong>
-          <p style="font-size:1.05rem;">Mais de 190 páginas de poesia autoral — poemas, trovas, quadras e cordéis sobre identidade, ancestralidade, inclusão e cultura popular. Repertório para usar o ano todo.</p>
+          <strong>Proposta Pedagógica com códigos da BNCC, para cada cordel</strong>
+          <p style="font-size:1.05rem;">Cada cordel acompanha uma proposta prática, pronta para discussão, reflexão e aplicação em sala. Você não precisa montar nada do zero.</p>
         </div>
       </div>
       <div class="bonus-item">
@@ -1501,7 +1505,7 @@
       <div class="section-header" style="text-align:center;">
         <span class="overline" style="color:var(--amarelo);">Pagamento único. Acesso imediato. Uso ilimitado.</span>
         <h2 style="background:var(--amarelo); color:var(--preto);">Coleção Tesouro Poético dos Professores Conscientes</h2>
-        <p style="color: rgba(255,254,245,0.75); font-family: var(--font-headline); font-size: 1.1rem; margin-top: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Tudo isso por apenas:</p>
+        <p style="color: rgba(255,254,245,0.75); font-family: var(--font-headline); font-size: 1.1rem; margin-top: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;">Cordéis, proposta pedagógica BNCC, roteiro teatral e atividades — por um pagamento único de:</p>
       </div>
 
       <!-- Price -->
@@ -1527,11 +1531,11 @@
 
       <!-- MAIN BUY CTA -->
       <div style="text-align:center; margin:2.5rem 0;">
-        <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy" id="main-cta-offer" onclick="return trackCheckout('colecao-completa','https://pay.kiwify.com.br/ZP2vT08')">
-          QUERO ACESSAR AGORA — R$ 67,70
+        <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy" id="main-cta-offer">
+          QUERO RECEBER A COLEÇÃO COMPLETA — R$ 67,70
         </a>
         <p style="margin-top:1rem; font-family:var(--font-headline); font-size:1rem; opacity:0.7;">
-          Entrega digital imediata via Kiwify • Vendido por Leonardo Furtado Sampaio
+          Pix, cartão ou boleto · Acesso imediato por e-mail · 7 dias para pedir reembolso<br>Compra segura via Kiwify • Vendido por Leonardo Furtado Sampaio
         </p>
       </div>
 
@@ -1540,7 +1544,7 @@
         <div class="guarantee-icon">🛡️</div>
         <div>
           <p style="font-family:var(--font-headline); font-weight:900; font-size:1.3rem; color:var(--amarelo); text-transform:uppercase;">Garantia Incondicional de 7 Dias</p>
-          <p style="font-size:1rem; opacity:0.85;">Se por qualquer motivo você não ficar satisfeito(a), basta pedir o reembolso em até 7 dias. Sem burocracia, sem perguntas.</p>
+          <p style="font-size:1rem; opacity:0.85;">Receba tudo, leia os cordéis, teste com a sua turma. Se por qualquer motivo não gostar, peça o reembolso em até 7 dias e devolvemos 100% do valor, direto pela Kiwify (plataforma de pagamento verificada). Sem burocracia, sem perguntas.</p>
         </div>
       </div>
 
@@ -1606,6 +1610,16 @@
     </div>
 
     <div style="max-width:700px; margin:0 auto;">
+
+      <div class="accordion-item">
+        <button class="accordion-header" aria-expanded="false">
+          Nunca trabalhei com cordel ou poesia. Vou conseguir aplicar?
+          <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="accordion-body">
+          <p>Sim. Cada cordel acompanha uma proposta pedagógica prática, pronta para discussão, reflexão e aplicação em sala, com os códigos da BNCC. Você não precisa ser especialista em poesia: basta ler o cordel com a turma e seguir o caminho já montado.</p>
+        </div>
+      </div>
 
       <div class="accordion-item">
         <button class="accordion-header" aria-expanded="false">
@@ -1699,8 +1713,8 @@
     <p style="max-width:560px; margin:0 auto 2rem; font-size:1.2rem; color:var(--preto); line-height:1.7;">
       Garanta agora sua coleção completa com cordéis, ebook, atividades prontas e BNCC mapeada. Acesso imediato, uso ilimitado, e uma educação que respeita, representa e desperta.
     </p>
-    <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy" onclick="return trackCheckout('colecao-completa-footer','https://pay.kiwify.com.br/ZP2vT08')">
-      GARANTA AGORA — R$ 67,70
+    <a href="https://pay.kiwify.com.br/ZP2vT08" class="btn-buy">
+      QUERO RECEBER A COLEÇÃO COMPLETA — R$ 67,70
     </a>
     <p style="margin-top:1.2rem; font-size:1rem; color:var(--preto); opacity:0.7; font-family:var(--font-headline);">
       Garantia de 7 dias • Acesso imediato • Entrega pela Kiwify
@@ -1718,8 +1732,8 @@
   FIXED MOBILE CTA
 ================================================================ -->
 <div id="mobile-cta">
-  <a href="https://pay.kiwify.com.br/ZP2vT08" onclick="return trackCheckout('colecao-completa-sticky','https://pay.kiwify.com.br/ZP2vT08')">
-    GARANTIR COLEÇÃO TESOURO POÉTICO — R$ 67,70
+  <a href="https://pay.kiwify.com.br/ZP2vT08">
+    QUERO RECEBER A COLEÇÃO COMPLETA — R$ 67,70
   </a>
 </div>
 
