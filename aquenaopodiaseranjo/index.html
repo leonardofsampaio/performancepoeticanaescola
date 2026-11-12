@@ -1097,13 +1097,46 @@
       cursor: pointer; color: var(--text-muted); line-height: 1;
     }
     #exit-close:hover { color: var(--text); }
+
+    /* ═══ ATUALIZAÇÃO: peças de teatro + oferta ═══ */
+    .badge-new{display:inline-block;background:var(--accent);color:var(--text);font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .85rem;border-radius:99px;margin-bottom:.75rem;position:relative}
+    .hero-glass-box .hero-small{font-size:.9rem;color:var(--text-muted);margin:.6rem 0 0}
+    .hero-glass-box .hero-small a{color:var(--primary-d);font-weight:700;text-decoration:underline}
+    .plays-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin:2rem 0}
+    @media(min-width:700px){.plays-grid{grid-template-columns:1fr 1fr}}
+    .play-card{display:flex;gap:1rem;text-align:left;background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border:1.5px solid var(--glass-border);border-radius:var(--radius-lg);padding:1rem;box-shadow:var(--glass-shadow)}
+    .play-card img{width:96px;flex-shrink:0;align-self:flex-start;border-radius:.6rem;box-shadow:var(--shadow)}
+    .play-card h3{font-size:1.15rem;margin-bottom:.2rem}
+    .play-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-d);margin-bottom:.25rem}
+    .play-from{font-size:.82rem;font-weight:700;color:var(--primary-d);margin-bottom:.5rem}
+    .play-card .play-desc{font-size:.9rem;color:var(--text-muted);line-height:1.55;margin-bottom:.6rem}
+    .chips{display:flex;flex-wrap:wrap;gap:.35rem}
+    .chips span{font-size:.74rem;font-weight:600;background:rgba(0,168,219,.08);border:1px solid rgba(0,168,219,.18);color:var(--primary-d);border-radius:99px;padding:.15rem .6rem}
+    .plays-includes{max-width:680px;margin:0 auto 1.75rem;font-size:.95rem;color:var(--text-muted)}
+    @media(max-width:400px){.play-card{flex-direction:column}.play-card img{width:120px}}
+    .btn-outline{background:transparent;color:var(--primary-d);border:2px solid var(--primary);box-shadow:none}
+    .btn-outline::after{display:none}
+    .btn-outline:hover{background:rgba(0,168,219,.08);box-shadow:none}
+    .btn-md{padding:.8rem 1.5rem;font-size:.92rem}
+    .kiwify-note{display:flex;gap:.6rem;align-items:flex-start;text-align:left;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:var(--radius);padding:.8rem 1rem;margin-top:1rem;font-size:.88rem;color:rgba(255,255,255,.9);position:relative}
+    .kiwify-note i{color:var(--accent);margin-top:.2rem}
+    .upsell-line{font-size:.85rem;color:var(--text-muted);text-align:center;margin-top:.75rem}
+    .upsell-line a{color:var(--primary-d);font-weight:700;text-decoration:underline}
+    
+    @media(max-width:699px){.compare-card.main-offer{order:-1}}
+    .hero-cta{margin-top:1.25rem;position:relative}
+    .step-label{display:inline-block;font-size:.75rem;font-weight:700;color:var(--primary-d);margin-bottom:.5rem}
+    .after-proof{background:var(--bg-soft);padding:2.5rem 1.25rem;text-align:center}
+    .after-proof p{max-width:560px;margin:0 auto 1.25rem;color:var(--text-muted)}
+    #sticky-cta a{display:none}
+    #sticky-cta a.on{display:block}
   </style>
 </head>
 <body>
 
 <!-- ═══ ANNOUNCE BAR ═══ -->
 <div class="announce-bar">
-  <i class="fa-solid fa-fire"></i> OFERTA ESPECIAL · <span id="countdown-timer">Carregando...</span> &nbsp;|&nbsp; 🔒 Acesso digital imediato &nbsp;|&nbsp; 7 dias de garantia incondicional
+  <i class="fa-solid fa-fire"></i> OFERTA ESPECIAL &nbsp;|&nbsp; 🔒 Compra e acesso na plataforma Kiwify &nbsp;|&nbsp; 7 dias de garantia incondicional
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -1123,7 +1156,11 @@
     <div class="hero-glass-box fade-in">
       <p>Comece hoje com o cordel <strong>"A Negra que Não Podia Ser Anjo"</strong> — a obra que já emocionou centenas de educadores pelo Brasil — e descubra como ela pode ser o início de uma prática pedagógica que transforma vidas.</p>
       <div class="hero-price-tag">
-        Comece por apenas <span style="color:var(--primary)">R$ 9,90</span> &nbsp;·&nbsp; Coleção Completa por <span>R$ 67,70</span>
+        Comece por apenas <span style="color:var(--primary)">R$ 9,90</span>
+      </div>
+      <p class="hero-small" style="font-size:.9rem;color:var(--text-muted);margin:.5rem 0 0">Cordel + roteiro de teatro + proposta pedagógica. Compra e acesso dentro da plataforma Kiwify.</p>
+      <div class="hero-cta">
+        <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-primary btn-lg btn-full" onclick="return trackCheckout('cordel-essencial-hero','https://leonardosampaio.com.br/intermediariocolecao/')">📖 QUERO O KIT POR R$ 9,90</a>
       </div>
     </div>
     <div class="hero-image fade-in">
@@ -1135,7 +1172,7 @@
 <!-- ═══ TRUST BAR ═══ -->
 <div class="trust-bar">
   <span class="trust-item"><i class="fa-solid fa-shield-halved"></i> Garantia de 7 dias</span>
-  <span class="trust-item"><i class="fa-solid fa-bolt"></i> Acesso imediato</span>
+  <span class="trust-item"><i class="fa-solid fa-lock"></i> Compra e acesso na Kiwify</span>
   <span class="trust-item"><i class="fa-solid fa-file-pdf"></i> 100% digital em PDF</span>
   <span class="trust-item"><i class="fa-solid fa-check-double"></i> Alinhado à BNCC</span>
   <span class="trust-item"><i class="fa-brands fa-whatsapp"></i> Boletim Poético exclusivo</span>
@@ -1207,7 +1244,7 @@
 <section class="bg-soft fade-in" id="cordel">
   <div class="container">
     <div class="text-center" style="margin-bottom:2.5rem">
-      <span class="section-label">Passo 1 · O Ponto de Partida</span>
+      <span class="section-label">Etapa 1 · O kit de entrada</span>
       <h2 class="section-title">"A Negra que Não Podia Ser Anjo"</h2>
       <div class="sep"></div>
     </div>
@@ -1228,7 +1265,7 @@
           <div style="margin-bottom:1.5rem;text-align:center">
             <p class="price-old">De R$ 19,90</p>
             <p class="price-new">R$ 9,90</p>
-            <p class="price-note">Acesso vitalício · Entrega imediata por e-mail</p>
+            <p class="price-note">Acesso vitalício · Compra e acesso pela Kiwify</p>
           </div>
 
           <ul class="checklist" style="margin-bottom:1.5rem">
@@ -1238,10 +1275,10 @@
           </ul>
 
           <div class="access-box">
-            <h4><i class="fa-solid fa-box-open" style="margin-right:.4rem"></i> Como você recebe:</h4>
+            <h4><i class="fa-solid fa-box-open" style="margin-right:.4rem"></i> Como você acessa:</h4>
             <ul class="access-list">
-              <li><i class="fa-solid fa-laptop-code"></i> 100% digital — acesso imediato após confirmação</li>
-              <li><i class="fa-solid fa-envelope"></i> Link de acesso enviado ao seu e-mail pela Kiwify</li>
+              <li><i class="fa-solid fa-laptop-code"></i> 100% digital — acesso imediato após a confirmação do pagamento</li>
+              <li><i class="fa-solid fa-lock"></i> Compra e acesso dentro da plataforma Kiwify</li>
               <li><i class="fa-solid fa-print"></i> Pode baixar, imprimir ou usar direto no digital</li>
             </ul>
           </div>
@@ -1305,18 +1342,81 @@
   </div>
 </section>
 
+<!-- ═══ CTA 2 DO KIT R$ 9,90 ═══ -->
+<div class="after-proof fade-in">
+  <div class="container">
+    <p><strong style="color:var(--text)">“A Negra que Não Podia Ser Anjo”</strong>: cordel, roteiro de teatro e proposta pedagógica alinhada à BNCC por <strong style="color:var(--primary)">R$ 9,90</strong>, com compra e acesso na Kiwify.</p>
+    <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-primary btn-lg" onclick="return trackCheckout('cordel-essencial-2','https://leonardosampaio.com.br/intermediariocolecao/')">📖 COMEÇAR COM O KIT — R$ 9,90</a>
+  </div>
+</div>
+
 <!-- ═══════════════════════════════════════
      BRIDGE — CONVITE À COLEÇÃO
 ═══════════════════════════════════════ -->
 <section class="bg-dark text-center fade-in" style="padding:3.5rem 1.25rem">
   <div class="container">
-    <h2 style="color:#fff;font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:1rem">O cordel foi só o começo.</h2>
+    <h2 style="color:#fff;font-size:clamp(1.5rem,4vw,2.4rem);margin-bottom:1rem">Etapa 2: o kit foi só o começo.</h2>
     <p style="color:rgba(255,255,255,.8);font-size:1.1rem;max-width:600px;margin:0 auto 2rem;line-height:1.75">
       E se você pudesse ter um arsenal completo de materiais autorais para trabalhar educação antirracista com poesia, profundidade e praticidade — durante o ano letivo inteiro?
     </p>
-    <a href="#colecao" class="btn btn-green btn-xl btn-pulse">
+    <a href="#novidade-pecas" class="btn btn-green btn-xl btn-pulse">
       🚀 CONHEÇA A COLEÇÃO COMPLETA
     </a>
+  </div>
+</section>
+
+<!-- ═══ NOVIDADE — 4 PEÇAS DE TEATRO NA COLEÇÃO ═══ -->
+<section class="bg-white fade-in" id="novidade-pecas">
+  <div class="container text-center">
+    <span class="section-label">Novidade na Coleção</span>
+    <h2 class="section-title">Agora são 4 peças de teatro, adaptadas a partir de cordéis</h2>
+    <div class="sep"></div>
+    <p class="section-sub">Os quatro títulos entram na Coleção Tesouro Poético do Professor Consciente como peças de teatro para montar em sala de aula, cada uma a partir de um cordel de Leonardo Sampaio.</p>
+    <div class="plays-grid">
+      <article class="play-card">
+        <img src="assets/capa_peca_ceu.png" alt="Capa da peça de teatro Cada Um com o Seu Céu" loading="lazy">
+        <div>
+          <span class="play-tag">Peça de teatro</span>
+          <h3>Cada Um com o Seu Céu</h3>
+          <p class="play-from">a partir do cordel “Crenças e Religiões no Mundo”</p>
+          <p class="play-desc">Uma feira, uma banca de cordel e uma pergunta: “Qual é a religião certa?”. Usa 27 das 28 estrofes do cordel e traz combinados de respeito: ninguém reza de mentirinha, sem fantasia religiosa.</p>
+          <div class="chips"><span>8 cenas</span><span>6º ano ao Ensino Médio</span><span>Mínima: 5 alunos</span></div>
+        </div>
+      </article>
+      <article class="play-card">
+        <img src="assets/capa_peca_voto.jpg" alt="Capa da peça de teatro Consequência do Voto" loading="lazy">
+        <div>
+          <span class="play-tag">Peça de teatro</span>
+          <h3>Consequência do Voto</h3>
+          <p class="play-from">a partir do cordel “Consequência do Voto”</p>
+          <p class="play-desc">Zé do Roçado precisa decidir o voto; o Doutor Sorriso oferece uma cesta e a Dona Dúvida faz perguntas. Ensina a conferir e perguntar: não diz em quem votar e não cita partido nem candidato. O cordel tem ponto de vista, a peça deixa isso explícito e abre espaço, na Cena 7, para quem pensa diferente.</p>
+          <div class="chips"><span>8 cenas</span><span>6º ano ao Ensino Médio</span><span>Mínima: 5 alunos</span></div>
+        </div>
+      </article>
+      <article class="play-card">
+        <img src="assets/capa_peca_medo.png" alt="Capa da peça de teatro O Medo Tem Cor" loading="lazy">
+        <div>
+          <span class="play-tag">Peça de teatro</span>
+          <h3>O Medo Tem Cor</h3>
+          <p class="play-from">a partir do cordel “Lendas, racismo e brincadeiras africanas”</p>
+          <p class="play-desc">O medo que se herda e a cor que deram a ele, o brincar como herança, as religiões de matriz africana e o que a gente pode desmanchar. Parte de um cordel de 32 estrofes; as cenas delicadas trazem bloco de condução e a palavra de parar é “Luz!”.</p>
+          <div class="chips"><span>9 cenas + 1 extra</span><span>6º ano ao Ensino Médio</span><span>Mínima: 5 alunos</span></div>
+        </div>
+      </article>
+      <article class="play-card">
+        <img src="assets/capa_peca_pobre.png" alt="Capa da peça de teatro Pobre não pode ter voz" loading="lazy">
+        <div>
+          <span class="play-tag">Peça de teatro</span>
+          <h3>Pobre não pode ter voz</h3>
+          <p class="play-from">a partir do cordel “Pobre não pode ter voz”</p>
+          <p class="play-desc">A voz vira um objeto: o Porta-Voz, um cone de cartolina. Quem o segura tem a palavra. Tem 17 das 31 estrofes do cordel no roteiro (as outras 14, com sugestão de onde encaixar) e a seção “O cordel tem ponto de vista”, com duas leituras.</p>
+          <div class="chips"><span>Abertura + 8 cenas</span><span>6º ano ao 3º ano do EM</span><span>Mínima: 5 alunos</span></div>
+        </div>
+      </article>
+    </div>
+    <p class="plays-includes">Cada peça traz versões mínima, completa e aprofundada, notas por faixa etária, guia musical, atividades para antes e depois e um quadro de habilidades da BNCC. Foram escritas para montar sem palco e sem microfone.</p>
+    <a href="#oferta-colecao" class="btn btn-green btn-xl btn-pulse">🏆 QUERO A COLEÇÃO COM AS 4 PEÇAS</a>
+    <p class="cta-note">Compra e acesso dentro da plataforma Kiwify</p>
   </div>
 </section>
 
@@ -1345,6 +1445,7 @@
     <h3 style="font-size:1.3rem;margin-bottom:1.5rem;color:var(--text)">Tudo que você vai receber na Coleção:</h3>
     <ul class="feature-list" style="max-width:660px;margin:0 auto 2rem;text-align:left">
       <li><i class="fa-solid fa-book-reader"></i><span><strong>Ebook "Performance Poética na Escola"</strong> — 190 páginas de poesias e didática transformadora para enriquecer toda sua prática</span></li>
+      <li><i class="fa-solid fa-masks-theater"></i><span><strong>NOVO · 4 peças de teatro</strong> adaptadas a partir de cordéis de Leonardo Sampaio: “Cada Um com o Seu Céu”, “Consequência do Voto”, “O Medo Tem Cor” e “Pobre não pode ter voz” (do 6º ano ao Ensino Médio)</span></li>
       <li><i class="fa-solid fa-scroll"></i><span><strong>5 cordéis transformadores</strong> (incluindo "A Negra que Não Podia Ser Anjo"), cada um com proposta pedagógica alinhada à BNCC</span></li>
       <li><i class="fa-solid fa-masks-theater"></i><span><strong>Roteiro Teatral Completo</strong> do cordel "A Negra que Não Podia Ser Anjo" — para encenações e eventos culturais</span></li>
       <li><i class="fa-solid fa-gift"></i><span><strong>BÔNUS:</strong> Proposta pedagógica individual para cada cordel, com os códigos da BNCC</span></li>
@@ -1396,11 +1497,11 @@
           <li><i class="fa-solid fa-check-circle"></i><span>Roteiro Teatral Completo</span></li>
           <li><i class="fa-solid fa-check-circle"></i><span>Proposta Pedagógica BNCC</span></li>
         </ul>
-        <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-primary btn-full btn-lg"
+        <a href="https://leonardosampaio.com.br/intermediariocolecao/" class="btn btn-outline btn-full btn-md"
            onclick="return trackCheckout('cordel-essencial','https://leonardosampaio.com.br/intermediariocolecao/')">
           Começar com o Cordel
         </a>
-        <p class="cta-note">🟢 Ótimo ponto de entrada</p>
+        <p class="cta-note">Por R$ 57,80 a mais, você leva a <a href="#oferta-colecao" style="text-decoration:underline;font-weight:700">Coleção completa</a></p>
       </div>
 
       <!-- Coleção Principal -->
@@ -1416,6 +1517,7 @@
         <div class="economy-tag">✨ Economize R$ 30,00 — tudo incluso!</div>
         <ul class="compare-list">
           <li><i class="fa-solid fa-check-circle"></i><span><strong>TUDO do Cordel Essencial</strong></span></li>
+          <li><i class="fa-solid fa-check-circle"></i><span><strong>4 peças de teatro novas</strong>, adaptadas a partir de cordéis</span></li>
           <li><i class="fa-solid fa-check-circle"></i><span>Ebook Performance Poética na Escola (190 págs.)</span></li>
           <li><i class="fa-solid fa-check-circle"></i><span>5 cordéis transformadores + propostas BNCC</span></li>
           <li><i class="fa-solid fa-check-circle"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
@@ -1444,11 +1546,6 @@
   <div class="container text-center">
     <span class="section-label" style="color:var(--secondary)">Garanta agora com preço especial</span>
 
-    <!-- Urgência acima do preço -->
-    <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,186,25,.15);border:1px solid rgba(255,186,25,.4);border-radius:99px;padding:.4rem 1.2rem;font-size:.83rem;font-weight:700;color:var(--accent);margin-bottom:1rem">
-      <i class="fa-solid fa-clock"></i> <span id="offer-timer">Calculando...</span>
-    </div>
-
     <h2 style="font-size:clamp(1.7rem,4.5vw,2.8rem);margin-bottom:.75rem;color:#fff">Coleção Tesouro Poético</h2>
     <p style="color:rgba(255,255,255,.72);font-size:1rem;margin-bottom:2rem">A biblioteca mais completa para a educação antirracista com poesia</p>
 
@@ -1460,6 +1557,7 @@
 
       <ul class="checklist" style="text-align:left;margin-bottom:2rem">
         <li><i class="fa-solid fa-check"></i><span>Ebook "Performance Poética na Escola" — 190 páginas</span></li>
+        <li><i class="fa-solid fa-check"></i><span><strong>4 peças de teatro</strong>: Cada Um com o Seu Céu, Consequência do Voto, O Medo Tem Cor e Pobre não pode ter voz</span></li>
         <li><i class="fa-solid fa-check"></i><span>5 cordéis + propostas pedagógicas BNCC</span></li>
         <li><i class="fa-solid fa-check"></i><span>Roteiro Teatral Completo</span></li>
         <li><i class="fa-solid fa-check"></i><span>Kit Poético Interdisciplinar (Bônus)</span></li>
@@ -1473,6 +1571,7 @@
          onclick="return trackCheckout('colecao-completa','https://pay.kiwify.com.br/M3GiQfv')">
         🏆 GARANTIR MINHA COLEÇÃO AGORA
       </a>
+      <div class="kiwify-note"><i class="fa-solid fa-lock"></i><span><strong>Compra e acesso na Kiwify.</strong> Você paga e acessa os materiais direto dentro da plataforma Kiwify.</span></div>
       <div style="display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.55);margin-top:1rem">
         <i class="fa-solid fa-shield-halved"></i>
         <span>Compra 100% segura via Kiwify · Garantia de 7 dias · Acesso imediato</span>
@@ -1498,7 +1597,7 @@
 <section class="bg-white fade-in">
   <div class="container text-center">
     <span class="section-label">Simples e imediato</span>
-    <h2 class="section-title">Como você recebe seu conteúdo</h2>
+    <h2 class="section-title">Como você acessa seu conteúdo</h2>
     <div class="sep"></div>
     <div class="delivery-steps">
       <div class="step">
@@ -1507,7 +1606,7 @@
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <p><strong>Receba o acesso</strong> por e-mail imediatamente após a confirmação do pagamento</p>
+        <p><strong>Acesse seus materiais</strong> na plataforma Kiwify imediatamente após a confirmação do pagamento</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -1529,7 +1628,7 @@
     <div class="quick-faq-grid" style="margin-bottom:2rem;max-width:760px;margin-inline:auto;margin-bottom:2rem">
       <div class="quick-faq-item">
         <h3>É digital ou físico?</h3>
-        <p>100% digital em PDF, com acesso imediato após a confirmação do pagamento pela Kiwify.</p>
+        <p>100% digital em PDF, com acesso imediato dentro da plataforma Kiwify após a confirmação do pagamento.</p>
       </div>
       <div class="quick-faq-item">
         <h3>Tem garantia?</h3>
@@ -1552,7 +1651,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-header"><h3>Qual a diferença entre o cordel individual e a Coleção?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">O cordel é uma obra poderosa e completa por si só — uma introdução acessível ao universo de Leonardo. A Coleção Tesouro Poético é um pacote muito mais amplo: 5 cordéis, o ebook de 190 páginas, caderno de atividades, kit interdisciplinar e bônus adicionais para enriquecer o ano letivo inteiro.</div>
+        <div class="faq-body">O cordel é uma obra poderosa e completa por si só — uma introdução acessível ao universo de Leonardo. A Coleção Tesouro Poético é um pacote muito mais amplo: 4 peças de teatro adaptadas de cordéis, 5 cordéis, o ebook de 190 páginas, caderno de atividades, kit interdisciplinar e bônus adicionais para enriquecer o ano letivo inteiro.</div>
       </div>
       <div class="faq-item">
         <div class="faq-header"><h3>Funciona em escolas públicas?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -1563,8 +1662,16 @@
         <div class="faq-body">Sim! Todos os PDFs são otimizados para impressão em formato A4, podendo ser usados tanto digitalmente quanto em material físico para distribuir aos alunos.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-header"><h3>Recebo tudo na hora da compra?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-        <div class="faq-body">Sim! Assim que a compra for confirmada pela Kiwify, você receberá um e-mail com o link de acesso a todo o conteúdo digital imediatamente. Sem espera.</div>
+        <div class="faq-header"><h3>Como acesso o conteúdo depois da compra?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+        <div class="faq-body">Assim que a compra for confirmada, você acessa todo o conteúdo digital dentro da plataforma Kiwify, onde a venda e o acesso acontecem. Sem espera.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header"><h3>As peças de teatro estão na Coleção?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+        <div class="faq-body">Sim. “Cada Um com o Seu Céu”, “Consequência do Voto”, “O Medo Tem Cor” e “Pobre não pode ter voz” entram agora na Coleção Tesouro Poético do Professor Consciente como peças de teatro adaptadas a partir de cordéis de Leonardo Sampaio.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header"><h3>Preciso de palco ou figurino para montar as peças?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+        <div class="faq-body">Não. As peças foram escritas para montar numa sala de aula comum, sem palco e sem microfone, e cada uma traz a lista de materiais e uma versão mínima para 5 alunos.</div>
       </div>
       <div class="faq-item">
         <div class="faq-header"><h3>E se eu não gostar?</h3><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -1626,10 +1733,8 @@
 
 <!-- ═══ STICKY CTA MOBILE ═══ -->
 <div id="sticky-cta">
-  <a href="https://pay.kiwify.com.br/M3GiQfv"
-     onclick="return trackCheckout('colecao-completa-sticky','https://pay.kiwify.com.br/M3GiQfv')">
-    🏆 GARANTIR COLEÇÃO — 12x R$ 7,00
-  </a>
+  <a id="sticky-isca" class="on" href="https://leonardosampaio.com.br/intermediariocolecao/" onclick="return trackCheckout('cordel-essencial-sticky','https://leonardosampaio.com.br/intermediariocolecao/')">📖 COMEÇAR COM O KIT — R$ 9,90</a>
+  <a id="sticky-colecao" href="https://pay.kiwify.com.br/M3GiQfv" onclick="return trackCheckout('colecao-completa-sticky','https://pay.kiwify.com.br/M3GiQfv')">🏆 GARANTIR COLEÇÃO — 12x R$ 7,00</a>
 </div>
 
 <!-- ═══ EXIT INTENT POPUP ═══ -->
@@ -1638,12 +1743,23 @@
     <button id="exit-close" aria-label="Fechar">&times;</button>
     <div style="font-size:2.5rem;margin-bottom:.75rem">✋</div>
     <h3>Espera! Antes de ir...</h3>
-    <p>Você pode começar hoje mesmo por <strong style="color:var(--primary)">apenas R$ 9,90</strong> com o Cordel Essencial e experimentar o material sem risco — com 7 dias de garantia incondicional.</p>
-    <a href="https://leonardosampaio.com.br/intermediariocolecao/"
-       class="btn btn-green btn-lg btn-full btn-pulse"
-       onclick="return trackCheckout('cordel-exit-intent','https://leonardosampaio.com.br/intermediariocolecao/')">
-      📖 COMEÇAR POR R$ 9,90 AGORA
-    </a>
+    <div id="popup-kit">
+      <p>Você pode começar hoje mesmo por <strong style="color:var(--primary)">apenas R$ 9,90</strong> com o kit “A Negra que Não Podia Ser Anjo” e experimentar o material sem risco, com 7 dias de garantia incondicional. Compra e acesso na Kiwify.</p>
+      <a href="https://leonardosampaio.com.br/intermediariocolecao/"
+         class="btn btn-green btn-lg btn-full btn-pulse"
+         onclick="return trackCheckout('cordel-exit-intent','https://leonardosampaio.com.br/intermediariocolecao/')">
+        📖 COMEÇAR POR R$ 9,90 AGORA
+      </a>
+    </div>
+    <div id="popup-colecao" style="display:none">
+      <p>A <strong style="color:var(--primary)">Coleção Tesouro Poético do Professor Consciente</strong> agora inclui 4 peças de teatro adaptadas de cordéis, por <strong style="color:var(--primary)">R$ 67,70</strong>, com 7 dias de garantia incondicional. Compra e acesso na Kiwify.</p>
+      <a href="https://pay.kiwify.com.br/M3GiQfv"
+         class="btn btn-green btn-lg btn-full btn-pulse"
+         onclick="return trackCheckout('colecao-exit-intent','https://pay.kiwify.com.br/M3GiQfv')">
+        🏆 QUERO A COLEÇÃO COMPLETA
+      </a>
+      <p style="font-size:.85rem;margin:1rem 0 0">Prefere começar menor? <a href="https://leonardosampaio.com.br/intermediariocolecao/" style="color:var(--primary-d);font-weight:700;text-decoration:underline" onclick="return trackCheckout('cordel-exit-intent','https://leonardosampaio.com.br/intermediariocolecao/')">Kit “A Negra…” por R$ 9,90</a></p>
+    </div>
     <p style="font-size:.78rem;color:var(--text-muted);margin-top:.75rem">7 dias de garantia · Acesso imediato · Compra segura</p>
   </div>
 </div>
@@ -1705,6 +1821,9 @@
   const stickyCTA = document.getElementById('sticky-cta');
   window.addEventListener('scroll', () => {
     stickyCTA.style.display = window.scrollY > 400 ? 'block' : 'none';
+    var gate = document.getElementById('novidade-pecas'), inCol = gate && gate.getBoundingClientRect().top < window.innerHeight * 0.5;
+    document.getElementById('sticky-isca').classList.toggle('on', !inCol);
+    document.getElementById('sticky-colecao').classList.toggle('on', !!inCol);
   });
 
   // ── FADE IN ON SCROLL ──
@@ -1718,32 +1837,20 @@
 
 
 
-  // ── COUNTDOWN TIMER (reinicia a cada 15 min para urgência real) ──
-  (function(){
-    var els = [document.getElementById('countdown-timer'), document.getElementById('offer-timer')];
-    var KEY = 'ctp_countdown_end';
-    var stored = sessionStorage.getItem(KEY);
-    var end;
-    if(stored){ end = parseInt(stored); }
-    else { end = Date.now() + (14*60+Math.floor(Math.random()*60))*1000; sessionStorage.setItem(KEY,end); }
-    function tick(){
-      var diff = Math.max(0, end - Date.now());
-      var m = Math.floor(diff/60000);
-      var s = Math.floor((diff%60000)/1000);
-      var txt = 'Preço especial expira em ' + m + ':' + (s<10?'0':'')+s;
-      els.forEach(function(el){ if(el) el.textContent = txt; });
-      if(diff <= 0){ sessionStorage.removeItem(KEY); end = Date.now() + 14*60*1000; sessionStorage.setItem(KEY,end); }
-    }
-    tick(); setInterval(tick,1000);
-  })();
-
   // ── EXIT INTENT ──
   (function(){
     var shown = sessionStorage.getItem('exit_shown');
     if(shown) return;
     var popup = document.getElementById('exit-popup');
     var closeBtn = document.getElementById('exit-close');
-    function show(){ popup.classList.add('show'); sessionStorage.setItem('exit_shown','1'); }
+    var reached = false, gate = document.getElementById('novidade-pecas');
+    function check(){ if(gate && gate.getBoundingClientRect().top < window.innerHeight * 0.5) reached = true; }
+    window.addEventListener('scroll', check, {passive:true}); check();
+    function show(){
+      document.getElementById('popup-kit').style.display = reached ? 'none' : 'block';
+      document.getElementById('popup-colecao').style.display = reached ? 'block' : 'none';
+      popup.classList.add('show'); sessionStorage.setItem('exit_shown','1');
+    }
     function hide(){ popup.classList.remove('show'); }
     if(closeBtn) closeBtn.addEventListener('click', hide);
     popup.addEventListener('click', function(e){ if(e.target===popup) hide(); });
