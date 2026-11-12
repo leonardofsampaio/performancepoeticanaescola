@@ -42,10 +42,18 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
         }
 
+        @media (prefers-reduced-motion: reduce) {
+            .pulse-btn { animation: none; }
+        }
+
         .check-icon {
             color: #16a34a;
             margin-right: 12px;
             font-weight: bold;
+        }
+
+        .play-card {
+            border-left: 4px solid #2563eb;
         }
     </style>
 </head>
@@ -64,6 +72,9 @@
             <h1 class="text-3xl md:text-4xl font-black mt-2 leading-tight">
                 Espere! Tenho uma <span class="text-red-600">OFERTA ESPECIAL</span> para você completar seu material!
             </h1>
+            <p class="mt-4 text-gray-600 text-base md:text-lg">
+                Cordéis, propostas pedagógicas <strong>e agora também peças de teatro</strong> para levar a poesia popular do papel para o palco da sua sala de aula.
+            </p>
         </div>
 
         <!-- Mockup do Produto Intermediário -->
@@ -100,6 +111,10 @@
                 </li>
                 <li class="flex items-start">
                     <span class="check-icon">✓</span>
+                    <span><strong>4 Peças de Teatro:</strong> Cada uma criada a partir de um dos cordéis, para você encenar com seus alunos.</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="check-icon">✓</span>
                     <span><strong>Garantia Total:</strong> 7 dias para avaliar todo o material.</span>
                 </li>
                 <li class="flex items-start">
@@ -113,10 +128,41 @@
             </ul>
         </div>
 
+        <!-- Peças de Teatro -->
+        <section class="mb-10" aria-labelledby="titulo-pecas">
+            <div class="text-center mb-6">
+                <h2 id="titulo-pecas" class="text-2xl md:text-3xl font-black leading-tight">
+                    Do cordel para o palco: 4 peças de teatro
+                </h2>
+                <p class="mt-3 text-gray-600 text-sm md:text-base">
+                    Os cordéis ganham voz, corpo e cena. Use as peças para transformar a leitura em encenação e abrir a conversa em sala.
+                </p>
+            </div>
+
+            <ul class="space-y-4">
+                <li class="play-card bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+                    <h3 class="font-extrabold text-lg">“Cada Um com o Seu Céu”</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-1">Peça de teatro a partir do cordel <em>“Crenças e Religiões no Mundo”</em>.</p>
+                </li>
+                <li class="play-card bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+                    <h3 class="font-extrabold text-lg">“Consequência do Voto”</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-1">Peça de teatro a partir do cordel <em>“Consequência do voto”</em>.</p>
+                </li>
+                <li class="play-card bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+                    <h3 class="font-extrabold text-lg">“O Medo Tem Cor”</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-1">Peça de teatro a partir do cordel <em>“Lendas racismo e brincadeiras africanas”</em>.</p>
+                </li>
+                <li class="play-card bg-white rounded-2xl p-5 shadow-md border border-gray-100">
+                    <h3 class="font-extrabold text-lg">“Pobre não pode ter voz”</h3>
+                    <p class="text-sm md:text-base text-gray-600 mt-1">Peça de teatro a partir do cordel <em>“Pobre não pode ter voz”</em>.</p>
+                </li>
+            </ul>
+        </section>
+
         <!-- Seção de Ação -->
         <div class="text-center space-y-6">
             <p class="text-gray-600 font-semibold px-4">
-                Aproveite agora e complete sua coleção por apenas R$ 37,70
+                Aproveite agora e complete sua coleção, com as peças de teatro, por apenas R$ 37,70
             </p>
 
             <!-- Botão de Ação Principal -->
